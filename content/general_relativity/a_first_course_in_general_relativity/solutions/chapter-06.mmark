@@ -1,0 +1,630 @@
+---
+title: "Chapter 6"
+description: "Problem Solutions to A First Course in General Relativity - Chapter 6"
+date: 2015-12-28T21:47:31-08:00
+menu: "solutions"
+---
+
+1.  **Decide if the following sets are manifolds and say why. If there are exceptional points at which the sets are not manifolds, give them:**
+
+    a.  **phase space of Hamiltonian mechanics, the space of the canonical coordinates and momenta $$ p_i $$ and $$ q^i $$;**
+
+        Yes.
+
+    b.  **the interior of a circle of unit radius in two-dimensional Euclidean space;**
+
+        Yes.
+
+    c.  **the set of permutations of $$ n $$ objects;**
+
+        No, because the points in this space are discreet rather than continuous.
+
+    d.  **the subset of Euclidean space of two dimensions (coordinates $$ x $$ and $$ y $$) which is a solution to $$ x y (x^2 + y^2 − 1) = 0 $$.**
+
+        No, with exceptional points at $$ (\pm 1, 0) $$ and $$ (0, \pm 1) $$. For a more rigorous mathematical explanation why it is not a manifold, please refer to my solution to Problem 5-2 in [*Calculus on Manifolds*](/mathematics/Calculus-on-Manifolds/).
+
+2.  **Of the manifolds in Exer. 1, on which is it customary to use a metric, and what is that metric? On which would a metric not normally be defined, and why?**
+
+    It is customary to use a metric on (b), while not on (a), because there is no real physical meaning of distances between any two points in (a).
+
+3.  **It is well known that for any symmetric matrix $$ A $$ (with real entries), there exists a matrix $$ H $$ for which the matrix $$ H^T A H $$ is a diagonal matrix whose entries are the eigenvalues of $$ A $$.**
+
+    a.  **Show that there is a matrix $$ R $$ such that $$ R^T H^T A H R $$ is the same matrix as $$ H^T A H $$ except with the eigenvalues rearranged in ascending order along the main diagonal from top to bottom.**
+
+        To switch the $$ i, i $$ element with the $$ j, j $$ element, one can let $$ R $$ be the identity matrix with the $$ i $$-th row and $$ j $$-th row switched. To have the eigenvalues rearranged in a particular order, one can simply have a series of $$ R_1, R_2, \ldots $$.
+
+    b.  **Show that there exists a third matrix $$ N $$ such that $$ N^T R^T H^T A H R N $$ is a diagonal matrix whose entries on the diagonal are −1, 0, or +1.**
+
+        Let $$ N $$ be a diagonal matrix with $$ N_{i, i} = \frac{1}{\sqrt{|{(R^T H^T A H R)}_{i, i}|}} $$ if $$ {(R^T H^T A H R)}_{i, i} \neq 0 $$ and $$ N_{i, i} = 1 $$ otherwise.
+
+    c.  **Show that if $$ A $$ has an inverse, none of the diagonal elements in (b) is zero.**
+
+        If $$ A $$ has an inverse, $$ \det A \neq 0 $$. The determinant of the diagonal matrix in (b) would be zero if any of the diagonal elements in (b) is zero. But we know by construction that $$ H $$, $$ R $$, and $$ N $$ all have non-zero determinants. This would lead to a contradiction.
+
+    d.  **Show from (a)–(c) that there exists a transformation matrix $$ \Lambda $$ which produces Eq. (6.2).**
+
+        $$ \Lambda $$ is simply $$ H R N $$.
+
+4.  **Prove the following results used in the proof of the local flatness theorem in § 6.2:**
+
+    a.  **The number of independent values of $$ \partial^2 x^\alpha / \partial x^{\gamma'} \partial x^{\mu'} |_0 $$ is 40.**
+
+        There are four possibilities for $$ \alpha $$ and ten for the $$ (\gamma', \mu') $$ pair.
+
+    b.  **The corresponding number for $$ \partial^3 x^\alpha / \partial x^{\lambda'} \partial x^{\mu'} \partial x^{\nu'} |_0 $$ is 80.**
+
+        Four possibilities for $$ \alpha $$, 20 for $$ \lambda' $$, $$ \mu' $$, and $$ \nu' $$ combinations (4 for all three being the same, 12 for two out of the three are the same, and 4 for all three being different.)
+
+    c.  **The corresponding number for $$ g_{\alpha \beta, \gamma' \mu'} |_0 $$ is 100.**
+
+        Ten possibilities for the $$ (\alpha, \beta) $$ pair, and ten possibilities for the $$ (\gamma', \mu') $$ pair.
+
+5. 
+
+    a.  **Prove that $$ {\Gamma^\mu}_{\alpha \beta} = {\Gamma^\mu}_{\beta \alpha} $$ in any coordinate system in a curved Riemannian space.**
+
+        The proof is exactly the same as that leads to Eq. (5.74), except that one replaces *Cartesian coordinates* by *locally inertial coordinates* in the argument.
+
+    b.  **Use this to prove that Eq. (6.32) can be derived in the same manner as in flat space.**
+
+        Everything between Eq. (5.74) and Eq. (5.75) is as valid in curved space as in flat space.
+
+6.  **Prove that the first term in Eq. (6.37) vanishes.**
+
+    Let $$ L_\mu = g^{\alpha \beta}(g_{\beta \mu, \alpha} - g_{\mu \alpha, \beta}) $$. One can switch $$ \alpha $$ and $$ \beta $$ since both are dummy variables and $$ L_\mu = g^{\beta \alpha}(g_{\alpha \mu, \beta} - g_{\mu \beta, \alpha}) = g^{\alpha \beta}(g_{\mu \alpha, \beta} - g_{\beta \mu, \alpha}) $$. Therefore, $$ 2 L_\mu = g^{\alpha \beta}(g_{\beta \mu, \alpha} - g_{\mu \alpha, \beta}) + g^{\alpha \beta}(g_{\mu \alpha, \beta} - g_{\beta \mu, \alpha}) = 0 $$.
+
+7. 
+
+    a.  **Give the definition of the determinant of a matrix $$ A $$ in terms of cofactors of elements.**
+
+        $$ \det A = \sum_j A_{ij} C_{ij} $$ for any $$ i $$, where $$ C_{ij} $$ is the determinant of the $$ (i, j) $$ [minor] (https://en.wikipedia.org/wiki/Minor_(linear_algebra)) of $$ A $$, multiplied by $$ (-1)^{i + j} $$.
+
+    b.  **Differentiate the determinant of an arbitrary $$ 2 \times 2 $$ matrix and show that it satisfies Eq. (6.39).**
+
+        $$ {(\det A)}_{, \mu} = {(A_{11} A_{22} - A_{12} A_{21})}_{, \mu} = A_{11, \mu} A_{22} + A_{11} A_{22, \mu} - A_{12, \mu} A_{21} - A_{12} A_{21, \mu} = \det A (A_{11, \mu} \frac{A_{22}}{\det A} - A_{12, \mu} \frac{A_{21}}{\det A} - A_{21, \mu} \frac{A_{12}}{\det A} + A_{22, \mu} \frac{A_{11}}{\det A}) $$. It is further easy to verify that $$\begin{pmatrix} \frac{A_{22}}{\det A} & \frac{A_{12}}{\det A} \\ \frac{A_{21}}{\det A} & \frac{A_{11}}{\det A} \end{pmatrix} = A^{-1} $$.
+
+    c.  **Generalize Eq. (6.39) (by induction or otherwise) to arbitrary $$ n \times n $$ matrices.**
+
+        Note that $$ g g^{\alpha \beta} $$ is exactly the cofactor matrix of $$ g_{\alpha \beta} $$ as $$ g g^{\alpha \beta} g_{\gamma \beta} = g \delta^\alpha_\gamma $$. Eq. (6.39) is called Jacobi's formula and its derivation can be found [here](https://en.wikipedia.org/wiki/Jacobi%27s_formula).
+
+8.  **Fill in the missing algebra leading to Eqs. (6.40) and (6.42).**
+
+    From Eqs. (6.38) and (6.39), we have
+
+    $$ {\Gamma^\alpha}_{\mu \alpha} = \frac{-g_{, \mu}}{-2 g} = \frac{(\sqrt{-g})_{, \mu}}{\sqrt{-g}}. $$
+
+    From Eq. (6.41), we have
+
+    $$ {V^\alpha}_{; \alpha} = \frac{\sqrt{-g} {V^\alpha}_{, \alpha} + {(\sqrt{-g})}_{, \alpha} V^\alpha}{\sqrt{-g}} = \frac{(\sqrt{-g} V^\alpha)_{, \alpha}}{\sqrt{-g}}. $$
+
+9.  **Show that Eq. (6.42) leads to Eq. (5.56). Derive the divergence formula for the metric in Eq. (6.19).**
+
+    Trivial. Notice that for Eq. (5.56), $$ -g $$ should be replaced by $$ g $$ since it's Riemannian instead of pseudo-Riemannian.
+
+    For the metric in Eq. (6.19), $$ {V^\alpha}_{; \alpha} = \frac{{(r^2 V^r)}_{, r}}{r^2} + \frac{{(\sin \theta V^\theta)}_{, \theta}}{\sin \theta} + {V^\phi}_{, \phi} $$.
+
+10. **A 'straight line' on a sphere is a great circle, and it is well known that the sum of the interior angles of any triangle on a sphere whose sides are arcs of great circles exceeds $$ 180^{\circ} $$. Show that the amount by which a vector is rotated by parallel transport around such a triangle (as in Fig. 6.3) equals the excess of the sum of the angles over $$ 180^{\circ} $$.**
+
+    Suppose we move a vector $$ \vec{V} $$ clockwise from $$ A $$ to $$ B $$ to $$ C $$ and back to $$ A $$, and $$ \vec{V} $$ is originally at angle $$ \alpha $$ with 'straight line' $$ AB $$. When $$ \vec{V} $$ is transported to $$ B $$, its angle relative to $$ AB $$ remains the same $$ \alpha $$, but its angle relative to $$ BC $$ is $$ \alpha - (180^\circ - \angle B) $$. Similarly, after $$ \vec{V} $$ is further transported to $$ C $$, its angle to $$ CA $$ is $$ \alpha - (180^\circ - \angle B) - (180^\circ - \angle C) $$. And finally, when $$ \vec{V} $$ returns to $$ A $$ along $$ CA $$, its angle relative to $$ AB $$ is $$ \alpha - (180^\circ - \angle B) - (180^\circ - \angle C) - (180^\circ - \angle A) = \alpha + (\angle A + \angle B + \angle C) - 540^\circ $$, or equivalently $$ \alpha + (\angle A + \angle B + \angle C - 180^\circ) $$, since $$ 360^\circ $$ is just a circle. The end result of the whole process is that $$ \vec{V} $$ has rotated clockwise by $$ \angle A + \angle B + \angle C - 180^\circ $$.
+
+11. **In this exercise we will determine the condition that a vector field $$ \vec{V} $$ can be considered to be globally parallel on a manifold. More precisely, what guarantees that we can find a vector field $$ \vec{V} $$ satisfying the equation**
+
+    $$ {{(\nabla \vec{V})}^\alpha}_\beta = {V^\alpha}_{; \beta} = {V^\alpha}_{, \beta} + {\Gamma^\alpha}_{\mu \beta} V^\mu = 0? $$
+
+    a.  **A necessary condition, called the _integrability condition_ for this equation, follows from the commuting of partial derivatives. Show that $$ {V^\alpha}_{, \nu \beta} = {V^\alpha}_{, \beta \nu} $$ implies**
+
+        $$ ({\Gamma^\alpha}_{\mu \beta, \nu} - {\Gamma^\alpha}_{\mu \nu, \beta}) V^\mu = ({\Gamma^\alpha}_{\mu \beta} {\Gamma^\mu}_{\sigma \nu} - {\Gamma^\alpha}_{\mu \nu} {\Gamma^\mu}_{\sigma \beta}) V^\sigma. $$
+
+        Take the derivative of both sides of $$ {V^\alpha}_{, \beta} + {\Gamma^\alpha}_{\mu \beta} V^\mu = 0 $$, we have
+
+        $$ {V^\alpha}_{, \beta \nu} + {\Gamma^\alpha}_{\mu \beta, \nu} V^\mu + {\Gamma^\alpha}_{\mu \beta} {V^\mu}_{, \nu} = 0, $$
+
+        and by replacing $$ {V^\mu}_{, \nu} $$ by $$ - {\Gamma^\mu}_{\sigma \nu} V^\sigma $$, we have
+
+        $$ {V^\alpha}_{, \beta \nu} + {\Gamma^\alpha}_{\mu \beta, \nu} V^\mu = {\Gamma^\alpha}_{\mu \beta} {\Gamma^\mu}_{\sigma \nu} V^\sigma. $$
+
+        By switching $$ \beta $$ and $$ \nu $$, we have
+
+        $$ {V^\alpha}_{, \nu \beta} + {\Gamma^\alpha}_{\mu \nu, \beta} V^\mu = {\Gamma^\alpha}_{\mu \nu} {\Gamma^\mu}_{\sigma \beta} V^\sigma. $$
+
+        Subtracting one from the other, we have
+
+        $$ ({\Gamma^\alpha}_{\mu \beta, \nu} - {\Gamma^\alpha}_{\mu \nu, \beta}) V^\mu = ({\Gamma^\alpha}_{\mu \beta} {\Gamma^\mu}_{\sigma \nu} - {\Gamma^\alpha}_{\mu \nu} {\Gamma^\mu}_{\sigma \beta}) V^\sigma. $$
+
+    b.  **By relabeling indices, work this into the form**
+
+        $$ ({\Gamma^\alpha}_{\mu \beta, \nu} - {\Gamma^\alpha}_{\mu \nu, \beta} + {\Gamma^\alpha}_{\sigma \nu} {\Gamma^\sigma}_{\mu \beta} - {\Gamma^\alpha}_{\sigma \beta} {\Gamma^\sigma}_{\mu \nu}) V^\mu = 0. $$
+
+        **This turns out to be _sufficient_, as well.**
+
+        Trivial. Simply switch $$ \sigma $$ and $$ \mu $$ in the right side of (a).
+
+12. **Prove that Eq. (6.52) defines a new affine parameter.**
+
+    Trivial, since $$ \frac{\textrm{d}^2}{\textrm{d} \phi^2} = \frac{1}{a^2} \frac{\textrm{d}^2}{\textrm{d} \lambda^2} $$ and $$ \frac{\textrm{d}}{\textrm{d} \phi} = \frac{1}{a} \frac{\textrm{d}}{\textrm{d} \lambda} $$.
+
+13. 
+
+    a.  **Show that if $$ \vec{A} $$ and $$ \vec{B} $$ are parallel-transported along a curve, then $$ g(\vec{A}, \vec{B}) = \vec{A} \cdot \vec{B} $$ is
+constant on the curve**
+
+        Let $$ \lambda $$ be the parameter and $$ \vec{U} $$ the tangent vector of the curve. We have, since covariant differentiation obeys the product rule,
+
+        $$
+        \begin{eqnarray}
+          &&  \frac{\textrm{d} g(\vec{A}, \vec{B})}{\textrm{d} \lambda}  \\
+          &=& U^\gamma {(g_{\alpha \beta} A^\alpha B^\beta)}_{; \gamma}  \\
+          &=& U^\gamma g_{\alpha \beta; \gamma} A^\alpha B^\beta + g_{\alpha \beta} U^\gamma {A^\alpha}_{; \gamma} B^\beta + g_{\alpha \beta} A^\alpha U^\gamma {B^\beta}_{; \gamma}  \\
+          &=& 0.
+        \end{eqnarray}
+        $$
+
+        The last equality is because all three factors $$ g_{\alpha \beta; \gamma} $$, $$ U^\gamma {A^\alpha}_{; \gamma} $$, and $$ U^\gamma {B^\beta}_{; \gamma} $$ are 0. (The first is from Eq. (6.31), the second and the third are from the defintion of parallel-transportion.)
+
+    b.  **Conclude from this that if a _geodesic_ is spacelike (or timelike or null) somewhere, it is spacelike (or timelike or null) everywhere.**
+
+        One can simply take $$ \vec{A} = \vec{B} = \vec{U} $$.
+
+14. **The proper distance along a curve whose tangent is $$ \vec{V} $$ is given by Eq. (6.8). Show that if the curve is a geodesic, then proper length is an affine parameter. (Use the result of Exer. 13.)**
+
+    We need to assume that the geodesic not null. Then $$ l $$, as a function of $$ \lambda $$, is
+
+    $$ l(\lambda) = \int_{\lambda_0}^{\lambda} {| \vec{U} \cdot \vec{U} |}^{1/2} \textrm{d} \lambda'. $$
+
+    But since $$ \vec{U} \cdot \vec{U} $$ is a constant from Exer. 13 (b), we have $$ l(\lambda) = a (\lambda - \lambda_0) $$, where $$ a = {| \vec{U} \cdot \vec{U} |}^{1/2} $$. Therefore $$ l $$ is an affine parameter.
+
+15. **Use Exers. 13 and 14 to prove that the proper length of a geodesic between two points is unchanged to first order by small changes in the curve that do not change its endpoints.**
+
+    Suppose the original geodesic is $$ x(\lambda) $$. With a small change $$ \delta x(\lambda) $$, the proper length becomes
+
+    $$ \int_a^b F(\lambda, \delta x(\lambda)) \mathrm{d} \lambda, $$
+
+    where $$ F(\lambda, \delta x(\lambda)) = \sqrt{g_{\alpha \beta} \frac{\mathrm{d} (x + \delta x)^\alpha}{\mathrm{d} \lambda} \frac{\mathrm{d} (x + \delta x)^\beta}{\mathrm{d} \lambda}} \mathrm{d} \lambda $$. Note that $$ g_{\alpha \beta} $$ should be taken at $$ x(\lambda) + \delta x(\lambda) $$ instead of $$ x(\lambda) $$.
+
+    We have further
+
+    $$
+    \begin{eqnarray}
+      &&  \int_a^b F(\lambda, \delta x(\lambda)) \mathrm{d} \lambda  \\
+      &\approx& \int_a^b (F(\lambda, 0) + \frac{\partial F}{\partial g_{\alpha \beta}} \frac{\partial g_{\alpha \beta}}{\partial x^\mu} \delta x^\mu + \frac{\partial F}{\partial \frac{\mathrm{d} x^\alpha}{\mathrm{d} \lambda}} \frac{\mathrm{d} \delta x^\alpha}{\mathrm{d} \lambda} + \frac{\partial F}{\partial \frac{\mathrm{d} x^\beta}{\mathrm{d} \lambda}} \frac{\mathrm{d} \delta x^\beta}{\mathrm{d} \lambda}) \mathrm{d} \lambda  \\
+      &=& \int_a^b F(\lambda, 0) \mathrm{d} \lambda + \int_a^b (\frac{\frac{\mathrm{d} x^\alpha}{\mathrm{d} \lambda} \frac{\mathrm{d} x^\beta}{\mathrm{d} \lambda}}{2 F(\lambda, 0)} g_{\alpha \beta, \mu} \delta x^\mu + \frac{g_{\alpha \beta} \frac{\mathrm{d} x^\beta}{\mathrm{d} \lambda}}{2 F(\lambda, 0)} \frac{\mathrm{d} \delta x^\alpha}{\mathrm{d} \lambda} + \frac{g_{\alpha \beta} \frac{\mathrm{d} x^\alpha}{\mathrm{d} \lambda}}{2 F(\lambda, 0)} \frac{\mathrm{d} \delta x^\beta}{\mathrm{d} \lambda}) \mathrm{d} \lambda.
+    \end{eqnarray}
+    $$
+
+    Since $$ F(\lambda, 0) $$ is a constant (from Exer. 13), we can denote it as $$ F $$ and have
+
+    $$
+    \begin{eqnarray}
+      &&  \int_a^b F(\lambda, \delta x(\lambda)) \mathrm{d} \lambda  \\
+      &\approx& \int_a^b F(\lambda, 0) \mathrm{d} \lambda + \frac{1}{2 F} \int_a^b (\frac{\mathrm{d} x^\alpha}{\mathrm{d} \lambda} \frac{\mathrm{d} x^\beta}{\mathrm{d} \lambda} g_{\alpha \beta, \mu} \delta x^\mu + 2 g_{\alpha \beta} \frac{\mathrm{d} x^\alpha}{\mathrm{d} \lambda} \frac{\mathrm{d} \delta x^\beta}{\mathrm{d} \lambda}) \mathrm{d} \lambda.
+    \end{eqnarray}
+    $$
+
+    For the second term in the integrand, we can integrate by part. Since $$ \delta x = 0 $$ at $$ \lambda = a $$ and $$ \lambda = b $$, we have
+
+    $$
+    \begin{eqnarray}
+      &&  \int_a^b F(\lambda, \delta x(\lambda)) \mathrm{d} \lambda  \\
+      &\approx& \int_a^b F(\lambda, 0) \mathrm{d} \lambda + \frac{1}{2 F} \int_a^b (U^\alpha U^\beta g_{\alpha \beta, \mu} \delta x^\mu - 2 (g_{\alpha \beta} U^\alpha)_{, \mu} U^\mu \delta x^\beta) \mathrm{d} \lambda  \\
+      &=& \int_a^b F(\lambda, 0) \mathrm{d} \lambda + \frac{1}{2 F} \int_a^b (U^\alpha U^\beta g_{\alpha \beta, \mu} \delta x^\mu - 2 (g_{\alpha \mu} U^\alpha)_{, \beta} U^\beta \delta x^\mu) \mathrm{d} \lambda  \\
+      &=& \int_a^b F(\lambda, 0) \mathrm{d} \lambda + \frac{1}{2 F} \int_a^b (U^\alpha U^\beta g_{\alpha \beta, \mu} - 2 g_{\alpha \mu, \beta} U^\alpha U^\beta - 2 g_{\alpha \mu} {U^\alpha}_{, \beta} U^\beta) \delta x^\mu \mathrm{d} \lambda  \\.
+    \end{eqnarray}
+    $$
+
+    We can choose the locally inertial frame to evaluate $$ U^\alpha U^\beta g_{\alpha \beta, \mu} - 2 g_{\alpha \mu, \beta} U^\alpha U^\beta - 2 g_{\alpha \mu} {U^\alpha}_{, \beta} U^\beta $$, and the first two terms are zero automatically. The third term is also zero since the Christoffel symbol in Eq. (6.50) is zero in the chosen frame. (We don't have to choose the locally inertial frame. We simply will have to write a few Christoffel symbols and let them cancel each other. The result will be the same.)
+
+    This finishes the proof.
+
+16. 
+
+    a.  **Derive Eqs. (6.59) and (6.60) from Eq. (6.58).**
+
+        Trivial. If someone does not understand this basic calculation, they'd better do something else than reading this book.
+
+    b.  **(b) Fill in the algebra needed to justify Eq. (6.61).**
+
+        Equally trivial.
+
+17. 
+
+    a.  **Prove that Eq. (6.5) implies $$ {g^{\alpha \beta}}_{, \mu}(P) = 0 $$.**
+
+        Note that $$ g^{\alpha \beta} g_{\beta \gamma} = \delta^\alpha_\gamma $$ is a constant, and therefore $$ (g^{\alpha \beta} g_{\beta \gamma})_{, \mu} = 0 $$. But we have also $$ (g^{\alpha \beta} g_{\beta \gamma})_{, \mu} = {g^{\alpha \beta}}_{, \mu} g_{\beta \gamma} + g^{\alpha \beta} g_{\beta \gamma, \mu} $$, where the second term is 0 at $$ P $$ from Eq. (6.5). Therefore $$ {g^{\alpha \beta}}_{, \mu}(P) g_{\beta \gamma}(P) = 0 $$. We can now simply take $$ \beta = \gamma $$ and get $$ {g^{\alpha \beta}}_{, \mu} = 0 $$.
+
+    b.  **Use this to establish Eq. (6.64).**
+
+        Trivial.
+
+    c.  **Fill in the steps needed to establish Eq. (6.68).**
+
+        See the note on Eq. (6.68) in the Notes section.
+
+18. 
+
+    a.  **Derive Eqs. (6.69) and (6.70) from Eq. (6.68).**
+
+        Trivial. Just list the terms and let them cancel each other.
+
+    b.  **Show that Eq. (6.69) reduces the number of independent components of $$ R_{\alpha \beta \mu \nu} $$ from $$ 4 \times 4 \times 4 \times 4 = 256 $$ to $$ 6 \times 7 / 2 = 21 $$. (Hint: treat pairs of indices. Calculate how many independent choices of pairs there are for the first and the second pairs on $$ R_{\alpha \beta \mu \nu} $$.)**
+
+        There are only 6 independent choices of $$ \alpha $$ and $$ \beta $$ since they are anti-symmetric. Similarly, there are also 6 independent choices of $$ \mu $$ and $$ \nu $$ once $$ \alpha $$ and $$ \beta $$ are fixed. When $$ \mu \nu $$ is different to $$ \alpha \beta $$, there are $$ 6 \times 5 / 2 $$ independent combinations of $$ \alpha $$, $$ \beta $$, $$ \mu $$, and $$ \nu $$, where the division is because $$ R_{\alpha \beta \mu \nu} = R_{\mu \nu \alpha \beta} $$. When $$ \mu \nu $$ is the same as $$ \alpha \beta $$, there are 6 choices. Therefore there are in total $$ 6 \times 5 / 2 + 6 = 21 $$ independent choices.
+
+    c.  **Show that Eq. (6.70) imposes only one further relation independent of Eq. (6.69) on the components, reducing the total of independent ones to 20.**
+
+        If any two of $$ \alpha $$, $$ \beta $$, $$ \mu $$, and $$ \nu $$ are the same, Eq. (6.70) reduces to Eq. (6.69). Further one can list the $$ 4! $$ combinations where $$ \alpha $$, $$ \beta $$, $$ \mu $$, and $$ \nu $$ are different from each other, and realize they are all the same because of Eq. (6.69).
+
+19. **Prove that $$ {R^\alpha}_{\beta \mu \nu} = 0 $$ for polar coordinates in the Euclidean plane. Use Eq. (5.45) or equivalent results.**
+
+    Trivial. Simply plug Eq. (5.45) in Eq. (6.63). One can save some repetition by noticing that Eq. (6.63) is anti-symmetric on $$ \mu $$ and $$ \nu $$.
+
+20. **Fill in the algebra necessary to establish Eq. (6.73).**
+
+    The second and third terms are zero in locally inertial coordinates. For the first term we have
+
+    $$ {({V^\mu}_{; \beta})}_{, \alpha} = {({V^\mu}_{, \beta} + {\Gamma^\mu}_{\nu \beta} V^\nu )}_{, \alpha} = {V^\mu}_{, \beta \alpha} + {\Gamma^\mu}_{\nu \beta, \alpha} V^\nu + {\Gamma^\mu}_{\nu \beta} {V^\nu}_{, \alpha}. $$
+
+    Again, the last term is zero in locally inertial coordinates.
+
+21. **Consider the sentences following Eq. (6.78). Why does the argument in parentheses _not_ apply to the signs in**
+
+    $$ {V^\alpha}_{; \beta} = {V^\alpha}_{, \beta} + {\Gamma^\alpha}_{\mu \beta} V^\mu \textrm{ and } V_{\alpha; \beta} = V_{\alpha, \beta} - {\Gamma^\mu}_{\alpha \beta} V_{\mu}? $$
+
+    Because the two terms on the right-hand side of the equation are not tensors and one cannot use $$ \boldsymbol{\mathrm{g}} $$ to raise or lower indices in these two terms.
+
+22. **Fill in the algebra necessary to establish Eqs. (6.84), (6.85), and (6.86).**
+
+    Please refer to the Errata on Eqs. (6.80), (6.84), (6.85) and Notes on Eq. (6.72).
+
+23. **Prove Eq. (6.88). (Be careful: one cannot simply differentiate Eq. (6.67) since it is valid only at $$ P $$, not in the neighborhood of $$ P $$.)**
+
+    Differentiating Eq. (6.63), which is valid also in the neighborhood of $$ P $$, we have
+
+    $$ {R^\alpha}_{\beta \mu \nu, \lambda} = {\Gamma^\alpha}_{\beta \nu, \mu \lambda} - {\Gamma^\alpha}_{\beta \mu, \nu \lambda} + {\Gamma^\alpha}_{\sigma \mu, \lambda} {\Gamma^\sigma}_{\beta \nu} + {\Gamma^\alpha}_{\sigma \mu} {\Gamma^\sigma}_{\beta \nu, \lambda} - {\Gamma^\alpha}_{\sigma \nu, \lambda} {\Gamma^\sigma}_{\beta \mu} - {\Gamma^\alpha}_{\sigma \nu} {\Gamma^\sigma}_{\beta \mu, \lambda}. $$
+
+    Now we can safely restrain ourselves to $$ P $$ and choose a locally intertial frame at $$ P $$. Since $$ {\Gamma^\alpha}_{\mu \nu} = 0 $$ at $$ P $$, we have
+
+    $$ {R^\alpha}_{\beta \mu \nu, \lambda} = {\Gamma^\alpha}_{\beta \nu, \mu \lambda} - {\Gamma^\alpha}_{\beta \mu, \nu \lambda}. $$
+
+    To calculate $$ {\Gamma^\alpha}_{\mu \nu, \sigma \tau} $$, we *cannot* directly differentiate Eq. (6.64) because it is valid only at $$ P $$. We have to differentiate Eq. (6.32), which is valid also in the neighborhood of $$ P $$, twice. We have
+
+    $$
+    \begin{eqnarray}
+      &&  {\Gamma^\alpha}_{\mu \nu, \sigma \tau}  \\
+      &=& \frac{1}{2} (g^{\alpha \beta} (g_{\beta \mu, \nu} + g_{\beta \nu, \mu} - g_{\mu \nu, \beta}))_{, \sigma \tau}  \\
+      &=& \frac{1}{2} ({g^{\alpha \beta}}_{, \sigma} (g_{\beta \mu, \nu} + g_{\beta \nu, \mu} - g_{\mu \nu, \beta}) + g^{\alpha \beta} (g_{\beta \mu, \nu \sigma} + g_{\beta \nu, \mu \sigma} - g_{\mu \nu, \beta \sigma}))_{, \tau}  \\
+      &=& \frac{1}{2} ({g^{\alpha \beta}}_{, \sigma \tau} (g_{\beta \mu, \nu} + g_{\beta \nu, \mu} - g_{\mu \nu, \beta}) + {g^{\alpha \beta}}_{, \tau} (g_{\beta \mu, \nu \sigma} + g_{\beta \nu, \mu \sigma} - g_{\mu \nu, \beta \sigma}) + {g^{\alpha \beta}}_{, \sigma} (g_{\beta \mu, \nu \tau} + g_{\beta \nu, \mu \tau} - g_{\mu \nu, \beta \tau}) + g^{\alpha \beta} (g_{\beta \mu, \nu \sigma \tau} + g_{\beta \nu, \mu \sigma \tau} - g_{\mu \nu, \beta \sigma \tau})).  \\
+    \end{eqnarray}
+    $$
+
+    Now we can move back to $$ P $$ again and ignore its neighborhood. At $$ P $$, all those $$ {g^{\alpha \beta}}_{, \mu} $$ and $$ g_{\alpha \beta, \mu} $$ terms vanish and we have
+
+    $$ {\Gamma^\alpha}_{\mu \nu, \sigma \tau} = \frac{1}{2} g^{\alpha \beta} (g_{\beta \mu, \nu \sigma \tau} + g_{\beta \nu, \mu \sigma \tau} - g_{\mu \nu, \beta \sigma \tau}), $$
+
+    which *happens to* be the same as what we would have got by (incorrectly) directly differentiating Eq. (6.64).
+
+    The rest is in exactly the same fashion as the derivation from Eq. (6.64) to Eq. (6.68).
+
+24. **Establish Eq. (6.89) from Eq. (6.88).**
+
+    Trivial. Just list all 12 terms and let them cancel each other.
+
+25. 
+
+    a.  **Prove that the Ricci tensor is the only independent contraction of $$ {R^\alpha}_{\beta \mu \nu} $$: all others are multiples of it.**
+
+        Since $$ {R^\alpha}_{\beta \mu \nu} $$ is anti-symmetric on $$ \mu $$ and $$ \nu $$, $$ {R^\mu}_{\alpha \beta \mu} = -{R^\mu}_{\alpha \mu \beta} = -R_{\alpha \beta} $$.
+
+        Also, $$ {R^\mu}_{\mu \alpha \beta} = g^{\mu \sigma} R_{\sigma \mu \alpha \beta} = - g^{\mu \sigma} R_{\mu \sigma \alpha \beta} = -{R^\sigma}_{\sigma \alpha \beta} $$, and therefore $$ {R^\mu}_{\mu \alpha \beta} = 0 $$.
+
+        The other ones can be derived similarly.
+
+    b.  **Show that the Ricci tensor is symmetric.**
+
+        $$ R_{\beta \alpha} = {R^\mu}_{\beta \mu \alpha} = g^{\mu \sigma} R_{\sigma \beta \mu \alpha} = g^{\mu \sigma} R_{\mu \alpha \sigma \beta} = {R^\sigma}_{\alpha \sigma \beta} = R_{\alpha \beta} $$.
+
+26. **Use Exer. 17(a) to prove Eq. (6.94).**
+
+    In locally inertial coordinates, $$ {g^{\alpha \beta}}_{; \mu} = {g^{\alpha \beta}}_{, \mu} = 0 $$ and this is a tensor equation.
+
+27. **Fill in the algebra necessary to establish Eqs. (6.95), (6.97), and (6.99).**
+
+    In Eq. (6.95), the first equality is due to the anti-symmetry of $$ R_{\alpha \beta \lambda \mu} $$ on $$ \lambda $$ and $$ \mu $$, and the second is due to the fact that $$ {g^{\alpha \mu}}_{; \nu} = 0 $$.
+
+    To derive Eq. (6.97) from Eq. (6.96), the key is to show that $$ R_{; \lambda} = ({\delta^\mu}_\lambda R)_{; \mu} $$. One way is to notice that $$ {\delta^\mu}_\lambda = {g^\mu}_\lambda $$ is a tensor and $$ {g^\mu}_{\lambda ; \sigma} = 0 $$, and another way is to simply list all possibilities of $$ \mu $$.
+
+    The equlivalence between Eq. (6.97) and Eq. (6.99) can be established as follows.
+
+    $$
+    \begin{eqnarray}
+      &&     (2 {R^\mu}_\lambda - {\delta^\mu}_\lambda R)_{; \mu} = 0  \\
+      &\iff& ({R^\beta}_\sigma - \frac{1}{2} {\delta^\beta}_\sigma R)_{; \beta} = 0  \\
+      &\iff& g^{\alpha \sigma} ({R^\beta}_\sigma - \frac{1}{2} {\delta^\beta}_\sigma R)_{; \beta} = 0  \\
+      &\iff& (R^{\beta \alpha} - \frac{1}{2} g^{\beta \alpha} R)_{; \beta} = 0  \\
+      &\iff& {G^{\beta \alpha}}_{; \beta} = 0  \\
+      &\iff& {G^{\alpha \beta}}_{; \beta} = 0
+    \end{eqnarray}
+    $$
+
+    The "if" part in the second equivalence can be best seen by choosing locally inertial coordinates and let $$ \alpha = \sigma $$, and the third equivalence is because $$ {g^{\alpha \sigma}}_{; \beta} = 0 $$.
+
+28. 
+
+    a.  **Derive Eq. (6.19) by using the usual coordinate transformation from Cartesian to spherical polars.**
+
+        Let Cartesian be the primed coordinates and spherical polars be the unprimed ones. We have $$ g_{i j} = {\Lambda^{m'}}_i {\Lambda^{n'}}_j g_{m' n'} $$, or in matrix notation,
+
+        $$ g_{i j} = \Lambda^T g_{m' n'} \Lambda = \begin{pmatrix} \sin \theta \cos \phi & \sin \theta \sin \phi & \cos \theta \\ r \cos \theta \cos \phi & r \cos \theta \sin \phi & -r \sin \theta \\ -r \sin \theta \sin \phi & r \sin \theta \cos \phi & 0 \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} \sin \theta \cos \phi & r \cos \theta \cos \phi & -r \sin \theta \sin \phi \\ \sin \theta \sin \phi & r \cos \theta \sin \phi & r \sin \theta \cos \phi \\ \cos \theta & -r \sin \theta & 0 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & r^2 & 0 \\ 0 & 0 & r^2 \sin^2 \theta \end{pmatrix} . $$
+
+    b.  **Deduce from Eq. (6.19) that the metric of the surface of a sphere of radius $$ r $$ has components ($$ g_{\theta \theta} = r^2 $$, $$ g_{\phi \phi} = r^2 \sin^2 \theta $$, $$ g_{\theta \phi} = 0 $$) in the usual spherical coordinates.**
+
+        It is simply the lower-right $$ 2 \times 2 $$ matrix.
+
+    c.  **Find the components $$ g^{\alpha \beta} $$ for the sphere.**
+
+        It is the inverse of $$ g_{\alpha \beta} $$, i.e. $$ \begin{pmatrix} \frac{1}{r^2} & 0 \\ 0 & \frac{1}{r^2 \sin^2 \theta} \end{pmatrix} $$.
+
+29. **In polar coordinates, calculate the Riemann curvature tensor of the sphere of unit radius, whose metric is given in Exer. 28. (Note that in two dimensions there is only one independent component, by the same arguments as in Exer. 18(b). So calculate $$ R_{\theta \phi \theta \phi} $$ and obtain all other components in terms of it.)**
+
+    $$ R_{\theta \phi \theta \phi} = \frac{1}{2} (g_{\theta \phi, \phi \theta} - g_{\theta \theta, \phi \phi} + g_{\phi \theta, \theta \phi} - g_{\phi \phi, \theta \theta}) = -r^2 \cos 2 \theta. $$
+
+30. **Calculate the Riemann curvature tensor of the cylinder. (Since the cylinder is flat, this should vanish. Use whatever coordinates you like, and make sure you write down the metric properly!)**
+
+    Trivial. By choosing a convenient coordinate system, we have its metric with the same components as the metric of Cartesian coordinates in a flat space, leading to zero Riemann curvature tensor.
+
+31. **Show that covariant differentiation obeys the usual product rule, e.g. $$ (V^{\alpha \beta} W_{\beta \gamma})_{; \mu} = {V^{\alpha \beta}}_{; \mu} W_{\beta \gamma} + V^{\alpha \beta} W_{\beta \gamma; \mu} $$. (Hint: use a locally inertial frame.)**
+
+    The hint could not be clearer!
+
+32. **A four-dimensional manifold has coordinates $$ (u, v, w, p) $$ in which the metric has components $$ g_{uv} = g_{ww} = g_{pp} = 1 $$, all other independent components vanishing.**
+
+    a.  **Show that the manifold is flat and the signature is +2.**
+
+        The Riemann tensor is obviously zero since all metric components are constant. The eigenvalues of the metric matrix are -1, 1, 1, 1.
+
+    b.  **The result in (a) implies the manifold must be Minkowski spacetime. Find a coordinate transformation to the usual coordinates $$ (t, x, y, z) $$. (You may find it a useful hint to calculate $$ \vec{e}_v \cdot \vec{e}_v $$ and $$ \vec{e}_u \cdot \vec{e}_u $$.)**
+
+        Just let $$ t = \frac{1}{\sqrt{2}} u - \frac{1}{\sqrt{2}} v $$, $$ x = \frac{1}{\sqrt{2}} u + \frac{1}{\sqrt{2}} v $$, $$ y = w $$, and $$ z = p $$.
+
+33. **A ‘three-sphere’ is the three-dimensional surface in four-dimensional Euclidean space (coordinates $$ x $$, $$ y $$, $$ z $$, $$ w $$), given by the equation $$ x^2 + y^2 + z^2 + w^2 = r^2 $$, where $$ r $$ is the radius of the sphere.**
+
+    a.  **Define new coordinates $$ (r, \theta, \phi, \chi) $$ by the equations $$ w = r \cos \chi $$, $$ z = r \sin \chi \cos \theta $$, $$ x = r \sin \chi \sin \theta \cos \phi $$, $$ y = r \sin \chi \sin \theta \sin \phi $$. Show that $$ (\theta, \phi, \chi) $$ are coordinates for the sphere. These generalize the familiar polar coordinates.**
+
+        Trivial.
+
+    b.  **Show that the metric of the three-sphere of radius $$ r $$ has components in these coordinates $$ g_{\chi \chi} = r^2, g_{\theta \theta} = r^2 \sin^2 \chi $$, $$ g_{\phi \phi} = r^2 \sin^2 \chi \sin^2 \theta $$, all other components vanishing. (Use the same method as in Exer. 28.)**
+
+        First,
+
+        $$ \Lambda = \begin{pmatrix} \sin \chi \sin \theta \cos \phi & r \cos \chi \sin \theta \cos \phi & r \sin \chi \cos \theta \cos \phi & - r \sin \chi \sin \theta \sin \phi \\ \sin \chi \sin \theta \sin \phi & r \cos \chi \sin \theta \sin \phi & r \sin \chi \cos \theta \sin \phi & r \sin \chi \sin \theta \cos \phi \\ \sin \chi \cos \theta & r \cos \chi \cos \theta & - r \sin \chi \sin \theta & 0 \\ \cos \chi & - r \sin \chi & 0 & 0 \end{pmatrix}. $$
+
+        Second,
+
+        $$ g_{r, \theta, \phi, \chi} = \Lambda^T g_{x, y, z, w} \Lambda = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & r^2 & 0 & 0 \\ 0 & 0 & r^2 \sin^2 \chi \\ 0 & 0 & 0 & r^2 \sin^2 \chi \sin^2 \theta \end{pmatrix}. $$
+
+        Finally, we only need to take the $$ 3 \times 3 $$ bottom-right sub-matrix of the result above.
+
+34. **Establish the following identities for a general metric tensor in a general coordinate system. You may find Eqs. (6.39) and (6.40) useful.**
+
+    a.  **$$ {\Gamma^\mu}_{\mu \nu} = \frac{1}{2} (\ln |g|)_{, \nu} $$;**
+
+        From Eq. (6.40), we have
+
+        $$ {\Gamma^\mu}_{\mu \nu} = \frac{(\sqrt{-g})_{, \nu}}{\sqrt{-g}} = \ln(\sqrt{-g})_{, \nu} = \frac{1}{2} \ln(-g)_{, \nu} = \frac{1}{2} \ln(|g|)_{, \nu}. $$
+
+    b.  **$$ g^{\mu \nu} {\Gamma^\alpha}_{\mu \nu} = -(g^{\alpha \beta} \sqrt{-g})_{, \beta} / \sqrt{-g} $$;**
+
+        Since $$ {g^{\alpha \beta}}_{; \gamma} = 0 $$, we have also
+
+        $$ {g^{\alpha \beta}}_{; \beta} = {g^{\alpha \beta}}_{, \beta} + {\Gamma^\alpha}_{\mu \beta} g^{\mu \beta} + {\Gamma^\beta}_{\mu \beta} g^{\alpha \mu} = 0, $$
+        
+        or
+
+        $$ - {g^{\alpha \beta}}_{, \beta} = {\Gamma^\alpha}_{\mu \beta} g^{\mu \beta} + {\Gamma^\beta}_{\mu \beta} g^{\alpha \mu} = g^{\mu \nu} {\Gamma^\alpha}_{\mu \nu} + g^{\alpha \beta} {\Gamma^\mu}_{\beta \mu}, $$
+
+        where the last equality is from switching dummy varialbes.
+
+        Now we have
+
+        $$ -(g^{\alpha \beta} \sqrt{-g})_{, \beta} / \sqrt{-g} = -{g^{\alpha \beta}}_{, \beta} - g^{\alpha \beta} {\Gamma^\mu}_{\beta \mu} = g^{\mu \nu} {\Gamma^\alpha}_{\mu \nu} + g^{\alpha \beta} {\Gamma^\mu}_{\beta \mu} - g^{\alpha \beta} {\Gamma^\mu}_{\beta \mu} = g^{\mu \nu} {\Gamma^\alpha}_{\mu \nu}, $$
+
+        where the first equality is established through Eq. (6.40).
+
+    c.  **for an antisymmetric tensor $$ F^{\mu \nu} $$, $$ {F^{\mu \nu}}_{; \nu} = (\sqrt{-g} F^{\mu \nu})_{, \nu} / \sqrt{-g} $$;**
+
+    	First we have
+
+    	$$ {F^{\mu \nu}}_{; \nu} = {F^{\mu \nu}}_{, \nu} + {\Gamma^\mu}_{\alpha \nu} F^{\alpha \nu} + {\Gamma^\nu}_{\alpha \nu} F^{\mu \alpha}. $$
+
+    	Notice that the second term is zero because $$ F^{\alpha \nu} $$ is antisymetric on $$ \alpha $$ and $$ \nu $$ while $$ {\Gamma^\mu}_{\alpha \nu} $$ is symmetric. Employing Eq. (6.40), we have
+
+    	$$ {F^{\mu \nu}}_{; \nu} = {F^{\mu \nu}}_{, \nu} + \frac{(\sqrt{-g})_{, \alpha}}{\sqrt{-g}} F^{\mu \alpha} = (\sqrt{-g} F^{\mu \nu})_{, \nu} / \sqrt{-g}. $$
+
+    d.  **$$ g^{\alpha \beta} g_{\beta \mu, \nu} = -{g^{\alpha \beta}}_{, \nu} g_{\beta \mu} $$ (hint: what is $$ g^{\alpha \beta} g_{\beta \mu} $$?);**
+
+        Notice that $$ g^{\alpha \beta} g_{\beta \mu} = \delta^\alpha_\mu $$ is constant and therefore $$ (g^{\alpha \beta} g_{\beta \mu})_{, \nu} = 0 $$, or equivalently $$ g^{\alpha \beta} g_{\beta \mu, \nu} + {g^{\alpha \beta}}_{, \nu} g_{\beta \mu} = 0 $$.
+
+    e.  **$$ {g^{\mu \nu}}_{, \alpha} = - {\Gamma^\mu}_{\beta \alpha} g^{\beta \nu} - {\Gamma^\nu}_{\beta \alpha} g^{\mu \beta} $$ (hint: use Eq. (6.31)).**
+
+        Directly from $$ {g^{\mu \nu}}_{; \alpha} = {g^{\mu \nu}}_{, \alpha} + {\Gamma^\mu}_{\beta \alpha} g^{\beta \nu} + {\Gamma^\nu}_{\beta \alpha} g^{\mu \beta} = 0 $$.
+
+35. **Compute 20 independent components of $$ R_{\alpha \beta \mu \nu} $$ for a manifold with line element $$ \textrm{d} s^2 = −e^{2 \Phi} \textrm{d} t^2 + e^{2 \Lambda} \textrm{d} r^2 + r^2 (\textrm{d} θ^2 + \sin^2 \theta \textrm{d} \phi^2) $$, where $$ \Phi $$ and $$ \Lambda $$ are arbitrary functions of the coordinate $$ r $$ alone. (First, identify the coordinates and the components $$ g_{\alpha \beta} $$; then compute $$ g^{\alpha \beta} $$ and the Christoffel symbols. Then decide on the indices of the 20 components of $$ R_{\alpha \beta \mu \nu} $$ you wish to calculate, and compute them. Remember that you can deduce the remaining 236 components from those 20.)**
+
+    There is nothing mysterious or ingenious about the process. One only needs to employ Eqs. (5.75) and (6.63) mechanically to get the results. (One cannot use Eq. (6.68) because it depends on Eq. (6.67), which is valid only in the locally flat coordinate system.)
+
+    It is better to use Mathematica to solve it. Just get a package called [GREATER2](http://www.hartmanhep.net/greater2.php) and run the following code.
+
+    ```mathematica
+    Needs["GREATER2`"];
+    X = {t, r, \[Theta], \[Phi]};
+    ds2 = -E^(2 \[CapitalPhi][r]) dt^2 + E^(2 \[CapitalLambda][r]) dr^2 + 
+       r^2 (d\[Theta]^2 + Sin[\[Theta]]^2 d\[Phi]^2);
+    Gdd = Metric[ds2, X];
+    Raise[Riemann[Gdd, X], 1, Gdd]
+    ```
+
+    Note that the function `Raise` can also be used to lower indices if the third argument provided is $$ g_{\alpha \beta} $$ instead of $$ g^{\alpha \beta} $$.
+
+36. **A four-dimensional manifold has coordinates $$ (t, x, y, z) $$ and line element**
+
+    $$ \textrm{d} s^2 = -(1 + 2 \phi) \textrm{d} t^2 + (1 - 2 \phi) (\textrm{d} x^2 + \textrm{d} y^2 + \textrm{d} z^2), $$
+
+    **where $$ | \phi(t, x, y, z) | \ll 1 $$ everywhere. At any point $$ P $$ with coordinates $$ (t_0, x_0, y_0, z_0) $$, find a coordinate transformation to a locally inertial coordinate system, to first order in $$ \phi $$. At what rate does such a frame accelerate with respect to the original coordinates, again to first order in $$ \phi $$?**
+
+    Let $$ x^{\mu} = x^{\mu}(x^{\alpha'}) $$ be the transformation from locally inertial coordinates (primed) at $$ P $$ to the original coordinates (unprimed). We will define $$ x^{\mu}(x^{\alpha'}) $$ in the neighborhood of $$ P $$ by its Taylor series expanded at $$ P $$. For further simplification, we let the coordinates of $$ P $$ to be $$ (0, 0, 0, 0) $$ in both coordinates. So we have in the neighborhood of $$ P $$
+
+    $$ x^\mu = {\Lambda^\mu}_{\alpha'} |_P x^{\alpha'} + \frac{1}{2} {\Lambda^\mu}_{\alpha', \beta'} |_P x^{\alpha'} x^{\beta'} + O(x^{\alpha'} x^{\beta'} x^{\gamma'}), $$
+
+    where $$ {\Lambda^\mu}_{\alpha'} = \frac{\partial x^\mu}{\partial x^{\alpha'}} $$ and $$ {\Lambda^\mu}_{\alpha', \beta'} = \frac{\partial^2 x^\mu}{\partial x^{\alpha'} \partial x^{\beta'}} $$
+
+    Since the primed coordinates are locally inertial, the choice of $$ {\Lambda^\mu}_{\alpha'} $$ and $$ {\Lambda^\mu}_{\alpha', \beta'} $$ must satisfy two criteria at $$ P $$:
+
+    a.  $$ g_{\alpha' \beta'} = {\Lambda^\mu}_{\alpha'} {\Lambda^\nu}_{\beta'} g_{\mu \nu} = \eta_{\alpha' \beta'} $$, and
+
+    b.  $$ g_{\alpha' \beta', \gamma'} = 0 $$, or equivalently, $$ {\Gamma^{\alpha'}}_{\beta' \gamma'} = 0 $$.
+
+    For (a), there are 16 equations with 10 free variables, and therefore 6 degrees of freedom in our choice. In this particular case, one solution is obvious through simple visual inspection.
+
+    $$ {\Lambda^\mu}_{\alpha'} = \begin{pmatrix} \frac{1}{\sqrt{1 + 2 \phi}} & 0 & 0 & 0 \\ 0 & \frac{1}{\sqrt{1 - 2 \phi}} & 0 & 0 \\ 0 & 0 & \frac{1}{\sqrt{1 - 2 \phi}} & 0 \\ 0 & 0 & 0 & \frac{1}{\sqrt{1 - 2 \phi}} \end{pmatrix} = \begin{pmatrix} 1 - \phi & 0 & 0 & 0 \\ 0 & 1 + \phi & 0 & 0 \\ 0 & 0 & 1 + \phi & 0 \\ 0 & 0 & 0 & 1 + \phi \end{pmatrix} + O(\phi^2) $$
+
+    This is a transformation that implies zero relative speed at $$ P $$, and no rotation or reversion of spatial axes.
+
+    For (b), we have from Exer. (5.17)
+
+    $$ {\Gamma^{\alpha'}}_{\beta' \gamma'} = {\Gamma^\sigma}_{\mu \nu} {\Lambda^{\alpha'}}_\sigma {\Lambda^\mu}_{\beta'} {\Lambda^\nu}_{\gamma'} + {\Lambda^\mu}_{\beta' ,\gamma'} {\Lambda^{\alpha'}}_\mu = 0. $$
+
+    With our particular simple choice of $$ {\Lambda^\mu}_{\alpha'} $$, where the only non-zero elements are diagonal, the equation above can be simplified further as
+
+    $$ {\Gamma^\alpha}_{\beta \gamma} {\Lambda^{\alpha'}}_\alpha {\Lambda^\beta}_{\beta'} {\Lambda^\gamma}_{\gamma'} + {\Lambda^\alpha}_{\beta' , \gamma'} {\Lambda^{\alpha'}}_{\alpha} = 0, $$
+
+    where repeated indices, one of which is primed while the other unprimed, are not added.
+
+    Therefore we have
+
+    $$ {\Lambda^\alpha}_{\beta' ,\gamma'} = - {\Gamma^\alpha}_{\beta \gamma} {\Lambda^\beta}_{\beta'} {\Lambda^\gamma}_{\gamma'}. $$
+
+    The Christoffel symbols can be calculated using Eq. (5.75). In particular,
+
+    $$ {\Gamma^i}_{0 0} = \frac{1}{2} g^{\alpha i} (g_{\alpha 0, 0} + g_{\alpha 0, 0} - g_{0 0, \alpha}) = - \frac{1}{2} (1 - 2 \phi) g_{0 0, i} + O(\phi^2) = (1 - 2 \phi) \phi_{,i} + O(\phi^2) = \phi_{,i} + O(\phi^2), $$
+
+    where it is assumed that $$ \phi_{, i} = O(\phi) $$, i.e., that $$ \phi $$ does not change too rapidly spatially.
+
+    And therefore
+
+    $$ {\Lambda^i}_{0', 0'} = - \phi_{,i} (1 - \phi)^2 + O(\phi^2) = - \phi_{,i} + O(\phi^2). $$
+
+    Other $$ {\Lambda^\mu}_{\alpha', \beta'} $$ can be calculated similarly. Below are the results.
+
+    $$
+    \begin{eqnarray}
+      {\Lambda^0}_{0', 0'} &=& - \phi_{, 0} + O(\phi^2)  \\
+      {\Lambda^0}_{0', i'} &=& - \phi_{, i} + O(\phi^2)  \\
+      {\Lambda^0}_{i', j'} &=& \phi_{, i} \delta_{i j} + O(\phi^2)  \\
+      {\Lambda^i}_{0', j'} &=& \phi_{, 0} \delta_{i j} + O(\phi^2)  \\
+      {\Lambda^i}_{j', k'} &=& - \phi_{, i} \delta_{j k} + \phi_{, j} \delta_{k i} + \phi_{, k} \delta_{i j} + O(\phi^2)
+    \end{eqnarray}
+    $$
+
+    It is not very clear what is meant in the question *at what rate does such a frame accelerate with respect to the original coordinates*? Here I'll show how the spatial origin (i.e. $$ x^{i'} = 0 $$) of the locally inertial frame at $$ P $$ accelerates relative to the original coordinates, i.e. how $$ x^i $$ changes as a function of $$ \tau = t^{0'} $$. Keeping in mind that $$ x^{i'} = 0 $$, we have
+
+    $$ x^i \approx {\Lambda^i}_{0'} |_P x^{0'} + \frac{1}{2} {\Lambda^i}_{0', 0'} |_P x^{0'} x^{0'} \approx - \frac{1}{2} \phi_{, i} |_P \tau^2, $$
+
+    which means that the origin of the locally inertial frame accelerates at $$ - \phi_{, i} $$ relative to the original frmae, since $$ \tau \approx t $$. $$ \phi $$ is essentially the gravitational potential in Newtonian mechanics.
+
+37. 
+
+    a.  **‘Proper volume’ of a two-dimensional manifold is usually called ‘proper area’. Using the metric in Exer. 28, integrate Eq. (6.18) to find the proper area of a sphere of radius $$ r $$.**
+
+        It is $$ |g|^{1/2} \mathrm{d}^2 x = r^2 \sin \theta \mathrm{d} \theta \mathrm{d} \phi $$.
+
+    b.  **Do the analogous calculation for the three-sphere of Exer. 33.**
+
+        It is $$ |g|^{1/2} \mathrm{d}^3 x = r^3 \sin^2 \chi \sin \theta \mathrm{d} \chi \mathrm{d} \theta \mathrm{d} \phi $$.
+
+38. **Integrate Eq. (6.8) to find the length of a circle of constant coordinate $$ \theta $$ on a sphere of radius $$ r $$.**
+
+    We can take $$ \lambda $$ to be $$ \phi $$, and have
+
+    $$ l = \int_0^{2 \pi} | g_{\phi \phi} |^{1/2} \mathrm{d} \phi = \int_0^{2 \pi} r \sin \theta \mathrm{d} \phi = 2 \pi r \sin \theta. $$
+
+39. 
+
+    a.  **For any two vector fields $$ \vec{U} $$ and $$ \vec{V} $$, their _Lie bracket_ is defined to be the vector field $$ [\vec{U}, \vec{V}] $$ with components**
+
+        $$ [\vec{U}, \vec{V}]^\alpha = U^\beta \nabla_\beta V^\alpha - V^\beta \nabla_\beta U^\alpha. $$
+
+        **Show that**
+
+        $$ [\vec{U}, \vec{V}] = -[\vec{V}, \vec{U}], $$
+
+        $$ [\vec{U}, \vec{V}]^\alpha = U^\beta \partial V^\alpha / \partial x^\beta - V^\beta \partial U^\alpha / \partial x^\beta. $$
+
+        **This is one tensor field in which partial derivatives need not be accompanied by Christoffel symbols!**
+
+        The first one is quite trivial.
+
+        $$ [\vec{U}, \vec{V}] = U^\beta \nabla_\beta V^\alpha - V^\beta \nabla_\beta U^\alpha = - (V^\beta \nabla_\beta U^\alpha - U^\beta \nabla_\beta V^\alpha) = -[\vec{V}, \vec{U}] $$
+
+        For the second one (and the following questions), the most important thing to keep in mind is that $$ \nabla_\beta V^\alpha $$ denotes $$ {[\nabla \vec{V}]^\alpha}_\beta $$ where $$ \nabla \vec{V} $$ is a $$ \begin{pmatrix} 1 \\ 1 \end{pmatrix} $$ tensor.
+
+        $$ [\vec{U}, \vec{V}]^\alpha = U^\beta (\partial V^\alpha / \partial x^\beta + {\Gamma^\alpha}_{\mu \beta} V^\mu) - V^\beta (\partial U^\alpha / \partial x^\beta + {\Gamma^\alpha}_{\mu \beta} U^\mu) = U^\beta \partial V^\alpha / \partial x^\beta - V^\beta \partial U^\alpha / \partial x^\beta $$
+
+        The last equality is due to the symmetry of $$ {\Gamma^\alpha}_{\mu \beta} $$ on $$ \mu $$ and $$ \beta $$.
+
+    b.  **Show that $$ [\vec{U}, \vec{V}] $$ is a derivative operator on $$ \vec{V} $$ along $$ \vec{U} $$, i.e. show that for any scalar $$ f $$,**
+
+        $$ [\vec{U}, f \vec{V}] = f [\vec{U}, \vec{V}] + \vec{V} (\vec{U} \cdot \nabla f). $$
+
+        **This is sometimes called the _Lie derivative_ with respect to $$ \vec{U} $$ and is denoted by**
+
+        $$ [\vec{U}, \vec{V}] := {\it\unicode{xA3}}_\vec{U} \vec{V}, \textrm{  } \vec{U} \cdot \nabla f := {\it\unicode{xA3}}_\vec{U} f. $$
+
+        **Then Eq. (6.101) would be written in the more conventional form of the Leibnitz rule for the derivative operator $$ {\it\unicode{xA3}}_\vec{U} $$:**
+
+        $$ {\it\unicode{xA3}}_\vec{U} (f \vec{V}) = f {\it\unicode{xA3}}_\vec{U} \vec{V} + \vec{V} {\it\unicode{xA3}}_\vec{U} f. $$
+
+        **The result of (a) shows that this derivative operator may be defined without a connection or metric, and is therefore very fundamental. See Schutz (1980b) for an introduction.**
+
+        We have
+
+        $$
+        \begin{eqnarray}
+          &&  [\vec{U}, f \vec{V}]^\alpha  \\
+          &=& U^\beta \nabla_\beta (f \vec{V})^\alpha - (f \vec{V})^\beta \nabla_\beta U^\alpha  \\
+          &=& U^\beta (f \nabla_\beta V^\alpha + V^\alpha \nabla_\beta f) - f V^\beta \nabla_\beta U^\alpha  \\
+          &=& f U^\beta \nabla_\beta V^\alpha - f V^\beta \nabla_\beta U^\alpha + V^\alpha (U^\beta \nabla_\beta f)  \\
+          &=& f [\vec{U}, \vec{V}]^\alpha + \vec{V}^\alpha (\vec{U} \cdot \nabla f).
+        \end{eqnarray}
+        $$
+
+        We have the second equality because tensor differentiation obeys the Leibniz rule (and $$ f \vec{V} = f \otimes \vec{V} $$. One should also notice that $$ \nabla f $$ is a one-form while $$ \vec{U} $$ is a vector, and therefore $$ U^\beta \nabla_\beta f = \vec{U} \cdot \nabla f $$.
+
+    c.  **Calculate the components of the Lie derivative of a one-form field $$ \tilde{\omega} $$ from the knowledge that, for any vector field $$ \vec{V} $$, $$ \tilde{\omega}(\vec{V}) $$ is a scalar like $$ f $$ above, and from the definition that $$ {\it\unicode{xA3}}_\vec{U} \tilde{\omega} $$ is a one-form field:**
+
+        $$ {\it\unicode{xA3}}_\vec{U} [\tilde{\omega}(\vec{V})] = ({\it\unicode{xA3}}_\vec{U} \tilde{\omega}) (\vec{V}) + \tilde{\omega} ({\it\unicode{xA3}}_\vec{U} \vec{V}). $$
+
+        **This is the analog of Eq. (6.103).**
+
+        A mathematician would get mad at the phrazing of this exercise. One should insert *defined by* after *a one-form field*. Logically, $$ {\it\unicode{xA3}}_\vec{U} \tilde{\omega} $$ is *defined* by the equation and it can be derived that $$ {\it\unicode{xA3}}_\vec{U} \tilde{\omega} $$ is a one-form field from the fact that the two other terms are scaler fields.
+
+        What remains is to calculate the components of $$ {\it\unicode{xA3}}_\vec{U} \tilde{\omega} $$. From the definition, we have
+
+        $$
+        \begin{eqnarray}
+          &&  ({\it\unicode{xA3}}_\vec{U} \tilde{\omega}) (\vec{V})  \\
+          &=& {\it\unicode{xA3}}_\vec{U} [\tilde{\omega}(\vec{V})] - \tilde{\omega} ({\it\unicode{xA3}}_\vec{U} \vec{V})  \\
+          &=& \vec{U} \cdot \nabla[\tilde{\omega}(\vec{V})] - \tilde{\omega} [\vec{U}, \vec{V}]  \\
+          &=& U^\beta \nabla_\beta (\omega_\alpha V^\alpha) - \omega_\alpha [\vec{U}, \vec{V}]^\alpha  \\
+          &=& U^\beta \omega_\alpha \nabla_\beta V^\alpha + U^\beta V^\alpha \nabla_\beta \omega_\alpha - \omega_\alpha (U^\beta \nabla_\beta V^\alpha - V^\beta \nabla_\beta U^\alpha)  \\
+          &=& U^\beta V^\alpha \nabla_\beta \omega_\alpha + \omega_\alpha V^\beta \nabla_\beta U^\alpha  \\
+          &=& U^\beta V^\alpha (\omega_{\alpha, \beta} - {\Gamma^\mu}_{\alpha \beta} \omega_\mu) + \omega_\alpha V^\beta \nabla_\beta U^\alpha  \\
+          &=& U^\beta V^\alpha \omega_{\alpha, \beta} - U^\beta V^\alpha {\Gamma^\mu}_{\beta \alpha} \omega_\mu + \omega_\alpha V^\beta \nabla_\beta U^\alpha  \\
+          &=& U^\beta V^\alpha \omega_{\alpha, \beta} + V^\alpha \omega_\mu {U^\mu}_{, \alpha} - V^\alpha \omega_\mu {U^\mu}_{, \alpha} - V^\alpha \omega_\mu U^\beta {\Gamma^\mu}_{\beta \alpha} + \omega_\alpha V^\beta \nabla_\beta U^\alpha  \\
+          &=& U^\beta V^\alpha \omega_{\alpha, \beta} + V^\alpha \omega_\mu {U^\mu}_{, \alpha} - V^\alpha \omega_\mu ({U^\mu}_{, \alpha} + U^\beta {\Gamma^\mu}_{\beta \alpha}) + \omega_\alpha V^\beta \nabla_\beta U^\alpha  \\
+          &=& U^\beta V^\alpha \omega_{\alpha, \beta} + V^\alpha \omega_\mu {U^\mu}_{, \alpha} - \omega_\mu V^\alpha \nabla_\alpha U^\mu + \omega_\alpha V^\beta \nabla_\beta U^\alpha  \\
+          &=& V^\alpha U^\beta \omega_{\alpha, \beta} + V^\alpha \omega_\mu {U^\mu}_{, \alpha}  \\
+          &=& V^\alpha U^\beta (\nabla_\beta \omega_\alpha + {\Gamma^\mu}_{\alpha \beta} \omega_\mu) + V^\alpha \omega_\mu (\nabla_\alpha U^\mu - {\Gamma^\mu}_{\beta \alpha} U^\beta)  \\
+          &=& V^\alpha (U^\beta \nabla_\beta \omega_\alpha - \omega_\beta \nabla_\alpha U^\beta).
+        \end{eqnarray}
+        $$
+
+        Therefore the components of $$ {\it\unicode{xA3}}_\vec{U} \tilde{\omega} $$ is $$ U^\beta \nabla_\beta \omega_\alpha - \omega_\beta \nabla_\alpha U^\beta $$.
