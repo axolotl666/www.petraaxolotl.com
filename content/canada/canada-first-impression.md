@@ -1,7 +1,6 @@
 ---
 title: "Canada - First Impression"
 date: 2017-12-03T23:21:50-05:00
-draft: true
 ---
 
 (The text below is from my personal journal and reflected my experience at the time of writing.)
