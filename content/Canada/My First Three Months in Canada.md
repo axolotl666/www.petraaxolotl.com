@@ -392,3 +392,7 @@ that she is also incentivized to welcome airbnb guests and to share her bed with
 
 Also, I have got quite a few LinkedIn inquiries from companies in Canada, including Foodies and
 Shopify. It seems that once you are in Canada, finding a job can be very easy.
+
+# Next
+
+[Personal Finance]({{< relref "Personal Finance.md" >}})

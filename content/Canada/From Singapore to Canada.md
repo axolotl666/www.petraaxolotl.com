@@ -215,7 +215,7 @@ which was eventually paid by Platterz.
 
 # Next
 
-[Canada - First Impression]({{< relref "Canada - First Impression.md" >}})
+[My First Three Months in Canada]({{< relref "My First Three Months in Canada.md" >}})
 
 # Useful Links
 
