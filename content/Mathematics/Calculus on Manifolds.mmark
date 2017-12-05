@@ -1,0 +1,1329 @@
+---
+title: "Calculus on Manifolds"
+Description: "Errata, Notes, and Problem Solutions to Calculus on Manifolds"
+date: 2015-12-28T21:47:31-08:00
+---
+
+This is a great book for those who are learning General Relativity but are unsatisfied with the often wrong mathematics when the author tries to be *mathematically rigorous*. (I have *Spacetime and Geometry* by Sean Carroll in mind.) There are however a few shortcomings with this book: a) errors here and there, b) lack of an official solution manual, and c) lack of explanations necessary for the physical intuition behind mathematical formalism. To address these issues, I am publishing an additional errata as well as exercise solutions, in which I try to first give some intuition before delving into mathematical formalism.
+
+Spivak chose to define manifolds as something embedded in a higher-dimensional Euclidean space. This definition seems less popular among physicists, since there is little evidence suggesting our 4-dimensional spacetime is in fact embedded in a higher-dimensional space. (Let's forget about String Theory for now.) We need two things in this more "physical" approach: a) a collection of open sets as part of the definition of a topology, and b) a metric tensor. Point (a) is where books such as *Spacetime and Geometry* got it wrong.
+
+# Errata
+
+If you are stuck with a problem, please first check the errata at the end of the book. If it's not listed there, check further this [additional errata] (http://www.jirka.org/spivak-errata.html). After that, check the points below.
+
+Page 43: In Theorem 2-13, it is stated that *there is an open set $$ A \subset \mathbb{R}^n $$ containing $$ a $$*. But it should be $$ h(A) $$, rather than $$ A $$, that contains $$ a $$.
+
+Page 89: The definition of $$ f^* $$ should be $$ (f^*\omega)(p) = (f_*)^*(\omega(f(p))) $$. In the original definition, $$ f^* $$ on the right-hand side is not well defined. Up to this point, the only $$ f^* $$ was defined on page 77, a definition that requires $$ f $$ to be linear rather than just differentiable. By replacing $$ f $$ with $$ f_* $$, the linearity requiremnt is satisfied and the definition on page 77 can be used.
+
+Page 100: In Problem 4-24, the author should have specified that the 2-chain $$ c^2 $$ is also in $$ \mathbb{R}^2 - 0 $$. Otherwise $$ n $$ wouldn't be unique, as claimed in Problem 4-27. Also, I have trouble to see how the hint could help.
+
+Page 104: In Problem 4-26, it is required to use Stoke's theorem. But Stoke's theorem would work only in cases where $$ n \neq 0 $$. One has to use a different argument for the case where $$ n = 0 $$. But this argument would apply equally well to cases where $$ n \neq 0 $$, making the partial proof using Stoke's theorem redundant in the first place.
+
+Page 105: In Problem 4-28, it should be $$ c_{R^n, n} $$ instead of $$ c_{R, n} $$. Otherwise the statement that _$$ c([0, 1] \times [0, 1]) \in \mathbb{C} - 0 $$ if $$ R $$ is large enough_ would't be correct.
+
+Page 105: In Problem 4-32(a), the way the problem is phrased is rather misleading. One does *not* need to prove the existence of $$ c $$ to prove that $$ \int_{c_1} \omega = \int_{c_2} \omega $$ if $$ \omega $$ is exact. In fact, it is better not to use the existence of $$ c $$, because such a proof would require that $$ \omega $$ be exact on every point in $$ c $$, while a more direct proof can lead to a much stronger result which only requires $$ \omega $$ to be exact on $$ c_1 $$ and $$ c_2 $$.
+
+Page 106: In Problem 4-33(e), it is impossible for a singular 1-cube to be the boundary of a 2-chain, as explained in the solution to Problem 4-26.
+
+Page 108: In Problem 4-34(a), it should be $$ \partial C_{F,G} = c_{F_1, G_1} - c_{F_0, G_0} $$ instead of $$ \partial C_{F,G} = c_{F_0, G_0} - c_{F_1, G_1} $$.
+
+Page 112: In the proof of Theorem 5-1, it reads *Then $$ V_2 \cap M $$ is exactly $$ \{ f(a): (a, 0) \in V_1 \} = \{ g(a, 0): (a, 0) \in V_1 \} $$*. But $$ V_2 $$, constructed as described, may intersect with parts of $$ M $$ that are not in $$ f(W) $$. A concrete counter-example is as follows.
+
+Let $$ M = S^2 $$, $$ x = (0, 0, 1) $$, $$ W = \{ (x, y): x^2 + y^2 < \frac{1}{2} \} $$, and $$ f(x, y) = (x, y, \sqrt{1 - x^2 - y^2}) $$. It is easy to verify that they satisfy all criteria of (C). ($$ U $$ could be, for example, an open ball centering at $$ (0, 0, \sqrt{\frac{1}{2}})) $$ with radius $$ \sqrt{\frac{1}{2}} $$.)
+
+Now, following the proof, we have $$ y = (0, 0) $$ and $$ g(x, y, z) = (x, y, \sqrt{1 - x^2 - y^2} + z) $$, and we can *choose* $$ V_1' = V_2' = \{ (x, y, z): x^2 + y^2 < \frac{1}{2} \} $$. It is easy to verify that this choice satisfies all conditions listed (i.e., $$ V_2' = g(V_1') $$, $$ V_1' $$ containins $$ (y, 0) = (0, 0, 0) $$, $$ V_2' $$ containins $$ x = (0, 0, 1) $$, and $$ g $$ has a differentiable inverse.) We can further choose $$ U = V_1' = V_2' $$ and then $$ V_2 = V_2' $$ and $$ V_1 = V_1' $$. Now, however, $$ V_2 \cap M $$ does not only include $$ \{ f(a): (a, 0) \in V_1 \} $$, but also $$ \{ (x, y, -\sqrt{1 - x^2 - y^2}): x^2 + y^2 < \frac{1}{2} \} $$, i.e., it includes both the "upper cap" $$ f(W) $$, and the "lower cup" mirroring the "upper cap".
+
+Fortunately it is easy to correct the proof. One only needs to use condition (C)(1) by letting $$ f(W) = M \cap U' $$, and define $$ V_2 = V_2' \cap U \cap U' $$.
+
+Page 114: In Problem 5-3(b), the concept of an *open subset of a manifold*, contrary to that of an *open subset of $$ \mathbb{R}^n $$*, has not been defined anywhere in the book. Depending on the reader's own definition, the claim can be either true or false.
+
+Page 115: In Problem 5-6, the "only if" part is incorrect. A concrete counterexample is $$ f: \mathbb{R} \to \mathbb{R} $$ where $$ f(x) = x^{1/3} $$. $$ f $$ is not differentiable at $$ x = 0 $$. The graph of $$ f $$ is nonetheless a 1-dimensional manifold.
+
+Page 115: Problem 5-7 is itself problematic for $$ n > 3 $$. For a more detailed discussion, please refer to its solution.
+
+# Notes
+
+The equality at page 102 deserves some explanation instead of just "note that". Below shows a derivation thereof. For any $$ p \in {[0, 1]}^{k - 1} $$ and $$ v_1, \ldots, v_{k - 1} \in \mathbb{R}^{k - 1}_p $$, we have
+
+$$
+\begin{eqnarray}
+  &&  {I^k_{(j, \alpha)}}^* (f dx^1 \wedge \cdots \hat{dx^i} \wedge \cdots \wedge dx^k) (p) (v_1, \ldots, v_{k - 1})     \nonumber \\
+  &=& (f(I^k_{(j, \alpha)}(p))) dx^1 \wedge \cdots \hat{dx^i} \wedge \cdots \wedge dx^k (DI^k_{(j, \alpha)} v_1, \ldots, DI^k_{(j, \alpha)} v_{k - 1})     \nonumber \\
+  &=& f(p^1, \ldots, p^{j - 1}, \alpha, p^j, \ldots, p^{k - 1}) dx^1 \wedge \cdots \hat{dx^i} \wedge \cdots \wedge dx^k (\left(\begin{array}{c} v_1^1 \\ \vdots \\ v_1^{j - 1} \\ 0 \\ v_1^j \\ \vdots \\ v_1^{k - 1} \end{array} \right), \ldots, \left(\begin{array}{c} v_{k - 1}^1 \\ \vdots \\ v_{k - 1}^{j - 1} \\ 0 \\ v_{k - 1}^j \\ \vdots \\ v_{k - 1}^{k - 1} \end{array} \right)).
+\end{eqnarray}
+$$
+
+Note that now all the $$ k - 1 $$ vectors have their $$ j $$th component equal to zero. Therefore unless $$ i = j $$, the whole equation will be zero. In the case where $$ i = j $$, we have
+
+$$
+\begin{eqnarray}
+  &&  {I^k_{(j, \alpha)}}^* (f dx^1 \wedge \cdots \hat{dx^i} \wedge \cdots \wedge dx^k) (p) (v_1, \ldots, v_{k - 1})     \nonumber \\
+  &=& f(p^1, \ldots, p^{j - 1}, \alpha, p^j, \ldots, p^{k - 1}) dx^1 \wedge \cdots \wedge dx^{k - 1} (v_1, \ldots, v_{k - 1}).
+\end{eqnarray}
+$$
+
+Given the arbitrariness of $$ v_1, \ldots, v_{k - 1} $$, we have proven that $$ {I^k_{(j, \alpha)}}^* (f dx^1 \wedge \cdots \hat{dx^i} \wedge \cdots \wedge dx^k) (p) = f(p^1, \ldots, p^{j - 1}, \alpha, p^j, \ldots, p^{k - 1}) dx^1 \wedge \cdots \wedge dx^{k - 1} $$.
+
+Note that, in the equation above, the wedge product on the left-hand side is on $$ A $$, while the wedge product on the right-hand is on $$ {[0, 1]}^{k - 1} $$. Therefore, we have
+
+$$
+\begin{eqnarray}
+  &&  \int_{[0, 1]^{k - 1}} {I^k_{(j, \alpha)}}^* (f dx^1 \wedge \cdots \hat{dx^i} \wedge \cdots \wedge dx^k)     \nonumber \\
+  &=& \int_{[0, 1]^{k - 1}} f(x^1, \ldots, x^{j - 1}, \alpha, x^j, \ldots, x^{k - 1}) dx^1 \wedge \cdots \wedge dx^{k - 1}     \nonumber \\
+  &=& \int_{[0, 1]^{k - 1}} f(x^1, \ldots, x^{j - 1}, \alpha, x^j, \ldots, x^{k - 1}) dx^1 \cdots dx^{k - 1}.
+\end{eqnarray}
+$$
+
+By relabeling $$ j $$ as $$ j + 1 $$, $$ j + 1 $$ as $$ j + 2 $$, etc. We have
+
+$$
+\begin{eqnarray}
+  &&  \int_{[0, 1]^{k - 1}} {I^k_{(j, \alpha)}}^* (f dx^1 \wedge \cdots \hat{dx^i} \wedge \cdots \wedge dx^k)     \nonumber \\
+  &=& \int_{[0, 1]^{k - 1}} f(x^1, \ldots, x^{j - 1}, \alpha, x^{j + 1}, \ldots, x^k) dx^1 \cdots \hat{dx^j} \cdots dx^k.
+\end{eqnarray}
+$$
+
+Using Fubini's theorem, one can insert $$ \int_{x^j \in [0, 1]} dx^j $$, which is equal to 1, without changing the value of the right-hand side. Therefore,
+
+$$
+\begin{eqnarray}
+  &&  \int_{[0, 1]^{k - 1}} {I^k_{(j, \alpha)}}^* (f dx^1 \wedge \cdots \hat{dx^i} \wedge \cdots \wedge dx^k)     \nonumber \\
+  &=& \int_{[0, 1]^{k - 1}} (\int_{x^j \in [0, 1]} dx^j) f(x^1, \ldots, x^{j - 1}, \alpha, x^{j + 1}, \ldots, x^k) dx^1 \cdots \hat{dx^j} \cdots dx^k     \nonumber \\
+  &=& \int_{[0, 1]^k} f(x^1, \ldots, x^{j - 1}, \alpha, x^{j + 1}, \ldots, x^k) dx^1 \cdots dx^k.
+\end{eqnarray}
+$$
+
+# Solutions
+
+## Chapters 1 - 3
+
+Solutions to most problems in Chapter 1 to Chapter 3 can be found [here] (http://jianfeishen.weebly.com/uploads/4/7/2/6/4726705/calculus_on_manifolds.pdf) and [here] (http://vision.caltech.edu/~kchalupk/spivak.html).
+
+Recently, I found complete solutions for all chapters [here] (http://www.ms.uky.edu/~ken/ma570/). But I have decided to continue publishing my own solutions because I sometimes have an alternative approach (e.g. Problem 4-30) and the solutions in the previous link are not exactly error-free (e.g. Problem 4-33 g), complete (e.g. Problem 5-2), or mathematically rigorous enough (e.g. Problem 5-3).
+
+## Chapter 4
+
+1.  **Let $$ e_1, \ldots, e_n $$ be the usual basis of $$ \mathbb{R}^n $$ and let $$ \varphi_1 , \ldots \varphi_n $$ be the dual basis.**
+
+    a.  **Show that $$ \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (e_{i_1}, \ldots, e_{i_k}) = 1 $$. What would the right side be if the factor $$ (k+l)!/k!l! $$ did not appear in the definition of $$ \wedge $$?**
+
+        $$
+        \begin{eqnarray} 
+          &&  \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (e_{i_1}, \ldots, e_{i_k})     \nonumber \\
+          &=& k! \mathrm{Alt}(\varphi_{i_1} \otimes \cdots \otimes \varphi_{i_k}) (e_{i_1}, \ldots, e_{i_k}) \nonumber \\
+          &=& k! \frac{1}{k!} \sum_{\sigma \in S_k} \mathrm{sgn} \sigma \cdot (\varphi_{i_1} \otimes \cdots \otimes \varphi_{i_k}) (e_{i_{\sigma(1)}}, \ldots, e_{i_{\sigma(n)}})    \nonumber \\
+          &=& \sum_{\sigma \in S_k} \mathrm{sgn} \sigma \cdot \delta_{i_1,i_{\sigma(1)}} \cdot \cdots \cdot \delta_{i_1,i_{\sigma(k)}}    \nonumber \\
+          &=& 1    \nonumber
+        \end{eqnarray}
+        $$
+
+        The first equality can be easily derived from Theorem 4-4(3). The last equality is because the only non-zero term is obtained when $$ \sigma(i) = i,  \forall i \in \{1,\ldots,k\} $$, which also guarantees that $$ \mathrm{sgn}{\sigma} = 1 $$.
+
+        From the proof of Theorem 4-4(3), it is easy to see that right side would be $$ \frac{1}{k!} $$ if the factor $$ (k+l)!/k!l! $$ did not appear in the definition of $$ \wedge $$.
+
+    b.  **Show that $$ \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (v_1, \ldots, v_k) $$ is the determinant of the $$ k \times k $$ minor of $$ \left(\begin{array}{c} v_1 \\ \vdots \\ v_k \end{array} \right) $$ obtained by selecting columns $$ i_1, \ldots, i_k $$.**
+
+        Let $$ S $$ be the set of all permutations of $$ \{1, \ldots, k\} $$ and $$ S' $$ be the set of all permutations of $$ \{i_1, \ldots, i_k\} $$. Note that $$ \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (e_{j_1}, \ldots, e_{j_k}) $$ is non-zero only if $$ (j_1, \ldots, j_k) \in S' $$ and this is true if and only if $$ (j_1, \ldots, j_k) = (i_{\sigma(1)}, \ldots, i_{\sigma(k)}) $$ for a certain $$ \sigma \in S $$. In fact, this establishes a 1-1 mapping between $$ j \in S' $$ and $$ \sigma \in S $$. Therefore, we have the following.
+
+        $$
+        \begin{eqnarray}
+          &&  \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (v_1, \ldots, v_k)     \nonumber \\
+          &=& \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (\sum_{j_1=1}^n a_{1, j_1} e_{j_1}, \ldots, \sum_{j_k=1}^n a_{k, j_k} e_{j_k})     \nonumber \\
+          &=& \sum_{(j_1, \ldots, j_k) \in S'} a_{1, j_1} \cdot \cdots \cdot a_{k, j_k} \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (e_{j_1}, \ldots, e_{j_k})     \nonumber \\
+          &=& \sum_{\sigma \in S} a_{1, i_{\sigma(1)}} \cdot \cdots \cdot a_{k, i_{\sigma(k)}} \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (e_{i_{\sigma(1)}}, \ldots, e_{i_{\sigma(k)}})     \nonumber \\
+          &=& \sum_{\sigma \in S} a_{1, i_{\sigma(1)}} \cdot \cdots \cdot a_{k, i_{\sigma(k)}} \mathrm{sgn} \sigma \varphi_{i_1} \wedge \cdots \wedge \varphi_{i_k} (e_{i_1}, \ldots, e_{i_k})     \nonumber \\
+          &=& \sum_{\sigma \in S} \mathrm{sgn} \sigma a_{1, i_{\sigma(1)}} \cdot \cdots \cdot a_{k, i_{\sigma(k)}}     \nonumber \\
+        \end{eqnarray}
+        $$
+
+        The last term is exactly the determinant of the $$ k \times k $$ minor described in the question.
+
+2.  **If $$ f: V \to V $$ is a linear transformation and $$ \dim V = n$$ , then $$ f^{*}: \Lambda^n(V) \to \Lambda^n(V) $$ must be multiplication by some constant $$ c $$. Show that $$ c = \det f $$.**
+
+    Let $$ v_1, \ldots, v_n $$ be a basis for V, $$ \omega \in \Lambda^n(V) $$, and $$ w_i = \sum_{j=1}^n a_{i,j} v_j $$ be any $$ n $$ vectors in $$ V $$. We furthur denote the matrix formed by $$ a_{i,j} $$ as $$ A $$.
+
+    $$
+    \begin{eqnarray}
+      &&  f^{*}(\omega)(w_1, \ldots, w_n)     \nonumber \\
+      &=& \omega(f(w_1), \ldots, f(w_n))     \nonumber \\
+      &=& \omega(f((v_1, \ldots, v_n) \cdot \left(\begin{array}{c} a_{1,1} \\ \vdots \\ a_{1,n} \end{array} \right)), \ldots, f((v_1, \ldots, v_n) \cdot \left(\begin{array}{c} a_{n,1} \\ \vdots \\ a_{n,n} \end{array} \right)))     \nonumber \\
+      &=& \omega((v_1, \ldots, v_n) \cdot f \cdot \left(\begin{array}{c} a_{1,1} \\ \vdots \\ a_{1,n} \end{array} \right), \ldots, (v_1, \ldots, v_n) \cdot f \cdot \left(\begin{array}{c} a_{n,1} \\ \vdots \\ a_{n,n} \end{array} \right))     \nonumber \\
+      &=& \det((f \cdot A^T)^T) \omega(v_1, \ldots, v_n)     \nonumber \\
+      &=& \det f \cdot \det A \cdot \omega(v_1, \ldots, v_n)     \nonumber \\
+      &=& \det f \cdot \omega(w_1, \ldots, w_n)
+    \end{eqnarray}
+    $$
+
+    Note that $$ f $$ denotes both the linear function and its matrix representation. The fourth and the last equalities are from Theorem 4-6.
+
+    Since $$ w_1, \ldots, w_n $$ can be any vectors in $$ V $$, we have $$ f^{*}(\omega) = \det f \cdot \omega $$.
+
+3.  **If $$ \omega \in \Lambda^n (v) $$ is the volume element determined by $$ T $$ and $$ \mu $$, and $$ w_1, \ldots , w_n \in V $$, show that**
+
+    $$ | \omega(w_1, \ldots, w_n) | = \sqrt{\det(g_{ij})}, $$
+
+    **where $$ g_{ij} = T(w_i, w_j) $$. _Hint_: If $$ v_1, ... ,v_n $$ is an orthonormal basis and $$ w_i = \sum_{j=1}^n a_{ij} v_j $$, show that $$ g_{ij} = \sum_{k=1}^n a_{ik} a_{kj} $$.**
+
+    Let $$ v_1, ... ,v_n $$ be an orthonormal basis determined by $$ T $$ and $$ \mu $$, and $$ w_i = \sum_{j=1}^n a_{ij} v_j $$.
+
+    $$
+    \begin{eqnarray}
+      g_{ij} &=& T(w_i, w_j)     \nonumber \\
+      &=&        T(\sum_{k=1}^n a_{ik} v_k, \sum_{l=1}^n a_{jl} v_l)     \nonumber \\
+      &=&        \sum_{k,l=1}^n a_{ik} a_{jl} T(v_k, v_l)     \nonumber \\
+      &=&        \sum_{k,l=1}^n a_{ik} a_{jl} \delta_{k,l}     \nonumber \\
+      &=&        \sum_{k=1}^n a_{ik} a_{jk}
+    \end{eqnarray}
+    $$
+
+    Therefore,
+
+    $$ \sqrt{\det(g_{ij})} = \sqrt{\det(a_{ik} a_{jk})} = \sqrt{\det(a_{ik}) \det(a_{jk}}) = | \det(a_{ij}) |. $$
+
+    Now we have
+
+    $$
+    \begin{eqnarray}
+      &&  | \omega(w_1, \ldots, w_n) |     \nonumber \\
+      &=& | \det(a_{ij}) \cdot \omega(v_1, \ldots, v_n) |     \nonumber \\
+      &=& | \det(a_{ij}) |     \nonumber \\
+      &=& \sqrt{\det(g_{ij})}.
+    \end{eqnarray}
+    $$
+
+    The first equality is from Theorem 4-6, and the second from the definition of a volume element.
+
+4.  **If $$ \omega $$ is the volume element determined by $$ T $$ and $$ \mu $$, and $$ f: \mathbb{R}^n \to V $$ is an isomorphism such that $$ f^{*}T = \langle,\rangle $$ and such that $$ [f(e_1), \ldots, f(e_n)) = \mu $$, show that $$ f^{*} \omega = \det $$.**
+
+    Let $$ v_i = f(e_i) $$ for $$ i = 1, \ldots, n $$. From $$ f^{*}T = \langle,\rangle $$ and $$ [f(e_1), \ldots, f(e_n)) = \mu $$, it is easy to derive that $$ v_i, \ldots , v_n $$ form an orthonormal basis of $$ V $$ with orientation $$ \mu $$. Therefore $$ \omega(v_1, \ldots, v_n) = 1$$.
+
+    Let $$ w_i = \sum_{j=1}^n a_{i,j} e_j $$ be any $$ n $$ vectors in $$ \mathbb{R}^n $$, we have
+
+    $$
+    \begin{eqnarray}
+      &&  f^{*} \omega(w_1, \ldots, w_n)    \nonumber \\
+      &=& f^{*} \omega(\sum_{j=1}^n a_{1,j} e_j, \ldots, \sum_{j=1}^n a_{n,j} e_j)    \nonumber \\
+      &=& \omega(f(\sum_{j=1}^n a_{1,j} e_j), \ldots, f(\sum_{j=1}^n a_{n,j} e_j))    \nonumber \\
+      &=& \omega(\sum_{j=1}^n a_{1,j} f(e_j), \ldots, \sum_{j=1}^n a_{n,j} f(e_j))    \nonumber \\
+      &=& \omega(\sum_{j=1}^n a_{1,j} v_j, \ldots, \sum_{j=1}^n a_{n,j} v_j)    \nonumber \\
+      &=& \det(a_{i,j}) \omega(v_1, \ldots, v_n)     \nonumber \\
+      &=& \det(a_{i,j})     \nonumber \\
+      &=& \det(w_1, \ldots, w_n).
+    \end{eqnarray}
+    $$
+
+    N.B.: $$ f $$ is assumed to be linear for the third equality to be valid. Strictly speaking isomorphism only means that there is a 1-1 mapping and linearity needs to be proved. But based on the text in which the term isomorphism was introduced, it seems that it is implicitly assumed that an isomorphism is always linear.
+
+    The fifth equality is from Theorem 4-6.
+
+5.  **If $$ c: [0,1] \to (\mathbb{R}^n)^n $$ is continuous and each $$ (c^1(t), \ldots ,c^n(t)) $$ is a basis for $$ \mathbb{R}^n $$, show that $$ [(c^1(0), \ldots ,c^n(0)] = [(c^1(1), \ldots ,c^n(1)] $$. _Hint_: Consider $$ \det \circ c $$.**
+
+    $$ \det \circ c $$ is continuous because both $$ \det $$ and $$ c $$ are.
+
+    $$ [(c^1(0), \ldots ,c^n(0)] \neq [(c^1(1), \ldots ,c^n(1)] $$ would imply that $$ \det \circ c (0) $$ and $$ \det \circ c (1) $$ have different signs and therefore there must exist an $$ x $$ such that $$ \det \circ c (x) = 0 $$, contradicting the fact that each $$ (c^1(t), \ldots ,c^n(t)) $$ is a basis for $$ \mathbb{R}^n $$.
+
+6.  **(a) If $$ v \in \mathbb{R}^2 $$, what is $$ v \times $$?**
+
+    For any $$ w \in \mathbb{R}^2 $$, $$ \det(v, w) = v_1 w_2 - v_2 w_1 = (-v_2, v_1) \cdot w$$. Therefore $$ v \times = (-v_2, v_1) $$. Note that $$ e_1 \times = e_2 $$ and $$ e_2 \times = -e_1 $$. Therefore $$ v \times $$ is a vector obtained by rotating $$ v $$ by $$ \frac{\pi}{2} $$.
+
+    **(b) If $$ v_1, \ldots, v_{n-1} \in \mathbb{R}^n $$ are linearly independent, show that $$ [v_1, \ldots ,v_{n-l}, v_1 \times \cdots \times v_{n-l}]$$ is the usual orientation of $$ \mathbb{R}^n $$.**
+
+    We only need to show that $$ \det(v_1, \ldots ,v_{n-l}, v_1 \times \cdots \times v_{n-l}) > 0 $$. By defition, we have
+
+    $$
+    \begin{eqnarray}
+      &&  \det(v_1, \ldots ,v_{n-l}, v_1 \times \cdots \times v_{n-l})    \nonumber \\
+      &=& (v_1 \times \cdots \times v_{n-l}) \cdot (v_1 \times \cdots \times v_{n-l})    \nonumber \\
+      &=& | v_1 \times \cdots \times v_{n-l} |^2    \nonumber \\
+      &\ge& 0.
+    \end{eqnarray}
+    $$
+
+    The fact that $$ v_1, \ldots, v_{n-1} \in \mathbb{R}^n $$ are linearly independent implies $$ v_1 \times \cdots \times v_{n-l} \neq 0 $$ (because you can find a $$ w \in \mathbb{R}^n $$ such that $$ \det(v_1, \ldots ,v_{n-l}, w) \neq 0 $$).
+
+7.  **Show that every non-zero $$ \omega \in \Lambda^n(V) $$ is the volume element determined by some inner product $$ T $$ and orientation $$ \mu $$ for $$ V $$.**
+
+    Simply take $$ w_1, \ldots, w_n \in V $$ such that $$ \omega(w_1, \ldots, w_n) = a \neq 0 $$. Let $$ v_1 = \frac{w_1}{a} $$ and $$ v_i = w_i $$ for $$ i \ge 2 $$. Obviously $$ \omega(v_1, \ldots, v_n) = 1 $$. Now we can define $$ T: V \times V \to \mathbb{R} $$ as a symetric bi-linear function such that $$ T(v_i, v_j) = \delta_{i, j} $$ and $$ \mu = [v_1, \ldots, v_n] $$. Then $$ \omega $$ is the volume element determined by $$ T $$ and orientation $$ \mu $$ for $$ V $$.
+
+8.  **If $$ \omega \in \Lambda^n(V) $$ is a volume element, define a "cross product" $$ v_1 \times \ldots v_{n - 1} $$ in terme of $$ \omega$$.**
+
+    Let $$ e_1, \ldots, e_n $$ be a basis of $$ V $$. For any $$ w = \sum_{i = 1}^n a^i e_i \in V $$, we have
+
+    $$
+    \begin{eqnarray}
+      &&  \omega(v_1, \ldots, v_{n - 1}, w)    \nonumber \\
+      &=& \omega(v_1, \ldots, v_{n - 1}, \sum_{i = 1}^n a^i e_i)    \nonumber \\
+      &=& \sum_{i = 1}^n a^i \omega(v_1, \ldots, v_{n - 1}, e_i).    \nonumber \\
+    \end{eqnarray}
+    $$
+
+    It is thus natural to define the "cross product" $$ v_1 \times \ldots v_{n - 1} $$ as $$ \sum_{i = 1}^n \omega(v_1, \ldots, v_{n - 1}, e_i) e_i $$.
+
+9.  **Deduce the following properties of the cross product in $$ \mathbb{R}^3 $$:**
+
+    a.  **$$ e_1 \times e_1 = 0 $$, $$ e_2 \times e_1 = -e_3 $$, $$ e_3 \times e_1 = e_2 $$,
+        $$ e_1 \times e_2 = e_3 $$, $$ e_2 \times e_2 = 0 $$, $$ e_3 \times e_2 = -e_1 $$,
+        $$ e_1 \times e_3 = -e_2 $$, $$ e_2 \times e_3 = e_1 $$, $$ e_3 \times e_3 = 0 $$**.
+       
+        Rather trivial. Simply keep in mind that $$ v_1 \times v_2 = \sum_{i=1}^3 \det(v_1, v_2, e_i) e_i $$.
+
+    b.  **$$ v \times w = (v^2 w^3 - v^3 w^2) e_1 + (v^3 w^1 - v^1 w^3) e_2 + (v^1 w^2 - v^2 w^1) e_3 $$.**
+
+        Equally trivial. Same comment as for (a).
+
+    c.  **$$ | v \times w | = |v| \cdot |w| \cdot | \sin \theta | $$, where $$ \theta = \angle(v,w) $$.<br>
+        $$ \langle v \times w, v \rangle = \langle v \times w, w \rangle = 0 $$**.
+
+        From (b), we have
+
+        $$
+        \begin{eqnarray}
+          &&  | v \times w |^2    \nonumber \\
+          &=& (v^2 w^3 - v^3 w^2)^2 + (v^3 w^1 - v^1 w^3)^2 + (v^1 w^2 - v^2 w^1)^2    \nonumber \\
+          &=& (v^1)^2 (w^2)^2 + (v^1)^2 (w^3)^2 + (v^2)^2 (w^1)^2 + (v^2)^2 (w^3)^2 + (v^3)^2 (w^1)^2 + (v^3)^2 (w^2)^2 \nonumber \\
+           &&  - 2 v^1 v^2 w^1 w^2 - 2 v^2 v^3 w^2 w^3 - 2 v^3 v^1 w^3 w^1     \nonumber \\
+          &=& (v^1)^2 (w^2)^2 + (v^1)^2 (w^3)^2 + (v^2)^2 (w^1)^2 + (v^2)^2 (w^3)^2 + (v^3)^2 (w^1)^2 + (v^3)^2 (w^2)^2 \nonumber \\
+           &&  + (v^1)^2 (w^1)^2 + (v^2)^2 (w^2)^2 + (v^3)^2 (w^3)^2     \nonumber \\
+           &&  - (v^1)^2 (w^1)^2 - (v^2)^2 (w^2)^2 - (v^3)^2 (w^3)^2     \nonumber \\
+           &&  - 2 v^1 v^2 w^1 w^2 - 2 v^2 v^3 w^2 w^3 - 2 v^3 v^1 w^3 w^1     \nonumber \\
+          &=& \big((v^1)^2 + (v^2)^2 + (v^3)^2\big) \big((w^1)^2 + (w^2)^2 + (w^3)^2\big)     \nonumber \\
+           &&  - (v^1 w^1 + v^2 w^2 + v^3 w^3)^2     \nonumber \\
+          &=& | v |^2 | w |^2 - \langle v, w \rangle^2     \nonumber \\
+          &=& | v |^2 | w |^2 - | v |^2 | w |^2 \cos^2 \theta     \nonumber \\
+          &=& | v |^2 | w |^2 \sin^2 \theta.
+        \end{eqnarray}
+        $$
+
+        Therefore, $$ | v \times w | = |v| \cdot |w| \cdot | \sin \theta | $$.
+
+        $$ \langle v \times w, v \rangle = \langle v \times w, w \rangle = 0 $$ is obvious from the definition of cross products.
+
+    d.  **$$ \langle v, w \times z \rangle = \langle w, z \times v \rangle = \langle z, v \times w \rangle $$<br>
+        $$ v \times (w \times z) = \langle v, z \rangle w - \langle v, w \rangle z $$<br>
+        $$ (v \times w) \times z = \langle v, z \rangle w - \langle w, z \rangle v $$**
+
+        The first one is obvious by the fact $$ \langle v, w \times z \rangle = \det(w, z, v) $$.
+
+        The derivation of the second is as follows.
+
+        $$
+        \begin{eqnarray}
+          &&  v \times (w \times z)    \nonumber \\
+          &=& (v^1 e_1 + v^2 e_2 + v^3 e_3) \big((w^2 z^3 - w^3 z^2) e_1 + (w^3 z^1 - w^1 z^3) e_2 + (w^1 z^2 - w^2 z^1) e_3 \big)    \nonumber \\
+          &=& (v^2 (w^1 z^2 - w^2 z^1) - v^3 (w^3 z^1 - w^1 z^3)) e_1 + (v^3 (w^2 z^3 - w^3 z^2) - v^1 (w^1 z^2 - w^2 z^1)) e_2 +
+          (v^1 (w^3 z^1 - w^1 z^3) - v^2 (w^2 z^3 - w^3 z^2)) e_3    \nonumber \\
+          &=& ((v^2 z^2 + v^3 z^3) w^1 - (v^2 w^2 + v^3 w^3) z^1) e_1 + ((v^1 z^1 + v^3 z^3) w^2 - (v^1 w^1 + v^3 w^3) z^2) e_2 +
+          ((v^1 z^1 + v^2 z^2) w^3 - (v^1 w^1 + v^2 w^2) z^3) e_3    \nonumber \\
+          &=&((v^1 z^1 + v^2 z^2 + v^3 z^3) w^1 - (v^1 w^1 + v^2 w^2 + v^3 w^3) z^1) e_1    \nonumber \\
+          && + ((v^1 z^1 + v^2 z^2 + v^3 z^3) w^2 - (v^1 w^1 + v^2 w^2 + v^3 w^3) z^2) e_2    \nonumber \\
+          && + ((v^1 z^1 + v^2 z^2 + v^3 z^3) w^3 - (v^1 w^1 + v^2 w^2 + v^3 w^3) z^3) e_3    \nonumber \\
+          &=& \langle v, z \rangle w - \langle v, w \rangle z
+        \end{eqnarray}
+        $$
+
+        The third can be derived similarly.
+
+    e.  **$$ | v \times w | = \sqrt{\langle v, v \rangle \cdot \langle w, w \rangle - \langle v, w \rangle^2} $$**.
+
+        Already given in (c).
+10. **If $$ w_1, \ldots, w_{n-1} \in \mathbb{R}^n $$, show that**
+
+    $$ | w_1 \times \cdots \times w_{n-1} | = \sqrt{\det(g_{ij})}, $$
+
+    **where $$ g_{ij} = \langle w_i, w_j \rangle $$. _Hint_: Apply Problem 4-3 to a certain $$ (n - 1) $$-dimensional subspace of $$ \mathbb{R}^n $$.**
+
+    Let $$ V $$ be the space spanned by $$ w_1, \ldots, w_{n-1} $$, and $$ k = \dim V $$. Clearly $$ k \le n - 1 $$. Let $$ v_1, \ldots, v_k $$ be an orthonormal basis of $$ V $$ and we can expand them to an orthonormal basis of $$ \mathbb{R}^n $$ by adding vectors $$ v_{k + 1}, \ldots, v_n $$. We can also safely assume that $$ [v_1, \ldots, v_n] = [e_1, \ldots, e_n] $$. (Otherwise we could simply relabel $$ -v_1 $$ as $$ v_1 $$.)
+
+    Let $$ w_i = \sum_{j = 1}^n a_{ij} v_j $$. We have
+
+    $$ w_1 \times \cdots \times w_{n-1} = \sum_{i = 1}^n \det(w_1, \ldots, w_{n - 1}, v_i) v_i. $$
+
+    For any $$ i < n $$, by construction, $$ w_1, \ldots, w_{n - 1}, v_i $$ are not linearly independent and thus $$ \det(w_1, \ldots, w_{n - 1}, v_i) = 0 $$. Therefore, $$ w_1 \times \cdots \times w_{n-1} = \det(w_1, \ldots, w_{n - 1}, v_n) v_n$$, and in the $$ v_i $$ basis, we have
+
+    $$ | w_1 \times \cdots \times w_{n-1} | = \det
+    \begin{bmatrix}
+    a_{1,1} & \cdots & a_{1, n - 1} & 0 \\
+    \vdots & \dots & \vdots & 0 \\
+    a_{n - 1,1} & \cdots & a_{n - 1, n - 1} & 0 \\
+    0 & \cdots & 0 & 1
+    \end{bmatrix} = \det
+    \begin{bmatrix}
+    a_{1,1} & \cdots & a_{1, n - 1} \\
+    \vdots & \dots & \vdots \\
+    a_{n - 1,1} & \cdots & a_{n - 1, n - 1}
+    \end{bmatrix}. $$
+
+    Let $$ V' $$ be the space spanned by $$ v_1, \ldots, v_{n - 1} $$. The second $$ \det \in \Lambda^{n-1}(V') $$ is exactly the volumn element determined by $$ T = \langle, \rangle \upharpoonright_{V'} $$ and $$ \mu = [v_1, \ldots, v_{n - 1}] $$. From Problem 4-3, we have
+
+    $$ \det
+    \begin{bmatrix}
+    a_{1,1} & \cdots & a_{1, n - 1} \\
+    \vdots & \dots & \vdots \\
+    a_{n - 1,1} & \cdots & a_{n - 1, n - 1}
+    \end{bmatrix} =
+    \det(w_1, \ldots, w_{n - 1}) = \sqrt{\det(T(w_i, w_j))} = \sqrt{\det(\langle w_i, w_j \rangle)}.$$
+
+    Therefore, $$ | w_1 \times \cdots \times w_{n-1} | = \sqrt{\det(g_{ij})} $$ where $$ g_{ij} = \langle w_i, w_j \rangle $$.
+
+11. **If $$ T $$ is an inner product on $$ V $$, a linear transformation $$ f: V \to V $$ is called __self-adjoint__ (with respect to $$ T $$) if $$ T(f(x), y) = T(x, f(y)) $$ for $$ x, y \in V $$. If $$ v_1, \ldots, v_n $$ is an orthonormal basis and $$ A = (a_{ij}) $$ is the matrix of $$ f $$ with respect to this basis, show that $$ a_{ij} = a_{ji} $$.**
+
+    First, we have
+
+    $$
+    \begin{eqnarray}
+      &&  T(v_i, f(v_j))    \nonumber \\
+      &=& T(v_i, \sum_{k = 1}^n a_{jk} v_k)    \nonumber \\
+      &=& \sum_{k = 1}^n a_{jk} \delta_{i, k}    \nonumber \\
+      &=& a_{ji}.
+    \end{eqnarray}
+    $$
+
+    It can be similarly derived that $$ T(f(v_i), v_j) = a_{ij} $$. Since $$ T(f(x), y) = T(x, f(y)) $$, $$ a_{ij} = a_{ji} $$.
+
+12. **If $$ f_1, \ldots, f_{n - 1}: \mathbb{R}^m \to \mathbb{R}^n $$, define $$ f_1 \times \cdots \times f_{n - 1}: \mathbb{R}^m \to \mathbb{R}^n $$ by $$ f_1 \times \cdots \times f_{n - 1}(p) = f_1(p) \times \cdots \times f_{n - 1}(p) $$. Use Problem 2-14 to derive a formula for $$ D(f_1 \times \cdots \times f_{n - 1}) $$ when $$ f_1, \ldots, f_{n - 1} $$ are differentiable.**
+
+    Define $$ f: (\mathbb{R}^m)^{n-1} \to \mathbb{R}^m $$ as $$ f(x_1, \ldots, x_{n-1}) = x_1 \times \cdots \times x_{n-1} $$. Clearly $$ f $$ is multilinear. Applying the result of Problem 2-14 (b), we have
+
+    $$
+    \begin{eqnarray}
+      &&  D(f_1 \times \cdots \times f_{n - 1})(p)(x)    \nonumber \\
+      &=& Df(f_1(p), \ldots, f_{n-1}(p)) \circ D(f_1(p), \ldots, f_{n-1}(p))(x)    \nonumber \\
+      &=& Df(f_1(p), \ldots, f_{n-1}(p)) (Df_1(p)(x), \ldots, Df_{n-1}(p)(x))    \nonumber \\
+      &=& \sum_{i = 1}^{n -1} f(f_1(p), \ldots, f_{i-1}(p), Df_i(p)(x), f_{i+1}(p), \ldots, f_{n-1}(p) )    \nonumber \\
+      &=& \sum_{i = 1}^{n -1} f_1(p) \times \cdots \times f_{i-1}(p) \times Df_i(p)(x) \times f_{i+1}(p) \times \cdots \times f_{n-1}(p).
+    \end{eqnarray}
+    $$
+
+13. 
+    a.  **If $$ f: \mathbb{R}^n \to \mathbb{R}^m $$ and $$ g: \mathbb{R}^m \to \mathbb{R}^p $$, show that $$ (g \circ f)_* = g_* \circ f_* $$ and $$ (g \circ f)^* = f^* \circ g^* $$.**
+
+        $$
+        \begin{eqnarray}
+          &&  (g \circ f)_*(v_p)   \nonumber \\
+          &=& (D(g \circ f)(p)(v))_{g \circ f (p)} = (Dg (f(p)) \cdot Df(p) (v))_{g \circ f (p)}   \nonumber \\
+          &=& (Dg(f(p))(Df(p)(v))_{g(f(p))}   \nonumber \\
+          &=& g_* \big( (Df(p)(v))_{f(p)} \big)   \nonumber \\
+          &=& g_* \circ f_* (v_p)
+        \end{eqnarray}
+        $$
+
+        $$
+        \begin{eqnarray}
+          &&  (g \circ f)^* \omega(p) (v_1, \ldots, v_k)   \nonumber \\
+          &=& \omega(g(f(p))) (g(f(v_1)), \ldots, g(f(v_k)))   \nonumber \\
+          &=& g^* \omega(f(p)) (f(v_1), \ldots, f(v_k))   \nonumber \\
+          &=& f^* \circ g^* \omega(p) (v_1, \ldots, v_k)
+        \end{eqnarray}
+        $$
+
+    b.  **If $$ f, g: \mathbb{R}^n \to \mathbb{R} $$, show that $$ d(f \cdot g) = f \cdot dg + g \cdot df $$.**
+
+        $$
+        \begin{eqnarray}
+          &&  d(f \cdot g) = \sum_{\alpha = 1}^n D_\alpha (f \cdot g) \cdot dx^\alpha    \nonumber \\
+          &=& \sum_{\alpha = 1}^n \big( f \cdot D_\alpha (g) + g \cdot D_\alpha (f) \big) \cdot dx^\alpha    \nonumber \\
+          &=& f \cdot \sum_{\alpha = 1}^n D_\alpha (g) \cdot dx^\alpha + g \cdot \sum_{\alpha = 1}^n D_\alpha (f) \cdot dx^\alpha    \nonumber \\
+          &=& f \cdot dg + g \cdot df
+          \end{eqnarray}
+        $$
+14. **Let $$ c $$ be a differentiable curve in $$ \mathbb{R}^n $$, that is, a differentiable function $$ c: [0, 1] \to \mathbb{R}^n $$. Define the __tangent__ vector $$ v $$ of $$ c $$ at $$ t $$ as $$ c_*((e_1)_t) = ((c^1)'(t), \ldots , (c^n)'(t))_{c(t)} $$. If $$ f: \mathbb{R}^n \to \mathbb{R}^m $$, show that the tangent vector to $$ f \circ c $$ at $$ t $$ is $$ f_*(v) $$.**
+
+    Treating v as a column vector, we have
+
+    $$
+    \begin{eqnarray}
+      &&  (f \circ c)_*((e_1)_t)    \nonumber \\
+      &=& (((f \circ c)^1)'(t), \ldots , ((f \circ c)^m)'(t))_{f(c(t))}    \nonumber \\
+      &=& (Df \cdot v)_{f(c(t))}    \nonumber \\
+      &=& f_*(v).
+    \end{eqnarray}
+    $$
+
+15. **Let $$ f: \mathbb{R} \to \mathbb{R} $$ and define $$ c: \mathbb{R} \to \mathbb{R}^2 $$ by $$ c(t) = (t,f(t)) $$. Show that the end point of the tangent vector of $$ c $$ at $$ t $$ lies on the tangent line to the graph of $$ f $$ at $$ (t,f(t)) $$.**
+
+    As defined in Problem 4-14, the tangent vector $$ v $$ is simply $$ (1, f'(t)) $$ and the end point is thus $$ (t + 1, f(t) + f'(t)) $$. Obviously it does lie on the tangent line to the graph of $$ f $$ at $$ (t,f(t)) $$, which is $$ (t, f(t)) + x \cdot (1, f'(t)) $$.
+
+16. **Let $$ c: [0, l] \to \mathbb{R}^n $$ be a curve such that $$ | c(t) | = 1 $$ for all $$ t $$. Show that $$ c(t)_{c(t)} $$ and the tangent vector to $$ c $$ at $$ t $$ are perpendicular.**
+
+    With $$ c $$ treated as a column vector, $$ | c(t) | = 1 $$ implies $$ c^T \cdot c = \langle c, c \rangle = 1 $$. Taking the derivative of both sides, we have $$ \langle v, c \rangle = \left((c^1)'(t), \ldots , (c^n)'(t)\right) \cdot \left(\begin{array}{c} c^1(t) \\ \vdots \\ c^n(t) \end{array} \right) = 0 $$ where $$ v $$ denotes the the tangent vector to $$ c $$ at $$ t $$.
+
+17. **If $$ f: \mathbb{R}^n \to \mathbb{R}^n $$, define a vector field $$ \mathbf{f} $$ by $$ \mathbf{f}(p) = f(p)_p \in {\mathbb{R}^n}_p $$.**
+
+    a.  **Show that every vector field $$ F $$ on $$ \mathbb{R}^n $$ is of the form $$ \mathbf{f} $$ for some $$ f $$.**
+
+        Trivial. Define $$ f(p) = v $$ whereever $$ F(p) = v_p $$.
+
+    b.  **Show that $$ \mathrm{div} \mathbf{f} = \mathrm{trace} f' $$**.
+
+        Trivial. Both sides are equal to $$ \sum_{i = 1}^n D_i f^i $$.
+
+18. **If $$ f: \mathbb{R}^n \to \mathbb{R} $$, define a vector field $$ \mathrm{grad} f $$ by**
+
+    $$ (\mathrm{grad} f)(p) = D_1 f(p) \cdot (e_1)_p + \cdots + D_n f(p) \cdot (e_n)_p. $$
+
+    **For obvious reasons we also write $$ \mathrm{grad} f = \nabla f $$. If $$ \nabla f(p) = w_p $$, prove that $$ D_v f(p) = \langle v, w \rangle $$ and conclude that $$ \nabla f(p) $$ is the direction in which $$ f $$ is changing fastest at $$ p $$.**
+
+    $$
+    \begin{eqnarray}
+      &&  D_v f(p)    \nonumber \\
+      &=& \sum_{i = 1}^n v^i D_i f(p)    \nonumber \\
+      &=& \langle v, w \rangle
+    \end{eqnarray}
+    $$
+
+    Therefore, with an extra restriction that $$ | v | = 1 $$, the maximum of $$ | D_v f(p) | $$ is reached when $$ \angle(v, w) \in \{ 0, \pi \} $$.
+
+19. **If $$ F $$ is a vector field on $$ \mathbb{R}^3 $$ , define the forms**
+
+    $$
+    \begin{eqnarray}
+      \omega^1_F &=& F^1 dx + F^2 dy + F^3 dz,    \nonumber \\
+      \omega^2_F &=& F^1 dy \wedge dz + F^2 dz \wedge dx + F^3 dx \wedge dy.
+    \end{eqnarray}
+    $$
+
+    a.  **Prove that**
+
+        $$
+        \begin{eqnarray}
+          df &=& \omega^1_{\mathrm{grad}f},    \nonumber \\
+          d(\omega^1_F) &=& \omega^2_{\mathrm{curl}F},    \nonumber \\
+          d(\omega^2_F) &=& (\mathrm{div}F) dx \wedge dy \wedge dz.     \nonumber \\
+        \end{eqnarray}
+        $$
+
+        $$
+        \begin{eqnarray}
+          &&  df    \nonumber \\
+          &=& D_1 f dx + D_2 f dy + D_3 f dz    \nonumber \\
+          &=& \omega^1_{\mathrm{grad}f}    \nonumber \\
+          &&    \nonumber \\
+          &&  d(\omega^1_F)    \nonumber \\
+          &=& D_2 F^1 dy \wedge dx + D_3 F^1 dz \wedge dx + D_1 F^2 dx \wedge dy + D_3 F^2 dz \wedge dy + D_1 F^3 dx \wedge dz + D_2 F^3 dy \wedge dz    \nonumber \\
+          &=& (D_2 F^3 - D_3 F^2) dy \wedge dz + (D_3 F^1 - D_1 F^3) dz \wedge dx + (D_1 F^2 - D_2 F^1) dx \wedge dy    \nonumber \\
+          &=& \omega^2_{\mathrm{curl}F}    \nonumber \\
+          &&    \nonumber \\
+          &&  d(\omega^2_F)    \nonumber \\
+          &=& D_1 F^1 dx \wedge dy \wedge dz + D_2 F^2 dy \wedge dz \wedge dx + D_3 F^3 dz \wedge dx \wedge dy    \nonumber \\
+          &=& (D_1 F^1 + D_2 F^2 + D_3 F^3) dx \wedge dy \wedge dz    \nonumber \\
+          &=& (\mathrm{div}F) dx \wedge dy \wedge dz
+        \end{eqnarray}
+        $$
+
+    b.  **Use (a) to prove that**
+
+        $$
+        \begin{eqnarray}
+          \mathrm{curl} \, \mathrm{grad} f = 0,    \nonumber \\
+          \mathrm{div} \, \mathrm{curl} F = 0.
+        \end{eqnarray}
+        $$
+
+        Note that $$ F = 0 \Leftrightarrow \omega^1_F = 0 \Leftrightarrow \omega^2_F = 0 \Leftrightarrow F dx \wedge dy \wedge dz = 0 $$.
+
+        $$
+        \begin{eqnarray}
+          &&  \omega^2_{\mathrm{curl} \, \mathrm{grad} f}    \nonumber \\
+          &=& d(\omega^1_{\mathrm{grad} f})    \nonumber \\
+          &=& d(df)    \nonumber \\
+          &=& 0    \nonumber \\
+          &&    \nonumber \\
+          &&  \mathrm{div} \, \mathrm{curl} F dx \wedge dy \wedge dz    \nonumber \\
+          &=& d(\omega^2_{\mathrm{curl} F})    \nonumber \\
+          &=& d(d(\omega^1_F))    \nonumber \\
+          &=& 0
+        \end{eqnarray}
+        $$
+
+    c.  **If $$ F $$ is a vector field on a star-shaped open set $$ A $$ and $$ \mathrm{curl} F = 0 $$, show that $$ F = \mathrm{grad} f $$ for some function $$ f: A \to \mathbb{R} $$. Similarly, if $$ \mathrm{div} F = 0 $$, show that $$ F = \mathrm{curl} G $$ for some vector field $$ G $$ on $$ A $$.**
+
+        $$ \mathrm{curl} F = 0 $$ implies that $$ \omega^2_{\mathrm{curl} F} = 0 $$ and therefore from (a) $$ d(\omega^1_F) = 0 $$. From Theorem 4-11, $$ \omega^1_F = df $$ for some function $$ f: A \to \mathbb{R} $$. Again from (a), this implies that $$ \omega^1_F = \omega^1_{\mathrm{grad} f} $$ and therefore $$ F = \mathrm{grad} f $$.
+
+        $$ \mathrm{div} F = 0 $$ implies that $$ \mathrm{div} F dx \wedge dy \wedge dz = 0 $$ and therefore from (a) $$ d(\omega^2_F) = 0 $$. From Theorem 4-11, $$ \omega^2_F = d(\omega^1_G) $$ for some some one-form $$ \omega^1_G $$ on $$ A $$ (or equivalently for some vector field $$ G $$ on $$ A $$ since there is a 1-1 correspondence between a vector field and a one-form). Again from (a), this implies that $$ \omega^2_F = \omega^2_{\mathrm{curl} G} $$ and therefore $$ F = \mathrm{curl} G $$.
+
+20. **Let $$ f: U \to \mathbb{R}^n $$ be a differentiable function with a differentiable inverse $$ f^{-1}: f(U) \to \mathbb{R}^n $$. If every closed form on $$ U $$ is exact, show that the same is true for $$ f(U) $$. _Hint_: If $$ d\omega = 0 $$ and $$ f^* \omega = d\eta $$, consider $$ (f^{-1})^* \eta $$.**
+
+    For any form $$ \omega $$ on $$ f(U) $$, if $$ d(\omega) = 0 $$, we have, from Theorem 4-10 (4), $$ d(f^* \omega) = f^*(d\omega) = 0 $$. Note that $$ f^* \omega $$ is a form on $$ U $$ and from the assumption $$ f^* \omega = d\eta $$ for a certain form $$ \eta $$ on $$ U $$. Now $$ (f^{-1})^* \eta $$ is a form on $$ f(U) $$ and $$ d((f^{-1})^* \eta) = (f^{-1})^* (d\eta) = (f^{-1})^* (f^* \omega) $$. It is easy to prove that $$ (f^{-1})^* (f^* \omega) = \omega $$ by the fact that $$ Df \cdot Df^{-1} \cdot v = v $$ for any vector $$ v \in f(U) $$. Therefore $$ \omega $$ is exact because $$ \omega = d((f^{-1})^* \eta) $$.
+
+21. **Prove that on the set where $$ \theta $$ is defined we have**
+
+    $$ d\theta = \frac{-y}{x^2 + y^2} dx + \frac{x}{x^2 + y^2} dy. $$
+
+    Trivial. By definition $$ d\theta = \frac{\partial \theta}{\partial x} dx + \frac{\partial \theta}{\partial y} dy $$.
+
+    The definition of $$ \theta $$ as a function of $$ x $$ and $$ y $$ can be found in Problem 3-41. Note that $$ (r, \theta) = f^{-1} (x, y) $$ and the easiest way to calculate $$ Df^{-1} $$ is to calculate $$ Df $$ and then use the fact that $$ Df^{-1} \cdot Df = I $$.
+
+22. **Let $$ \mathscr{S} $$ be the set of all singular n-cubes, and $$ \mathbb{Z} $$ the integers. An __n-chain__ is a function $$ f: \mathscr{S} \to \mathbb{Z} $$ such that $$ f(c) = 0 $$ for all but finitely many $$ c $$. Define $$ f + g $$ and $$ nf $$ by $$ (f + g)(c) = f(c) + g(c) $$ and $$ nf(c) = n \cdot f(c) $$. Show that $$ f + g $$ and $$ nf $$ are n-chains if $$ f $$ and $$ g $$ are. If $$ c \in \mathscr{S} $$, let $$ c $$ also denote the function $$ f $$ such that $$ f(c) = 1 $$ and $$ f(c') = 0 $$ for $$ c' \neq c $$. Show that every n-chain $$ f $$ can be written $$ a_1 c_1 + \cdots + a_k c_k $$ for some integers $$ a_1, \ldots ,a_k $$ and singular n-cubes $$ c_1, \ldots , c_k $$.**
+
+    To show that $$ f + g $$ are n-chains, we only need to show that $$ (f + g) (c) = 0 $$ for all but finitely many $$ c $$. For $$ (f + g) (c) \neq 0 $$, we must have either $$ f(c) \neq 0 $$ or $$ g(c) \neq 0 $$. Since both $$ f(c) $$ and $$ g(c) $$ are non-zero only for finitely many $$ c $$, $$ (f + g) (c) $$ is non-zero only for finitely many $$ c $$. It is completely similar for $$ n $$.
+
+    Let $$ \{ c_1, \ldots, c_k \} $$ be the set of n-cubes such that $$ a_i = f(c_i) \neq 0 $$. It is easy to show that $$ f(c) = a_1 c_1 (c) + \cdots + a_k c_k (c) $$ regardless whether $$ c \in \{ c_1, \ldots, c_k \} $$ or not.
+
+23. **For $$ R > 0 $$ and $$ n $$ an integer, define the singular 1-cube $$ c_{R, n} : [0, 1] \to \mathbb{R}^2 - 0 $$ by $$ c_{R, n} (t) = (R \cos 2\pi n t, R \sin 2\pi n t) $$. Show that there is a singular 2-cube $$ c: [0, 1]^2 \to \mathbb{R}^2 - 0 $$ such that $$ c_{R_1, n} - c_{R_2, n} = \partial c $$.**
+
+    Define $$ c: [0, 1]^ 2 \to \mathbb{R}^2 - 0 $$ as $$ c(t^1, t^2) = (R_2 (1 - t^1) + R_1 t^1) \cdot (\cos 2\pi n t^2, \sin 2\pi n t^2) $$. It is easy to verify the following.
+
+    $$
+    \begin{eqnarray}
+      c_{(1, 0)}(t) &=& R_2 \cdot (\cos 2\pi n t, \sin 2\pi n t) = c_{R_2, n}    \nonumber \\
+      c_{(1, 1)}(t) &=& R_1 \cdot (\cos 2\pi n t, \sin 2\pi n t) = c_{R_1, n}    \nonumber \\
+      c_{(2, 0)}(t) &=& R_1 \cdot (R_2 (1 - t) + R_1 t, 0)    \nonumber \\
+      c_{(2, 1)}(t) &=& R_1 \cdot (R_2 (1 - t) + R_1 t, 0)
+    \end{eqnarray}
+    $$
+
+    Therefore $$ \partial c = -c_{(1, 0)} + c_{(1, 1)} + c_{(2, 0)} - c_{(2, 1)} = c_{R_1, n} - c_{R_2, n} $$.
+
+24. **If $$ c $$ is a singular 1-cube in $$ \mathbb{R}^2 - 0 $$ with $$ c(0) = c(1) $$, show that there is an integer $$ n $$ such that $$ c - c_{1, n} = \partial c^2 $$ for some 2-chain $$ c^2 $$. _Hint_: First partition [0, 1] so that each $$ c([t_{i - 1}, t_i)]) $$ is contained on one side of some line through 0.**
+
+    For clarity, the author should have specified that the 2-chain $$ c^2 $$ is also in $$ \mathbb{R}^2 - 0 $$. Otherwise $$ n $$ wouldn't be unique, as claimed in Problem 4-27.
+
+    Intuitively, one could imagine a rubber string of whose two ends one is attached to $$ c_{1, n} $$ and the other is attached to $$ c $$. Both ends of the string move in synchronization speficied by the parameter $$ t $$ in both curves. Along the rubber string there are marks $$ 0, 0.1, \ldots, 0.9, 1 $$. The first dimension of the chain $$ c^2 $$ specifies these marks, while the second dimension specifies the position of its ends along the two curves. We are done if we can show that the string, and the marks on it, eventually end up at the same position as when they started.
+
+    Without the requirement that $$ c^2 $$ is in $$ \mathbb{R}^2 - 0 $$, one could choose any $$ n $$ and keep the string straight at any $$ t $$. In general, the string will pass through 0 multiple times.
+
+    To formalize the string idea, one first choose $$ n = \frac{1}{2\pi} \int_c d\theta $$, where $$ \theta $$ is as defined in Problem 3-41. To make sure the string will not pass through 0, we make the string "straight" on the $$ (r, \theta) $$-plain, rather than the $$ (x, y) $$-plain. (This is why we have to choose $$ n $$ in the way we do.)
+
+    Now we define $$ c^2 $$ as $$ c^2(s, t) = (1 \cdot (1 - s) + |c(t)| \cdot s) \cdot (\cos \theta(s, t), \sin \theta(s, t)) $$, where $$ \theta(s, t) = 2\pi n t \cdot (1 - s) + (\theta_0 + \int_0^t c^* d\theta) \cdot s $$ and $$ \theta_0 = \theta(c(0)) $$.
+
+    It is easy to verify the following.
+
+    $$
+    \begin{eqnarray}
+      {c^2}_{(1, 0)}(t) &=& c_{1, n}(t)    \nonumber \\
+      {c^2}_{(1, 1)}(t) &=& c(t)    \nonumber \\
+      {c^2}_{(2, 0)}(s) &=& (1 \cdot (1 - s) + |c(0)| \cdot s) \cdot (\cos \theta_0 s, \sin \theta_0 s)    \nonumber \\
+      {c^2}_{(2, 1)}(s) &=& (1 \cdot (1 - s) + |c(1)| \cdot s) \cdot (\cos (2\pi n \cdot (1 - s) + (\theta_0 + 2\pi n) \cdot s), \sin (2\pi n \cdot (1 - s) + (\theta_0 + 2\pi n) \cdot s)) = {c^2}_{(2, 0)}(s)
+    \end{eqnarray}
+    $$
+
+    Therefore $$ \partial c^2 = -{c^2}_{(1, 0)} + {c^2}_{(1, 1)} + {c^2}_{(2, 0)} - {c^2}_{(2, 1)} = c - c_{1, n} $$.
+
+25. **(_Independence of parameterization_). Let $$ c $$ be a singular k-cube and $$ p : [0, 1]^k \to [0, 1]^k $$ a 1-1 function such that $$ p([0, 1]^k) = [0, 1]^k $$ and $$ \det p'(x) \ge 0 $$ for $$ x \in [0, 1]^k $$. If $$ \omega $$ is a k-form, show that**
+
+    $$ \int_c \omega = \int_{c \circ p} \omega. $$
+
+    Let $$ c^* \omega $$, which is a k-form on $$ [0, 1]^k $$, be of the form $$ f dx^1 \wedge \cdots \wedge dx^k $$. We have
+
+    $$
+    \begin{eqnarray}
+      &&  \int_{c \circ p} \omega    \nonumber \\
+      &=& \int_{[0, 1]^k} (c \circ p)^* \omega    \nonumber \\
+      &=& \int_{[0, 1]^k} p^* (c^* \omega)    \nonumber \\
+      &=& \int_{[0, 1]^k} p^* (f dx^1 \wedge \cdots \wedge dx^k)    \nonumber \\
+      &=& \int_{[0, 1]^k} (f \circ p) (\det p') dx^1 \wedge \cdots \wedge dx^k    \nonumber \\
+      &=& \int_{[0, 1]^k} (f \circ p) | \det p') |    \nonumber \\
+      &=& \int_{p([0, 1]^k)} f    \nonumber \\
+      &=& \int_{[0, 1]^k} f    \nonumber \\
+      &=& \int_{[0, 1]^k} f dx^1 \wedge \cdots \wedge dx^k   \nonumber \\
+      &=& \int_{[0, 1]^k} c^* \omega   \nonumber \\
+      &=& \int_{c} \omega
+    \end{eqnarray}
+    $$
+
+    The second equality is from Problem 4-13(a). The fourth equality is from Theorem 4-9. The fifth equality is due to the fact that $$ \det p' \ge 0 $$ and the definition of integraion of forms on a cube. The sixth equality is from Theorem 3-13.
+
+26. **Show that $$ \int_{c_{R, n}} d\theta = 2\pi n $$, and use Stokes' theorem to conclude that $$ c_{R ,n} \neq \partial c $$ for any 2-chain $$ c $$ in $$ \mathbb{R}^2 - 0 $$ (recall the definition of c_{R, n} in Problem 4-23).**
+
+    Let us first calculate $$ {c_{R, n}}^* d\theta $$ where $$ d\theta = \frac{-y}{x^2 + y^2} dx + \frac{x}{x^2 + y^2} dy $$ as in Problem 4-21.
+
+    For any $$ t \in [0, 1] $$ and $$ \tau \in \mathbb{R} $$, we have
+
+    $$
+    \begin{eqnarray}
+      &&  ({c_{R, n}}^* d\theta) (\tau)    \nonumber \\
+      &=& {c_{R, n}}^* (\frac{-y}{x^2 + y^2} dx + \frac{x}{x^2 + y^2} dy) (\tau)    \nonumber \\
+      &=& (\frac{-R \sin 2\pi n t}{R^2} dx + \frac{R \cos 2\pi n t}{R^2} dy) ({c_{R, n}}_* \tau)    \nonumber \\
+      &=& (\frac{-\sin 2\pi n t}{R} dx + \frac{\cos 2\pi n t}{R} dy) (\left(\begin{array}{c} -2\pi n R \tau \sin 2\pi n t \\ 2\pi n R \tau \cos 2\pi n \tau \end{array} \right))    \nonumber \\
+      &=& 2\pi n \tau (\sin^2 2\pi n t + \cos^2 2\pi n t)    \nonumber \\
+      &=& 2\pi n dt (\tau).
+    \end{eqnarray}
+    $$
+
+    Therefore $$ {c_{R, n}}^* d\theta = 2\pi n dt $$. We have further $$ \int_{c_{R, n}} d\theta = \int_{[0, 1]} {c_{R, n}}^* d\theta = \int_{[0, 1]} 2\pi n dt = 2\pi n $$.
+
+    Note that a proof using Stoke's theorem works only for cases where $$ n \neq 0 $$. The proof is as follows.
+
+    Suppose $$ c_{R, n} = \partial c $$ for a 2-chain $$ c $$ in $$ \mathbb{R}^2 - 0 $$. We have $$ \int_{c_{R, n}} d\theta = \int_{\partial c} d\theta = \int_c dd\theta = 0 $$, contradicting $$ \int_{c_{R, n}} d\theta = 2\pi n $$.
+
+    To prove the general case regardless whether $$ n = 0 $$, one should notice that the boundary of any 2-cube is made of two 1-chains with coefficient +1 and two 1-chains with coefficient -1, making the sum of coefficients zero. The sum of coefficients of the boundary of any 2-chain, which is made of multiple 2-cubes, must therefore also be zero. $$ c_{R, n} $$, as a 1-chain, has its sum of coefficients equal to 1 and thus cannot be the boundary of a 2-chain.
+
+27. **Show that the integer $$ n $$ of Problem 4-24 is unique. This integer is called the __winding number__ of $$ c $$ around 0.**
+
+    Suppose that there are two different integers $$ n $$ and $$ N $$, that satisfy $$ c - c_{1, n} = \partial {c^2}_n $$ and $$ c - c_{1, N} = \partial {c^2}_N $$ for some 2-chains $$ {c^2}_n $$ and $$ {c^2}_N $$. Clearly we have $$ c_{1, N} - c_{1, n} = \partial ({c^2}_n - {c^2}_N) $$, where $$ {c^2}_n - {c^2}_N $$ is also a 2-chain. Therefore $$ \int_{c_{1, N} - c_{1, n}} d\theta = \int_{\partial ({c^2}_n - {c^2}_N)} d\theta = \int_{{c^2}_n - {c^2}_N} dd\theta = 0 $$.
+
+    But from the previous problem, we have $$ \int_{c_{1, N} - c_{1, n}} d\theta = \int_{c_{1, N}} d\theta - \int_{c_{1, n}} d\theta = 2\pi (N - n) \neq 0 $$, a contradiction.
+
+28. **Recall that the set of complex numbers $$ \mathbb{C} $$ is simply $$ \mathbb{R}^2 $$ with $$ (a, b) = a + bi $$. If $$ a_1, \ldots, a_n \in \mathbb{C} $$ let $$ f: \mathbb{C} \to \mathbb{C} $$ be $$ f(z) = z^n  + a_1 z^{n - 1} + \cdots + a_n $$. Define the singular 1-cube $$ c_{R, f}: [0, 1] \to \mathbb{C} - 0 $$ by $$ c_{R, f} = f \circ c_{R, 1} $$, and the singular 2-cube $$ c $$ by $$ c(s, t) = t \cdot c_{R, n}(s) + (1 - t) \cdot c_{R, f}(s) $$.**
+
+    a.  **Show that $$ \partial c = c_{R, f} - c_{R, n} $$, and that $$ c([0, 1] \times [0, 1]) \subset \mathbb{C} - 0 $$ if $$ R $$ is large enough.**
+
+        It should be $$ c_{R^n, n} $$ instead of $$ c_{R, n} $$. Otherwise the statement that _$$ c([0, 1] \times [0, 1]) \in \mathbb{C} - 0 $$ if $$ R $$ is large enough_ wouldn't be correct.
+
+        We have
+
+        $$
+        \begin{eqnarray}
+          c_{(1, 0)}(t) &=& t \cdot c_{R^n, n}(0) + (1 - t) \cdot c_{R, f}(0)    \nonumber \\
+          c_{(1, 1)}(t) &=& t \cdot c_{R^n, n}(1) + (1 - t) \cdot c_{R, f}(1) = c_{(1, 0)}(t)    \nonumber \\
+          c_{(2, 0)}(t) &=& c_{R, f}(t)    \nonumber \\
+          c_{(2, 1)}(t) &=& c_{R^n, n}(t).
+        \end{eqnarray}
+        $$
+
+        Therefore $$ \partial c = -c_{(1, 0)} + c_{(1, 1)} + c_{(2, 0)} - c_{(2, 1)} = c_{R, f} - c_{R^n, n} $$.
+
+        For any $$ s, t \in [0, 1] $$, we have
+
+        $$
+        \begin{eqnarray}
+          &&    | c(s, t) |    \nonumber \\
+          &=&   | t \cdot c_{R^n, n}(s) + (1 - t) \cdot c_{R, f}(s) |    \nonumber \\
+          &=&   | t \cdot R^n e^{2\pi n s i} + (1 - t) \cdot (R^n e^{2\pi n s i} + a_1 R^{n - 1} e^{2\pi (n - 1) s i} + \cdots + a_n) |    \nonumber \\
+          &=&   | R^n e^{2\pi n s i} + (1 - t) \cdot (a_1 R^{n - 1} e^{2\pi (n - 1) s i} + \cdots + a_n) |    \nonumber \\
+          &\ge& | R^n e^{2\pi n s i} | - (1 - t) | (a_1 R^{n - 1} e^{2\pi (n - 1) s i} + \cdots + a_n) |    \nonumber \\
+          &\ge& R^n - (| (a_1 R^{n - 1} e^{2\pi (n - 1) s i} + \cdots + a_n) |)    \nonumber \\
+          &\ge& R^n - (| a_1 | R^{n - 1} + \cdots + | a_n |).
+        \end{eqnarray}
+        $$
+
+        When $$ R > n \cdot max\{ 1, | a_1 |, \ldots, | a_n | \} $$, we have further
+
+        $$
+        \begin{eqnarray}
+          &&    | c(s, t) |    \nonumber \\
+          &\ge& R^n - (| a_1 | R^{n - 1} + \cdots + | a_n |)    \nonumber \\
+          &\ge& R^n - (| a_1 | + \cdots + | a_n |) \cdot R^{n - 1}    \nonumber \\
+          &=& R^{n - 1} \cdot (R - (| a_1 | + \cdots + | a_n |))     \nonumber \\
+          &\ge& R^{n - 1} \cdot (R - n \cdot max\{ | a_1 |, \ldots, | a_n | \})     \nonumber \\
+          &>&   0.
+        \end{eqnarray}
+        $$
+
+    b.  **Using Problem 4-26, prove the _Fundamental Theorem of Algebra_: Every polynomial $$ z^n + a_1 z^{n - 1} + \cdots + a_n $$ with $$ a_i \in \mathbb{C} $$ has a root in $$ \mathbb{C} $$.**
+
+        The problem is trivial when $$ a_n = 0 $$. From now on we assume $$ a_n \neq 0 $$.
+
+        We first redefine $$ c_{R, n} $$ to allow $$ R = 0 $$ in the most obvious way. We then define the singular 2-cube $$ c' $$ by $$ c'(s, t) = c_{R \cdot s, f} (t) $$, where $$ R $$ is large enough as described in (a). We have
+
+        $$
+        \begin{eqnarray}
+          c'_{(1, 0)}(t) &=& f(0) = a_n    \nonumber \\
+          c'_{(1, 1)}(t) &=& c_{(R, f)}(t)    \nonumber \\
+          c'_{(2, 0)}(t) &=& c_{R \cdot s, f}(0)    \nonumber \\
+          c'_{(2, 1)}(t) &=& c_{R \cdot s, f}(1) = c'_{(2, 0)}(t).
+        \end{eqnarray}
+        $$
+
+        Therefore $$ \partial c' = -c_{(1, 0)} + c_{(1, 1)} + c_{(2, 0)} - c_{(2, 1)} = - a_n + c_{R, f} $$. Note that $$ d\theta $$ is defined on both $$ a_n $$ and $$ c_{R, f} $$. Thus we have $$ \int_{\partial c'} d\theta = \int_{c_{R, f}} d\theta - \int_{a_n} d\theta = n $$.
+
+        Note that $$ c'(s, t) = f((R \cdot s) \cdot e^{2\pi t i}) $$. Thus the assumption that $$ f(z) $$ does not have a root in $$ \mathbb{C} $$ would imply that $$ c'(s, t) \neq 0 $$ for any $$ s, t \in [0, 1] $$ and therefore $$ c' $$ is a chain in the open set $$ \mathbb{C} - 0 $$. But since $$ d\theta $$ is a form on $$ \mathbb{C} - 0 $$, from Stoke's theorem, $$ \int_{\partial c'} d\theta = \int_{c'} dd\theta = 0 $$, contradicting the result at the end of the previous paragraph.
+
+29. **If $$ \omega $$ is a 1-form $$ f dx $$ on [0, 1] with $$ f(0) = f(1) $$, show that there is a unique number $$ \lambda $$ such that $$ \omega - \lambda dx = dg $$ for some function $$ g $$ with $$ g(0) = g(1) $$. _Hint_: Integrate $$ \omega - \lambda dx = dg $$ on [0, 1] to find $$ \lambda $$.**
+
+    For any $$ \lambda \in \mathbb{R} $$, define $$ g: [0, 1] \to \mathbb{R} $$ as $$ g(x) = \int_0^t (f - \lambda) dt $$. Then $$ dg = g' dx = f dx - \lambda dx = \omega - \lambda dx $$.
+
+    We also have $$ g(1) - g(0) = \int_{\partial[0, 1]} g = \int_{[0, 1]} dg = \int_{[0, 1]} (\omega - \lambda dx) = \int_{[0, 1]} \omega - \lambda $$. For $$ g(0) = g(1) $$, we have $$ \lambda = \int_{[0, 1]} \omega $$. Hence its uniqueness.
+
+30. **If $$ \omega $$ is a 1-form on $$ \mathbb{R}^2 - 0 $$ such that $$ d\omega = 0 $$, prove that**
+
+    $$ \omega = \lambda d\theta + dg $$
+
+    **for some $$ \lambda \in \mathbb{R} $$ and $$ g: \mathbb{R}^2 - 0 \to \mathbb{R} $$. _Hint_: If**
+
+    $$ {c_{R, 1}}^*(\omega) = \lambda_R dx + d(g_R), $$
+
+    **show that all numbers $$ \lambda_R $$ have the same value $$ \lambda $$.**
+
+    The hint is hardly helpful as it presumes the existence of function $$ g $$. But in fact, the tricky part is not that *all numbers $$ \lambda_R $$ have the same value $$ \lambda $$*, but rather the existence of $$ g $$. Since $$ \mathbb{R}^2 - 0 $$ is *not* star-shaped and therefore one cannot directly apply Theorem 4-11, one has to construct function $$ g $$ one way or another. (Some so-called solutions circulated online simply take the existence of $$ g $$ for granted.)
+
+    One way to prove $$ g $$ exists is to show that $$ \int_c \omega - \lambda d\theta $$, where $$ c $$ is a 1-chain in $$ \mathbb{R}^2 - 0 $$, is path-independent, and then apply Problem 4-32(b), the proof of which we are not supposed to have done yet. Here we will do it in a different way. We will mainly work on a subset of the $$ (R, \theta) $$-space, which is star-shaped, instead of the $$ (x, y) $$-space.
+
+    *Step 1: Define $$ \lambda $$.*
+
+    Let $$ \lambda_{R_1} = \int_{c_{R_1, 1}} \omega $$ and $$ \lambda_{R_2} = \int_{c_{R_2, 1}} \omega $$. We have
+
+    $$
+    \begin{eqnarray}
+      &&  \lambda_{R_1} - \lambda_{R_2}    \nonumber \\
+      &=& \int_{c_{R_1, 1}} \omega - \int_{c_{R_2, 1}} \omega    \nonumber \\
+      &=& \int_{c_{R_1, 1} - c_{R_2, 1}} \omega    \nonumber \\
+      &=& \int_{\partial c} \omega    \nonumber \\
+      &=& \int_c d\omega    \nonumber \\
+      &=& \int_c 0    \nonumber \\
+      &=& 0,
+    \end{eqnarray}
+    $$
+
+    where $$ c $$ is as defined in Problem 4-23. Therefore $$ \lambda_{R} $$ is independent of $$ R $$ and it can be denoted simply as $$ \lambda $$.
+
+    *Step 2: Define $$ g $$.*
+
+    Define $$ f: (0, \infty) \times \mathbb{R} \to \mathbb{R}^2 - 0 $$ as $$ f(r, \phi) = (r \cos \phi, r \sin \phi) $$. Then $$ f^* (\omega - \lambda d\theta) $$ is a 1-form in $$ (0, \infty) \times \mathbb{R} $$. Moreover,
+
+    $$
+    \begin{eqnarray}
+      &&  d(f^* (\omega - \lambda d\theta))    \nonumber \\
+      &=& f^* (d(\omega - \lambda d\theta))    \nonumber \\
+      &=& f^* (d\omega - \lambda dd\theta)    \nonumber \\
+      &=& f^*(0)    \nonumber \\
+      &=& 0.
+    \end{eqnarray}
+    $$
+
+    Since $$ (0, \infty) \times \mathbb{R} $$ is star-shaped, from Theorem 4-11, there is a 0-form $$ \gamma $$ such that $$ d\gamma = f^* (\omega - \lambda d\theta) $$.
+
+    Now we can define $$ g: \mathbb{R}^2 - 0 \to r $$ as $$ g(x, y) = \gamma (r, \theta) $$, where $$ r $$ and $$ \theta $$ is defined as functions of $$ (x, y) $$ as in Problem 3-41.
+
+    *Step 3: Prove $$ dg = \omega - \lambda d\theta $$.*
+
+    First we are to prove that for any $$ (r, \phi) \in (0, \infty) \times \mathbb{R} $$, we have $$ \gamma(r, \phi) = \gamma((r, \phi + 2\pi) $$.
+
+    Let $$ l $$ be the line segment connecting $$ (r, \phi) $$ and $$ r, \phi + 2\pi) $$, i.e., define $$ l: [0, 1] \to (0, \infty) \times \mathbb{R} $$ as $$ l(t) = (r, \phi + 2\pi t) $$. Note that $$ f \circ l $$ is a full circle which is different to c_{r, 1} only by starting (and ending) at $$ (r \cos \phi, r \sin \phi) $$ instead of $$ (r, 0) $$. From Problem 4-24, there is a 2-chain $$ c $$ in $$ \mathbb{R}^2 - 0 $$ such that $$ \partial c = f \circ l - c_{r, 1} $$. Combined with the fact that $$ d\omega = 0 $$, one has $$ \int_{f \circ l} \omega - \lambda d\theta = \int_{c_{r, 1}} \omega - \lambda d\theta $$. (The condition that $$ d\omega = 0 $$ is in fact unnecessary. But I do not want to have to prove $$ \int_{f \circ l} \mu = \int_{c_{r, 1}} \mu $$ for any random $$ \mu $$. Intuitively it should be obvious since $$ f \circ l $$ and $$ c_{r, 1} $$ are really the same curve. Mathematically it does require a few lines using Stoke's thoerem.) Therefore,
+
+    $$
+    \begin{eqnarray}
+      &&  \gamma(r, \phi + 2\pi) - \gamma(r, \phi)    \nonumber \\
+      &=& \int_{\partial l} \gamma    \nonumber \\
+      &=& \int_{l} d\gamma    \nonumber \\
+      &=& \int_{l} f^* (\omega - \lambda d\theta)    \nonumber \\
+      &=& \int_{[0, 1]} l^* (f^* (\omega - \lambda d\theta))    \nonumber \\
+      &=& \int_{[0, 1]} (f \circ l)^* (\omega - \lambda d\theta)    \nonumber \\
+      &=& \int_{f \circ l} \omega - \lambda d\theta    \nonumber \\
+      &=& \int_{c_{r, 1}} \omega - \lambda d\theta    \nonumber \\
+      &=& 0.
+    \end{eqnarray}
+    $$
+
+    Now we are to prove that for any $$ (x, y ) \in \mathbb{R}^2 - 0 $$, one can find an open set containing it and on that open set $$ g = \gamma \circ (f \upharpoonright_A)^{-1} $$, where $$ A $$ is an open set in $$ (0, \infty) \times \mathbb{R} $$.
+
+    For any $$ (x, y) \in \mathbb{R}^2 - 0 $$, we can find a $$ (r, \phi) \in (0, \infty) \times \mathbb{R} $$ such that $$ f(r, \phi) = (x, y) $$. Define the open set $$ A $$ as $$ (\frac{r}{2}, \frac{3r}{2}) \times (\phi - \pi, \phi + \pi) $$. $$ f \upharpoonright_A $$ is clearly 1-1. For any $$ (x', y') \in f(A) $$, let $$ (r', \phi') = (f \upharpoonright_A)^{-1} (x', y') $$ and we have $$ g(x', y') = \gamma(r', \theta') $$ by definition and $$ \theta' - \phi' = 2 n \pi $$ where $$ n \in \mathbb{Z} $$. Since $$ \gamma(r, \phi) = \gamma((r, \phi + 2\pi) $$ for any $$ (r, \phi) \in (0, \infty) \times \mathbb{R} $$, we have $$ g(x', y') = \gamma(r', \theta') = \gamma(r', \phi') = \gamma \circ (f \upharpoonright_A)^{-1} (x', y') $$.
+
+    The rest is straightforward. For any $$ (x, y) \in \mathbb{R}^2 - 0 $$, we have
+
+    $$
+    \begin{eqnarray}
+      &&  dg    \nonumber \\
+      &=& d(\gamma \circ (f \upharpoonright_A)^{-1})    \nonumber \\
+      &=& d(({f \upharpoonright_A)^{-1}}^* \gamma)    \nonumber \\
+      &=& ({f \upharpoonright_A)^{-1}}^* d\gamma    \nonumber \\
+      &=& ({f \upharpoonright_A)^{-1}}^* (f^* (\omega - \lambda d\theta))    \nonumber \\
+      &=& (f \circ (f \upharpoonright_A)^{-1})^* (\omega - \lambda d\theta)    \nonumber \\
+      &=& \omega - \lambda d\theta.
+    \end{eqnarray}
+    $$
+
+    The second equality is from the definition of $$ f^* \omega $$ where $$ \omega $$ is a 0-form.
+
+31. **If $$ \omega \neq 0 $$, show that there is a chain $$ c $$ such that $$ \int_c \omega \neq 0 $$. Use this fact, Stokes' theorem and $$ \partial^2 = 0 $$ to prove $$ d^2 = 0 $$.**
+
+    Let $$ \omega $$ be a k-chain in $$ A $$. Since $$ \omega \neq 0 $$, there exist a point $$ p $$ and vectors $$ v_1, \ldots, v_k $$ such that $$ \omega(p)(v_1, \ldots, v_k) > 0 $$. (If $$ \omega(p)(v_1, \ldots, v_k) < 0 $$, simply replace $$ v_1 $$ by $$ -v_1 $$.) Since $$ \omega $$ is continuous, there is an $$ \epsilon > 0 $$, such that for any $$ t_1, \ldots, t_k \in [0, 1] $$, $$ \omega(p + \epsilon \cdot (v_1 \cdot t_1, \ldots, v_k \cdot t_k))(v_1, \ldots, v_k) > 0 $$.
+
+    Define $$ c: [0, 1]^k \to A $$ as $$ c(x) = p + \epsilon \cdot (v_1 \cdot x_1, \ldots, v_k \cdot x_k) $$. $$ c^* \omega $$ is a k-form on $$ [0, 1]^k $$ and has the form $$ f(x) dx^1 \wedge \cdots \wedge dx^k $$. For any $$ x \in [0, 1]^k $$ we have
+
+    $$
+    \begin{eqnarray}
+      &&  f(x)    \nonumber \\
+      &=& c^* \omega (x)(e_1, \ldots, e_n)    \nonumber \\
+      &=& \omega(c(x)) (\epsilon \cdot v_1, \ldots, \epsilon \cdot v_k)    \nonumber \\
+      &=& \epsilon^k \omega(c(x)) (v_1, \ldots, v_k)    \nonumber \\
+      &>& 0.
+    \end{eqnarray}
+    $$
+
+    Now by definition, $$ \int_c \omega = \int_{[0, 1]^k} c^* \omega = \int_{[0, 1]^k} f(x) dx^1 \wedge \cdots \wedge dx^k = \int_{[0, 1]^k} f(x) > 0 $$.
+
+    For any k-form $$ \omega $$ and k-chain $$ c $$, $$ \int_c d^2 \omega = \int_{\partial c} d \omega = \int_{\partial^2 c} \omega = \int_{0} \omega = 0 $$. Therefore $$ d^2 \omega $$ must be 0.
+
+32.  
+
+    a.  **Let $$ c_1, c_2 $$ be singular 1-cubes in $$ \mathbb{R}^2 $$ with $$ c_1(0) = c_2(0) $$ and $$ c_1(1) = c_2(1) $$. Show that there is a singular 2-cube $$ c $$ such that $$ \partial c = c_1 - c_2 + c_3 - c_4 $$, where $$ c_3 $$ and $$ c_4 $$ are _degenerate_, that is, $$ c_3([0, 1]) $$ and $$ c_4([0, 1]) $$ are points. Conclude that $$ \int_{c_1} \omega = \int_{c_2} \omega $$ if $$ \omega $$ is exact. Give a counterexample on $$ \mathbb{R}^2 - 0 $$ if $$ \omega $$ is merely closed.**
+
+        The way the problem is phrased is rather misleading. One does *not* need to prove the existence of $$ c $$ to prove that $$ \int_{c_1} \omega = \int_{c_2} \omega $$ if $$ \omega $$ is exact. In fact, it is better not to use the existence of $$ c $$, because such a proof would require that $$ \omega $$ be exact on every point in $$ c $$, while a more direct proof can lead to a much stronger result which only requires $$ \omega $$ to be exact on $$ c_1 $$ and $$ c_2 $$.
+
+        Define $$ c: [0, 1]^2 \to \mathbb{R}^2 $$ as $$ c(s, t) = s \cdot c_1(t) + (1 - s) \cdot c_2(t) $$. it is easy to verify that $$ c $$ satisfy the requirement.
+
+        Below is the proof of a weaker result that requires $$ \omega $$ to be exact on $$ c $$.
+
+        It is worthwhile to prove, once and for all, that for any denegenate 1-chain $$ c $$ and any 1-form $$ \omega $$, $$ \int_c \omega = 0 $$. Since $$ \int_c \omega = \int_{[0, 1]} c^* \omega $$, we only need to prove $$ c^* \omega (p) = 0 $$ for any $$ p \in [0, 1] $$. For any $$ v \in \mathbb{R} $$, $$ c^* \omega (p) (v) = \omega(c(p)) (Dc(p) \cdot v) $$ by definition. But the degeneracy implies that $$ Dc(p) = 0 $$ and therefore $$ c^* \omega (p) (t) = 0 $$. Q.E.D. (One can prove that intergration on a degenerate k-chain, where $$ k > 1 $$, is also zero in a similar fashion.)
+
+        Therefore if $$ \omega $$ is exact, i.e. there is an $$ f $$ such that $$ \omega = df $$, we have
+
+        $$
+        \begin{eqnarray}
+          &&  \int_{c_1} \omega - \int_{c_2} \omega    \nonumber \\
+          &=& \int_{c_1} \omega - \int_{c_2} \omega + \int_{c_3} \omega - \int_{c_4} \omega    \nonumber \\
+          &=& \int_{\partial c} df    \nonumber \\
+          &=& \int_c d^2 f    \nonumber \\
+          &=& 0.
+        \end{eqnarray}
+        $$
+
+        A stronger result, which only requires $$ \omega $$ to be defined on $$ c_1 $$ and $$ c_2 $$, can be proved even more easily. We have
+
+        $$
+        \begin{eqnarray}
+          &&  \int_{c_1} \omega    \nonumber \\
+          &=& \int_{c_1} df    \nonumber \\
+          &=& \int_{\partial c_1} f    \nonumber \\
+          &=& f(c_1(1)) - f(c_1(0))    \nonumber \\
+          &=& f(c_2(1)) - f(c_2(0))    \nonumber \\
+          &=& \int_{c_2} \omega.
+        \end{eqnarray}
+        $$
+
+        A counterexample on $$ \mathbb{R}^2 - 0 $$ if $$ \omega $$ is merely closed is $$ \omega = d\theta $$ and $$ c_1 $$ is a half circle from (1, 0) to (-1, 0) going counter-clockwise while $$ c_2 $$ is a half circle from (1, 0) to (-1, 0) going clockwise.
+
+    b.  **If $$ \omega $$ is a 1-form on a subset of $$ \mathbb{R}^2 $$ and $$ \int_{c_1} \omega = \int_{c_2} \omega $$ for all $$ c_1, c_2 $$ with $$ c_1(0) = c_2(0) $$ and $$ c_1(1) = c_2(1) $$, show that $$ \omega $$ is exact. _Hint_: Consider Problems 2-21 and 3-34.**
+
+        We can assume that all points in the given subset, let's call it $$ A $$, are connected to each other through a curve in $$ A $$, otherwise we could simply deal with each connected part separately. We also assume that $$ A $$ is an open set.
+
+        Since $$ \int_c \omega $$ is path-independent, we can pick any point $$ p_0 $$ and define $$ g: A \to \mathbb{R} $$ as $$ g(p) = \int_c \omega $$ where $$ c $$ is any curve such that $$ c(0) = p_0 $$ and $$ c(1) = p $$.
+
+        First we prove that for any $$ p_1, p_2 \in A $$, $$ g(p_2) - g(p_1) = \int_c \omega $$, where $$ c $$ is any curve in $$ A $$ such that $$ c(0) = p_1 $$ and $$ c(1) = p_2 $$. Although it is intuitively obvious, here it is how it can be done in a mathematically rigorous way. Let $$ c_1 $$ be a curve such that $$ c_1(0) = p_0 $$, $$ c_1(1) = p_1 $$, and $$ Dc_1(1) = Dc(0) $$; $$ c_2 $$ be a curve such that $$ c_2(t) = c_1(2 t) $$ when $$ t \in [0, 0.5] $$ and $$ c_2(t) = c(2 t - 1) $$ when $$ t \in (0.5, 1] $$; and $$ c_3 $$ be a degenerate curve starting and ending at $$ p_2 $$. Note that $$ c_2 $$ is differentiable due to the way $$ c_1 $$ is constructed. Finally define $$ c^2: [0, 1]^2 \to A $$ as $$ c^2(s, t) = c_2(\frac{s}{2} \cdot (1 - t) + 1 \cdot t) $$. It is easy to verify that $$ c^2_{(1, 0)} = c_2 $$, $$ c^2_{(1, 1)} = c $$, $$ c^2_{(2, 0)} = c_1 $$, and $$ c^2_{(2, 1)} = c_3 $$. Therefore, $$ \partial c^2 = -c_2 + c + c_1 - c_3 $$. One can further verify that $$ (c^2)^* \omega = 0 $$ for any 2-form $$ \omega $$ in a way similar to the discussion in (a). Therefore $$ \int_{-c_2 + c + c_1 - c_3} \omega = \int_{c^2} d\omega = \int_{[0, 1]^2} (c^2)^* d\omega = 0 $$, or $$ \int_c \omega = \int_{c_2} \omega - \int_{c_1} \omega = g(p_2) - g(p_1) $$.
+
+        For any $$ (x, y) \in A $$, we can find $$ (x_0, y_0) $$ such that $$ c_1(t) = (x_0 (1 - t) + x t, y_0) $$, $$ c_2(t) = (x, y_0 (1 - t) + y t) $$, $$ c_3(t) = (x_0, y_0 (1 - t) + y t) $$, and $$ c_4(t) = (x_0 (1 - t) + x t, y) $$ are all in $$ A $$ as $$ A $$ is an open set. Let $$ \omega = g_1(x, y) dx + g_2(x, y) dy $$, we have
+
+        $$
+        \begin{eqnarray}
+          &&  g(x, y)    \nonumber \\
+          &=& g(x_0, y_0) + \int_{c_1} \omega + \int_{c_2} \omega    \nonumber \\
+          &=& g(x_0, y_0) + \int_{[0, 1]} c_1^* \omega + \int_{[0, 1]} c_2^* \omega    \nonumber \\
+          &=& g(x_0, y_0) + \int_{[0, 1]} (x - x_0) g_1(x_0 (1 - t) + x t, y_0) dt + \int_{[0, 1]} (y - y_0) g_2(x, y_0 (1 - t) + y t) dt    \nonumber \\
+          &=& g(x_0, y_0) + \int_{x_0}^x g_1(t, y_0) dt + \int_{y_0}^y g_2(x, t) dt.
+        \end{eqnarray}
+        $$
+
+        The last equality is from Theorem 3-13. From Problem 2-21, we have $$ D_2 g(x, y) = g_2(x, y) $$. If we replace $$ c_1 $$ and $$ c_2 $$ in the derivation above by $$ c_3 $$ and $$ c_4 $$, we get $$ D_1 g(x, y) = g_1(x, y) $$. Since we assume $$ \omega $$ to be continuous, $$ Dg $$ exists from Theorem 2-8, and $$ dg = D_1 g dx + D_2 g dy = \omega $$.
+
+33. **(_A first course in complex variables._) If $$ f: \mathbb{C} \to \mathbb{C} $$, define $$ f $$ to be _differentiable_ at $$ z_0 \in \mathbb{C} $$ if the limit**
+
+    $$ f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} $$
+
+    **exists. (This quotient involves two complex numbers and this definition is completely different from the one in Chapter 2.) If $$ f $$ is differentiable at every point $$ z $$ in an open set $$ A $$ and $$ f' $$ is continuous on $$ A $$, then $$ f $$ is called _analytic_ on $$ A $$.**
+
+    a.  **Show that $$ f(z) = z $$ is analytic and $$ f(z) = \overline{z} $$ is not (where $$ \overline {x + iy} = x - iy) $$. Show that the sum, product, and quotient of analytic functions are analytic.**
+
+        $$ f(z) = z $$. It is trivial.
+
+        $$ f(z) = \overline{z} $$. Setting $$ z = z_0 + x $$ where $$ x \in \mathbb{R} $$, we have $$ \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} = 1 $$. Setting $$ z = z_0 + y \cdot i $$ where $$ y \in \mathbb{R} $$, we have $$ \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} = -1 $$.
+
+        The proofs for sum, product, and quotient of analytic functions are exactly parallel to those in real analysis.
+
+    b.  **If $$ f = u + iv $$ is analytic on $$ A $$, show that $$ u $$ and $$ v $$ satisfy the _Cauchy-Riemann equations_:**
+
+        <center>$$ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} $$ and $$ \frac{\partial u}{\partial y} = \frac{-\partial v}{\partial x} $$</center>
+
+        **_Hint_: Use the fact that $$ \lim_{z \to z_0} [f(z) - f(z_0]/(z - z_0) $$ must be the same for $$ z = z_0 + (x + i \cdot 0) $$ and $$ z = z_0 + (0 + i \cdot y) $$ with $$ x, y \to 0 $$. (The converse is also true, if $$ u $$ and $$ v $$ are continuously differentiable; this is more difficult to prove.)**
+
+        If $$ f = u + iv $$ is analytic on $$ A $$, for any $$ z_0 \in A $$, we have
+
+        $$
+        \begin{eqnarray}
+          &&         \lim_{x \to 0} \frac{f(z_0 + x) - f(z_0)}{x} = \lim_{y \to 0} \frac{f(z_0 + i \cdot y) - f(z_0)}{i \cdot y}    \nonumber \\
+          &\implies& \lim_{x \to 0} \frac{u(z_0 + x) - u(z_0)}{x} + \frac{(v(z_0 + x) - v(z_0)) \cdot i}{x} = \lim_{y \to 0} \frac{u(z_0 + i \cdot y) - u(z_0)}{i \cdot y} + \frac{v(z_0 + i \cdot y) - v(z_0)}{y}    \nonumber \\
+          &\implies& \frac{\partial u}{\partial x} (z_0) + \frac{\partial v}{\partial x} (z_0) \cdot i = - \frac{\partial u}{\partial y} (z_0) \cdot i + \frac{\partial v}{\partial y} (z_0)    \nonumber \\
+          &\implies& \frac{\partial u}{\partial x} (z_0) - \frac{\partial v}{\partial y} (z_0) + (\frac{\partial v}{\partial x} (z_0) + \frac{\partial u}{\partial y} (z_0)) \cdot i = 0    \nonumber \\
+          &\implies& \frac{\partial u}{\partial x} - \frac{\partial v}{\partial y} = 0 \wedge \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} = 0    \nonumber \\
+          &\implies& \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \wedge \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}.
+        \end{eqnarray}
+        $$
+
+    c.  **Let $$T: \mathbb{C} \to \mathbb{C} $$ be a linear transformation (where $$ \mathbb{C} $$ is considered as a vector space over $$ \mathbb{R} $$). If the matrix of $$ T $$ with respect to the basia $$ (1 ,i) $$ is $$ \begin{bmatrix} a & b \\ c & d \end{bmatrix} $$ show that $$ T $$ is multiplication by a complex number if and only if $$ a = d $$ and $$ b = -c $$. Part (b) shows that an analytic function $$ f: \mathbb{C} \to \mathbb{C} $$, considered as a function $$ f: \mathbb{R}^2 \to \mathbb{R}^2 $$, has a derivative $$ Df(z_0) $$ which is multiplication by a complex number. What complex number is this?**
+
+        Since $$ (a + b i) \cdot (x + y i) = (a x - b y) + (b x + a y) i $$, the multiplication matrix for $$ x + y i $$ is $$ \begin{bmatrix} a & -b \\ b & a \end{bmatrix} $$, satisfying the criterion. On the other hand, any $$ x + y i $$, when left-multiplied by a matrix of the form $$ \begin{bmatrix} a & b \\ -b & a \end{bmatrix} $$, is simply $$ (a x + b y) + (-b x + a y) i = (x + y i) \cdot (a - b i) $$.
+
+    d.  **Define**
+
+    	$$
+        \begin{eqnarray}
+          d(\omega + i \eta) &=& d\omega + i d\eta,    \nonumber \\
+          \int_c \omega + i \eta &=& \int_c \omega + i \int_c \eta,    \nonumber \\
+          (\omega + i \eta) \wedge (\theta + i \lambda) &=& \omega \wedge \theta - \eta \wedge \lambda + i (\eta \wedge \theta + \omega \wedge \lambda),
+        \end{eqnarray}
+        $$
+
+        **and**
+
+        $$ dz = dx + i dy. $$
+
+        **Show that $$ d(f \cdot dz) = 0 $$ if and only if $$ f $$ satisfies the Cauchy-Riemann equations.**
+
+        Let $$ f = u + i v $$, we have
+
+        $$
+        \begin{eqnarray}
+          &&     d(f \cdot dz) = 0    \nonumber \\
+          &\iff& d((u + i v) \wedge (dx + i dy))) = 0    \nonumber \\
+          &\iff& d(u dx - v dy + i (v dx + u dy)) = 0    \nonumber \\
+          &\iff& d(u dx - v dy) + i d(v dx + u dy) = 0    \nonumber \\
+          &\iff& \left\{ \begin{array}{ll} d(u dx - v dy) = 0 \\ d(v dx + u dy) = 0 \end{array} \right.    \nonumber \\
+          &\iff& \left\{ \begin{array}{ll} \frac{\partial u}{\partial y} dy \wedge dx - \frac{\partial v}{\partial x} dx \wedge dy) = 0 \\ \frac{\partial v}{\partial y} dy \wedge dx + \frac{\partial u}{\partial x} dx \wedge dy) = 0 \end{array} \right.    \nonumber \\
+          &\iff& \left\{ \begin{array}{ll} \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} \\ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \end{array} \right.
+        \end{eqnarray}
+        $$
+
+    e.  **Prove the _Cauchy Integral Theorem_: If $$ f $$ is analytic on $$ A $$, then $$ \int_c f dz = 0 $$ for every closed curve $$ c $$ (singular 1-cube with $$ c(0) = c(1)) $$ such that $$ c = \partial c' $$ for some 2-chain $$ c' $$ in $$ A $$.**
+
+        The problem, as stated, is wrong. It is impossible for a singular 1-cube to be the boundary of a 2-chain, as explained in the solution to Problem 4-26.
+
+        If $$ A $$ does not have "holes", it is however possible to find some 2-chain $$ c' $$ in $$ A $$, such that $$ c - c_1 = \partial c' $$, where $$ c_1 $$ is a denegerate 1-chain, as shown in Problem 4-32(a). Again from the solution to Problem 4-32(a), we have $$ \int_{c_1} \omega = 0 $$ for any 1-chain $$ \omega $$ in $$ A $$.
+
+        If $$ f $$ is analytic, it must satisfy the Cauchy-Riemann equations as shown in (b), and therefore $$ d(f dz) = 0 $$ as shown in (d).  Now we have
+
+        $$
+        \begin{eqnarray}
+          &&  \int_c f dz    \nonumber \\
+          &=& \int_c f dz - \int_{c_1} f dz    \nonumber \\
+          &=& \int_{c - c_1} f dz    \nonumber \\
+          &=& \int_{\partial c'} f dz    \nonumber \\
+          &=& \int_{c'} d(f dz)    \nonumber \\
+          &=& \int_{c'} 0    \nonumber \\
+          &=& 0.
+        \end{eqnarray}
+        $$
+
+    f.  **Show that if $$ g(z) = 1/z $$, then $$ g \cdot dz $$ [or $$ (1/z) dz $$ in classical notation] equals $$ i d\theta + dh $$ for some function $$ h: \mathbb{C} - 0 \to \mathbb{R} $$. Conclude that $$ \int_{c_{R, n}} (1/z) dz = 2\pi i n $$.**
+
+        Let $$ z = x + iy $$. We have
+
+        $$
+        \begin{eqnarray}
+          &&  \frac{1}{z} dz    \nonumber \\
+          &=& \frac{1}{x + iy} dz    \nonumber \\
+          &=& \frac{x - iy}{x^2 + y^2} (dx + i dy)    \nonumber \\
+          &=& \frac{x}{x^2 + y^2} dx + \frac{y}{x^2 + y^2} dy + i (\frac{-y}{x^2 + y^2} dx + \frac{x}{x^2 + y^2} dy)    \nonumber \\
+          &=& i d\theta + d(\frac{ln(x^2 + y^2)}{2})    \nonumber \\
+          &=& i d\theta + dh,
+        \end{eqnarray}
+        $$
+
+        where $$ h = \frac{ln(x^2 + y^2)}{2} $$.
+
+        Therefore,
+
+        $$
+        \begin{eqnarray}
+          &&  \int_{c_{R, n}} \frac{1}{z} dz    \nonumber \\
+          &=& \int_{c_{R, n}} i d\theta + dh    \nonumber \\
+          &=& i \int_{c_{R, n}} d\theta + \int_{c_{R, n}} dh    \nonumber \\
+          &=& 2\pi i n + \int_{\partial c_{R, n}} h    \nonumber \\
+          &=& 2\pi i n + h(R, 0) - h(R, 0)    \nonumber \\
+          &=& 2\pi i n.
+        \end{eqnarray}
+        $$
+
+    g.  **If $$ f $$ is analytic on $$ \{ z: |z| < 1 \} $$, use the fact that $$ g(z) = f(z)/z $$ is analytic in $$ \{ z: 0 < |z| < 1 \} $$ to show that**
+
+        $$ \int_{c_{R_1, n}} \frac{f(z)}{z} dz = \int_{c_{R_2, n}} \frac{f(z)}{z} dz $$
+
+        **if $$ 0 < R_1, R_2 < 1 $$. Use (f) to evaluate $$ \lim_{R \to 0} \int_{c_{R, n}} f(z)/z dz $$ and conclude**
+
+        **_Cauchy Integrai Formula_: If $$ f $$ is analytic on $$ \{ z: |z| < 1 \} $$ and $$ c $$ is a closed curve in $$ \{ z : 0 < |z| < 1 \} $$ with winding number $$ n $$ around 0, then**
+
+        $$ n \cdot f(0) = \frac{1}{2\pi i} \int_{c} \frac{f(z)}{z} dz. $$
+
+        Since $$ g(z) = f(z)/z $$ is analytic, $$ d(\frac{f(z)}{z} dz) = 0 $$ from (b) and (d).
+
+        From Problem 4-23, there is a singular 2-cube $$ c: [0, 1]^2 \to \mathbb{C} - 0 $$ such that $$ c_{R_1, n} - c_{R_2, n} = \partial c' $$. Therefore,
+
+        $$
+        \begin{eqnarray}
+          &&  \int_{c_{R_1, n}} \frac{f(z)}{z} dz - \int_{c_{R_2, n}} \frac{f(z)}{z} dz    \nonumber \\
+          &=& \int_{c_{R_1, n} - c_{R_2, n}} \frac{f(z)}{z} dz    \nonumber \\
+          &=& \int_{\partial c'} \frac{f(z)}{z} dz    \nonumber \\
+          &=& \int_{c'} d(\frac{f(z)}{z} dz)    \nonumber \\
+          &=& \int_{c'} 0    \nonumber \\
+          &=& 0.
+        \end{eqnarray}
+        $$
+
+        Similar to the derivation above, we can also prove that $$ \int_c \frac{f(z)}{z} dz = \int_{c_{R, n}} \frac{f(z)}{z} dz $$ for any $$ 0 < R < 1 $$ where $$ n $$ is the winding number around 0. This implies that $$ \int_c \frac{f(z)}{z} dz = \lim_{R \to 0} \int_{c_{R, n}} \frac{f(z)}{z} dz $$. Below we will prove that $$ \lim_{R \to 0} \int_{c_{R, n}} \frac{f(z)}{z} dz = 2\pi i n \cdot f(0) $$.
+
+        A pitfall here is to assume *a priori* that $$ \left| \int_c f \omega \right| \leq \max(\left| f \right|) \cdot \int_c \omega $$, where $$ f $$ is a function and $$ \omega $$ is a 1-form on $$ c $$. The reason why this assumption may be wrong is that $$ \omega $$ may swing back and forth between positive and negative values, as one moves along $$ c $$, and a well-chosen $$ f $$ can always have the same sign as $$ \omega $$ and thereby reinforces $$ \omega $$. A concrete example is $$ \int_{c_{1, 1}} -y dx $$, whose absolute value ($$ \pi $$) is greater, rather than less, than $$ \max(|y|) \cdot \int_{c_{1, 1}} dx = 0 $$. We will not make this mistake here!
+
+        Let $$ f(z) = u(z) + i v(z) $$, we have
+
+        $$
+        \begin{eqnarray}
+          &&  \int_{c_{R, n}} \frac{f(z)}{z} dz - 2\pi i n \cdot f(0)    \nonumber \\
+          &=& \int_{c_{R, n}} \frac{f(z)}{z} dz - \int_{c_{R, n}} \frac{f(0)}{z} dz    \nonumber \\
+          &=& \int_{c_{R, n}} \frac{f(z) - f(0)}{z} dz    \nonumber \\
+          &=& \int_{c_{R, n}} (u(z) - u(0) + i (v(z) - v(0))) (dh + i d\theta)    \nonumber \\
+          &=& \int_{c_{R, n}} (u(z) - u(0)) dh - \int_{c_{R, n}} (v(z) - v(0)) d\theta + i \int_{c_{R, n}} (u(z) - u(0)) d\theta + i \int_{c_{R, n}} (v(z) - v(0)) dh    \nonumber \\
+          &=& \int_{[0, 1]} {c_{R, n}}^* ((u(z) - u(0)) dh) - \int_{[0, 1]} {c_{R, n}}^* ((v(z) - v(0)) d\theta)    \nonumber \\
+          &&  + i \int_{[0, 1]} {c_{R, n}}^* ((u(z) - u(0)) d\theta) + i \int_{[0, 1]} {c_{R, n}}^* ((v(z) - v(0)) dh)    \nonumber \\
+          &=& \int_{[0, 1]} (u(c_{R, n}(t)) - u(0)) \cdot {c_{R, n}}^* dh - \int_{[0, 1]} (v(c_{R, n}(t)) - v(0)) \cdot {c_{R, n}}^* d\theta    \nonumber \\
+          &&  + i \int_{[0, 1]} (u(c_{R, n}(t)) - u(0)) \cdot {c_{R, n}}^* d\theta + i \int_{[0, 1]} (v(c_{R, n}(t)) - v(0)) \cdot {c_{R, n}}^* dh,
+        \end{eqnarray}
+        $$
+
+        where the last equality is from Theorem 4-8(3).
+
+        To continue the derivation, we need $$ {c_{R, n}}^* d\theta $$ and $$ {c_{R, n}}^* dh $$. In the solution to Problem 4-26, we have already shown that $$ {c_{R, n}}^* d\theta = 2\pi n dt $$. Below we show that $$ {c_{R, n}}^* dh = 0 $$. For any $$ \tau \in \mathbb{R} $$, we have
+
+        $$
+        \begin{eqnarray}
+          &&  {c_{R, n}}^* dh (\tau)    \nonumber \\
+          &=& {c_{R, n}}^* (\frac{x}{x^2 + y^2} dx + \frac{y}{x^2 + y^2} dy) (\tau)    \nonumber \\
+          &=& (\frac{R \cos 2\pi n t}{R^2} dx + \frac{R \sin 2\pi n t}{R^2} dy) ({c_{R, n}}_* \tau)    \nonumber \\
+          &=& (\frac{\cos 2\pi n t}{R} dx + \frac{\sin 2\pi n t}{R} dy) (\left(\begin{array}{c} -2\pi n R \tau \sin 2\pi n t \\ 2\pi n R \tau \cos 2\pi n \tau \end{array} \right))    \nonumber \\
+          &=& 2\pi n \tau (-\cos 2\pi n t \cdot \sin 2\pi n t + \sin 2\pi n t \cdot \cos 2\pi n t)    \nonumber \\
+          &=& 0
+        \end{eqnarray}
+        $$
+
+        Therefore, we have
+
+        $$
+        \begin{eqnarray}
+          &&  \int_{c_{R, n}} \frac{f(z)}{z} dz - 2\pi i n \cdot f(0)    \nonumber \\
+          &=& 0 - 2\pi n \int_{[0, 1]} (v(c_{R, n}(t)) - v(0)) dt + 2\pi i n \int_{[0, 1]} (u(c_{R, n}(t)) - u(0)) dt + 0    \nonumber \\
+          &=& 2\pi i n \int_{[0, 1]} (u(c_{R, n}(t)) - u(0)) dt - 2\pi n \int_{[0, 1]} (v(c_{R, n}(t)) - v(0)) dt.
+        \end{eqnarray}
+        $$
+
+        Since $$ f $$ is analytic, for any $$ \epsilon > 0 $$, we can find a $$ \delta > 0 $$ such that $$ \left| f(z) - f(0) \right| < \epsilon $$ for any $$ \left| z \right| < \delta $$. For any $$ R < \delta $$ we have
+
+        $$
+        \begin{eqnarray}
+          &&     \left| \int_{c_{R, n}} \frac{f(z)}{z} dz - 2\pi i n \cdot f(0) \right|    \nonumber \\
+          &\leq& 2\pi n (\left| \int_{[0, 1]} (u(c_{R, n}(t)) - u(0)) dt \right| + \left| \int_{[0, 1]} (v(c_{R, n}(t)) - v(0)) dt \right|)    \nonumber \\
+          &\leq& 2\pi n (\int_{[0, 1]} \left| u(c_{R, n}(t)) - u(0) \right| dt + \int_{[0, 1]} \left| v(c_{R, n}(t)) - v(0) \right| dt)    \nonumber \\
+          &\leq& 2\pi n (\int_{[0, 1]} \left| f(c_{R, n}(t)) - f(0) \right| dt + \int_{[0, 1]} \left| f(c_{R, n}(t)) - f(0) \right| dt)    \nonumber \\
+          &<&    2\pi n (\int_{[0, 1]} \epsilon dt + \int_{[0, 1]} \epsilon dt)    \nonumber \\
+          &=&    4\pi n \epsilon.
+        \end{eqnarray}
+        $$
+
+        This proves that $$ \lim_{R \to 0} \int_{c_{R, n}} \frac{f(z)}{z} dz = 2\pi i n \cdot f(0) $$, and hence $$ n \cdot f(0) = \frac{1}{2\pi i} \int_{c} \frac{f(z)}{z} dz $$.
+
+34. **If $$ F: [0, 1]^2 \to \mathbb{R}^3 $$ and $$ s \in [0, 1] $$ define $$ F_s: [0,1] \to \mathbb{R}^3 $$ by $$ F_s (t) = F(s, t) $$. If each $$ F_s $$ is a closed curve, $$ F $$ is called a _homotopy_ between the closed curve $$ F_0 $$ and the closed curve $$ F_1 $$. Suppose $$ F $$ and $$ G $$ are homotopies of closed curves; if for each $$ s $$ the closed curves $$ F_s $$ and $$ G_s $$ do not intersect, the pair $$ (F, G) $$ is called a homotopy between the nonintersecting closed curves $$ F_0 $$, $$ G_0 $$ and $$ F_1 $$, $$ G_1 $$. It is intuitively obvious that there is no such homotopy with $$ F_0 $$ , $$ G_0 $$ the pair of curves shown in Figure 4-6 (a), and $$ F_1 $$, $$ G_1 $$ the pair of (b) or (c). The present problem, and Problem 5-33 prove this for (b) but the proof for (c) requires different techniques.**
+
+    a.  **If $$ f, g: [0, 1] \to \mathbb{R}^3 $$ are nonintersecting closed curves define $$ c_{f, g}: [0,1]^2 \to \mathbb{R}^3 - 0 $$ by**
+
+        $$ c_{f, g} (u, v) = f(u) - g(v). $$
+
+        **If $$ (F, G) $$ is a homotopy of nonintersecting closed curves define $$ c_{F, G}: [0, 1]^3 \to \mathbb{R}^3 - 0 $$ by**
+
+        $$ C_{F,G} (s, u, v) = c_{F_s, G_s} (u, v) = F(s, u) - G(s, v). $$
+
+        **Show that**
+
+        $$ \partial C_{F,G} = c_{F_0, G_0} - c_{F_1, G_1}. $$
+
+        It should be $$ \partial C_{F,G} = c_{F_1, G_1} - c_{F_0, G_0} $$ instead of $$ \partial C_{F,G} = c_{F_0, G_0} - c_{F_1, G_1} $$.
+
+        By definition, we have
+
+        $$
+        \begin{eqnarray}
+          &&  \partial C_{F,G}    \nonumber \\
+          &=& - C_{F,G}(0, u, v) + C_{F,G}(1, u, v) + C_{F,G}(s, 0, v) - C_{F,G}(s, 1, v) - C_{F,G}(s, u, 0) + C_{F,G}(s, u, 1)    \nonumber \\
+          &=& - c_{F_0, G_0} + c_{F_1, G_1} + F(s, 0) - G(s, v) - F(s, 1) + G(s, v) - F(s, u) + G(s, 0) + F(s, u) - G(s, 1)    \nonumber \\
+          &=& c_{F_1, G_1} - c_{F_0, G_0} + F(s, 0) - F(s, 1) + G(s, 0) - G(s, 1)    \nonumber \\
+          &=& c_{F_1, G_1} - c_{F_0, G_0}.
+        \end{eqnarray}
+        $$
+
+        We have the last equality because $$ F(s, 0) = F(s, 1) $$ and $$ G(s, 0) = G(s, 1) $$ for any $$ s \in [0, 1] $$ (because each curve is closed).
+
+    b.  **If $$ \omega $$ is a closed 2-form on $$ \mathbb{R}^3 - 0 $$ show that**
+
+        $$ \int_{c_{F_0, G_0}} \omega = \int_{c_{F_1, G_1}} \omega. $$
+
+        If $$ \omega $$ is a closed 2-form (i.e. $$ d\omega = 0 $$), we have
+
+        $$
+        \begin{eqnarray}
+          &&  \int_{c_{F_1, G_1}} \omega - \int_{c_{F_0, G_0}} \omega    \nonumber \\
+          &=& \int_{c_{F_1, G_1} - c_{F_0, G_0}} \omega    \nonumber \\
+          &=& \int_{\partial C_{F, G}} \omega    \nonumber \\
+          &=& \int_{C_{F, G}} d\omega    \nonumber \\
+          &=& \int_{C_{F, G}} 0    \nonumber \\
+          &=& 0.
+        \end{eqnarray}
+        $$
+
+## Chapter 5
+
+1.  **If $$ M $$ is a $$ k $$-dimensional manifold-with-boundary, prove that $$ \partial M $$ is a $$ (k - 1) $$-dimensional manifold and $$ M - \partial M $$ is a $$ k $$-dimensional manifold.**
+
+    We need to prove that for every point $$ x \in \partial M $$, condition ($$ M $$) is satisfied with dimension $$ k - 1 $$.
+
+    By definition, for every point $$ x \in \partial M $$, condition ($$ M' $$) is satiisfied, i.e., that there is an open set $$ U $$ containing $$ x $$, an open set $$ V \in \mathbb{R}^n $$, and a diffeomorphism $$ h: U \to V $$ such that
+
+    $$ h(U \cap M) = V \cap (\mathbb{H}^k \times \{0\}) = \{ y \in V: y^k \geq 0 \textrm{ and } y^{k + 1} = \cdots = y^n = 0 \} $$
+
+    and $$ h(x) $$ has $$ k $$th component = 0.
+
+    Now we are going to prove that $$ h(U \cap \partial M) = V \cap (\mathbb{R}^{k - 1} \times \{0\}) $$.
+
+    First, $$ h(U \cap \partial M) \subset V \cap (\mathbb{R}^{k - 1} \times \{0\}) $$. For any $$ x' \in U \cap \partial M $$ and $$ y' = h(x') \in h(U \cap \partial M) $$, we have $$ y' \in h(U \cap M) $$ since $$ \partial M \subset M $$. Therefore $$ y' \in V $$, $$ {y'}^k \geq 0 $$, and $$ {y'}^{k + 1} = \cdots = y^n = 0 $$. We can prove $$ {y'}^k = 0 $$ by contradiction. Assuming $$ {y'}^k > 0 $$, let $$ V' = \{ y \in V: y^k > 0 \} $$ and $$ U' = f^{-1}(V') $$. It is easy to show that $$ U' $$ and $$ V' $$ are open sets (using Problem 2-36 for $$ U' $$), and $$ x' $$, $$ h $$, $$ U' $$, and $$ V' $$ satisfy condition ($$ M $$) with dimension $$ k $$. But since ($$ M $$) and ($$ M' $$) cannot both hold for the same $$ x' $$, this contradicts the fact that $$ x' \in \partial M $$.
+
+    Second, $$ h(U \cap \partial M) \supset V \cap (\mathbb{R}^{k - 1} \times \{0\}) $$. This is even easier to prove. For any $$ y' \in V \cap (\mathbb{R}^{k - 1} \times \{0\} $$, $$ x' = f^{-1}(y') $$, together with $$ U $$, $$ V $$, and $$ f $$, satisfies condition ($$ M' $$). Therefore $$ x' \in \partial M $$ and $$ y' \in h(U \cap \partial M) $$.
+
+    This proves that $$ \partial M $$ is a $$ k - 1 $$-dimensional manifold.
+
+    By definition, points in $$ M - \partial M $$ are those that satisfy condition ($$ M $$) with dimension $$ k $$. Therefore, $$ M - \partial M $$ is a $$ k $$-dimensional manifold.
+
+2.  **Find a counterexample to Theorem 5-2 if condition (3) is omitted. _Hint_: Wrap an open interval into a figure six.**
+
+    Define $$ c: (0, 1) \to \mathbb{R}^2 $$ as
+
+    $$ c(t) = \left \{ \begin{array}{ll}  (t - 0.5, 0), & t \leq 0.5 \\ (\sin(4\pi t - 2\pi), 1 - \cos(4\pi t - 2\pi)), & t > 0.5 \end{array} \right. $$
+
+    It is easy to check all conditions in Theorem 5-2 are satisfied except (3).
+
+    It is however not a manifold. If we choose $$ x = (0, 0) $$, any "small" open set $$ U \in \mathbb{R}^2 $$ in $$ \mathbb{R}^2 $$ containing $$ x $$ contains three branches emanating from $$ x $$ that devide the open set into three connected regions. Any diffeomorphism from $$ U $$ to open set $$ V \in \mathbb{R}^2 $$ will preserve this property. But $$ V \cap (\mathbb{R}^k \times \{ 0 \}) $$ will contain either just a line if $$ k = 1 $$ or a full connected surface if $$ k = 2 $$. Neither can be the projection of $$ U \cap c $$ through a diffeomorphism.
+
+3.   
+
+    a.  **Let $$ A \subset \mathbb{R}^n $$ be an open set such that $$ \textrm{boundary } A $$ is an $$ (n - 1) $$-dimensionai manifold. Show that $$ N = A \cup \textrm{boundary } A $$ is an $$ n $$-dimensionai manifold-with-boundary. (It is well to bear in mind the following example: if $$ A = \{ x \in \mathbb{R}^n: |x| < 1 \textrm{ or } 1 < |x| < 2 \} $$ then $$ N = A \cup \textrm{boundary } A $$ is a manifold-with-boundary, but $$ \partial N \neq \textrm{boundary } A $$.)**
+
+  	    All points in $$ A $$ automatically satisfy condition ($$ M $$) with dimensionality $$ n $$ (with identity being the diffeomorphism). We only need to focus on points in $$ \textrm{boundary } A $$.
+
+  	    For any $$ x \in \textrm{boundary } A $$, conditon ($$ M $$) with dimensionality $$ n - 1 $$ holds, i.e., there is an open set $$ U $$ containing $$ x $$, an open set $$ V \subset \mathbb{R}^n $$, and a diffeomorphism $$ h: U \to V $$ such that
+
+  	    $$ h(U \cap \textrm{boundary } A) = V \cap (\mathbb{R}^{n - 1} \times \{0\}) = \{ y \in V: y^n = 0 \}. $$
+
+  	    Without loss of generality, we can assume $$ V $$ to be an open ball centering at $$ h(x) $$. (Otherwise we can simply find such an open ball contained in $$ V $$ and its corresponding pre-image through $$ h $$ and redefine them as $$ V $$ and $$ U $$.). $$ V $$ is divided into three regions: $$ \mathcal{A} = \{ y \in V: y^n = 0 \} $$, $$ \mathcal{B} = \{ y \in V: y^n > 0 \} $$, and $$ \mathcal{C} = \{ y \in V: y^n < 0 \} $$. We will prove that either $$ \mathcal{B} \subset h(U \cap A) $$ or $$ \mathcal{B} \cap h(U \cap A) = \emptyset $$ and the same holds for $$ \mathcal{C} $$ in the paragraph below.
+
+  	    Suppose there are points $$ y_1, y_2 \in \mathcal{B} $$ and $$ y_1 \in h(U \cap A) $$ while $$ y_2 \notin h(U \cap A) $$. Take the midpoint $$ y_3 $$ between $$ y_1 $$ and $$ y_2 $$. Note that $$ y_3 $$ is still in $$ \mathcal{B} $$ because $$ \mathcal{B} $$ is a "half ball". We take $$ y_4 $$ as the midpoint between $$ y_2 $$ and $$ y_3 $$ if $$ y_3 \in h(U \cap A) $$, or the midpoint between $$ y_1 $$ and $$ y_3 $$ otherwise. We repeat this process by always taking $$ y_n $$ as the midpoint between $$ y_{n - 1} $$ and $$ y_{n - 2} $$ or $$ y_{n - 1} $$ and $$ y_{n - 3} $$ such that one of the two end points is in $$ h(U \cap A) $$ while the other is not. From elementary calculus, the sequence $$ y_1, y_2, \ldots $$ has a limit $$ y' \in \mathcal{B} $$. Let $$ x' = h^{-1}(y') $$. In any open ball centering at $$ y' $$ of radius $$ \epsilon > 0 $$, there are always both a $$ y'' \in h(U \cap A) $$ and a $$ y''' \notin h(U \cap A) $$ by the way $$ y' $$ is constructed. Since $$ h $$ is a diffeomorphism, the same holds for $$ x' $$, i.e., there is an $$ x'' \in U \cap A $$ and an $$ x''' \notin U \cap A $$ in any open ball centering at $$ x' $$. Therefore $$ x' \in U \cap \textrm{boundary } A $$, but this implies that $$ y' \in \mathcal{A} $$, contradicting the fact that $$ y' \in \mathcal{B} $$. The same reasoning holds for $$ \mathcal{C} $$.
+
+        Now we have four possibilities.
+
+        i.  $$ \mathcal{B} \cap h(U \cap A) = \emptyset $$ and $$ \mathcal{C} \cap h(U \cap A) = \emptyset $$.
+
+            This is in fact impossible. Notice that $$ A \cap \textrm{boundary } A = \emptyset $$ because $$ A $$ is an open set. This implies that $$ \mathcal{A} \cap h(U \cap A) = h(U \cap \textrm{boundary } A) \cap h(U \cap A) = \emptyset $$ since $$ h $$ is 1-1. Therefore, $$ y \in V = \mathcal{A} \cup \mathcal{B} \cup \mathcal{C} $$ is in the exterior of $$ h(U \cap A) $$, and this in turn means $$ x $$ is in the exterior of $$ U \cap A $$ (because $$ h $$ is a diffeomorphism), contradicting the fact that $$ x \in U \cap \textrm{boundary } A $$.
+
+        i.  $$ \mathcal{B} \subset h(U \cap A) $$ and $$ \mathcal{C} \subset h(U \cap A) $$.
+
+            Unlike the previous case, this is perfectly possible. Now $$ V = \mathcal{A} \cup \mathcal{B} \cup \mathcal{C} \subset h(U \cap \textrm{boundary } A) \cup h(U \cap A) = h(U \cap (A \cup \textrm{boundary } A )) $$, where the last eqaulity is again because $$ h $$ is 1-1. But we also have $$ V \supset h(U \cap (A \cup \textrm{boundary } A )) $$ because $$ V = h(U) $$. Therefore $$ h(U \cap (A \cup \textrm{boundary } A)) = V = V \cap \mathbb{R}^n $$. Thus condition ($$ M $$) is satisfied for $$ x $$.
+
+        i.  $$ \mathcal{B} \subset h(U \cap A) $$ and $$ \mathcal{C} \cap h(U \cap A) = \emptyset $$.
+
+            In a similar fashion as in the previous case, one can prove that $$ h(U \cap (A \cup \textrm{boundary } A)) = \mathcal{A} \cup \mathcal{B} = V \cap \mathbb{H}^n $$. Thus condition ($$ M' $$) is satisfied for $$ x $$.
+
+        i.  $$ \mathcal{B} \cap h(U \cap A) = \emptyset $$ and $$ \mathcal{C} \subset h(U \cap A) $$.
+
+            One can simply replace $$ h = (h^1, \ldots, h^n) $$ by $$ h' = (h^1, \ldots, -h^n) $$. Then it becomes the previous case.
+
+        Since for all $$ x \in N = A \cup \textrm{boundary } A $$, either condition ($$ M $$) or condition ($$ M' $$) is satisfied with dimensionality $$ n $$, $$ N $$ is an $$ n $$-dimensionai manifold-with-boundary.
+
+    b.  **Prove a similar assertion for an open subset of an $$ n $$-dimensional manifold.**
+
+        The concept of an *open subset of a manifold*, contrary to that of an *open subset of $$ \mathbb{R}^n $$*, has not been defined anywhere in the book. Depending on the reader's own definition, the claim can be either true or false.
+
+        A concrete example to show that it may not work is the letter T with its junction point and end points removed. Let's call it $$ T $$. It is easy to verify that $$ T $$ is a 1-dimensional manifold and $$ \textrm{boundary } T $$ is a 0-dimensional manifold. But if we consider $$ T $$ an open subset of itself, $$ T \cup \textrm{boundary } T $$ is clearly not a 1-dimensional manifold-with-boundary due to the junction point, which is in $$ \textrm{boundary } T $$.
+
+        A definition that will work is as follows. $$ T $$ is an open subset of a $$ n $$-dimensional manifold $$ M \subset \mathbb{R}^m $$ if there is an open set $$ U \subset \mathbb{R}^m $$, an open set $$ W \subset \mathbb{R}^n $$, and a 1-1 differentiable function $$ f: W \to \mathbb{R}^m $$ such that
+
+        1.  $$ f(W) = M \cap U $$,
+
+        2.  $$ f'(y) $$ has rank $$ n $$ for each $$ y \in W $$,
+
+        3.  $$ f^{-1}: f(W) \to W $$ is continuous,
+
+        4.  $$ T \subset f(W) $$ and $$ f^{-1}(T) $$ is an open set in $$ \mathbb{R}^n $$.
+
+        The specification above is to ensure that the whole open subset can be covered by one single coordinate system. This excludes the counterexample given previously.
+
+        It is easy to show that $$ f^{-1}(\textrm{boundary } T) = \textrm{boundary } f^{-1}(T) $$ from the fact that both $$ f $$ and $$ f^{-1} $$ are continuous. Therefore $$ \textrm{boundary } T $$ is an $$ n - 1 $$-dimensional manifold, a fact that implies that $$ f^{-1} (\textrm{boundary } T) $$ is an $$ n - 1 $$-dimensional manifold, also implies that $$ \textrm{boundary } f^{-1}(T) $$ is an $$ n - 1 $$-dimensional manifold. From (a), $$ f^{-1}(T) \cup \textrm{boundary } f^{-1}(T) $$ is an $$ n $$-dimensional manifold-with-boundary. This in turn implies that $$ f^{-1}(T \cup \textrm{boundary } T) = f^{-1}(T) \cup f^{-1} (\textrm{boundary } T) $$, and therefore $$ T \cup \textrm{boundary } T $$, are $$ n $$-dimensional manifolds-with-boundary.
+
+4.  **Prove a partial converse of Theorem 5-1: If $$ M \subset \mathbb{R}^n $$ is a $$ k $$-dimensional manifold and $$ x \in M $$, then there is an open set $$ A \subset \mathbb{R}^n $$ containing $$ x $$ and a differentiable function $$ g: A \to \mathbb{R}^{n - k} $$ such that $$ A \cap M = g^{-1} (0) $$ and $$ g'(y) $$ has rank $$ n - k $$ when $$ g(y) = 0 $$.**
+
+    Since $$ M \subset \mathbb{R}^n $$ is a $$ k $$-dimensional manifold and $$ x \in M $$, there is an open set $$ U \subset \mathbb{R}^n $$ containing $$ x $$, an open set $$ V \subset \mathbb{R}^n $$, and a diffeomorphism $$ h: U \to V $$ such that
+
+    $$ h(U \cap M) = V \cap (\mathbb{R}^k \times \{ 0 \}). $$
+
+    Let $$ A = U $$ and $$ g = (h^{k + 1}, \ldots, h^{n}) $$. It is easy to verify that $$ A \cap M = g^{-1} (0) $$. $$ h' $$ has rank $$ n $$ because $$ h^{-1} \circ h = I $$. $$ g $$, being the last $$ n - k $$ components of $$ h $$, has thus rank $$ n - k $$ for all $$ y \in A $$, not only when $$ g(y) = 0 $$.
+
+5.  **Prove that a $$ k $$-dimensional (vector) subspace of $$ \mathbb{R}^n $$ is a $$ k $$-dimensional manifold.**
+
+    Let $$ A $$ be said $$ k $$-dimensional (vector) subspace of $$ \mathbb{R}^n $$, with basis vectors $$ v_1, \ldots, v_k $$. Extend this basis to $$ \mathbb{R}^n $$ by adding basis vectors $$ v_{k + 1}, \ldots, v_n $$. Define $$ h: \mathbb{R}^n \to \mathbb{R}^n $$ as $$ h(\sum_{i = 1}^n a^i v_i) = (a_1, \ldots, a_n) $$, and $$ U = V = \mathbb{R}^n $$. It is easy to verify the chosen $$ h $$, $$ U $$, and $$ V $$ satisfy condition ($$ M $$) for all $$ x \in A $$.
+
+6.  **If $$ f: \mathbb{R}^n \to \mathbb{R}^m $$, the _graph_ of $$ f $$ is $$ \{ (x,y): y = f(x) \} $$. Show that the graph of $$ f $$ is an $$ n $$-dimensionai manifold if and only if $$ f $$ is differentiable.**
+
+    The "only if" part is incorrect. A concrete counterexample is $$ f: \mathbb{R} \to \mathbb{R} $$ where $$ f(x) = x^{1/3} $$. $$ f $$ is not differentiable at $$ x = 0 $$. The graph of $$ f $$ is nonetheless a 1-dimensional manifold.
+
+    For the "if" part, define $$ g: \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R}^{n + m} $$ as $$ g(x, y) = (x, y - f(x)) $$. $$ g $$ is differentiable when $$ f $$ is. It is also easy to verify that $$ g^{-1}(x, y) = (x, y + f(x)) $$ is also differentiable. Therefore $$ g $$ is a diffeomorphism.
+
+    Let $$ h = g $$, and $$ U = V = \mathbb{R}^{n + m} $$. One can easily verify that condition ($$ M $$) is satisfied for all $$ x \in \{ (x, y): y = f(x) \} $$.
+
+7.  **Let $$ \mathbb{K}^n = \{x \in \mathbb{R}^n: x^1 = 0 \textrm{ and } x^2, \ldots , x^{n - 1} > 0 \} $$. If $$ M \subset \mathbb{K}^n $$ is a $$ k $$-dimensional manifold and $$ N $$ is obtained by revolving $$ M $$ around the axis $$ x^1 = \cdots = x^{n - 1} = 0 $$, show that $$ N $$ is a $$ (k + 1) $$-dimensionaI manifold. Example: the torus (Figure 5-4).**
+
+    This problem is itself problematic for $$ n > 3 $$.
+
+    The meaning of revolving $$ M $$ around an axis is undefined. I, unlike Prof. Spivak, am merely a sentient being in a 3-dimensional space and have trouble understanding the concept of revolving in higher dimensions intuitively. Therefore I can only try to understand it in lower dimensions mathematically, and extrapolate the maths into higher dimensions. Also, to prevent my little brain from exploding, I have to start with the simplest case, i.e., revolving a single point (or a 0-dimensional manifold), around the origin (i.e. another 0-dimensional object), in a 2-dimensional space.
+
+    In $$ \mathbb{R}^2 $$, we can "revolve" point $$ (x_0, y_0) $$ around the origin point by choosing all points $$ (x, y) \in \mathbb{R}^2 $$ such that $$ x^2 + y^2 = {x_0}^2 + {y_0}^2 $$. The result of this revolvement is a circle, which is a 1-dimensional manifold.
+
+    In $$ \mathbb{R}^3 $$, we can "revolve" point $$ (x_0, y_0, z_0) $$ in two ways.
+
+    a.  Around the origin point by choosing all points $$ (x, y, z) \in \mathbb{R}^3 $$ such that $$ x^2 + y^2 + z^2 = {x_0}^2 + {y_0}^2 + {z_0}^2 $$. The result of this revolvement is a sphere, which is a 2-dimensional manifold.
+
+    b.  Around the $$ z $$-axis by choosing all points $$ (x, y, z) \in \mathbb{R}^3 $$ such that $$ x^2 + y^2 = {x_0}^2 + {y_0}^2 $$ and $$ z = z_0 $$. The result of this revolvement is a circle, which is a 1-dimensional manifold.
+
+    By extrapolation, in $$ \mathbb{R}^4 $$, we can "revolve" point $$ (x_0, y_0, z_0, w_0) $$ in three ways.
+
+    a.  Around the origin point by choosing all points $$ (x, y, z, w) \in \mathbb{R}^4 $$ such that $$ x^2 + y^2 + z^2 + w^2 = {x_0}^2 + {y_0}^2 + {z_0}^2 + {w_0}^2 $$. The result of this revolvement is a 3-sphere, which is a 3-dimensional manifold.
+
+    b.  Around the $$ w $$-axis by choosing all points $$ (x, y, z, w) \in \mathbb{R}^4 $$ such that $$ x^2 + y^2 + z^2= {x_0}^2 + {y_0}^2 + {z_0}^2 $$ and $$ w = w_0 $$. The result of this revolvement is a sphere, which is a 2-dimensional manifold.
+
+    c.  Around the $$ (z, w) $$-plane by choosing all points $$ (x, y, z, w) \in \mathbb{R}^4 $$ such that $$ x^2 + y^2 = {x_0}^2 + {y_0}^2 $$, $$ z = z_0 $$ and $$ w = w_0 $$. The result of this revolvement is a circle, which is a 1-dimensional manifold.
+
+    The discussion above should be sufficient for us to "intuitively" conclude that when we revolve a 0-dimensional manifold, around an $$ m $$-dimensional object (e.g. a point, a line, a plane, etc.), in $$ \mathbb{R}^n $$, we get a $$ (n - m - 1) $$-dimensional manifold.
+
+    Unfortunately, things get more complicated when we revolve manifolds of dimensionality higher than 0.
+
+    In $$ \mathbb{R}^2 $$, we can "revolve" an open curve segment around the origin point in a similar fashion. The result of this revolvement can be either a 1-dimensional manifold, if the curve is part of a circle centering at the origin, a 2-dimensional manifold, if the curve lies on the $$ x $$-axis, or a 2-dimensional manifold with boundary, if the curve bends more or less randomly. If, however, different points in the original open curve do not overlap when being "revolved", the result is always a 2-dimensional manifold.
+
+    Similary, in $$ \mathbb{R}^3 $$, we can "revolve" an open curve segment around the origin point into a 2-dimensional manifold, a 3-dimensional manifold, or a 3-dimensional manifold with boundary. If, however, different points in the original open curve do not overlap when being "revolved", the result is always a 3-dimensional manifold.
+
+    Again in $$ \mathbb{R}^3 $$, we can "revolve" an open curve segment around the $$ z $$-axis into a 1-dimensional manifold, a 2-dimensional manifold, or a 2-dimensional manifold with boundary. If, however, different points in the original open curve do not overlap when being "revolved", the result is always a 2-dimensional manifold. One way to guarantee this is by requiring that the the original open curve be a subset of $$ \mathbb{K}^3 = \{x \in \mathbb{R}^3: x^1 = 0 \textrm{ and } x^2 > 0 \} $$.
+
+    Now we can hypothesize that when we revolve a $$ k $$-dimensional manifold, around an $$ m $$-dimensional object, in $$ \mathbb{R}^n $$, in a way such that different points in the original manifold do not overlap when being "revolved", we get a $$ (k + n - m - 1) $$-dimensional manifold.
+
+    Clearly, the original problem is wrong. (We have already shown this in the special case where $$ k = 0 $$ and $$ n = 4 $$.) The problem should be reformulated as follows.
+
+    **Let $$ \mathbb{K}^n = \{x \in \mathbb{R}^n: x^1 = 0 \textrm{ and } x^2 > 0 \} $$. If $$ M \subset \mathbb{K}^n $$ is a $$ k $$-dimensional manifold and $$ N $$ is obtained by revolving $$ M $$ around the hyperplane $$ x^1 = x^2 = 0 $$, show that $$ N $$ is a $$ (k + 1) $$-dimensionaI manifold.**
+
+    First we will prove that $$ M' = \{ x' \in \mathbb{R}^{n - 1}: (0, x'^1, \ldots, x'^{n - 1}) \in M \} $$ is a $$ k $$-dimensional manifold in $$ \mathbb{R}^{n - 1} $$. Intuitively this is obvious as $$ M $$ lies in an $$ (n - 1) $$-dimensional hyperplane with $$ x^1 = 0 $$. A rigorous proof, however, requires some work.
+
+    For any $$ x' \in M' $$, We have $$ x = (0, x'^1, \ldots, x'^{n - 1}) \in M $$. From Theorem 5-2, for such an $$ x $$, condition ($$ C $$) is satisfied. There is thus an open set $$ U $$ containing $$ x $$, an open set $$ W \subset \mathbb{R}^k $$, and a 1-1 differentiable function $$ f: W \to \mathbb{R}^n $$ such that
+
+    1.  $$ f(W) = M \cap U $$,
+
+    2. 	$$ f'(y) $$ has rank $$ k $$ for each $$ y \in W $$,
+
+    3.  $$ f^{-1}: f(W) \to W $$ is continuous.
+
+    Define $$ f': W \to \mathbb{R}^{n - 1} $$ as $$ f'(y) = (f^2 (y), \ldots, f^n (y)) $$ and $$ U' = \{ x \in \mathbb{R}^{n - 1}: (0, x^1, \ldots, x^{n - 1}) \in U \} $$. (Note that $$ f' $$ here is *not* the deriviative of $$ f $$.) It is easy to verify that $$ U' $$ is an open set containing $$ x' $$, $$ f' $$ is 1-1 differentiable, and all three requirements of condition ($$ C $$) listed above are satisfied when $$ f $$, $$ M $$, and $$ U $$ are replaced by their primed versions. This proves that $$ M' $$ is indeed a $$ k $$-dimensional manifold in $$ \mathbb{R}^{n - 1} $$.
+
+    From now on I will reuse the symbols $$ U $$ and $$ U' $$.
+
+    Note $$ N = \{ x \in \mathbb{R}^n: (\sqrt{(x^1)^2 + (x^2)^2}, x^3, \ldots, x^n) \in M' \} $$. We need to prove that for every point $$ x \in N $$ condition ($$ M $$) is satisfied, i.e., that there is an open set $$ U $$ containing $$ x $$, an open set $$ V \in \mathbb{R}^n $$, and a diffeomorphism $$ h: U \to V $$ such that
+
+    $$ h(U \cap N) = V \cap \{ \mathbb{R}^{k + 1} \times {0} \}. $$
+
+    We will first prove it for $$ x_0 \in \mathbb{K}^n $$. $$ {x_0}' = ({x_0}^2, \ldots, {x_0}^n) $$ must be in $$ M' $$. There is thus an open set $$ U' $$ containing $$ {x_0}' $$, an open set $$ V' \in \mathbb{ℝ}^{n - 1} $$, and a diffeomorphism $$ h': U' \to V' $$ such that
+
+    $$ h'(U' \cap M') = V' \cap \{ \mathbb{R}^k \times {0} \}. $$
+
+    Without loss of generality, we can assume $$ h' $$ to be an open ball centering at $$ {x_0}' $$ with a radius $$ r $$ less than $$ {x_0}^2 $$. Define $$ U \in \mathbb{R}^n $$ as an open ball centering at $$ x_0 $$ with the same radius $$ r $$, and $$ f: U \to \mathbb{R}^n $$ as $$ f(x) = ({h'}^1(r, x^3, \ldots, x^n), \ldots, {h'}^k(r, x^3, \ldots, x^n), \theta, {h'}^{k + 1}(r, x^3, \ldots, x^n), {h'}^{n - 1}(r, x^3, \ldots, x^n)) $$, where $$ r = \sqrt{(x^1)^2 + (x^2)^2} $$ and $$ \theta = \arctan \frac{x^1}{x^2} $$, and $$ V = h(U) $$. Note that the fact that $$ U $$ is an open ball derived from $$ U' $$ guarantees that $$ (r, x^3, \ldots, x^n) \in U' $$ and therefore $$ h $$ is well-defined.
+
+    It is easy to show that condition ($$ M $$) is satisfied for such an $$ x_0 \in \mathbb{K}^n $$, with $$ h $$, $$ U $$, and $$ V $$ defined as above. (We could also replace $$ \theta $$ by $$ x^1 $$. But I find $$ \theta $$ more aesthetically pleasing.)
+
+    For $$ x_0 \notin \mathbb{K}^n $$, define $$ f: \mathbb{R}^n \to \mathbb{R}^n $$ as $$ f(x) = (x^2 \sin (-\theta) + x^1 \cos (-\theta), x^2 \cos (-\theta) - x^1 \sin (-\theta), x^3, \ldots, x^n) $$, where $$ \theta $$ is as defined in Problem 3-41 with $$ {x_0}^2 $$ and $$ {x_0}^1 $$ as its two arguments. Effectively, $$ f $$ is a diffeomorphism "rotating" $$ x_0 $$ to the $$ \mathbb{K}^n $$ hyperplane, together with $$ x_0 $$'s neighborhood. Now one can simply replace $$ h $$ by $$ h \circ f $$ and $$ U $$ by $$ f^{-1} (U) $$ in the case where $$ x_0 \in \mathbb{K}^n $$, and exactly the same argument will hold.
+
+    This proves that $$ N $$ is a $$ (k+1) $$-dimensionaI manifold.
+
+8.   
+
+    a.  **If $$ M $$ is a $$ k $$-dimensional manifold in $$ \mathbb{R}^n $$ and $$ k < n $$, show that $$ M $$ has measure 0.**
+
+    b.  **If $$ M $$ is a closed $$ n $$-dimensionai manifold-with-boundary in $$ \mathbb{R}^n $$, show that the boundary of $$ M $$ is $$ \partial M $$. Give a counterexample if $$ M $$ is not closed.**
+
+    c.  **If $$ M $$ is a compact $$ n $$-dimensional manifold-with-boundary in $$ \mathbb {R}^n $$, show that $$ M $$ is Jordan-measurable.**
