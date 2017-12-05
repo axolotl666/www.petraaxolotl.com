@@ -1,5 +1,5 @@
 ---
-title: "My Journey to Canada"
+title: "From Singapore to Canada"
 date: 2017-11-30T00:46:56-05:00
 ---
 
