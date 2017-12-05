@@ -3,5 +3,29 @@ languageCode = "en-us"
 title = "All axolotls enjoy mathematics. But this one also loves physics."
 theme = "gohugo-theme-ananke"
 copyright = "Petra Axolotl"
-sectionPagesMenu = "main"
 favicon = "images/favicon.png"
+pluralizelisttitles = "false"
+
+[[menu.main]]
+    name = "About"
+    weight = 1
+    identifier = "about"
+    url = "/about/"
+
+[[menu.main]]
+    name = "Canada"
+    weight = 2
+    identifier = "canada"
+    url = "/canada/"
+
+[[menu.main]]
+    name = "General Relativity"
+    weight = 3
+    identifier = "general relativity"
+    url = "/general-relativity/a-first-course-in-general-relativity"
+
+[[menu.main]]
+    name = "Mathematics"
+    weight = 4
+    identifier = "mathematics"
+    url = "/mathematics/"
