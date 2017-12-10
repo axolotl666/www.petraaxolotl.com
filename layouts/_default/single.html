@@ -1,6 +1,6 @@
 {{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
-  <div class="flex-l pb7 mt2 mw8 center">
+  <div class="flex-l pb0 mt2 mw8 center">
     <article class="center cf pv5 ph3 ph4-ns mw7">
       <header>
         <p class="f6 b helvetica tracked">
@@ -13,9 +13,26 @@
       <div class="nested-copy-line-height lh-copy f5 nested-links nested-img mid-gray">
         {{ .Content }}
       </div>
+      <div class="nested-copy-line-height lh-copy f5 nested-links nested-img mid-gray">
+      <form id="contactform" method="POST">
+          <h1>Contact Me</h1>
+          <p><input type="text" name="name" placeholder="Your name" class="w-50"></p>
+          <p><input type="email" name="_replyto" placeholder="Your email" class="w-50"></p>
+          <input type="hidden" name="_subject" value="Website contact" />
+          <p><textarea name="message" placeholder="Your message" class="w-50 vh-25-l"></textarea></p>
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="submit" value="Send">
+      </form>
+    </div>
     </article>
     <aside class="ph3 mt2 mt6-ns">
       {{ partial "menu-contextual.html" . }}
     </aside>
+  </div>
+  <div class="flex-l pb0 mt2 mw8 center w-100">
+  <script>
+      var contactform =  document.getElementById('contactform');
+      contactform.setAttribute('action', '//formspree.io/' + 'petra.axolotl' + '@' + 'gmail' + '.' + 'com');
+  </script>
   </div>
 {{ end }}
