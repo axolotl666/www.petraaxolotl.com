@@ -5,11 +5,11 @@ date: 2017-12-10T22:24:47-05:00
 
 # Why bother?
 
-Learning French is a relatively easy way to improve one's CRS score. By achieving an NCLC level of 5 (equivalent to B1 of the CEFR) or above for all four abilities (speaking, listening, reading, and writing), one can increae their CRS score by 16 points. (This applies to the Federal Skilled Worker Program. For other programs, please refer to [this link](https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/become-candidate/eligibility/language-requirements/language-testing.html).)
+Learning French is a relatively easy way to improve one's CRS score. By achieving an NCLC level of 5 (equivalent to B1 of the CEFR) or above for all four abilities (speaking, listening, reading, and writing), one can increase their CRS score by 16 points. (This applies to the Federal Skilled Worker Program. For other programs, please refer to [this link](https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/become-candidate/eligibility/language-requirements/language-testing.html).)
 
 # How long did it take me?
 
-First a disclamer. I was already familiar with French as a written language long before I decided to move to Canada. I read _Le Petit Prince_ and _L'Étranger_ with the help of a dictionary, although I could understand nothing when I watched TV or films in French, nor could I have a conversation in it. Besides English and French, I also learned to read to German, Latin, and Greek. So I certainly am more used to language learning than the average person.
+First a disclamer. I was already familiar with French as a written language long before I decided to move to Canada. I read _Le Petit Prince_ and _L'Étranger_ with the help of a dictionary, although I could understand nothing when I watched TV or films in French, nor could I have a conversation in it. Besides Dutch, English, and French, I also learned to read German, Latin, and Greek. So I certainly am more used to language learning than the average person.
 
 It was the decision to move to Canada, and the uncertainty whether I would have enough points, that prompted me to improve my spoken French. I had my first private lesson, which focused 100% on conversations, on 2 February 2017. I had in total 12 lessons, the last of which took place on 6 April 2017. I did not take any test at that time since I already had enough points for Canada PR. But I am quite sure that my NCLC level was already at or above 5 for both listening and speaking by that time. (Eventually I got my French officially evaluated, for free, on 24 October 2017, when I was already in Canada as a Permanent Resident. I got 6, 7, 8, and 7 for reading, writing, listening, and speaking, respectively.)
 
@@ -21,11 +21,11 @@ An absolute beginner who does not live in a French-speaking country should first
 
 The reason why one should not completely ignore pronunciation in this phase is that it is easier to learn the general rules from the very beginning, than to learn many words with the wrong pronunciation and to correct them later. There are always exceptions (e.g. _faisant_). But it is important to know the general rules, e.g., that _ille_ should be pronounced /ɪj/ as in _fille_ instead of /ɪl/ as in _file_.
 
-When you are reading a text, it is good practice to try to apply these pronuncation rules to read it aloud. It does not matter if your pronunciation is terrible. The purpose here is to learn how to apply these rules without too much reflexion.
+When you are reading a text, it is good practice to try to apply these pronuncation rules and to read it aloud. It does not matter if your pronunciation is terrible. The purpose here is to learn how to apply these rules without too much reflexion.
 
 Repetition is key to learn new words and conjugations. Rather than reading a lot of different texts, it is more effective to read the same text many times until you can understand it without having to translate individual words to your own language, or to analyze each sentence's grammatical structure.
 
-Repetition can be very boring. Therefore you must focus on texts that are not too difficult and whose content is interesting to you.
+Repetition can be very boring. Therefore you should only read texts that are not too difficult and whose content is interesting to you.
 
 Finally, it is better to spend 30 minutes a day every day without exception, than to spend 8 hours every Saturday.
 
