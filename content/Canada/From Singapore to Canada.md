@@ -7,13 +7,16 @@ date: 2017-11-30T00:46:56-05:00
 
 For the meaning of the acronyms below, please refer to [this link]((https://www.canadavisa.com/canada-immigration-discussion-board/threads/express-entry-e-apr-submitted-in-november-2016.459415/page-68#post-5619049)).
 
-- 27-06-2017: AOR
+- 08-01-2017: Decision to apply for Canada Permanent Residence
+- 17-03-2017: First job offer from Canada
+- 19-04-201&: Invitation to apply
+- 27-06-2017: Application submitted and Acknowledgment of Receipt from IRCC
 - 04-07-2017: LMIA approved (through the Global Talent Stream, independent of Permanent Residence application)
-- 15-07-2017: Landed in Canada and got work permit at airport
-- 15-07-2017: Medical Passed and IP1
+- 15-07-2017: Landed in Canada as a temporary worker
+- 15-07-2017: Medical Passed (for PR application)
 - 29-07-2017: Requests for PCCs from Singapore and Netherland; Uploaded PCCs
-- 18-07-2017: IP2
-- 18-07-2017: PPR
+- 18-07-2017: _Ready for Visa / Prêt pour Visa_ email
+- 05-10-2017: Flagpoling at Peace Bridge (Fort Érié)
 
 # Background
 
