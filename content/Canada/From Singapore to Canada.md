@@ -1,6 +1,7 @@
 ---
 title: "From Singapore to Canada"
 date: 2017-11-30T00:46:56-05:00
+aliases: "/canada/my-journey-to-canada/"
 ---
 
 # Timeline
