@@ -9,7 +9,7 @@ For the meaning of the acronyms below, please refer to [this link]((https://www.
 
 - 08-01-2017: Decision to apply for Canada Permanent Residence
 - 17-03-2017: First job offer from Canada
-- 19-04-201&: Invitation to apply
+- 19-04-2017: Invitation to apply
 - 27-06-2017: Application submitted and Acknowledgment of Receipt from IRCC
 - 04-07-2017: LMIA approved (through the Global Talent Stream, independent of Permanent Residence application)
 - 15-07-2017: Landed in Canada as a temporary worker
