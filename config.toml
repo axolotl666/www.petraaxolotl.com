@@ -22,7 +22,13 @@ pluralizelisttitles = "false"
     name = "General Relativity"
     weight = 3
     identifier = "general relativity"
-    url = "/general-relativity/a-first-course-in-general-relativity"
+    url = "/physics/general-relativity/a-first-course-in-general-relativity"
+
+[[menu.main]]
+    name = "Quantum Mechanics"
+    weight = 5
+    identifier = "quantum mechanics"
+    url = "/physics/quantum-mechanics/principles-of-quantum-mechanics"
 
 [[menu.main]]
     name = "Mathematics"
