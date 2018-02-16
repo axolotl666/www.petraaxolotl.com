@@ -1,0 +1,213 @@
+---
+title: "Chapter 5"
+description: "Problem Solutions to A First Course in General Relativity - Chapter 5"
+date: 2015-12-28T21:47:31-08:00
+menu: "solutions"
+---
+
+1.  **Repeat the argument that led to Eq. (5.1) under more realistic assumptions: suppose a fraction ε of the kinetic energy of the mass at the bottom can be converted into a photon and sent back up, the remaining energy staying at ground level in a useful form. Devise a perpetual motion engine if Eq. (5.1) is violated.**
+
+	Trivial.
+
+2.  **Explain why a _uniform_ external gravitational field would raise no tides on Earth.**
+
+	Trivial.
+
+3. 
+
+	a.  **Show that the coordinate transformation $$ (x, y) \to (\psi , \eta) $$ with $$ \psi = x $$ and $$ \eta = 1 $$ violates Eq. (5.6).**
+
+		Trivial.
+
+	b.  **Are the following coordinate transformations good ones? Compute the Jacobian and list any points at which the transformations fail.**
+
+		i.  **$$ \psi = (x^2 + y^2)^{1/2}, \eta = \arctan (y/x) $$;**
+
+			No. It would be fine with the restriction $$ x > 0 $$.
+
+		i.  **$$ \psi = \ln x, \eta = y $$;**
+
+			Same as (i).
+
+		i.  **$$ \psi = \arctan (y/x), \eta = (x^2 + y^2)^{−1/2} $$.**
+
+			Same as (i).
+
+4.  **A curve is defined by $$ \{ x = f (\lambda), y = g(\lambda), 0 \leq λ \leq 1 \} $$. Show that the tangent vector $$ (\mathrm{d} x/\mathrm{d} λ, \mathrm{d} y/\mathrm{d} λ) $$ does actually lie tangent to the curve.**
+
+	Trivial.
+
+5.  **Sketch the following curves. Which have the same paths? Find also their tangent vectors where the parameter equals zero.**
+
+	**(a) $$ x = \sin \lambda, y = \cos \lambda $$; (b) $$ x = \cos (2 \pi t^2), y = \sin (2 \pi t^2 + \pi) $$; (c) $$ x = s, y = s + 4 $$; (d) $$ x = s^2, y = −(s − 2)(s + 2) $$; (e) $$ x = \mu, y = 1 $$.**
+
+	Trivial. (a) and (b) have the same path.
+
+6.  **Justify the pictures in Fig. 5.5.**
+
+	Trivial.
+
+7.  **Calculate all elements of the transformation matrices $$ {\Lambda^{\alpha'}}_\beta $$ and $$ {\Lambda^\mu}_{\nu'} $$ for the transformation from Cartesian $$ (x, y) $$ – the unprimed indices – to polar $$ (r, \theta) $$ – the primed indices.**
+
+	The transformation matrix of $$ {\Lambda^{\alpha'}}_\beta $$ is $$ \begin{pmatrix} \frac{x}{r} & \frac{y}{r} \\ -\frac{y}{r^2} & \frac{x}{r^2} \end{pmatrix} $$. The transformation matrix of $$ {\Lambda^\mu}_{\nu'} $$ is $$ \begin{pmatrix} \cos \theta & -r \sin \theta \\ \sin \theta & r \cos \theta \end{pmatrix} $$.
+
+8. 
+
+    a.  **(Uses the result of Exer. 7.) Let $$ f = x^2 + y^2 + 2 x y $$, and in Cartesian coordinates $$ \vec{V} \to (x^2 + 3 y, y^2 + 3 x) $$, $$ \vec{W} \to (1, 1) $$. Compute $$ f $$ as a function of $$ r $$ and $$ \theta $$, and find the components of $$ \vec{V} $$ and $$ \vec{W} $$ on the polar basis, expressing them as functions of $$ r $$ and $$ \theta $$.**
+
+        It is easy to verify that $$ f = r^2 (1 + 2 \cos \theta \sin \theta) $$.
+
+        Further, $$ \vec{V} \to_{(r, \theta)} (r^2 (\cos^3 \theta + \sin^3 \theta) + 6 r \cos \theta \sin \theta, r (\cos \theta \sin^2 \theta - \cos^2 \theta \sin \theta) + 3 \cos^2 \theta - 3 \sin^2 \theta) $$, and $$ \vec{W} \to_{(r, \theta)} (\cos \theta + \sin \theta, \frac{\cos \theta - \sin \theta}{r}) $$.
+
+    b.  **Find the components of $$ \tilde{\mathrm{d}} f $$ in Cartesian coordinates and obtain them in polars (i) by direct calculation in polars, and (ii) by transforming components from Cartesian.**
+
+        $$ \tilde{\mathrm{d}} f \to_{(x, y)} (2x + 2y, 2x + 2y) $$ and $$ \tilde{\mathrm{d}} f \to_{(r, \theta)} (2r (\cos \theta + \sin \theta)^2, 2r^2 (\cos^2 \theta - \sin^2 \theta)) $$ through both (i) and (ii). One should keep in mind that the components of $$ \tilde{\mathrm{d}} f $$ should be treated as a row vector and left-multiplied to the matrix form of $$ {\Lambda^\mu}_{\nu'} $$ in (ii).
+
+    c.  **(i) Use the metric tensor in polar coordinates to find the polar components of the one-forms $$ \tilde{V} $$ and $$ \tilde{W} $$ associated with $$ \vec{V} $$ and $$ \vec{W} $$. (ii) Obtain the polar components of $$ \tilde{V} $$ and $$ \tilde{W} $$ by transformation of their Cartesian components.**
+
+        $$ \tilde{V} \to_{(r, \theta)} (r^2 (\cos^3 \theta + \sin^3 \theta) + 6 r \cos \theta \sin \theta, r^3 (\cos \theta \sin^2 \theta - \cos^2 \theta \sin \theta) + 3 r^2 \cos^2 \theta - 3 r^2 \sin^2 \theta ) $$, and $$ \tilde{W} \to_{(r, \theta)} (\cos \theta + \sin \theta, -r \sin \theta + r \cos \theta) $$ through both methods.
+
+9.  **Draw a diagram similar to Fig. 5.6 to explain Eq. (5.38).**
+
+    Do it on a piece of paper instead of using LaTex!
+
+10. **Prove that $$ \nabla \vec{V} $$, defined in Eq. (5.52), is a $$ \begin{pmatrix} 1 \\1 \end{pmatrix} $$ tensor.**
+
+	The exercise itself is unclear. $$ \nabla \vec{V} $$ is *defined* as a $$ \begin{pmatrix} 1 \\1 \end{pmatrix} $$ tensor which returns vector $$ \frac{\partial \vec{V}}{\partial x^\beta} $$ when operating on $$ \vec{e}_\beta $$. Eq. (5.52) simply gives its components consistent with the definition. Eq. (5.52) should not be understood as the definition of $$ \nabla \vec{V} $$.
+
+	The intention of the author is likely to let the student show that $$ {V^\alpha}_{; \beta} $$ satisfies the tensor transformation rule, i.e., that $$ {V^{\mu'}}_{; \nu'} = {\Lambda^{\mu'}}_\alpha {\Lambda^{\beta}}_{\nu'} {V^\alpha}_{; \beta} $$. This can be proved as follows.
+
+	By definition, $$ {V^{\mu'}}_{; \nu'} $$ is the $$ \mu' $$-th component of $$ \frac{\partial \nabla \vec{V}}{\partial x^{\nu'}} = \frac{\partial \nabla \vec{V}}{\partial x^\beta} \frac{\partial \beta}{\partial \nu'} = \frac{\partial \nabla \vec{V}}{\partial x^\beta} {\Lambda^\beta}_{\nu'} $$. Since $$ \frac{\partial \nabla \vec{V}}{\partial x^{\nu'}} $$ is itself a vector, it follows the tensor transformation rule and
+
+	$$
+	\begin{eqnarray}
+	  &&  {V^{\mu'}}_{; \nu'}  \\
+	  &=& (\frac{\partial \nabla \vec{V}}{\partial x^{\nu'}})^{\mu'}  \\
+	  &=& (\frac{\partial \nabla \vec{V}}{\partial x^{\nu'}})^\alpha {\Lambda^{\mu'}}_\alpha  \\
+	  &=& (\frac{\partial \nabla \vec{V}}{\partial x^\beta} {\Lambda^\beta}_{\nu'})^\alpha {\Lambda^{\mu'}}_\alpha  \\
+	  &=& (\frac{\partial \nabla \vec{V}}{\partial x^\beta})^\alpha {\Lambda^\beta}_{\nu'} {\Lambda^{\mu'}}_\alpha  \\
+	  &=& {V^\alpha}_{; \beta} {\Lambda^\beta}_{\nu'} {\Lambda^{\mu'}}_\alpha.
+	\end{eqnarray}
+	$$
+
+11. **(Uses the result of Exers. 7 and 8.) For the vector field $$ \vec{V} $$ whose Cartesian components are $$ (x^2 + 3 y, y^2 + 3 x) $$, compute: (a) $$ {V^\alpha}_{, \beta} $$ in Cartesian; (b) the transformation $$ {\Lambda^{\mu'}}_\alpha {\Lambda^\beta}_{\nu'} {V^\alpha}_{, \beta} $$ to polars; (c) the components $$ {V^{\mu'}}_{; \nu'} $$ directly in polars using the Christoffel symbols, Eq. (5.45), in Eq. (5.50); (d) the divergence $$ {V^\alpha}_{, \alpha} $$ using your results in (a); (e) the divergence $$ {V^{\mu'}}_{; \mu'} $$ using your results in either (b) or (c); (f) the divergence $$ {V^{\mu'}}_{; \mu'} $$ using Eq. (5.56) directly.**
+
+    (a) $$ \begin{pmatrix} 2x & 3 \\ 3 & 2y \end{pmatrix} $$. (b) $$ \begin{pmatrix} 2r (\cos^3 \theta + \sin^3 \theta) + 6 \cos \theta \sin \theta & 2 r^2 (\cos \theta \sin^2 \theta - \cos^2 \theta \sin \theta) + 3 r \cos^2 \theta - 3 r \sin^2 \theta \\ 2 \cos \theta \sin^2 \theta - 2 \cos^2 \theta \sin \theta + \frac{3 \cos^2 \theta - 3 \sin^2 \theta}{r} & 2 r (\cos^2 \theta \sin \theta + \cos \theta \sin^2 \theta) - 6 \cos \theta \sin \theta \end{pmatrix} $$. (c) Same as (b). (d) $$ 2x + 2y $$. (e) Same as (d).
+
+12. **For the one-form field $$ \tilde{p} $$ whose Cartesian components are $$ (x^2 + 3 y, y^2 + 3 x) $$, compute: (a) $$ p_{\alpha, \beta} $$ in Cartesian; (b) the transformation $$ {\Lambda^\alpha}_{\mu'} {\Lambda^\beta}_{\nu'} p_{\alpha, \beta} $$ to polars; (c) the components $$ p_{\mu'; \nu'} $$ directly in polars using the Christoffel symbols, Eq. (5.45), in Eq. (5.63).**
+
+    (a) $$ \begin{pmatrix} 2x & 3 \\ 3 & 2y \end{pmatrix} $$. (b) $$ \begin{pmatrix} 2r (\cos^3 \theta + \sin^3 \theta) + 6 \cos \theta \sin \theta & 2 r^2 (\cos \theta \sin^2 \theta - \cos^2 \theta \sin \theta) + 3 r \cos^2 \theta - 3 r \sin^2 \theta \\ 2 r^2 (\cos \theta \sin^2 \theta - \cos^2 \theta \sin \theta) + 3 r \cos^2 \theta - 3 r \sin^2 \theta & 2 r^3 (\cos^2 \theta \sin \theta + \cos \theta \sin^2 \theta) - 6 r^2 \cos \theta \sin \theta \end{pmatrix} $$. (c) Same as (b).
+
+13. **For those who have done both Exers. 11 and 12, show in polars that $$ g_{\mu' \alpha'} {V^{\alpha'}}_{; \nu'} = p_{\mu'; \nu'} $$.**
+
+    Trivial.
+
+14. **For the tensor whose polar components are $$ (A^{rr} = r^2, A^{r \theta} = r \sin \theta, A^{\theta r} = r \cos \theta, A^{\theta \theta} = \tan \theta) $$, compute Eq. (5.65) in polars for all possible indices.**
+
+    $$ \nabla_r A^{r r} = 2r $$, $$ \nabla_\theta A^{r r} = -r^2 (\cos \theta + \sin \theta) $$, $$ \nabla_r A^{r \theta} = 2 \sin \theta $$, $$ \nabla_\theta A^{r \theta} = r (1 + \cos \theta - \tan \theta) $$, $$ \nabla_r A^{\theta r} = 2 \cos \theta $$, $$ \nabla_\theta A^{\theta r} = r (1 -\sin \theta - \tan \theta) $$, $$ \nabla_r A^{\theta \theta} = \frac{2 \tan \theta}{r} $$, $$ \nabla_\theta A^{\theta \theta} = \cos \theta + \sin \theta + \frac{1}{\cos^2 \theta} $$.
+
+15. **For the vector whose polar components are $$ (V^r = 1, V^\theta = \theta) $$, compute in polars all components of the second covariant derivative $$ {V^\alpha}_{; \mu ; \nu} $$. (Hint: to find the second derivative, treat the first derivative $$ {V^\alpha}_{; \mu} $$ as any $$ \begin{pmatrix} 1 \\1 \end{pmatrix} $$ tensor: Eq. (5.66).)**
+
+    First we have $$ {V^r}_{; r} = {V^r}_{; \theta} = {V^\theta}_{; r} = 0 $$ and $$ {V^\theta}_{; \theta} = \frac{1}{r} $$. Then $$ {V^r}_{;r ;r} = {V^r}_{;r ;\theta} = {V^r}_{;\theta ;r} = 0 $$, $$ {V^r}_{;\theta ;\theta} = -1 $$, $$ {V^\theta}_{;r ;r} = 0 $$, $$ {V^\theta}_{;r ;\theta} = {V^\theta}_{;\theta ;r} = - \frac{1}{r^2} $$, and $$ {V^\theta}_{;\theta ;\theta} = 0 $$.
+
+16. **Fill in all the missing steps leading from Eq. (5.74) to Eq. (5.75).**
+
+    There are really no missing steps from from Eq. (5.74) to Eq. (5.75), except for the most obvious ones.
+
+17. **Discover how each expression $$ {V^\beta}_{, \alpha} $$ and $$ V^\mu {\Gamma^{\beta}}_{\mu \alpha} $$ separately transforms under a change of coordinates (for $$ {\Gamma^{\beta}}_{\mu \alpha} $$, begin with Eq. (5.44)). Show that neither is the standard tensor law, but that their _sum_ does obey the standard law.**
+
+    We have
+
+    $$
+    \begin{eqnarray}
+      &&  {V^{\nu'}}_{, \mu'}  \\
+      &=& {({\Lambda^{\nu'}}_\beta V^\beta)}_{, \mu'}  \\
+      &=& {\Lambda^{\nu'}}_\beta {V^\beta}_{, \mu'} + {({\Lambda^{\nu'}}_\beta)}_{, \mu'} V^\beta  \\
+      &=& {V^\beta}_{, \alpha} {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{, \mu'} + {({\Lambda^{\nu'}}_\beta)}_{, \mu'} V^\beta,
+    \end{eqnarray}
+    $$
+
+    and
+
+    $$
+    \begin{eqnarray}
+      &&  V^{\sigma'} {\Gamma^{\nu'}}_{\sigma' \mu'}  \\
+      &=& V^{\sigma'} {(\frac{\partial \vec{e}_{\sigma'}}{\partial x^{\mu'}})}^{\nu'}  \\
+      &=& V^{\sigma'} {(\frac{\partial (\vec{e}_{\omega} {\Lambda^\omega}_{\sigma'})}{\partial x^{\mu'}})}^{\beta} {\Lambda^{\nu'}}_\beta  \\
+      &=& V^{\sigma'} {(\frac{\partial \vec{e}_{\omega}}{\partial x^{\mu'}} {\Lambda^\omega}_{\sigma'} + \vec{e}_{\omega} \frac{\partial {\Lambda^\omega}_{\sigma'}}{\partial x^{\mu'}})}^{\beta} {\Lambda^{\nu'}}_\beta  \\
+      &=& V^{\sigma'} {(\frac{\partial \vec{e}_{\omega}}{\partial x^{\alpha}} {\Lambda^\alpha}_{\mu'} {\Lambda^\omega}_{\sigma'} + \vec{e}_{\omega} \frac{\partial {\Lambda^\omega}_{\sigma'}}{\partial x^{\mu'}})}^{\beta} {\Lambda^{\nu'}}_\beta  \\
+      &=& V^{\sigma'} {\Gamma^\beta}_{\omega \alpha} {\Lambda^\alpha}_{\mu'} {\Lambda^\omega}_{\sigma'} {\Lambda^{\nu'}}_\beta + V^{\sigma'} {\delta^\beta}_{\omega} ({\Lambda^\omega}_{\sigma'})_{,\mu'} {\Lambda^{\nu'}}_\beta  \\
+      &=& V^{\omega} {\Gamma^\beta}_{\omega \alpha} {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{\mu'} + ({\Lambda^\beta}_{\sigma'})_{,\mu'} {\Lambda^{\nu'}}_\beta V^{\sigma'}.
+    \end{eqnarray}
+    $$
+
+    Clearly neither $$ {V^\beta}_{, \alpha} $$ or $$ V^\mu {\Gamma^{\beta}}_{\mu \alpha} $$ transforms according to the standard tensor law due to the second term in the above equations. Their sum, however, does transform according to the standard tensor law, as shown below.
+
+    $$
+    \begin{eqnarray}
+      &&  {V^{\nu'}}_{, \mu'} + V^{\sigma'} {\Gamma^{\nu'}}_{\sigma' \mu'}  \\
+      &=& {V^\beta}_{, \alpha} {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{, \mu'} + {({\Lambda^{\nu'}}_\beta)}_{, \mu'} V^\beta + V^{\omega} {\Gamma^\beta}_{\omega \alpha} {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{\mu'} + ({\Lambda^\beta}_{\sigma'})_{,\mu'} {\Lambda^{\nu'}}_\beta V^{\sigma'}  \\
+      &=& ({V^\beta}_{, \alpha} + V^{\omega} {\Gamma^\beta}_{\omega \alpha}) {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{, \mu'} + {({\Lambda^{\nu'}}_\beta)}_{, \mu'} {\Lambda^\beta}_{\sigma'} V^{\sigma'} + ({\Lambda^\beta}_{\sigma'})_{,\mu'} {\Lambda^{\nu'}}_\beta V^{\sigma'}  \\
+      &=& ({V^\beta}_{, \alpha} + V^{\omega} {\Gamma^\beta}_{\omega \alpha}) {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{, \mu'} + ({({\Lambda^{\nu'}}_\beta)}_{, \mu'} {\Lambda^\beta}_{\sigma'} + {\Lambda^{\nu'}}_\beta ({\Lambda^\beta}_{\sigma'})_{,\mu'}) V^{\sigma'}  \\
+      &=& ({V^\beta}_{, \alpha} + V^{\omega} {\Gamma^\beta}_{\omega \alpha}) {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{, \mu'} + {({\Lambda^{\nu'}}_\beta {\Lambda^\beta}_{\sigma'})}_{, \mu'} V^{\sigma'}  \\
+      &=& ({V^\beta}_{, \alpha} + V^{\omega} {\Gamma^\beta}_{\omega \alpha}) {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{, \mu'} + {({\delta^{\nu'}}_{\sigma'})}_{, \mu'} V^{\sigma'}  \\
+      &=& ({V^\beta}_{, \alpha} + V^{\omega} {\Gamma^\beta}_{\omega \alpha}) {\Lambda^{\nu'}}_\beta {\Lambda^\alpha}_{, \mu'}
+    \end{eqnarray}
+    $$
+
+    The last equality is because $$ {\delta^{\nu'}}_{\sigma'} $$ is a constant.
+
+18. **Verify Eq. (5.78).**
+
+    Trivial.
+
+19. **Verify that the calculation from Eq. (5.81) to Eq. (5.84), when repeated for $$ \tilde{\mathrm{d}}r $$ and $$ \tilde{\mathrm{d}} \theta $$, shows them to be a coordinate basis.**
+
+    For $$ \tilde{\mathrm{d}}r $$, the unhatted version is the same as the hatted version. For $$ \tilde{\mathrm{d}} \theta $$, one has $$ \tilde{\omega}^\theta = \tilde{\mathrm{d}} \theta = - \frac{\sin \theta}{r} \tilde{\mathrm{d}} x + \frac{\cos \theta}{r} \tilde{\mathrm{d}} y $$. It is easy to verify that $$ \frac{\partial}{\partial y} (\frac{y}{x^2 + y^2}) + \frac{\partial}{\partial x} (\frac{x}{x^2 + y^2}) = 0 $$.
+
+20. **For a noncoordinate basis $$ \{ \vec{e}_\mu \} $$, define $$ \nabla_{\vec{e}_\mu} \vec{e}_{\nu} - \nabla_{\vec{e}_\nu} \vec{e}_{\mu} := {c^\alpha}_{\mu \nu} \vec{e}_\alpha $$ and use this in place of Eq. (5.74) to generalize Eq. (5.75).**
+
+    Now Eq. (5.74) must be replaced by $$ {\Gamma^\mu}_{\alpha \beta} - {\Gamma^\mu}_{\beta \alpha} = {c^\mu}_{\beta \alpha} $$. Further we have $$ g_{\alpha \beta, \mu} + g_{\alpha \mu, \beta} - g_{\beta \mu, \alpha} = {c^\nu}_{\mu \alpha} g_{\nu \beta} + {c^\nu}_{\beta \alpha} g_{\nu \mu} + {c^\nu}_{\beta \mu} g_{\alpha \nu} + 2 g_{\alpha \nu} {\Gamma^\nu}_{\beta \mu} $$ and finally $$ \frac{1}{2} g^{\alpha \gamma} (g_{\alpha \beta, \mu} + g_{\alpha \mu, \beta} - g_{\beta \mu, \alpha} - {c^\nu}_{\mu \alpha} g_{\nu \beta} - {c^\nu}_{\beta \alpha} g_{\nu \mu} - {c^\nu}_{\beta \mu} g_{\alpha \nu}) = {\Gamma^\gamma}_{\beta \mu} $$.
+
+21. **Consider the $$ x − t $$ plane of an inertial observer in SR. A certain uniformly accelerated observer wishes to set up an orthonormal coordinate system. By Exer. 21, § 2.9, his world line is**
+
+    $$ t(\lambda) = a \sinh \lambda, x(\lambda) = a \cosh \lambda, $$
+
+    **where $$ a $$ is a constant and $$ a \lambda $$ is his proper time (clock time on his wrist watch).**
+
+    a.  **Show that the spacelike line described by Eq. (5.96) with $$ a $$ as the variable parameter and $$ \lambda $$ fixed is orthogonal to his world line where they intersect. Changing $$ \lambda $$ in Eq. (5.96) then generates a _family_ of such lines.**
+
+        The world line's tangent vector $$ \vec{U} $$ has components $$ U^t = \frac{\partial t}{\partial \lambda} \frac{\partial \lambda}{\partial \tau} = \cosh \lambda $$ and $$ U^x = \sinh \lambda $$.
+
+        With $$ a $$ as the variable parameter, the spacelike vector $$ \vec{V} $$ has components $$ V^t = \sinh \lambda $$ and $$ V^x = \cosh \lambda $$.
+
+        It is easy to verify that $$ \vec{V} \cdot \vec{U} = 0 $$.
+
+    b.  **Show that Eq. (5.96) defines a transformation from coordinates $$ (t, x) $$ to coordinates $$ (\lambda, a) $$, which form an orthogonal coordinate system. Draw these coordinates and show that they cover only one half of the original $$ t − x $$ plane. Show that the coordinates are bad on the lines $$ |x| = |t| $$, so they really cover two disjoint quadrants.**
+
+        We have $$ a = \pm \sqrt{x^2 - t^2} $$ and $$ \lambda = \tanh^{-1} \frac{t}{x} $$ and both values are well defined when $$ |x| > |t| $$. But $$ \lambda $$ is undefined on $$ |x| = |t| $$.
+
+    c.  **Find the metric tensor and all the Christoffel symbols in this coordinate system. This observer will do a perfectly good job, provided that he always uses Christoffel symbols appropriately and sticks to events in his quadrant. In this sense, SR admits accelerated observers. The right-hand quadrant in these coordinates is sometimes called _Rindler space_, and the boundary lines $$ x = \pm t $$ bear some resemblance to the black-hole horizons we will study later.**
+
+        First, $$ \vec{e}_\lambda = {\Lambda^t}_\lambda \vec{e}_t + {\Lambda^x}_\lambda \vec{e}_x = a \cosh \lambda \vec{e}_t + a \sinh \lambda \vec{e}_x $$, and $$ \vec{e}_a = {\Lambda^t}_a \vec{e}_t + {\Lambda^x}_a \vec{e}_x = \sinh \lambda \vec{e}_t + \cosh \lambda \vec{e}_x $$.
+
+        Consequently, $$ \frac{\partial \vec{e}_\lambda}{\partial \lambda} = a \sinh \lambda \vec{e}_t + a \cosh \lambda \vec{e}_x = a \vec{e}_a $$, $$ \frac{\partial \vec{e}_\lambda}{\partial a} = \cosh \lambda \vec{e}_t + \sinh \lambda \vec{e}_x = \frac{\vec{e}_\lambda}{a} $$, $$ \frac{\partial \vec{e}_a}{\partial \lambda} = \cosh \lambda \vec{e}_t + \sinh \lambda \vec{e}_x = \frac{\vec{e}_\lambda}{a} $$, and $$ \frac{\partial \vec{e}_a}{\partial a} = 0 $$.
+
+        Finally, $$ {\Gamma^\lambda}_{\lambda \lambda} = 0 $$, $$ {\Gamma^a}_{\lambda \lambda} = a $$, $$ {\Gamma^\lambda}_{\lambda a} = \frac{1}{a} $$, $$ {\Gamma^a}_{\lambda a} = 0 $$, $$ {\Gamma^\lambda}_{a \lambda} = \frac{1}{a} $$, $$ {\Gamma^a}_{a \lambda} = 0 $$, and $$ {\Gamma^\lambda}_{a a} = {\Gamma^a}_{a a} = 0 $$.
+
+22. **Show that if $$ U^\alpha \nabla_\alpha V^\beta = W^\beta $$, then $$ U^\alpha \nabla_\alpha V_\beta = W_\beta $$.**
+
+    If $$ U^\alpha \nabla_\alpha V^\beta = W^\beta $$, we have
+
+    $$
+    \begin{eqnarray}
+      &&  U^\alpha \nabla_\alpha V_\beta  \\
+      &=& U^\alpha \nabla_\alpha (g_{\beta \mu} V^\mu)  \\
+      &=& U^\alpha \nabla_\alpha g_{\beta \mu} V^\mu + U^\alpha g_{\beta \mu} \nabla_\alpha V^\mu  \\
+      &=& g_{\beta \mu} U^\alpha \nabla_\alpha V^\mu  \\
+      &=& g_{\beta \mu} W^\mu  \\
+      &=& W_\beta.
+    \end{eqnarray}
+    $$
+
+    The second equality is beause covariant differentiation obeys the same sort of product rule as Eq. (5.60). THe third equality is because $$ \boldsymbol{\mathrm{g}} $$ is constant.

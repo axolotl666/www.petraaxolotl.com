@@ -1,0 +1,63 @@
+---
+title: "Principles of Quantum Mechanics"
+Description: "Errata, Notes, and Problem Solutions"
+date: 2018-02-15T14:56:31+01:00
+---
+
+Shankar's [*Principles of Quantum Mechanics*](https://www.amazon.com/Principles-Quantum-Mechanics-R-Shankar/dp/146157675X/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is in a great book, although not recommended as the first textbook for beginners. Griffiths' [*Introduction to Quantum Mechanics*](https://www.amazon.com/Introduction-Quantum-Mechanics-Pearson-International/dp/1292024089/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is much more easily approachable.
+
+Solutions to most problems can be found [here](http://www.physicspages.com/shankar.html). Some are however missing. Hence this post.
+
+# Solutions
+
+## 5.4.1
+
+If we replace $$ x $$ by $$ x + a $$ in (5.1.15) and $$ p_0 $$ by $$ \hbar k_0 $$, we get the following wave function.
+
+$$ \psi(x, t) = e^{i k_0 (x + a - \frac{\hbar k_0 t}{2 m})} \frac{e^{\frac{-(x + a - \frac{\hbar k_0 t}{m})^2}{2 \Delta^2 (1 + \frac{i \hbar t}{m \Delta^2})}}}{\pi^\frac{1}{4} (\Delta + \frac{i \hbar t}{m \Delta})^\frac{1}{2}} $$
+
+It describes a particle of mass $$ m $$. At $$ t = 0 $$, it has mean position $$ \langle X \rangle = -a $$ and $$ \Delta X = \frac{\Delta}{\sqrt{2}} $$. Through its whole evolution, $$ \langle P \rangle = p_0 $$ and the evelope, as described by the Gaussian function, moves at a group velocity of $$ \frac{p_0}{m} $$.
+
+The wave function above is obtained from the following calculation.
+
+$$ \psi(x, t) = (\frac{\Delta^2}{4 \pi^3})^\frac{1}{4} \int_{-\infty}^{\infty} e^{\frac{-i \hbar {k_1}^2 t}{2 m}} e^{\frac{-(k_1 - k_0)^2 \Delta^2}{2}} e^{i k_1 (x + a)} \mathrm{d} k_1 $$
+
+The last term in (5.4.15) is as follows.
+
+$$ \ast = (\frac{\Delta^2}{4 \pi^3})^\frac{1}{4} \int_{-\infty}^{\infty} e^{\frac{-i \hbar {k_1}^2 t}{2 m}} e^{\frac{-(k_1 - k_0)^2 \Delta^2}{2}} e^{i k_1 a} \frac{C}{A} e^{i ({k_1}^2 - \frac{2 m V_0}{\hbar^2})^{\frac{1}{2}} x} \theta(x) \mathrm{d} k_1 $$
+
+Due to the second exponential in the integrand, only $$ k_1 $$ close to $$ k_0 $$ has a real impact on the result, therefore we can take the following approximation.
+- $$ \frac{C}{A} $$, which depends on $$ k_1 $$ can be replaced by $$ \frac{C_0}{A_0} $$, its value at $$ k_1 = k_0 $$.
+- Expand the factor $$ ({k_1}^2 - \frac{2 m V_0}{\hbar^2})^{\frac{1}{2}} $$ and keep just the first derivative in the Taylor series.
+
+To simply notations, we define $$ k_2 \equiv ({k_0}^2 - \frac{2 m V_0}{\hbar^2})^{\frac{1}{2}} $$, $$ \gamma \equiv \frac{k_2}{k_0} < 1 $$, and $$ k_1' = \frac{k_1}{\gamma} $$.
+
+The Taylor expansion, up to the first derivative, is then $$ k_2 + \frac{k_0}{k_2} (k_1 - k_0) = k_2 + \frac{k_1 - k_0}{\gamma} $$, and we have the following.
+
+$$
+\begin{eqnarray}
+  \ast &=& \frac{C_0}{A_0} \theta(x) (\frac{\Delta^2}{4 \pi^3})^\frac{1}{4} \int_{-\infty}^{\infty} e^{\frac{-i \hbar {k_1}^2 t}{2 m}} e^{\frac{-(k_1 - k_0)^2 \Delta^2}{2}} e^{i k_1 a} e^{i {k_2} x} e^{i \frac{k_1 - k_0}{\gamma} x} \mathrm{d} k_1 \\
+  &=& \frac{C_0}{A_0} \theta(x) e^{i (k_2 - \frac{k_0}{\gamma}) x} (\frac{\Delta^2}{4 \pi^3})^\frac{1}{4} \int_{-\infty}^{\infty} e^{\frac{-i \hbar {k_1}^2 t}{2 m}} e^{\frac{-(k_1 - k_0)^2 \Delta^2}{2}} e^{i k_1 a} e^{i \frac{k_1}{\gamma} x} \mathrm{d} k_1 \\
+  &=& \gamma^{\frac{1}{2}} \frac{C_0}{A_0} \theta(x) e^{i (k_2 - \frac{k_0}{\gamma}) x} (\frac{(\gamma \Delta)^2}{4 \pi^3})^\frac{1}{4} \int_{-\infty}^{\infty} e^{\frac{-i \hbar {k_1'}^2 t}{2 \frac{m}{\gamma^2}}} e^{\frac{-(k_1' - \frac{k_0}{\gamma})^2 (\gamma \Delta)^2}{2}} e^{i k_1' (x + \gamma a)} \mathrm{d} k_1' \\
+  &=& \gamma^{\frac{1}{2}} \frac{C_0}{A_0} \theta(x) e^{i (k_2 - \frac{k_0}{\gamma}) x} \triangle
+\end{eqnarray}
+$$
+
+Compare $$ \triangle $$ to the calculation for the original Gaussian packet, we can see it has exactly the same form, with $$ \Delta \rightarrow \Delta' \equiv \gamma \Delta $$, $$ m \rightarrow m' \equiv \frac{m}{\gamma^2} $$, $$ k_0 \rightarrow k_0' \equiv \frac{k_0}{\gamma} $$, $$ a \rightarrow a' \equiv \gamma a $$, and $$ k_1 \rightarrow k_1' $$. From here we can already derive the transmission coefficient $$ T $$.
+
+$$ T = \gamma |\frac{C_0}{A_0}|^2 \int_{-\infty}^{\infty} \theta^2 (x) |\triangle|^2 \mathrm{d} x = \gamma |\frac{C_0}{A_0}|^2 $$
+
+This is exactly the same result as in (5.4.21). Note $$ \theta(x) $$ can be effectively ignored with $$ t \rightarrow \infty $$ since $$ \triangle $$ represents a particle moving towards $$ +x $$ at $$ \frac{\hbar k_0'}{m'} = \frac{\hbar \gamma k_0}{m} = \frac{\hbar k_2}{m} $$. This is also what we would expect from classical mechanics.
+
+Although we could stop here, it is beneficial to continue the derivation a bit.
+
+$$
+\begin{eqnarray}
+  \ast &=& \gamma^{\frac{1}{2}} \frac{C_0}{A_0} \theta(x) e^{i (k_2 - \frac{k_0}{\gamma}) x} \triangle \\
+  &=& \gamma^{\frac{1}{2}} \frac{C_0}{A_0} \theta(x) e^{i (k_2 - \frac{k_0}{\gamma}) x} e^{i k_0' (x + a' - \frac{\hbar k_0' t}{2 m'})} \frac{e^{\frac{-(x + a' - \frac{\hbar k_0' t}{m'})^2}{2 \Delta'^2 (1 + \frac{i \hbar t}{m' \Delta'^2})}}}{\pi^\frac{1}{4} (\Delta' + \frac{i \hbar t}{m' \Delta'})^\frac{1}{2}} \\
+  &=& \gamma^{\frac{1}{2}} \frac{C_0}{A_0} \theta(x) e^{i (k_2 - \frac{k_0}{\gamma} + k_0') x} e^{i k_0 (a - \frac{\hbar k_0 t}{2 m})} \frac{e^{\frac{-(x + a' - \frac{\hbar k_2 t}{m})^2}{2 \Delta'^2 (1 + \frac{i \hbar t}{m \Delta^2})}}}{\pi^\frac{1}{4} (\Delta' + \frac{i \hbar \gamma t}{m \Delta})^\frac{1}{2}} \\
+  &=& \gamma^{\frac{1}{2}} \frac{C_0}{A_0} \theta(x) e^{i k_2 x} e^{i k_0 (a - \frac{\hbar k_0 t}{2 m})} \frac{e^{\frac{-(x + a' - \frac{\hbar k_2 t}{m})^2}{2 \Delta'^2 (1 + \frac{i \hbar t}{m \Delta^2})}}}{\pi^\frac{1}{4} (\Delta' + \frac{i \hbar \gamma t}{m \Delta})^\frac{1}{2}}
+\end{eqnarray}
+$$
+
+From the term $$ e^{i k_2 x} $$, it can be clearly seen that $$ \langle P \rangle = \hbar k_2 $$, again exactly as what we would expect from classical mechanics.
