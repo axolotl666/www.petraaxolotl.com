@@ -4,7 +4,7 @@ Description: "Errata, Notes, and Problem Solutions"
 date: 2018-02-15T14:56:31+01:00
 ---
 
-Shankar's [*Principles of Quantum Mechanics*](https://www.amazon.com/Principles-Quantum-Mechanics-R-Shankar/dp/146157675X/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is in a great book, although not recommended as the first textbook for beginners. Griffiths' [*Introduction to Quantum Mechanics*](https://www.amazon.com/Introduction-Quantum-Mechanics-Pearson-International/dp/1292024089/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is much more easily approachable.
+Shankar's [*Principles of Quantum Mechanics*](https://www.amazon.com/Principles-Quantum-Mechanics-R-Shankar/dp/146157675X/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is a great book, although not recommended as the first textbook for beginners. Griffiths' [*Introduction to Quantum Mechanics*](https://www.amazon.com/Introduction-Quantum-Mechanics-Pearson-International/dp/1292024089/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is much more easily approachable.
 
 Solutions to most problems can be found [here](http://www.physicspages.com/shankar.html). Some are however missing. Hence this post.
 
@@ -61,3 +61,57 @@ $$
 $$
 
 From the term $$ e^{i k_2 x} $$, it can be clearly seen that $$ \langle P \rangle = \hbar k_2 $$, again exactly as what we would expect from classical mechanics.
+
+## 5.4.3
+
+One could use (4.3.13) to calculate $$ U(t) $$ in the coordinate space. To apply it to the momentum space, however, one faces the difficulty that $$ V(x) = - f x $$ is naturally expressed in the coordinate, instead of the momentum, space.
+
+Here we need to think about the _physical_ meaing of $$ U(t) $$, instead of purely relying on mathematical formalism.
+
+Consider a momentum eigenvector $$ |p'> $$ at time 0, subjected to a constant force $$ f $$ in one dimension. At time $$ \mathrm{d} t $$, two things will happen.
+- A phase change of $$ \phi(\mathrm{d}t) = -i \frac{p'^2}{2 m h} \mathrm{d}t $$. This will happen regardless of the presence or absence of $$ f $$.
+- Its momentum will increase by $$ f \mathrm{d}t $$, as one should expect from classical mechanics.
+
+This momentum eigenvector will therefore become $$ e^{\phi(dt)} | p' + f \mathrm{d}t > $$ at time $$ \mathrm{d}t $$.
+
+We can repeat the process with infinitesimal $$ \mathrm{d}t $$ until we have reached time $$ t $$, at which time we can expect the following.
+- A phase change of $$ \phi(t) = \int_{0}^{t} -i \frac{p(t')^2}{2 m h} \mathrm{d}t' $$. We need an integral here because $$ p $$ depends on $$ t' $$.
+- Its momentum will have cumulatively increased by $$ f t $$ since time 0.
+
+$$ \phi(t) $$ can be further calculate as follows.
+
+$$
+\begin{eqnarray}
+  \phi(t) &=& \int_{0}^{t} -i \frac{p(t')^2}{2 m h} \mathrm{d}t'  \\
+  &=& -\frac{i}{2 m h} \int_{0}^{t} (p + f t')^2 \mathrm{d}t'  \\
+  &=& -\frac{i}{6 m h f} (p + f t')^3 |_{t'=0}^{t}  \\
+  &=& -\frac{i (p''^3 - p'^3)}{6 m h f}  \\
+  &=& \frac{i (p'^3 - p''^3)}{6 m h f}
+\end{eqnarray}
+$$
+
+where $$ p'' = p' + ft $$.
+
+The momentum eigenvector $$ | p' > $$ at time 0 will therefore become $$ e^{-\frac{i}{6 m h f} (p'^3 - p''^3)} | p'' > $$ at time $$ t $$, and we have the following.
+
+$$
+\begin{eqnarray}
+  U(p, t; p', 0) &=& < p | U(t) | p'>  \\
+  &=& < p | e^{\frac{i (p'^3 - p''^3)}{6 m h f}} | p'' >  \\
+  &=& \delta(p - p'') e^{\frac{i (p'^3 - p''^3)}{6 m h f}}  \\
+  &=& \delta(p - p' - f t) e^{\frac{i (p'^3 - p^3)}{6 m h f}}
+\end{eqnarray}
+$$
+
+In coordinate space it is as follows.
+
+$$
+\begin{eqnarray}
+  U(x, t; x', 0) &=& < x | U(t) | x'>  \\
+  &=& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} < x|p >< p | U(t) | p' >< p'|x'> \mathrm{d}p \mathrm{d}p'  \\
+  &=& \frac{1}{2 \pi \hbar} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{i p x / \hbar} \delta(p - p' - f t) e^{\frac{i (p'^3 - p^3)}{6 m h f}} e^{-i p' x' / \hbar} \mathrm{d}p \mathrm{d}p'  \\
+  &=& \frac{1}{2 \pi \hbar} \int_{-\infty}^{\infty} e^{i f t x / \hbar} e^{\frac{i (- 3 p^2 f t + 3 p f^2 t^2 - f^3 t^3)}{6 m h f}} \mathrm{d}p  \\
+  &=& \frac{e^{i f t x / \hbar} e^{-i \frac{f^2 t^3}{6 m h}} }{2 \pi \hbar} \int_{-\infty}^{\infty} e^{-\frac{i (p^2 t - p f t^2)}{2 m \hbar}} \mathrm{d}p  \\
+  &=& \frac{e^{i f t x / \hbar} e^{-i \frac{f^2 t^3}{6 m h}} }{2 \pi \hbar} (\frac{2 \pi m \hbar}{i t})^{\frac{1}{2}} e^{i \frac{2 f^2 t^3}{m \hbar}}
+\end{eqnarray}
+$$
