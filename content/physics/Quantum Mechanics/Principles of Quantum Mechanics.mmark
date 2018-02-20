@@ -110,8 +110,12 @@ $$
   U(x, t; x', 0) &=& < x | U(t) | x'>  \\
   &=& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} < x|p >< p | U(t) | p' >< p'|x'> \mathrm{d}p \mathrm{d}p'  \\
   &=& \frac{1}{2 \pi \hbar} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{i p x / \hbar} \delta(p - p' - f t) e^{\frac{i (p'^3 - p^3)}{6 m h f}} e^{-i p' x' / \hbar} \mathrm{d}p \mathrm{d}p'  \\
-  &=& \frac{1}{2 \pi \hbar} \int_{-\infty}^{\infty} e^{i f t x / \hbar} e^{\frac{i (- 3 p^2 f t + 3 p f^2 t^2 - f^3 t^3)}{6 m h f}} \mathrm{d}p  \\
-  &=& \frac{e^{i f t x / \hbar} e^{-i \frac{f^2 t^3}{6 m h}} }{2 \pi \hbar} \int_{-\infty}^{\infty} e^{-\frac{i (p^2 t - p f t^2)}{2 m \hbar}} \mathrm{d}p  \\
-  &=& \frac{e^{i f t x / \hbar} e^{-i \frac{f^2 t^3}{6 m h}} }{2 \pi \hbar} (\frac{2 \pi m \hbar}{i t})^{\frac{1}{2}} e^{i \frac{2 f^2 t^3}{m \hbar}}
+  &=& \frac{1}{2 \pi \hbar} \int_{-\infty}^{\infty} e^{i f t x / \hbar} e^{i (p - f t) (x - x') / \hbar} e^{\frac{i (- 3 p^2 f t + 3 p f^2 t^2 - f^3 t^3)}{6 m h f}} \mathrm{d}p  \\
+  &=& \frac{e^{i f t x' / \hbar} e^{-i \frac{f^2 t^3}{6 m h}} }{2 \pi \hbar} \int_{-\infty}^{\infty} e^{-\frac{i (p^2 t - p f t^2)}{2 m \hbar} + \frac{i p (x - x')}{\hbar}} \mathrm{d}p  \\
+  &=& \frac{e^{i f t x' / \hbar} e^{-i \frac{f^2 t^3}{6 m h}} }{2 \pi \hbar} \int_{-\infty}^{\infty} e^{-\frac{i t}{2 m \hbar} p^2} e^{- 2 \frac{-i (f t^2 + 2 m (x - x'))}{4 m \hbar} p} \mathrm{d}p  \\
+  &=& \frac{e^{i f t x' / \hbar} e^{-i \frac{f^2 t^3}{6 m h}} }{2 \pi \hbar} (\frac{2 \pi m \hbar}{i t})^{\frac{1}{2}} e^{i \frac{(f t^2 + 2 m (x - x'))^2  }{8 m \hbar t}}  \\
+  &=& (\frac{m}{2 \pi \hbar i t})^{\frac{1}{2}} e^{\frac{i}{\hbar} (f t x' - \frac{f^2 t^3}{6 m} + \frac{(f t^2 + 2 m (x - x'))^2  }{8 m t})}  \\
+  &=& (\frac{m}{2 \pi \hbar i t})^{\frac{1}{2}} e^{\frac{i}{\hbar} (f t x' - \frac{f^2 t^3}{6 m} + \frac{f^2 t^3}{8 m} + \frac{m (x - x')^2}{2 t} + \frac{f t (x - x')}{2})}  \\
+  &=& (\frac{m}{2 \pi \hbar i t})^{\frac{1}{2}} e^{\frac{i}{\hbar} (\frac{m (x - x')^2}{2 t} + \frac{1}{2} f t (x + x') - \frac{f^2 t^3}{24 m})}
 \end{eqnarray}
 $$
