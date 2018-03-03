@@ -64,6 +64,16 @@ From the term $$ e^{i k_2 x} $$, it can be clearly seen that $$ \langle P \rangl
 
 ## 5.4.3
 
+We have the following Hamiltonian.
+
+$$ H = \frac{P^2}{2 m} - f X $$
+
+In momentum space, $$ X \rightarrow i \hbar \frac{\partial}{\partial p} $$ and $$ P \rightarrow p $$. We have thus the following differential equation.
+
+$$ \frac{p^2}{2 m} - i \hbar f \frac{\mathrm{d} \psi(p)}{\mathrm{d} p} = E \psi(p) $$
+
+Its general solution is $$ \psi(p) = \frac{p^2}{2 m E} - \frac{i \hbar f}{m E^2} p - \frac{\hbar^2 f^2}{m E^3} + C e^{i \frac{E}{\hbar f} p} $$.
+
 One could use (4.3.13) to calculate $$ U(t) $$ in the coordinate space. To apply it to the momentum space, however, one faces the difficulty that $$ V(x) = - f x $$ is naturally expressed in the coordinate, instead of the momentum, space.
 
 Here we need to think about the _physical_ meaing of $$ U(t) $$, instead of purely relying on mathematical formalism.
