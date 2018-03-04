@@ -70,48 +70,32 @@ $$ H = \frac{P^2}{2 m} - f X $$
 
 In momentum space, $$ X \rightarrow i \hbar \frac{\partial}{\partial p} $$ and $$ P \rightarrow p $$. We have thus the following differential equation.
 
-$$ \frac{p^2}{2 m} - i \hbar f \frac{\mathrm{d} \psi(p)}{\mathrm{d} p} = E \psi(p) $$
+$$ \frac{p^2}{2 m} \psi_E(p) - i \hbar f \frac{\mathrm{d} \psi_E(p)}{\mathrm{d} p} = E \psi_E(p) $$
 
-Its general solution is $$ \psi(p) = \frac{p^2}{2 m E} - \frac{i \hbar f}{m E^2} p - \frac{\hbar^2 f^2}{m E^3} + C e^{i \frac{E}{\hbar f} p} $$.
+Its general solution is $$ \psi_E(p) = C e^{- \frac{i p^3}{6 \hbar m f} + \frac{i E p}{\hbar f}} $$, where $$ C $$ can be any constant.
 
-One could use (4.3.13) to calculate $$ U(t) $$ in the coordinate space. To apply it to the momentum space, however, one faces the difficulty that $$ V(x) = - f x $$ is naturally expressed in the coordinate, instead of the momentum, space.
+Its normalization requires the following.
 
-Here we need to think about the _physical_ meaing of $$ U(t) $$, instead of purely relying on mathematical formalism.
+$$ < E | E' > = |C|^2 \int_{-\infty}^{\infty} e^{\frac{i (E' - E)}{\hbar f} p} \mathrm{d} p = |C|^2 2 \pi \hbar f \delta(E' - E) = \delta(E' - E) $$
 
-Consider a momentum eigenvector $$ |p'> $$ at time 0, subjected to a constant force $$ f $$ in one dimension. At time $$ \mathrm{d} t $$, two things will happen.
-- A phase change of $$ \phi(\mathrm{d}t) = -i \frac{p'^2}{2 m h} \mathrm{d}t $$. This will happen regardless of the presence or absence of $$ f $$.
-- Its momentum will increase by $$ f \mathrm{d}t $$, as one should expect from classical mechanics.
+We have used Eq. (1.10.26) in the derivation above.
 
-This momentum eigenvector will therefore become $$ e^{\phi(dt)} | p' + f \mathrm{d}t > $$ at time $$ \mathrm{d}t $$.
+And therefore we can set $$ C = \frac{1}{\sqrt{2 \pi \hbar f}} $$ and $$ \psi_E(p) = \frac{1}{\sqrt{2 \pi \hbar f}}  e^{-\frac{i p^3}{6 \hbar m f} + \frac{i E p}{\hbar f}} $$.
 
-We can repeat the process with infinitesimal $$ \mathrm{d}t $$ until we have reached time $$ t $$, at which time we can expect the following.
-- A phase change of $$ \phi(t) = \int_{0}^{t} -i \frac{p(t')^2}{2 m h} \mathrm{d}t' $$. We need an integral here because $$ p $$ depends on $$ t' $$.
-- Its momentum will have cumulatively increased by $$ f t $$ since time 0.
-
-$$ \phi(t) $$ can be further calculate as follows.
-
-$$
-\begin{eqnarray}
-  \phi(t) &=& \int_{0}^{t} -i \frac{p(t')^2}{2 m h} \mathrm{d}t'  \\
-  &=& -\frac{i}{2 m h} \int_{0}^{t} (p + f t')^2 \mathrm{d}t'  \\
-  &=& -\frac{i}{6 m h f} (p + f t')^3 |_{t'=0}^{t}  \\
-  &=& -\frac{i (p''^3 - p'^3)}{6 m h f}  \\
-  &=& \frac{i (p'^3 - p''^3)}{6 m h f}
-\end{eqnarray}
-$$
-
-where $$ p'' = p' + ft $$.
-
-The momentum eigenvector $$ | p' > $$ at time 0 will therefore become $$ e^{-\frac{i}{6 m h f} (p'^3 - p''^3)} | p'' > $$ at time $$ t $$, and we have the following.
+Now we have the following.
 
 $$
 \begin{eqnarray}
   U(p, t; p', 0) &=& < p | U(t) | p'>  \\
-  &=& < p | e^{\frac{i (p'^3 - p''^3)}{6 m h f}} | p'' >  \\
-  &=& \delta(p - p'') e^{\frac{i (p'^3 - p''^3)}{6 m h f}}  \\
+  &=& \int_{-\infty}^{\infty} < p | E > e^{-\frac{i E}{\hbar} t} < E | p' > \mathrm{d} E  \\
+  &=& \int_{-\infty}^{\infty} \psi_E(p) e^{-\frac{i E}{\hbar} t} \psi_E^*(p) \mathrm{d} E  \\
+  &=& \frac{1}{2 \pi \hbar f} \int_{-\infty}^{\infty} e^{-\frac{i p^3}{6 \hbar m f}} e^{\frac{i E p}{\hbar f}} e^{-\frac{i E}{\hbar} t} e^{\frac{i p'^3}{6 \hbar m f}} e^{- \frac{i E p'}{\hbar f}} \mathrm{d} E  \\
+  &=& \frac{1}{2 \pi \hbar f} e^{\frac{i (p'^3 - p^3)}{6 \hbar m f}} \int_{-\infty}^{\infty} e^{i \frac{p - p' - f t}{\hbar f} E} \mathrm{d} E  \\
   &=& \delta(p - p' - f t) e^{\frac{i (p'^3 - p^3)}{6 m h f}}
 \end{eqnarray}
 $$
+
+Here we have used Eq. (1.10.26) again.
 
 In coordinate space it is as follows.
 
