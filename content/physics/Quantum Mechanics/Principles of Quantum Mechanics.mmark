@@ -4,11 +4,29 @@ Description: "Errata, Notes, and Problem Solutions"
 date: 2018-02-15T14:56:31+01:00
 ---
 
-Shankar's [*Principles of Quantum Mechanics*](https://www.amazon.com/Principles-Quantum-Mechanics-R-Shankar/dp/146157675X/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is a great book, although not recommended as the first textbook for beginners. Griffiths' [*Introduction to Quantum Mechanics*](https://www.amazon.com/Introduction-Quantum-Mechanics-Pearson-International/dp/1292024089/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is much more easily approachable.
+Shankar's [*Principles of Quantum Mechanics*](https://www.amazon.com/Principles-Quantum-Mechanics-R-Shankar/dp/146157675X/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is a great book, although not recommended as the first textbook for beginners. Griffiths' [*Introduction to Quantum Mechanics*](https://www.amazon.com/Introduction-Quantum-Mechanics-Pearson-International/dp/1292024089/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is much more approachable.
 
-Solutions to most problems can be found [here](http://www.physicspages.com/shankar.html). Some are however missing. Hence this post.
+# Errata
+
+Here is the [official errata](http://www.erratapage.com/pages/Shankar.pdf), in which unfortunately not every error has been caught.
+
+Page 476, Eq. (18.2.12): $$ \mathscr{H} $$ should be $$ \mathscr{E} $$.
+
+Page 489, Eq. (18.3.27): The last factor in the integrand of the second term on the right hand side should be
+$$ e^{-i E^0_i (t'-t_0) / \hbar} $$.
+
+# Notes
+
+Page 482, Eq. (18.2.35): It would seem that $$ P_{i \rightarrow f} \rightarrow \infty $$ as $$ t \rightarrow \infty $$, when $$ \omega_{f i} = \omega $$. But keep in mind that the first-order calculation is reliable only if $$ |d_f (t)| \ll 1 (f \neq i) $$. (See the discussion underneath Eq. (18.2.9).)
+
+Page 483, Eq. (18.2.42): We will apply _Fermi's golden rule_ to _time-independent_ perturbation when we study spontaneous emissions. It is valid because we can simply set $$ \omega = 0 $$ and all the derivation will still be valid.
+
+Page 494, Exercise 18.4.3, (4): It is easy to show $$ \nabla^2 \Lambda = 0 $$. Its solution is unique when its boundary value is fixed. Hence the uniqueness of $$ A $$ when $$ |A| \rightarrow 0 $$ at spatial infinity. A proof of the uniqueness of solutions to Laplace's equation with fixed boundary conditions can be found [here](https://web.stanford.edu/class/math220b/handouts/laplace.pdf).
 
 # Solutions
+
+Solutions to most problems can be found [here](http://www.physicspages.com/shankar.html) and [here](https://www.physicsisbeautiful.com/blog/shankar/). Some are however missing and can be found below.
+
 
 ## 5.4.1
 
