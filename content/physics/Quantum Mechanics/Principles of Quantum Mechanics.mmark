@@ -6,29 +6,16 @@ date: 2018-02-15T14:56:31+01:00
 
 Shankar's [*Principles of Quantum Mechanics*](https://www.amazon.com/Principles-Quantum-Mechanics-R-Shankar/dp/146157675X/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is a great book, although not recommended as the first textbook for beginners. Griffiths' [*Introduction to Quantum Mechanics*](https://www.amazon.com/Introduction-Quantum-Mechanics-Pearson-International/dp/1292024089/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521887054&linkCode=as2&tag=axolotl0d-20&linkId=2ae25165f702314882f81af0233d11d7) is much more approachable.
 
-# Errata
-
-Here is the [official errata](http://www.erratapage.com/pages/Shankar.pdf), in which unfortunately not every error has been caught.
-
-Page 476, Eq. (18.2.12): $$ \mathscr{H} $$ should be $$ \mathscr{E} $$.
-
-Page 489, Eq. (18.3.27): The last factor in the integrand of the second term on the right hand side should be
-$$ e^{-i E^0_i (t'-t_0) / \hbar} $$.
-
-# Notes
-
-Page 482, Eq. (18.2.35): It would seem that $$ P_{i \rightarrow f} \rightarrow \infty $$ as $$ t \rightarrow \infty $$, when $$ \omega_{f i} = \omega $$. But keep in mind that the first-order calculation is reliable only if $$ |d_f (t)| \ll 1 (f \neq i) $$. (See the discussion underneath Eq. (18.2.9).)
-
-Page 483, Eq. (18.2.42): We will apply _Fermi's golden rule_ to _time-independent_ perturbation when we study spontaneous emissions. It is valid because we can simply set $$ \omega = 0 $$ and all the derivation will still be valid.
-
-Page 494, Exercise 18.4.3, (4): It is easy to show $$ \nabla^2 \Lambda = 0 $$. Its solution is unique when its boundary value is fixed. Hence the uniqueness of $$ A $$ when $$ |A| \rightarrow 0 $$ at spatial infinity. A proof of the uniqueness of solutions to Laplace's equation with fixed boundary conditions can be found [here](https://web.stanford.edu/class/math220b/handouts/laplace.pdf).
-
-# Solutions
+Here is the official [Errata](http://www.erratapage.com/pages/Shankar.pdf), which is unfortunately but not surprisingly incomplete.
 
 Solutions to most problems can be found [here](http://www.physicspages.com/shankar.html) and [here](https://www.physicsisbeautiful.com/blog/shankar/). Some are however missing and can be found below.
 
 
-## 5.4.1
+# Chapter 5 - Simple Problems in One Dimension
+
+## Solutions
+
+### 5.4.1
 
 If we replace $$ x $$ by $$ x + a $$ in (5.1.15) and $$ p_0 $$ by $$ \hbar k_0 $$, we get the following wave function.
 
@@ -80,7 +67,7 @@ $$
 
 From the term $$ e^{i k_2 x} $$, it can be clearly seen that $$ \langle P \rangle = \hbar k_2 $$, again exactly as what we would expect from classical mechanics.
 
-## 5.4.3
+### 5.4.3
 
 We have the following Hamiltonian.
 
@@ -131,3 +118,102 @@ $$
   &=& (\frac{m}{2 \pi \hbar i t})^{\frac{1}{2}} e^{\frac{i}{\hbar} (\frac{m (x - x')^2}{2 t} + \frac{1}{2} f t (x + x') - \frac{f^2 t^3}{24 m})}
 \end{eqnarray}
 $$
+
+# Chapter 18 - Time-Dependent Perturbation Theory
+
+## Errata
+
+Page 476, Eq. (18.2.12): $$ \mathscr{H} $$ should be $$ \mathscr{E} $$.
+
+Page 489, Eq. (18.3.27): The last factor in the integrand of the second term on the right hand side should be
+$$ e^{-i E^0_i (t'-t_0) / \hbar} $$.
+
+Page 506, Eq. (18.5.31): If we want to pedantic, it should be $$ \frac{\mathrm{d} \sigma}{\mathrm{d} \Omega} = \frac{8 \pi c}{|\boldsymbol{{A_0}}|^2 \omega^2} \hbar \omega R_{i \rightarrow \mathrm{d} \Omega} / \mathrm{d} \Omega $$.
+
+Page 509, Eq. (18.5.42): The claim that $$ | \nabla \times \boldsymbol{A} |^2 = - \boldsymbol{A} \cdot \nabla^2 \boldsymbol{A} $$ is valid when $$ \nabla \cdot \boldsymbol{A} = 0 $$ is by itself wrong. A counter-example is $$ \boldsymbol{A} = \boldsymbol{A_0} \cos(i \boldsymbol{k} \boldsymbol{r}) $$, where $$ \boldsymbol{A_0} $$ and $$ \boldsymbol{k} $$ are mutually perpendicular. We can see that the left hand side will have a $$ \sin^2(i \boldsymbol{k} \boldsymbol{r}) $$ term, while the right hand side will have a $$ \cos^2(i \boldsymbol{k} \boldsymbol{r}) $$ term.
+
+If we apply, to $$ - \boldsymbol{A} \cdot \nabla^2 \boldsymbol{A} $$, first $$ \nabla^2 \boldsymbol{A} = \nabla (\nabla \cdot \boldsymbol{A}) - \nabla \times (\nabla \times \boldsymbol{A}) $$, keeping in mind $$ \nabla \cdot \boldsymbol{A} = 0 $$, and then $$ \boldsymbol{Y} \cdot (\nabla \times \boldsymbol{X}) = \boldsymbol{X} \cdot (\nabla \times \boldsymbol{Y}) + \nabla \cdot (\boldsymbol{X} \times \boldsymbol{Y}) $$, where we set $$ \boldsymbol{Y} = \boldsymbol{A} $$ and $$ \boldsymbol{X} = \nabla \times \boldsymbol{A} $$, we get
+
+$$ | \nabla \times \boldsymbol{A} |^2 = - \boldsymbol{A} \cdot \nabla^2 \boldsymbol{A} + \nabla \cdot (\boldsymbol{A} \times (\nabla \times \boldsymbol{A})). $$
+
+The extra term, however, is negligible in an integral over an infinite volume $$ V $$, when both $$ \boldsymbol{A} $$ and $$ \nabla \times \boldsymbol{A} $$ are finite, because we can apply Gauss' theorem and the integral becomes $$ \int_{\partial V} \boldsymbol{A} \times (\nabla \times \boldsymbol{A}) \mathrm{d} \boldsymbol{S} $$, which grows at $$ V^{2/3} $$, and its per volume contribution becomes zero as $$ V $$ approaches infinity.
+
+## Notes
+
+Below are some useful vector calculus identies for electromagnetism.
+
+$$ \nabla (\nabla \cdot \boldsymbol{A}) - \nabla \times (\nabla \times \boldsymbol{A}) = \nabla^2 \boldsymbol{A} $$
+
+$$ \nabla \cdot (\nabla^2 \boldsymbol{A}) = \nabla^2 (\nabla \cdot \boldsymbol{A}) $$
+
+$$ \nabla \cdot (\boldsymbol{A} \times \boldsymbol{B}) = \boldsymbol{B} \cdot (\nabla \times \boldsymbol{A}) - \boldsymbol{A} \cdot (\nabla \times \boldsymbol{B}) $$
+
+Page 482, Eq. (18.2.35): It would seem that $$ P_{i \rightarrow f} \rightarrow \infty $$ as $$ t \rightarrow \infty $$, when $$ \omega_{f i} = \omega $$. But keep in mind that the first-order calculation is reliable only if $$ |d_f (t)| \ll 1 (f \neq i) $$. (See the discussion underneath Eq. (18.2.9).)
+
+Page 483, Eq. (18.2.42): We will apply _Fermi's golden rule_ to _time-independent_ perturbation when we study spontaneous emissions. It is valid because we can simply set $$ \omega = 0 $$ and all the derivation will still follow.
+
+Page 494, Exercise 18.4.3, (4): It is easy to show $$ \nabla^2 \Lambda = 0 $$. Its solution is unique when its boundary value is fixed. Hence the uniqueness of $$ A $$ when $$ |A| \rightarrow 0 $$ at spatial infinity. A proof of the uniqueness of solutions to Laplace's equation with fixed boundary conditions can be found [here](https://web.stanford.edu/class/math220b/handouts/laplace.pdf).
+
+Page 501, Footnote: Note that $$ \boldsymbol{A} = \boldsymbol{A_0} e^{i \boldsymbol{k} \boldsymbol{r}} $$.
+
+Page 505, Eq. (18.5.24): Strictly speaking, there should also be an extra term $$ \frac{m}{p_f} \delta \{ p_f + [2m(E^0_i + \hbar \omega)]^{1/2} \} $$ on the right hand side. But this term will become irrelevant in Eq. (18.5.25), where we are only interested in $$ p_f \in [0, \infty] $$ for the integral.
+
+Page 505, Eq. (18.5.25): Note $$ R_{i \rightarrow d \Omega} = \int_0^{\infty} R_{i \rightarrow f}(\boldsymbol{p_f}) p_f^2 \mathrm{d} p_f \mathrm{d} \Omega $$.
+
+Page 508, Note $$ \ddagger $$: Those who want to derive Maxwell's equations from the Lagrangian without reading Goldsteins' wonderful book _Classical Mechanics_, only need to know the Euler–Lagrange equation for a continuous field is $$ \partial_{t} \frac{\partial \mathscr{L}}{\partial (\partial_t \phi)} + \partial_{x} \frac{\partial \mathscr{L}}{\partial (\partial_x \phi)} = \frac{\partial \mathscr{L}}{\partial{\phi}} $$, where $$ \mathscr{L} $$ is the Lagrangian density and $$ \phi $$ is the scalar field. For three dimensions, add $$ \partial_y $$ and $$ \partial_z $$ terms on the left hand side. For a vector field, simply treat each vector componnent as a scalar field.
+
+Page 509, Eq. (18.5.6): See the previous note.
+
+Page 512, Eq. (18.5.51): _Some hard work_ to derive these equalities can be found below.
+
+First we can derive $$ \boldsymbol{a}(\boldsymbol{k}) $$ from Eq. (18.5.44) and Eq. (18.5.46).
+
+$$ \boldsymbol{a}(\boldsymbol{k}) = \frac{1}{2 (2\pi)^3} \int [\boldsymbol{A}(\boldsymbol{r}) + \frac{4 \pi i c}{k} \boldsymbol{\Pi}(\boldsymbol{r})] e^{-i \boldsymbol{k} \boldsymbol{r}} \mathrm{d}^3 \boldsymbol{r} $$
+
+Multiplying $$ \boldsymbol{\varepsilon}((\boldsymbol{k} \lambda_0)) $$ on both sides of Eq. (18.5.48) and then dropping the subscript 0, we get
+
+$$ a(\boldsymbol{k} \lambda) = \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)}}{2 (2\pi)^2} \int [\frac{\sqrt{\omega}}{c} \boldsymbol{A}(\boldsymbol{r}) + \frac{4 \pi i c}{\sqrt{\omega}} \boldsymbol{\Pi}(\boldsymbol{r})] e^{-i \boldsymbol{k} \boldsymbol{r}} \mathrm{d}^3 \boldsymbol{r}. $$
+
+In the continuous system that interests us now, the Poisson bracket is defined as
+
+$$ \{ X, Y \} = \Sigma_i \int \frac{\partial X}{\partial A_i(\boldsymbol{r})} \frac{\partial Y}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial Y}{\partial A_i(\boldsymbol{r})} \frac{\partial X}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r}, $$
+
+where $$ \boldsymbol{r} $$ is a continuous index rather than an independent variable.
+
+Differentiating $$ a(\boldsymbol{k} \lambda) $$ over $$ A_i(\boldsymbol{r}) $$ or $$ \Pi_i(\boldsymbol{r}) $$ gives us
+
+$$ \frac{\partial a(\boldsymbol{k} \lambda)}{\partial A_i(\boldsymbol{r})} = \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i}{2 (2\pi)^2} \frac{\sqrt{\omega}}{c} e^{-i \boldsymbol{k} \boldsymbol{r}}, $$
+
+$$ \frac{\partial a(\boldsymbol{k} \lambda)}{\partial \Pi_i(\boldsymbol{r})} = \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i}{2 (2\pi)^2} \frac{4 \pi i c}{\sqrt{\omega}} e^{-i \boldsymbol{k} \boldsymbol{r}}, $$ 
+
+where we have used the fact that $$ \boldsymbol{A}(\boldsymbol{r}) = \Sigma_i A_i(\boldsymbol{r}) \boldsymbol{\varepsilon}_i $$.
+
+Now we have
+
+$$
+\begin{eqnarray}
+  &&  \{ a(\boldsymbol{k} \lambda), a(\boldsymbol{k'} \lambda') \} \\
+  &=& \Sigma_i \int \frac{\partial a(\boldsymbol{k} \lambda)}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k'} \lambda')}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial a(\boldsymbol{k'} \lambda')}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k} \lambda)}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r} \\
+  &=& \Sigma_i \frac{[\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i][\boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} \cdot \boldsymbol{\varepsilon}_i] i}{2 (2\pi)^3} (\sqrt{\frac{\omega}{\omega'}} - \sqrt{\frac{\omega'}{\omega}} ) \int e^{-i \boldsymbol{k} \boldsymbol{r}} e^{-i \boldsymbol{k'} \boldsymbol{r}} \mathrm{d}^3 \boldsymbol{r} \\
+  &=& \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} i}{2} (\sqrt{\frac{\omega}{\omega'}} - \sqrt{\frac{\omega'}{\omega}} ) \delta^3(\boldsymbol{k} + \boldsymbol{k'}) \\
+  &=& 0.
+\end{eqnarray}
+$$
+
+We have last equality because $$ \omega = \omega' $$ when $$ \boldsymbol{k} = -\boldsymbol{k'} $$.
+
+Similarly we have $$ \{ a^* (\boldsymbol{k} \lambda), a^* (\boldsymbol{k'} \lambda') \} = 0 $$.
+
+And finally we have
+
+$$
+\begin{eqnarray}
+  &&  \{ a(\boldsymbol{k} \lambda), a^* (\boldsymbol{k'} \lambda') \} \\
+  &=& \Sigma_i \int \frac{\partial a(\boldsymbol{k} \lambda)}{\partial A_i(\boldsymbol{r})} \frac{\partial a^* (\boldsymbol{k'} \lambda')}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial a^* (\boldsymbol{k'} \lambda')}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k} \lambda)}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r} \\
+  &=& \Sigma_i \frac{[\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i][\boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} \cdot \boldsymbol{\varepsilon}_i] (-i)}{2 (2\pi)^3} (\sqrt{\frac{\omega}{\omega'}} + \sqrt{\frac{\omega'}{\omega}} ) \int e^{-i \boldsymbol{k} \boldsymbol{r}} e^{i \boldsymbol{k'} \boldsymbol{r}} \mathrm{d}^3 \boldsymbol{r} \\
+  &=& \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} (-i)}{2} (\sqrt{\frac{\omega}{\omega'}} + \sqrt{\frac{\omega'}{\omega}} ) \delta^3(\boldsymbol{k} - \boldsymbol{k'}) \\
+  &=& -i \delta_{\lambda \lambda'} \delta^3(\boldsymbol{k} - \boldsymbol{k'}).
+\end{eqnarray}
+$$
+
+## Solutions
