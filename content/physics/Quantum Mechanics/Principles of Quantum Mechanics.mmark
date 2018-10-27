@@ -142,6 +142,8 @@ Page 514, Eq. (18.5.60): $$ \boldsymbol{k}^- $$ should be $$ \boldsymbol{k} $$.
 
 Page 518, Eq. (18.5.81): $$ e^{i \boldsymbol{k} \boldsymbol{r}} $$ should be $$ e^{-i \boldsymbol{k} \boldsymbol{r}} $$. Idem for the equation immediately below.
 
+Page 520, Eq. (18.5.89): If you actually carry out all the calculations, you will realize that it should be $$ \frac{2^7}{3^8} $$ instead of $$ (\frac{2}{3})^8 $$. The reason is that the final state, as defined by Eq. (18.5.77), requires a particular polarization $$ \lambda $$. When we consider both $$ \lambda = 1 $$ and $$ \lambda = 2 $$, we double $$ \frac{2^7}{3^8} $$ and regain $$ (\frac{2}{3})^8 $$.
+
 ## Notes
 
 Below are some useful vector calculus identies for electromagnetism.
@@ -154,23 +156,39 @@ $$ \nabla \cdot (\boldsymbol{A} \times \boldsymbol{B}) = \boldsymbol{B} \cdot (\
 
 $$ (\boldsymbol{A} \times \boldsymbol{B}) \cdot (\boldsymbol{C} \times \boldsymbol{D}) = (\boldsymbol{A} \cdot \boldsymbol{C}) (\boldsymbol{B} \times \boldsymbol{D}) - (\boldsymbol{B} \cdot \boldsymbol{C}) (\boldsymbol{A} \times \boldsymbol{D}) $$
 
-Page 482, Eq. (18.2.35): It would seem that $$ P_{i \rightarrow f} \rightarrow \infty $$ as $$ t \rightarrow \infty $$, when $$ \omega_{f i} = \omega $$. But keep in mind that the first-order calculation is reliable only if $$ |d_f (t)| \ll 1 (f \neq i) $$. (See the discussion underneath Eq. (18.2.9).)
+### Page 482, Eq. (18.2.35)
 
-Page 483, Eq. (18.2.42): We will apply _Fermi's golden rule_ to _time-independent_ perturbation when we study spontaneous emissions. It is valid because we can simply set $$ \omega = 0 $$ and all the derivation will still follow.
+It would seem that $$ P_{i \rightarrow f} \rightarrow \infty $$ as $$ t \rightarrow \infty $$, when $$ \omega_{f i} = \omega $$. But keep in mind that the first-order calculation is reliable only if $$ |d_f (t)| \ll 1 (f \neq i) $$. (See the discussion underneath Eq. (18.2.9).)
+
+### Page 483, Eq. (18.2.42)
+
+We will apply _Fermi's golden rule_ to _time-independent_ perturbation when we study spontaneous emissions. It is valid because we can simply set $$ \omega = 0 $$ and all the derivation will still follow.
 
 Page 494, Exercise 18.4.3, (4): It is easy to show $$ \nabla^2 \Lambda = 0 $$. Its solution is unique when its boundary value is fixed. Hence the uniqueness of $$ A $$ when $$ |A| \rightarrow 0 $$ at spatial infinity. A proof of the uniqueness of solutions to Laplace's equation with fixed boundary conditions can be found [here](https://web.stanford.edu/class/math220b/handouts/laplace.pdf).
 
-Page 501, Footnote: Note that $$ \boldsymbol{A} = \boldsymbol{A_0} e^{i \boldsymbol{k} \boldsymbol{r}} $$.
+### Page 501, Footnote
 
-Page 505, Eq. (18.5.24): Strictly speaking, there should also be an extra term $$ \frac{m}{p_f} \delta \{ p_f + [2m(E^0_i + \hbar \omega)]^{1/2} \} $$ on the right hand side. But this term will become irrelevant in Eq. (18.5.25), where we are only interested in $$ p_f \in [0, \infty] $$ for the integral.
+Note that $$ \boldsymbol{A} = \boldsymbol{A_0} e^{i \boldsymbol{k} \boldsymbol{r}} $$.
 
-Page 505, Eq. (18.5.25): Note $$ R_{i \rightarrow d \Omega} = \int_0^{\infty} R_{i \rightarrow f}(\boldsymbol{p_f}) p_f^2 \mathrm{d} p_f \mathrm{d} \Omega $$.
+### Page 505, Eq. (18.5.24)
 
-Page 508, Note $$ \ddagger $$: Those who want to derive Maxwell's equations from the Lagrangian without reading Goldsteins' wonderful book _Classical Mechanics_, only need to know the Euler–Lagrange equation for a continuous field is $$ \partial_{t} \frac{\partial \mathscr{L}}{\partial (\partial_t \phi)} + \partial_{x} \frac{\partial \mathscr{L}}{\partial (\partial_x \phi)} = \frac{\partial \mathscr{L}}{\partial{\phi}} $$, where $$ \mathscr{L} $$ is the Lagrangian density and $$ \phi $$ is the scalar field. For three dimensions, add $$ \partial_y $$ and $$ \partial_z $$ terms on the left hand side. For a vector field, simply treat each vector componnent as a scalar field.
+Strictly speaking, there should also be an extra term $$ \frac{m}{p_f} \delta \{ p_f + [2m(E^0_i + \hbar \omega)]^{1/2} \} $$ on the right hand side. But this term will become irrelevant in Eq. (18.5.25), where we are only interested in $$ p_f \in [0, \infty] $$ for the integral.
 
-Page 509, Eq. (18.5.6): See the previous note.
+### Page 505, Eq. (18.5.25)
 
-Page 512, Eq. (18.5.51): _Some hard work_ to derive these equalities can be found below.
+Note $$ R_{i \rightarrow d \Omega} = \int_0^{\infty} R_{i \rightarrow f}(\boldsymbol{p_f}) p_f^2 \mathrm{d} p_f \mathrm{d} \Omega $$.
+
+### Page 508, Note $$ \ddagger $$
+
+Those who want to derive Maxwell's equations from the Lagrangian without reading Goldsteins' wonderful book _Classical Mechanics_, only need to know the Euler–Lagrange equation for a continuous field is $$ \partial_{t} \frac{\partial \mathscr{L}}{\partial (\partial_t \phi)} + \partial_{x} \frac{\partial \mathscr{L}}{\partial (\partial_x \phi)} = \frac{\partial \mathscr{L}}{\partial{\phi}} $$, where $$ \mathscr{L} $$ is the Lagrangian density and $$ \phi $$ is the scalar field. For three dimensions, add $$ \partial_y $$ and $$ \partial_z $$ terms on the left hand side. For a vector field, simply treat each vector componnent as a scalar field.
+
+### Page 509, Eq. (18.5.6)
+
+See the previous note.
+
+### Page 512, Eq. (18.5.51)
+
+_Some hard work_ to derive these equalities can be found below.
 
 First we can derive $$ \boldsymbol{a}(\boldsymbol{k}) $$ from Eq. (18.5.44) and Eq. (18.5.46).
 
@@ -222,7 +240,9 @@ $$
 \end{eqnarray}
 $$
 
-Page 513, Eq. (18.5.54): Below is the derivation.
+### Page 513, Eq. (18.5.54)
+
+Below is the derivation.
 
 From Eq. (18.5.41), we have
 
@@ -263,5 +283,48 @@ $$
   &=& \Sigma_{\lambda=1}^2 \int \omega \boldsymbol{a}^*(\boldsymbol{k} \lambda) \boldsymbol{a}(\boldsymbol{k} \lambda) \mathrm{d}^3 \boldsymbol{k} .
 \end{eqnarray}
 $$
+
+### Page 515, Eq. (18.5.67)
+
+Below is the derivation. (When applying $$ \boldsymbol{A} \times (\boldsymbol{B} \times \boldsymbol{C}) = (\boldsymbol{A} \cdot \boldsymbol{C}) \boldsymbol{B} - (\boldsymbol{A} \cdot \boldsymbol{B}) \boldsymbol{C} $$, we will omit the last term since we know they will be later eliminated through $$ \delta^3 (\boldsymbol{k} \pm \boldsymbol{k}') $$ and $$ \boldsymbol{a}(\boldsymbol{k}) \cdot \boldsymbol{k} = 0 $$ any way.)
+
+$$
+\begin{eqnarray}
+  \mathscr{P} &=& \frac{1}{4 \pi c} \int (\boldsymbol{E} \times \boldsymbol{B}) \mathrm{d}^3 \boldsymbol{r} \\
+  &=& - \int (\boldsymbol{\Pi} \times (\nabla \times \boldsymbol{A})) \mathrm{d}^3 \boldsymbol{r} \\
+  &=& - \frac{1}{4 \pi i c} \int \left( \int k [\boldsymbol{a}(\boldsymbol{k}) e^{i \boldsymbol{k} \boldsymbol{r}} - \boldsymbol{a}^*(\boldsymbol{k}) e^{-i \boldsymbol{k} \boldsymbol{r}}] \mathrm{d}^3 \boldsymbol{k} \right) \times \left( \nabla \times \int [ \boldsymbol{a}(\boldsymbol{k}') e^{i \boldsymbol{k}' \boldsymbol{r}} + \boldsymbol{a}^*(\boldsymbol{k}') e^{- i \boldsymbol{k}' \boldsymbol{r}} ] \mathrm{d}^3 \boldsymbol{k}' \right) \mathrm{d}^3 \boldsymbol{r} \\
+  &=& - \frac{1}{4 \pi c} \int \int \int k \left[ \boldsymbol{a}(\boldsymbol{k}) e^{i \boldsymbol{k} \boldsymbol{r}} - \boldsymbol{a}^*(\boldsymbol{k}) e^{-i \boldsymbol{k} \boldsymbol{r}} \right] \times \left[ \boldsymbol{k}' \times \boldsymbol{a}(\boldsymbol{k}') e^{i \boldsymbol{k}' \boldsymbol{r}} - \boldsymbol{k}' \times \boldsymbol{a}^*(\boldsymbol{k}') e^{- i \boldsymbol{k}' \boldsymbol{r}} \right] \mathrm{d}^3 \boldsymbol{r} \mathrm{d}^3 \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}' \\
+  &=& - \frac{1}{4 \pi c} \int \int \int k \left[ \left( \boldsymbol{a}(\boldsymbol{k}) \cdot \boldsymbol{a}(\boldsymbol{k}') \right) \boldsymbol{k}' e^{i (\boldsymbol{k} + \boldsymbol{k}') \boldsymbol{r}} - \left( \boldsymbol{a}(\boldsymbol{k}) \cdot \boldsymbol{a}^*(\boldsymbol{k}') \right) \boldsymbol{k}' e^{i (\boldsymbol{k} - \boldsymbol{k}') \boldsymbol{r}} - \left( \boldsymbol{a}^*(\boldsymbol{k}) \cdot \boldsymbol{a}(\boldsymbol{k}') \right) \boldsymbol{k}' e^{-i (\boldsymbol{k} - \boldsymbol{k}') \boldsymbol{r}} + \left( \boldsymbol{a}^*(\boldsymbol{k}) \cdot \boldsymbol{a}^*(\boldsymbol{k}') \right) \boldsymbol{k}' e^{-i (\boldsymbol{k} + \boldsymbol{k}') \boldsymbol{r}}
+  \right] \mathrm{d}^3 \boldsymbol{r} \mathrm{d}^3 \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}' \\
+  &=& \frac{4 \pi^2}{c} \int k \left[ \left( \boldsymbol{a}(\boldsymbol{k}) \cdot \boldsymbol{a}^*(\boldsymbol{k}) \right) \boldsymbol{k} + \Re[ \boldsymbol{a}(\boldsymbol{k}) \cdot \boldsymbol{a}(-\boldsymbol{k}) ] \boldsymbol{k} \right] \mathrm{d}^3 \boldsymbol{k}
+\end{eqnarray}
+$$
+
+The second term in the integrand does not matter because it will be cancelled when we take $$ \boldsymbol{k} = - \boldsymbol{k} $$. Therefore,
+
+$$
+\begin{eqnarray}
+  \mathscr{P} &=& \frac{4 \pi^2}{c} \int k \left( \boldsymbol{a}(\boldsymbol{k}) \cdot \boldsymbol{a}^*(\boldsymbol{k}) \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k} \\
+  &=& \Sigma_{\lambda = 1}^2 \int \frac{k c}{\omega} \left( a(\boldsymbol{k} \lambda) a^*(\boldsymbol{k} \lambda) \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k} \\
+  &=& \Sigma_{\lambda = 1}^2 \int \left( a(\boldsymbol{k} \lambda) a^*(\boldsymbol{k} \lambda) \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}.
+\end{eqnarray}
+$$
+
+The quantization of the classical result above is to replace $$ a(\boldsymbol{k} \lambda) a^*(\boldsymbol{k} \lambda) $$ by $$ \hbar \frac{a(\boldsymbol{k} \lambda) a^\dagger(\boldsymbol{k} \lambda) + a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda)}{2} $$, and we we have
+
+$$
+\begin{eqnarray}
+  \boldsymbol{P} &=& \Sigma_{\lambda = 1}^2 \int \hbar \frac{a(\boldsymbol{k} \lambda) a^\dagger(\boldsymbol{k} \lambda) + a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda)}{2} \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k} \\
+  &=& \Sigma_{\lambda = 1}^2 \int \hbar \left(a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda) + \frac{1}{2} \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}.
+\end{eqnarray}
+$$
+
+Again, the $$ \frac{1}{2} $$ does not matter because it will be cancelled when we take $$ \boldsymbol{k} = - \boldsymbol{k} $$. Therefore,
+
+$$ \boldsymbol{P} = \Sigma_{\lambda = 1}^2 \int \left(a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda)\right) \hbar \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}. $$
+
+### Page 517, discussion about photon's spin
+
+Recall that an infinitesimal rotation around the $$ z $$ axis is $$ I - i \mathrm{d} \theta S_z / \hbar $$. Invariance under such a rotation requires that $$ s_z = 0 $$.
 
 ## Solutions
