@@ -142,8 +142,6 @@ Page 514, Eq. (18.5.60): $$ \boldsymbol{k}^- $$ should be $$ \boldsymbol{k} $$.
 
 Page 518, Eq. (18.5.81): $$ e^{i \boldsymbol{k} \boldsymbol{r}} $$ should be $$ e^{-i \boldsymbol{k} \boldsymbol{r}} $$. Idem for the equation immediately below.
 
-Page 520, Eq. (18.5.89): If you actually carry out all the calculations, you will realize that it should be $$ \frac{2^7}{3^8} $$ instead of $$ (\frac{2}{3})^8 $$. The reason is that the final state, as defined by Eq. (18.5.77), requires a particular polarization $$ \lambda $$. When we consider both $$ \lambda = 1 $$ and $$ \lambda = 2 $$, we double $$ \frac{2^7}{3^8} $$ and regain $$ (\frac{2}{3})^8 $$.
-
 ## Notes
 
 Below are some useful vector calculus identies for electromagnetism.
@@ -327,4 +325,91 @@ $$ \boldsymbol{P} = \Sigma_{\lambda = 1}^2 \int \left(a^\dagger(\boldsymbol{k} \
 
 Recall that an infinitesimal rotation around the $$ z $$ axis is $$ I - i \mathrm{d} \theta S_z / \hbar $$. Invariance under such a rotation requires that $$ s_z = 0 $$.
 
+### Page 520, Eq. (18.5.89)
+
+The equation at the bottom of the previous page sums over all directions but not both polarizations. One needs to multiply it by 2 to count for both $$ \lambda = 1 $$ and $$ \lambda = 2 $$ and get the factor $$ (\frac{2}{3})^8 $$.
+
 ## Solutions
+
+# Chapter 21 - Path Integrals: Part Invariance
+
+This is probably the most interesting chapter of the whole book. unfortunately there are no solutions available online, except here.
+
+## Solutions
+
+### 21.1.1
+
+The answer is exactly the same as the derivation leading to Eq. (5.1.10). The only difference is that for some unknown reason, the definition of $$ | p > $$ here as in Eq. (21.1.14) is unnormalized and misses a factor of $$ \frac{1}{\sqrt{2 \pi h}} $$. As a consequence, the resolution of identity as in Eq. (21.1.13) has an extra factor correspondingly.
+
+### 21.1.2
+
+There isn't anything new compared to Exercise (12.3.8). The commutation rules for $$ (Q', P') $$ can be derived similarly to those of $$ (Q, P) $$.
+
+### 21.1.3
+
+From Eq. (21.1.39), we have
+
+$$ \frac{\partial}{\partial x} = \frac{\partial}{\partial z} + \frac{\partial}{\partial z^*}, $$
+
+and
+
+$$ \frac{\partial}{\partial y} = i \frac{\partial}{\partial z} - i \frac{\partial}{\partial z^*}. $$
+
+In the coordinate representation, using both the equalities above and the definition of $$ \omega_0 $$, we have
+
+$$
+\begin{eqnarray}
+  a &=& \sqrt{\frac{\mu \omega_0}{2 \hbar}} Q + \frac{i P}{\sqrt{2 \mu \omega_0 \hbar}} \\
+  &=& \sqrt{\frac{c}{2 \hbar q B}} (-i \hbar \frac{\partial} {\partial x} + q y B/2c) + \sqrt{\frac{c}{2 \hbar q B}} (\hbar \frac{\partial}{\partial y} - i q B x/2c) \\
+  &=& \sqrt{\frac{c}{2 \hbar q B}} (-i \hbar \frac{\partial} {\partial x} + \hbar \frac{\partial}{\partial y}) + \sqrt{\frac{c}{2 \hbar q B}} (- i q B x/2c + q y B/2c) \\
+  &=& -i \sqrt{\frac{2 \hbar c}{q B}} \frac{\partial}{\partial z^*} - \frac{i}{2} \sqrt{\frac{q B}{2 \hbar c}} (x + i y) \\
+  &=& -i \sqrt{\frac{2 \hbar c}{q B}} (\frac{\partial}{\partial z^*} + \frac{q B}{4 \hbar c} z),
+\end{eqnarray}
+$$
+
+from which Eqs. (21.1.38) and (21.1.41) follow.
+
+The probability density is concentrated at radius $$ r_m $$ that maximizes
+
+$$ r_m \psi_{0, m}^* \psi_{0, m} = r_m^{2 m + 1} e^{-\frac{q B r_m^2}{2 \hbar c}}. $$
+
+Setting its derivative to zero gives us
+
+$$ r_m = \sqrt{\frac{(2 m + 1) \hbar c}{q B}} \approx \sqrt{\frac{2 m \hbar c}{q B}} $$
+
+for large $$ m $$.
+
+By requiring $$ r_m \le R $$, we get Eq. (21.1.43).
+
+### 21.1.4
+
+It is easy to show from Eq. (21.1.47) that
+
+$$ \boldsymbol{v} \cdot \boldsymbol{\nabla} V = \dot{x} \frac{\partial V}{\partial x} + \dot{y} \frac{\partial V}{\partial y} = 0. $$
+
+Hence $$ \boldsymbol{v} $$ and $$ \boldsymbol{\nabla} V $$ are orthogonal, and the motion is on contours of constant $$ V $$.
+
+### 21.1.5
+
+Trivial.
+
+### 21.1.6
+
+Eq. (21.1.49) is antisymmetric, because when we switch $$ z_i $$ and $$ z_j $$, the following happen.
+- $$ (z_i - z_j) $$ switches sign;
+- Any term involving $$ z_k $$, where $$ k < \min(i, j) $$ or $$ k > \max(i, j) $$, keeps its original sign;
+- Any term involving $$ z_k $$, where $$ \min(i, j) < k < \max(i, j) $$, switches its sign.
+
+The first case takes place once, while the last one takes place twice with each $$ k $$. In total there are an odd number of sign switchings.
+
+For the three particle case, Eq. (21.1.49) gives us
+
+$$
+\begin{eqnarray}
+  && (z_2-z_1)(z_3-z_1)(z_3-z_2) \\
+  &=& z_2 z_3 z_3 - z_2 z_3 z_2 - z_2 z_1 z_3 + z_2 z_1 z_2 - z_1 z_3 z_3 + z_1 z_3 z_2 + z_1 z_1 z_3 -z_1 z_1 z_2 \\
+  &=& z_1^0 z_2^1 z_3^2 - z_1^0 z_2^2 z_3^1 + z_1^1 z_2^2 z_3^0 - z_1^1 z_2^0 z_3^2 + z_1^2 z_2^0 z_3^1 - z_1^2 z_2^1 z_3^0,
+\end{eqnarray}
+$$
+
+which is exactly the same as what Eq. (10.3.36) would give us.
