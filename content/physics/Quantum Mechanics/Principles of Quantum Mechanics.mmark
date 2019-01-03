@@ -15,7 +15,7 @@ Solutions to most problems can be found [here](http://www.physicspages.com/shank
 
 ## Solutions
 
-### 5.4.1
+### Exercise 5.4.1
 
 If we replace $$ x $$ by $$ x + a $$ in (5.1.15) and $$ p_0 $$ by $$ \hbar k_0 $$, we get the following wave function.
 
@@ -67,7 +67,7 @@ $$
 
 From the term $$ e^{i k_2 x} $$, it can be clearly seen that $$ \langle P \rangle = \hbar k_2 $$, again exactly as what we would expect from classical mechanics.
 
-### 5.4.3
+### Exercise 5.4.3
 
 We have the following Hamiltonian.
 
@@ -198,7 +198,7 @@ $$ a(\boldsymbol{k} \lambda) = \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lamb
 
 In the continuous system that interests us now, the Poisson bracket is defined as
 
-$$ \{ X, Y \} = \Sigma_i \int \frac{\partial X}{\partial A_i(\boldsymbol{r})} \frac{\partial Y}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial Y}{\partial A_i(\boldsymbol{r})} \frac{\partial X}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r}, $$
+$$ \{ X, Y \} = \sum_i \int \frac{\partial X}{\partial A_i(\boldsymbol{r})} \frac{\partial Y}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial Y}{\partial A_i(\boldsymbol{r})} \frac{\partial X}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r}, $$
 
 where $$ \boldsymbol{r} $$ is a continuous index rather than an independent variable.
 
@@ -208,15 +208,15 @@ $$ \frac{\partial a(\boldsymbol{k} \lambda)}{\partial A_i(\boldsymbol{r})} = \fr
 
 $$ \frac{\partial a(\boldsymbol{k} \lambda)}{\partial \Pi_i(\boldsymbol{r})} = \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i}{2 (2\pi)^2} \frac{4 \pi i c}{\sqrt{\omega}} e^{-i \boldsymbol{k} \boldsymbol{r}}, $$ 
 
-where we have used the fact that $$ \boldsymbol{A}(\boldsymbol{r}) = \Sigma_i A_i(\boldsymbol{r}) \boldsymbol{\varepsilon}_i $$.
+where we have used the fact that $$ \boldsymbol{A}(\boldsymbol{r}) = \sum_i A_i(\boldsymbol{r}) \boldsymbol{\varepsilon}_i $$.
 
 Now we have
 
 $$
 \begin{eqnarray}
   &&  \{ a(\boldsymbol{k} \lambda), a(\boldsymbol{k'} \lambda') \} \\
-  &=& \Sigma_i \int \frac{\partial a(\boldsymbol{k} \lambda)}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k'} \lambda')}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial a(\boldsymbol{k'} \lambda')}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k} \lambda)}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r} \\
-  &=& \Sigma_i \frac{[\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i][\boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} \cdot \boldsymbol{\varepsilon}_i] i}{2 (2\pi)^3} (\sqrt{\frac{\omega}{\omega'}} - \sqrt{\frac{\omega'}{\omega}} ) \int e^{-i \boldsymbol{k} \boldsymbol{r}} e^{-i \boldsymbol{k'} \boldsymbol{r}} \mathrm{d}^3 \boldsymbol{r} \\
+  &=& \sum_i \int \frac{\partial a(\boldsymbol{k} \lambda)}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k'} \lambda')}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial a(\boldsymbol{k'} \lambda')}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k} \lambda)}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r} \\
+  &=& \sum_i \frac{[\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i][\boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} \cdot \boldsymbol{\varepsilon}_i] i}{2 (2\pi)^3} (\sqrt{\frac{\omega}{\omega'}} - \sqrt{\frac{\omega'}{\omega}} ) \int e^{-i \boldsymbol{k} \boldsymbol{r}} e^{-i \boldsymbol{k'} \boldsymbol{r}} \mathrm{d}^3 \boldsymbol{r} \\
   &=& \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} i}{2} (\sqrt{\frac{\omega}{\omega'}} - \sqrt{\frac{\omega'}{\omega}} ) \delta^3(\boldsymbol{k} + \boldsymbol{k'}) \\
   &=& 0.
 \end{eqnarray}
@@ -231,8 +231,8 @@ And finally we have
 $$
 \begin{eqnarray}
   &&  \{ a(\boldsymbol{k} \lambda), a^* (\boldsymbol{k'} \lambda') \} \\
-  &=& \Sigma_i \int \frac{\partial a(\boldsymbol{k} \lambda)}{\partial A_i(\boldsymbol{r})} \frac{\partial a^* (\boldsymbol{k'} \lambda')}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial a^* (\boldsymbol{k'} \lambda')}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k} \lambda)}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r} \\
-  &=& \Sigma_i \frac{[\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i][\boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} \cdot \boldsymbol{\varepsilon}_i] (-i)}{2 (2\pi)^3} (\sqrt{\frac{\omega}{\omega'}} + \sqrt{\frac{\omega'}{\omega}} ) \int e^{-i \boldsymbol{k} \boldsymbol{r}} e^{i \boldsymbol{k'} \boldsymbol{r}} \mathrm{d}^3 \boldsymbol{r} \\
+  &=& \sum_i \int \frac{\partial a(\boldsymbol{k} \lambda)}{\partial A_i(\boldsymbol{r})} \frac{\partial a^* (\boldsymbol{k'} \lambda')}{\partial \Pi_i(\boldsymbol{r})} - \frac{\partial a^* (\boldsymbol{k'} \lambda')}{\partial A_i(\boldsymbol{r})} \frac{\partial a(\boldsymbol{k} \lambda)}{\partial \Pi_i(\boldsymbol{r})} \mathrm{d}^3 \boldsymbol{r} \\
+  &=& \sum_i \frac{[\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon}_i][\boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} \cdot \boldsymbol{\varepsilon}_i] (-i)}{2 (2\pi)^3} (\sqrt{\frac{\omega}{\omega'}} + \sqrt{\frac{\omega'}{\omega}} ) \int e^{-i \boldsymbol{k} \boldsymbol{r}} e^{i \boldsymbol{k'} \boldsymbol{r}} \mathrm{d}^3 \boldsymbol{r} \\
   &=& \frac{\boldsymbol{\varepsilon(\boldsymbol{k}\lambda)} \cdot \boldsymbol{\varepsilon(\boldsymbol{k'}\lambda')} (-i)}{2} (\sqrt{\frac{\omega}{\omega'}} + \sqrt{\frac{\omega'}{\omega}} ) \delta^3(\boldsymbol{k} - \boldsymbol{k'}) \\
   &=& -i \delta_{\lambda \lambda'} \delta^3(\boldsymbol{k} - \boldsymbol{k'}).
 \end{eqnarray}
@@ -277,8 +277,8 @@ Combining the two terms above, and substituting $$ \boldsymbol{a}(\boldsymbol{k}
 $$
 \begin{eqnarray}
   \mathscr{H} &=& 4 \pi^2 \int k^2 \boldsymbol{a}^*(\boldsymbol{k}) \boldsymbol{a}(\boldsymbol{k}) \mathrm{d}^3 \boldsymbol{k} \\
-  &=& \int \frac{c^ 2 k^2}{\omega} \Sigma_{\lambda=1}^2 \boldsymbol{a}^*(\boldsymbol{k} \lambda) \boldsymbol{a}(\boldsymbol{k} \lambda) \mathrm{d}^3 \boldsymbol{k} \\
-  &=& \Sigma_{\lambda=1}^2 \int \omega \boldsymbol{a}^*(\boldsymbol{k} \lambda) \boldsymbol{a}(\boldsymbol{k} \lambda) \mathrm{d}^3 \boldsymbol{k} .
+  &=& \int \frac{c^ 2 k^2}{\omega} \sum_{\lambda=1}^2 \boldsymbol{a}^*(\boldsymbol{k} \lambda) \boldsymbol{a}(\boldsymbol{k} \lambda) \mathrm{d}^3 \boldsymbol{k} \\
+  &=& \sum_{\lambda=1}^2 \int \omega \boldsymbol{a}^*(\boldsymbol{k} \lambda) \boldsymbol{a}(\boldsymbol{k} \lambda) \mathrm{d}^3 \boldsymbol{k} .
 \end{eqnarray}
 $$
 
@@ -303,8 +303,8 @@ The second term in the integrand does not matter because it will be cancelled wh
 $$
 \begin{eqnarray}
   \mathscr{P} &=& \frac{4 \pi^2}{c} \int k \left( \boldsymbol{a}(\boldsymbol{k}) \cdot \boldsymbol{a}^*(\boldsymbol{k}) \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k} \\
-  &=& \Sigma_{\lambda = 1}^2 \int \frac{k c}{\omega} \left( a(\boldsymbol{k} \lambda) a^*(\boldsymbol{k} \lambda) \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k} \\
-  &=& \Sigma_{\lambda = 1}^2 \int \left( a(\boldsymbol{k} \lambda) a^*(\boldsymbol{k} \lambda) \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}.
+  &=& \sum_{\lambda = 1}^2 \int \frac{k c}{\omega} \left( a(\boldsymbol{k} \lambda) a^*(\boldsymbol{k} \lambda) \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k} \\
+  &=& \sum_{\lambda = 1}^2 \int \left( a(\boldsymbol{k} \lambda) a^*(\boldsymbol{k} \lambda) \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}.
 \end{eqnarray}
 $$
 
@@ -312,14 +312,14 @@ The quantization of the classical result above is to replace $$ a(\boldsymbol{k}
 
 $$
 \begin{eqnarray}
-  \boldsymbol{P} &=& \Sigma_{\lambda = 1}^2 \int \hbar \frac{a(\boldsymbol{k} \lambda) a^\dagger(\boldsymbol{k} \lambda) + a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda)}{2} \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k} \\
-  &=& \Sigma_{\lambda = 1}^2 \int \hbar \left(a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda) + \frac{1}{2} \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}.
+  \boldsymbol{P} &=& \sum_{\lambda = 1}^2 \int \hbar \frac{a(\boldsymbol{k} \lambda) a^\dagger(\boldsymbol{k} \lambda) + a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda)}{2} \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k} \\
+  &=& \sum_{\lambda = 1}^2 \int \hbar \left(a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda) + \frac{1}{2} \right) \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}.
 \end{eqnarray}
 $$
 
 Again, the $$ \frac{1}{2} $$ does not matter because it will be cancelled when we take $$ \boldsymbol{k} = - \boldsymbol{k} $$. Therefore,
 
-$$ \boldsymbol{P} = \Sigma_{\lambda = 1}^2 \int \left(a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda)\right) \hbar \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}. $$
+$$ \boldsymbol{P} = \sum_{\lambda = 1}^2 \int \left(a^\dagger(\boldsymbol{k} \lambda) a(\boldsymbol{k} \lambda)\right) \hbar \boldsymbol{k} \mathrm{d}^3 \boldsymbol{k}. $$
 
 ### Page 517, discussion about photon's spin
 
@@ -353,15 +353,15 @@ The mathematically inclined should notice that there is no guarantee that each $
 
 ## Solutions
 
-### 21.1.1
+### Exercise 21.1.1
 
 The answer is exactly the same as the derivation leading to Eq. (5.1.10). The only difference is that for some unknown reason, the definition of $$ | p \rangle $$ here as in Eq. (21.1.14) is unnormalized and misses a factor of $$ \frac{1}{\sqrt{2 \pi h}} $$. As a consequence, the resolution of identity as in Eq. (21.1.13) has an extra factor correspondingly.
 
-### 21.1.2
+### Exercise 21.1.2
 
 There isn't anything new compared to Exercise (12.3.8). The commutation rules for $$ (Q', P') $$ can be derived similarly to those of $$ (Q, P) $$.
 
-### 21.1.3
+### Exercise 21.1.3
 
 From Eq. (21.1.39), we have
 
@@ -397,7 +397,7 @@ for large $$ m $$.
 
 By requiring $$ r_m \le R $$, we get Eq. (21.1.43).
 
-### 21.1.4
+### Exercise 21.1.4
 
 It is easy to show from Eq. (21.1.47) that
 
@@ -405,11 +405,11 @@ $$ \boldsymbol{v} \cdot \boldsymbol{\nabla} V = \dot{x} \frac{\partial V}{\parti
 
 Hence $$ \boldsymbol{v} $$ and $$ \boldsymbol{\nabla} V $$ are orthogonal, and the motion is on contours of constant $$ V $$.
 
-### 21.1.5
+### Exercise 21.1.5
 
 Trivial.
 
-### 21.1.6
+### Exercise 21.1.6
 
 Eq. (21.1.49) is antisymmetric, because when we switch $$ z_i $$ and $$ z_j $$, the following happen.
 - $$ (z_i - z_j) $$ switches sign;
@@ -430,7 +430,7 @@ $$
 
 which is exactly the same as what Eq. (10.3.36) would give us.
 
-### 21.1.7
+### Exercise 21.1.7
 
 First of all, it should be noted that both $$ \psi(R', \varepsilon) $$ and $$ \psi(R' + \eta, 0) $$ in Eq. (21.1.74) refer to the wave functions of the nucleus.
 
@@ -452,7 +452,7 @@ $$
 
 This directly leads to Eq. (21.1.78).
 
-### 21.1.8
+### Exercise 21.1.8
 
 Substituting Eqs. (21.1.80) and (21.1.81) into Eq. (21.1.79) and using $$ \langle n | \partial n \rangle = - \langle \partial n | n \rangle $$, we have, in the coordinate basis,
 
@@ -469,7 +469,7 @@ $$
 
 consistent with Eq. (21.1.78).
 
-### 21.1.9
+### Exercise 21.1.9
 
 By taking the derivative of $$ \langle n | n \rangle = 1 $$, we have
 
@@ -493,18 +493,18 @@ $$
   &=& I - (R' - R) \langle n | \partial n \rangle - \frac{(R' - R)^2}{2} \langle \partial n | \partial n \rangle \\
   &=& e^{-(R' - R) \langle n | \partial n \rangle - \frac{(R' - R)^2}{2} \langle n | \partial n \rangle^2 - \frac{(R' - R)^2}{2} \langle \partial n | \partial n \rangle} \\
   &=& e^{-(R' - R) \langle n | \partial n \rangle - \frac{(R' - R)^2}{2} \langle \partial n | (I - |n \rangle \langle n|) | \partial n \rangle}
-  \end{eqnarray}
+\end{eqnarray}
 $$
 
 Combined with the factor from Eq. (21.1.72), we get Eq. (21.1.82), as desired.
 
-### 21.1.10
+### Exercise 21.1.10
 
 Compared to Eq. (21.1.79), $$ I $$ plays the role of $$ m $$, and $$ \phi $$ plays the role of $$ R $$. Therefore the factor $$ 2m $$ in Eq. (21.1.81) should be replaced by $$ 2I = 1 $$ here.
 
 The calculations themselves are trivial and is omitted here.
 
-### 21.1.11
+### Exercise 21.1.11
 
 The downward spinor can be chosen as $$ | \theta \phi \rangle = \begin{bmatrix} -\sin \frac{\theta}{2} \\ i\cos \frac{\theta}{2} e^{i \phi} \end{bmatrix} $$. (See Eq. (14.3.28b).) Correspondingly, we have
 
@@ -524,11 +524,11 @@ Finally Eq. (21.1.94) becomes
 
 $$ E^- = \left( m + \cos^2 \frac{\theta}{2} \right)^2 \hbar^2 + B C. $$
 
-### 21.1.12
+### Exercise 21.1.12
 
 Its solution is exactly the same as that to Exercise 21.1.8.
 
-### 21.1.13
+### Exercise 21.1.13
 
 Let's first calculate $$ \boldsymbol{\mathscr{B}}^\uparrow $$. Note here $$ \uparrow $$ is taken to be the direction of $$ \boldsymbol{R} $$.
 
@@ -537,10 +537,10 @@ $$
   && \mathscr{B}^\uparrow_k \\
   &=& \frac{1}{2} \epsilon_{ijk} F_{ij}^\uparrow \\
   &=& \frac{1}{2} \epsilon_{ijk} \frac{i \hbar}{4 R^2} (\langle \uparrow | \sigma_i | \downarrow \rangle \langle \downarrow | \sigma_j | \uparrow \rangle - \langle \uparrow | \sigma_j | \downarrow \rangle \langle \downarrow | \sigma_i | \uparrow \rangle) \\
-  &=& \frac{1}{2} \epsilon_{ijk} \frac{i \hbar}{4 R^2} \Sigma_{m = \uparrow, \downarrow} (\langle \uparrow | \sigma_i | m \rangle \langle m | \sigma_j | \uparrow \rangle - \langle \uparrow | \sigma_j | m \rangle \langle m | \sigma_i | \uparrow \rangle) \\
+  &=& \frac{1}{2} \epsilon_{ijk} \frac{i \hbar}{4 R^2} \sum_{m = \uparrow, \downarrow} (\langle \uparrow | \sigma_i | m \rangle \langle m | \sigma_j | \uparrow \rangle - \langle \uparrow | \sigma_j | m \rangle \langle m | \sigma_i | \uparrow \rangle) \\
   &=& \frac{1}{2} \epsilon_{ijk} \frac{i \hbar}{4 R^2} \langle \uparrow | [\sigma_i,  \sigma_j] | \uparrow \rangle \\
   &=& - \frac{\hbar}{2 R^2} \langle \uparrow | \sigma_k | \uparrow \rangle
-  \end{eqnarray}
+\end{eqnarray}
 $$
 
 So the only non-zero component is $$ \mathscr{B}^\uparrow_z = - \frac{\hbar}{2 R^2} $$ and therefore we have
@@ -549,7 +549,7 @@ $$ \boldsymbol{\mathscr{B}}^\uparrow = - \hbar \frac{\boldsymbol{\hat{R}}}{2 R^2
 
 The sign is simply reversed for the $$ \downarrow $$ state.
 
-### 21.1.14
+### Exercise 21.1.14
 
 Note that there is no reason why we have to use Cartesian coordinates in _parameter space_. In fact, we can also use spherical coordinates. Then we have
 
@@ -565,7 +565,7 @@ where $$ \phi' $$ is the azimuthal angle in _real space_.
 
 $$ A^+ $$, expressed as a $$ \phi $$-derivative, is exactly the same in both real space and parameter space, and so is the line integral. (However, the vector $$ \boldsymbol{A}^+ $$ are certainly different in both spaces. In real space, its magnitude has a factor of $$ \frac{1}{r} $$, where $$ r $$ is the radius of the circle. In parameter space, on the other hand, it has a factor of $$ \frac{1}{B_2} $$.)
 
-### 21.1.15
+### Exercise 21.1.15
 
 Note that the magnitude of $$ \boldsymbol{A} $$ is indeed $$ \frac{1}{B_2} \cdot i \hbar \langle \theta \phi | \frac{\partial}{\partial \phi} | \theta \phi \rangle $$. The factor $$ \frac{1}{B_2} $$ is there because $$ \mathrm{d} \boldsymbol{R} = B_2 \mathrm{d} \phi \boldsymbol{e}_\phi $$.
 
@@ -574,3 +574,164 @@ Around the south pole, the line integral is
 $$ A (2 \pi R \sin \theta) = - 2 \pi \hbar \sin^2 \frac{\pi}{2} = - 2 \pi \hbar. $$
 
 The singularity around the north pole can be shown similarly.
+
+### Exercise 21.1.16
+
+Below is the derivation.
+
+$$
+\begin{eqnarray}
+  && \int \frac{\mathrm{d}x \mathrm{d}y}{\pi} |z \rangle \langle z| e^{-z^* z} \\
+  &=& \int \frac{\mathrm{d}x \mathrm{d}y}{\pi} \sum_{n, m} \frac{z^n}{\sqrt{n!}} \frac{{z^*}^m}{\sqrt{m!}} |n \rangle \langle m| e^{-z^* z} \\
+  &=& \sum_{n, m} \int \frac{r \mathrm{d}r \mathrm{d}\theta}{\pi} \frac{r^{n + m} e^{i \theta (n - m)}}{\sqrt{n!} \sqrt{m!}} |n \rangle \langle m| e^{-r^2} \\
+  &=& \sum_{n, m} \frac{|n \rangle \langle m|}{\pi \sqrt{n!} \sqrt{m!}} \int_0^\infty r^{n + m + 1} e^{-r^2} \mathrm{d}r \int_0^{2 \pi} e^{i \theta (n - m)} \mathrm{d}\theta
+\end{eqnarray}
+$$
+
+Note that the integral on $$ \theta $$ will be zero unless $$ m = n $$. We have thus
+
+$$
+\begin{eqnarray}
+  && \int \frac{\mathrm{d}x \mathrm{d}y}{\pi} |z \rangle \langle z| e^{-z^* z} \\
+  &=& \sum_{n} \frac{2 \pi |n \rangle \langle n|}{\pi n!} \int_0^\infty r^{2 n + 1} e^{-r^2} \mathrm{d}r \\
+  &=& \sum_{n} \frac{|n \rangle \langle n|}{n!} \\
+  &=& I.
+\end{eqnarray}
+$$
+
+### Exercise 21.1.17
+
+$$
+\begin{eqnarray}
+  && a^2 a^\dagger \\
+  &=& [a^2, a^\dagger] + a^\dagger a^2 \\
+  &=& a [a, a^\dagger] + [a, a^\dagger] a + a^\dagger a^2 \\
+  &=& a^\dagger a^2 + 2a
+\end{eqnarray}
+$$
+
+### Exercise 21.1.18
+
+From
+
+$$
+\begin{eqnarray}
+  && 0 \\
+  &=& (a - z) | z \rangle \\
+  &=& (\sqrt{\frac{m \omega}{2 \hbar}} x - z) \psi_z(x) + i \sqrt{\frac{1}{2 m \omega \hbar}} (- i \hbar) \frac{\partial \psi_z(x)}{\partial x} \\
+  &=& (\sqrt{\frac{m \omega}{2 \hbar}} x - z) \psi_z(x) + \sqrt{\frac{\hbar}{2 m \omega}} \frac{\partial \psi_z(x)}{\partial x}
+\end{eqnarray}
+$$
+
+we have
+
+$$ \ln \psi_z(x) = - \frac{m \omega}{2 \hbar} x^2 + \sqrt{\frac{2 m \omega}{\hbar}} z x + C', $$
+
+or equivalently,
+
+$$ \psi_z(x) = C e^{- \frac{m \omega}{2 \hbar} x^2} e^{\sqrt{\frac{2 m \omega}{\hbar}} z x}. $$
+
+For the normalization, we have
+
+$$
+\begin{eqnarray}
+  && \langle z' | z \rangle \\
+  &=& C(z')^* C(z) \int_{-\infty}^\infty e^{- \frac{m \omega}{\hbar} x^2} e^{\sqrt{\frac{2 m \omega}{\hbar}} ({z'}^* + z) x} \mathrm{d}x \\
+  &=& C(z')^* C(z) \sqrt{\frac{\pi \hbar}{m \omega}} e^{\frac{({z'}^* + z)^2}{2}} \\
+  &=& e^{{z'}^* z}
+\end{eqnarray}
+$$
+
+One obvious (though non-unique) solution is
+
+$$ C(z) = (\frac{m \omega}{\pi \hbar})^{1/4} e^{-z^2 / 2}.$$
+
+Set $$ z = \sqrt{\frac{m \omega}{2 \hbar}} x_0 + i \sqrt{\frac{1}{2 m \omega \hbar}} p_0 $$, we have
+
+$$
+\begin{eqnarray}
+  && \psi_z(x)  \\
+  &=& (\frac{m \omega}{\pi \hbar})^{1/4} e^{-z^2 / 2} e^{- \frac{m \omega}{2 \hbar} x^2} e^{\sqrt{\frac{2 m \omega}{\hbar}} z x} \\
+  &=& (\frac{m \omega}{\pi \hbar})^{1/4} e^{-\frac{m \omega}{4 \hbar} {x_0}^2} e^{\frac{1}{4 m \omega \hbar} {p_0}^2} e^{-\frac{i p_0 x_0}{2 \hbar}} e^{- \frac{m \omega}{2 \hbar} x^2} e^{\frac{m \omega}{\hbar} x_0 x} e^{\frac{i p_0 x}{\hbar}} \\
+  &=& (\frac{m \omega}{\pi \hbar})^{1/4} e^{\frac{m \omega}{4 \hbar} {x_0}^2} e^{\frac{1}{4 m \omega \hbar} {p_0}^2} e^{\frac{i p_0 x_0}{2 \hbar}} e^{\frac{i p_0 (x - x_0)}{\hbar}} e^{- \frac{m \omega}{2 \hbar} (x - x_0)^2} \\
+  &=& (\frac{m \omega}{\pi \hbar})^{1/4} e^{\frac{r^2}{2}} e^{\frac{i p_0 x_0}{2 \hbar}} e^{\frac{i p_0 (x - x_0)}{\hbar}} e^{- \frac{m \omega}{2 \hbar} (x - x_0)^2},
+\end{eqnarray}
+$$
+
+where $$ r $$ is the magnitude of $$ z $$.
+
+At time $$ t $$, $$ | z \rangle \rightarrow | z e^{-i \omega t} \rangle $$, and we can easily see that 
+- $$ r_0 $$ and $$ p_0 $$ behaves as in a classical oscillator of angular velocity $$ \omega $$;
+- $$ \psi_z(x) $$ behaves like a Gaussian packet oscillating at angular velocity $$ \omega $$.
+
+### Exercise 21.1.19
+
+Substituting Eqs. (21.1.151) and (21.1.152) into the exponent in Eq. (21.1.143), we have
+
+$$
+\begin{eqnarray}
+  && {z_f}^* z_f + \frac{i}{\hbar} \int_0^t [i \hbar z^* \frac{\mathrm{d}z}{\mathrm{d}t} - H(z^*, z)] \mathrm{d}t \\
+  &=& {z_f}^* z_f + \frac{i}{\hbar} \int_0^t [i \hbar (- i \omega) {z_f}^* e^{i \omega (t - T)} z_i e^{- i \omega t} - \hbar \omega {z_f}^* z_i e^{i \omega (t - T)} e^{i \omega t}] \mathrm{d}t \\
+  &=& {z_f}^* z_f.
+\end{eqnarray}
+$$
+
+### Exercise 21.1.20
+
+Trivial.
+
+### Exercise 21.1.21
+
+There are a few ways the solve this problem.
+
+The most obvious, but also most tedious, is to substitute $$ z_i $$, $$ {z_i}^* $$, $$ z_f $$, $$ {z_f}^* $$ by $$ x_i $$, $$ y_i $$, $$ x_f $$, $$ y_f $$, and eliminate the latter one by one.
+
+An easier way is to realize that one could simply take the partial derivatives of the exponent on each of the four variables, i.e. $$ x_i $$, $$ y_i $$, $$ x_f $$, $$ y_f $$, and solve them simulatenously.
+
+Finally, one can also treat $$ x_i $$, $$ y_i $$, $$ x_f $$, $$ y_f $$ as functions of $$ z_i $$, $$ {z_i}^* $$, $$ z_f $$, $$ {z_f}^* $$, which are considered _independent_ variables. After all, variables like $$ x_i $$, $$ y_i $$ are not required to be real when we solve the simulatenous equations in the previous approach. It should be noted that now $$ z_i $$ and $$ {z_i}^* $$ are no longer complex conjugates to each other. The chain rule implies then that the partial derivative of the exponent on $$ z_i $$ (or $$ {z_i}^* $$, etc.), being a linear combination of the partial derivaties on $$ x_i $$ and $$ y_i $$, must also vanish.
+
+Below is the derivation using the last approach.
+
+$$
+\begin{eqnarray}
+  && \langle x_2 | U(T) | x_1 \rangle \\
+  &=& \int \frac{\mathrm{d} x_f \mathrm{d} y_f \mathrm{d} x_i \mathrm{d} y_i}{\pi^2} \langle x_2 | z_f \rangle e^{-{z_f}^* {z_f}} \langle z_f | U(T) |  z_i \rangle e^{-{z_i}^* {z_i}} \langle z_i | x_1 \rangle \\
+  &=& \frac{1}{\pi^2} \sqrt{\frac{m \omega}{\pi \hbar}} e^{-\frac{m \omega}{2 \hbar} ({x_1}^2 + {x_2}^2)} \int e^{- \frac{{z_f}^2}{2}} e^{\sqrt{\frac{2 m \omega}{\hbar}} z_f x_2} e^{- {z_f}^* {z_f}} e^{z_i {z_f}^* e^{- i \omega T}} e^{- \frac{{{z_i}^*}^2}{2}} e^{\sqrt{\frac{2 m \omega}{\hbar}} {z_i}^* x_1} e^{-{z_i}^* {z_i}} \mathrm{d} x_f \mathrm{d} y_f \mathrm{d} x_i \mathrm{d} y_i.
+\end{eqnarray}
+$$
+
+Let us denote the exponent as $$ E $$, The simulatenous equations are
+
+$$
+\begin{eqnarray}
+  \frac{\partial E}{\partial z_f} &=& - z_f + \sqrt{\frac{2 m \omega}{\hbar}} x_2 - {z_f}^* = 0, \\
+  \frac{\partial E}{\partial {z_i}^*} &=& - {z_i}^* + \sqrt{\frac{2 m \omega}{\hbar}} x_1 - z_i = 0, \\
+  \frac{\partial E}{\partial {z_f}^*} &=& - z_f + z_i e^{- i \omega T} = 0, \\
+  \frac{\partial E}{\partial z_i} &=& - {z_i}^* + {z_f}^* e^{- i \omega T} = 0.
+\end{eqnarray}
+$$
+
+The solution is
+
+$$
+\begin{eqnarray}
+  z_i &=& \sqrt{\frac{2 m \omega}{\hbar}} \frac{-x_2 + x_1 e^{i \omega T}}{2 i \sin \omega T}, \\
+  {z_f}^* &=& \sqrt{\frac{2 m \omega}{\hbar}} \frac{-x_1 + x_2 e^{i \omega T}}{2 i \sin \omega T}, \\
+  {z_i}^* &=& \sqrt{\frac{2 m \omega}{\hbar}} \frac{x_2 - x_1 e^{- i \omega T}}{2 i \sin \omega T}, \\
+  z_f &=& \sqrt{\frac{2 m \omega}{\hbar}} \frac{x_1 - x_2 e^{- i \omega T}}{2 i \sin \omega T}.
+\end{eqnarray}
+$$
+
+Substituting these back into the original integral, we have 
+
+$$
+\begin{eqnarray}
+  && \langle x_2 | U(T) | x_1 \rangle \\
+  &=& \frac{1}{\pi^2} \sqrt{\frac{m \omega}{\pi \hbar}} e^{-\frac{m \omega}{2 \hbar} ({x_1}^2 + {x_2}^2)} C(T) e^{- \frac{{z_f}^2 + {{z_i}^*}^2}{2}} e^{\sqrt{\frac{2 m \omega}{\hbar}} (z_f x_2 + {z_i}^* x_1)} e^{- ({z_f}^* {z_f} + {z_i}^* {z_i})} e^{z_i {z_f}^* e^{- i \omega T}} \\
+  &=& \frac{1}{\pi^2} \sqrt{\frac{m \omega}{\pi \hbar}} e^{-\frac{m \omega}{2 \hbar} ({x_1}^2 + {x_2}^2)} C(T) e^{-\frac{m \omega}{2 \hbar \sin^2 \omega T} \left\{ \left[ - \frac{({x_1}^2 + {x_2}^2) (1 + e^{- 2 i \omega T})}{2} + 2 x_1 x_2 e^{-i \omega T} \right] + \left[ 4 i x_1 x_2 \sin \omega T - 2 i ({x_1}^2 + {x_2}^2) e^{- i \omega T} \sin \omega T \right] + \left[ 2 ({x_1}^2 + {x_2}^2) - 4 x_1 x_2 \cos \omega T \right] + \left[ 2 x_1 x_2 \cos \omega T - ({x_1}^2 + {x_2}^2) \right] \right\}} \\
+  &=& \frac{1}{\pi^2} \sqrt{\frac{m \omega}{\pi \hbar}} e^{-\frac{m \omega}{2 \hbar} ({x_1}^2 + {x_2}^2)} C(T) e^{-\frac{m \omega}{2 \hbar \sin^2 \omega T} \left[ - ({x_1}^2 + {x_2}^2) (\sin^2 \omega T + i \sin \omega T \cos \omega T) + 2 i x_1 x_2 \sin \omega T \right]} \\
+  &=& \frac{1}{\pi^2} \sqrt{\frac{m \omega}{\pi \hbar}} C(T) e^{\frac{i m \omega}{2 \hbar \sin \omega T} \left[ ({x_1}^2 + {x_2}^2) \cos \omega T - 2 x_1 x_2 \right]} ,
+\end{eqnarray}
+$$
+
+consistent with the answer to Exercise (8.6.2).
