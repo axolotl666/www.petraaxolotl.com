@@ -682,6 +682,8 @@ Trivial.
 
 ### Exercise 21.1.21
 
+First note that we do not need to care about the prefactor, which has no dependence on $$ x_1 $$ or $$ x_2 $$, because $$ V(x) $$ is quadratic. (See the discussion under Eq. (8.6.11).)
+
 There are a few ways the solve this problem.
 
 The most obvious, but also most tedious, is to substitute $$ z_i $$, $$ {z_i}^* $$, $$ z_f $$, $$ {z_f}^* $$ by $$ x_i $$, $$ y_i $$, $$ x_f $$, $$ y_f $$, and eliminate the latter one by one.
@@ -699,6 +701,8 @@ $$
   &=& \frac{1}{\pi^2} \sqrt{\frac{m \omega}{\pi \hbar}} e^{-\frac{m \omega}{2 \hbar} ({x_1}^2 + {x_2}^2)} \int e^{- \frac{{z_f}^2}{2}} e^{\sqrt{\frac{2 m \omega}{\hbar}} z_f x_2} e^{- {z_f}^* {z_f}} e^{z_i {z_f}^* e^{- i \omega T}} e^{- \frac{{{z_i}^*}^2}{2}} e^{\sqrt{\frac{2 m \omega}{\hbar}} {z_i}^* x_1} e^{-{z_i}^* {z_i}} \mathrm{d} x_f \mathrm{d} y_f \mathrm{d} x_i \mathrm{d} y_i.
 \end{eqnarray}
 $$
+
+(It is clear that neither $$ x_1 $$ nor $$ x_2 $$ appears in any quandratic terms of $$ x_i $$, $$ y_i $$, $$ x_f $$, $$ y_f $$. Therefore they will not appear in any prefactor in the result of the Gaussian integrals. This is consistent with the claim made in the very beginning.)
 
 Let us denote the exponent as $$ E $$, The simulatenous equations are
 
@@ -735,3 +739,64 @@ $$
 $$
 
 consistent with the answer to Exercise (8.6.2).
+
+### Exercise 21.2.1
+
+From Exercise (8.6.3), we have
+
+$$ A(t) = \sqrt{\frac{m \omega}{2 \pi i \hbar \sin \omega t}}. $$
+
+Substituting $$ \tau = i t $$, we have
+
+$$ A(\tau) = \sqrt{\frac{m \omega}{2 \pi \hbar \sinh \omega \tau}}. $$
+
+Taking the limit $$ \tau \rightarrow \infty $$, we have
+
+$$ \lim_{\tau \rightarrow \infty} A(\tau) = \sqrt{\frac{m \omega}{\pi \hbar}} e^{- \frac{\omega \tau}{2}}. $$
+
+Comparing it to Eqs. (21.2.14) and (21.2.15), we can easily read that ground state is
+
+$$ \psi_0(x) = (\frac{m \omega}{\pi \hbar})^{1/4} e^{- \frac{m \omega x^2}{2 \hbar}}, $$
+
+and
+
+$$ E_0 = \frac{\hbar \omega}{2}. $$
+
+### Exercise 21.2.2
+
+We have
+
+$$
+\begin{eqnarray}
+  && T | \theta \rangle \\
+  &=& \frac{1}{\sqrt{N}} \sum_{n=1}^N e^{i n \theta} T | n \rangle \\
+  &=& \frac{1}{\sqrt{N}} \sum_{n=1}^N e^{i n \theta} | n + 1 \rangle \\
+  &=& \frac{1}{\sqrt{N}} \sum_{n=2}^{N+1} e^{- i \theta} e^{i n \theta} | n \rangle \\
+  &=& e^{- i \theta} \frac{1}{\sqrt{N}} \sum_{n=1}^N e^{i n \theta} | n \rangle \\
+  &=& e^{- i \theta} | \theta \rangle.
+\end{eqnarray}
+$$
+
+Therefore the eigenvalue is $$ e^{- i \theta} $$.
+
+As $$ T^N = I $$, we have $$ N \theta = 2 k \pi $$ and $$ \theta = \frac{2 k \pi}{N} $$, where $$ k $$ is any integer. However, $$ k $$ and $$ k + N $$ would give the same $$ | \theta \rangle $$. Therefore the complete set of eigenstates is
+
+$$ | \theta = \frac{2 k \pi}{N} >, k = 0, 1, \dots N - 1. $$
+
+Further, we have
+
+$$
+\begin{eqnarray}
+  && H | \theta \rangle \\
+  &=& \frac{1}{\sqrt{N}} \sum_{n=1}^N e^{i n \theta} H | n \rangle \\
+  &=& \frac{1}{\sqrt{N}} \sum_{n=1}^N e^{i n \theta} \sum_{m=1}^N \left[ E_0 | m \rangle \langle m | - t(|m \rangle \langle m + 1 | + | m + 1 \rangle \langle m |) \right] | n \rangle \\
+  &=& \frac{1}{\sqrt{N}} \sum_{n=1}^N e^{i n \theta} \left[ E_0 | n \rangle \langle n | - t(|n - 1 \rangle \langle n | + | n + 1 \rangle \langle n |) \right] | n \rangle \\
+  &=& \frac{1}{\sqrt{N}} \sum_{n=1}^N e^{i n \theta} \left[ E_0 | n \rangle - t(|n - 1 \rangle + | n + 1 \rangle ) \right] \\
+  &=& \frac{1}{\sqrt{N}} \left[ E_0 \sum_{n=1}^N e^{i n \theta} | n \rangle - t( \sum_{n=1}^N e^{i n \theta} |n - 1 \rangle + \sum_{n=1}^N e^{i n \theta} | n + 1 \rangle ) \right] \\
+  &=& \frac{1}{\sqrt{N}} \left[ E_0 \sum_{n=1}^N e^{i n \theta} | n \rangle - t( e^{i \theta} \sum_{n=1}^N e^{i n \theta} |n \rangle + e^{- i \theta} \sum_{n=1}^N e^{i n \theta} | n \rangle ) \right] \\
+  &=& (E_0 - 2 t \cos \theta) \sum_{n=1}^N \frac{1}{\sqrt{N}} e^{i n \theta} | n \rangle \\
+  &=& (E_0 - 2 t \cos \theta) | \theta \rangle.
+\end{eqnarray}
+$$
+
+For $$ N = 2 $$, we have eigenstates $$ | \theta = 0 \rangle $$ and $$ | \theta = \pi \rangle $$, with energy levels $$ E_0 - 2 t $$ and $$ E_0 + 2 t $$, respectively.
