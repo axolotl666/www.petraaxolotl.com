@@ -341,6 +341,10 @@ This is probably the most interesting chapter of the whole book. Unfortunately t
 
 The left-hand side should be $$ e^{i S / \hbar} $$ instead of just $$ S $$.
 
+### Page 631, Eq. (21.2.82)
+
+It should be $$ \ln \lambda_0 $$ instead of just $$ \lambda_0 $$.
+
 ## Notes
 
 ### Page 602, Eqs. (21.1.102) and (21.1.103)
@@ -350,6 +354,18 @@ The factor $$ C $$ is missing in the Hamiltonian. But it does not matter in furt
 ### Page 604, Eq. (21.1.111)
 
 The mathematically inclined should notice that there is no guarantee that each $$ \boldsymbol{f} $$ can be mapped to a unique $$ f_0 $$. (For example, we can simply set $$ \boldsymbol{f} $$ to be a constant for any point in parameter space.) But it does not really matter due to the argument under Eq. (21.1.112).
+
+### Page 631, Eqs. (21.2.88), (21.2.89), and (21.2.90)
+
+Strictly speaking, we should have
+
+$$ T = e^{- H \tau / \hbar}, $$
+
+$$ H = - \frac{\hbar}{\tau} K^* \sigma_1, $$
+
+and
+
+$$ f =  - \frac{\tau}{\hbar} E_0 = K^*. $$
 
 ## Solutions
 
@@ -819,3 +835,91 @@ $$
   &=& \sum_{n=0}^\infty e^{- \beta \hbar \omega (n + 1/2)}.
 \end{eqnarray}
 $$
+
+### Exercise 21.2.4
+
+$$ \lambda \approx \frac{\hbar}{p} \approx \frac{\hbar}{\sqrt{m k T}} = \sqrt{\frac{\beta}{m}} \hbar $$
+
+### Exercise 21.2.5
+
+$$
+\begin{eqnarray}
+  && Z \\
+  &=& \sum_{s_0 = -}^+ \langle s_0 | T^N | s_0 \rangle \\
+  &=& {T^N}_{- -} + {T^N}_{+ +} \\
+  &=& \mathrm{Tr} {T^N}.\end{eqnarray}
+$$
+
+### Exercise 21.2.6
+
+From Eq. (21.2.85), we have
+
+$$ K^* = \ln \sqrt{\frac{1 + e^{-2K}}{1 - e^{-2K}}}, $$
+
+and
+
+$$ \ln \cosh K^* = \ln \sqrt{\frac{1}{1 - e^{-4K}}}, $$
+
+and finally
+
+$$ f = K^* - \ln \cosh K^* = \ln \left( \sqrt{\frac{1 + e^{-2K}}{1 - e^{-2K}}} \sqrt{1 - e^{-4K}} \right) = \ln (1 + e^{-2K}). $$
+
+### Exercise 21.2.7
+
+Simply notice that in the low temperature limit, where $$ K^* \rightarrow 0 $$, $$ K^* \approx \tanh K^* = e^{-2K} $$.
+
+### Exercise 21.2.8
+
+If we ignore $$ h s_N $$, which clearly does not matter in the limit $$ N \rightarrow \infty $$, we have
+
+$$ Z = \sum_{s_i = \pm 1} \exp \left[ \sum_{i = 0}^{N - 1} K (s_i s_{i + 1} - 1) + h s_i \right] = \sum_{s_i = \pm 1} \prod_{i = 0}^{N - 1} e^{K (s_i s_{i + 1} - 1)} e^{h s_i}. $$
+
+Clearly, $$ Z $$ will remain the same if we simultaneously switch the sign of every $$ s_i $$ in the sum. But this is also equivalent to changing $$ h $$ to $$ -h $$. Hence $$ Z(h) = Z(-h) $$.
+
+We can re-write Eq. (21.2.73) as
+
+$$ Z = \sum_{s_i, s'_i} T_{s'_N s_{N-1}} \cdots T_{s'_2 s_1} M_{s_1 s'_1} T_{s'_1 s_0} M_{s_0 s'_0}, $$
+
+which is clearly a matrix product. Note that to get the orignal Eq. (21.2.73), we only need to set each $$ M_{s_i s'_i} $$ to the identity matrix $$ \delta_{s_i s'_i} $$. In our current case, we simply need to set
+
+$$ M_{++} = e^h, M_{--} = e^{-h}, M_{+-} = M_{-+} = 0, $$
+
+or equivalently
+
+$$ M = e^{h \sigma_3}. $$
+
+If we combine $$ T $$ and $$ M $$ and re-label is as T, we have
+
+$$ T = e^{K^* \sigma_1} e^{h \sigma_3} \equiv T_k T_h, $$
+
+where as before, $$ e^{K^* \sigma_1} $$ should really be understood as $$ \frac{e^{K^* \sigma_1}}{\cosh K^*} $$.
+
+$$ T $$ is not Hermitian because $$ \sigma_1 $$ and $$ \sigma_3 $$ do not commute.
+
+Notice that except for the end points, we can also write $$ Z $$ as
+
+$$ Z = \sum_{s_i = \pm 1} \exp \left[ \sum_{i = 0}^{N - 1} \frac{h}{2} s_i + K (s_i s_{i + 1} - 1) + \frac{h}{2} s_{i + 1} \right] = \sum_{s_i = \pm 1} \prod_{i = 0}^{N - 1}  e^{\frac{h}{2} s_i} e^{K (s_i s_{i + 1} - 1)} e^{\frac{h}{2} s_i}. $$
+
+Following the same derivation, we get
+
+$$ T = e^{\frac{h}{2} \sigma_3} e^{K^* \sigma_1} e^{\frac{h}{2} \sigma_3} = {T_h}^{1/2} T_k {T_h}^{1/2}, $$
+
+which is Hermitian.
+
+From now on, we will always include the prefactor $$ \cosh K^* $$. We have
+
+$$ T = \begin{bmatrix} e^h & \tanh K^* \\ \tanh K^* & e^{-h} \end{bmatrix}, $$
+
+with eigenvalues $$ \cosh h \pm \sqrt{\sinh^2 h + \tanh^2 K^*} $$ and (non-normalized) eigenvectors
+
+$$ \begin{bmatrix} \tanh K^* \\ -\sinh h \pm \sqrt{\sinh^2 h + \tanh^2 K^*} \end{bmatrix}. $$
+
+There is degeneracy only if $$ \sinh^2 h = \tanh^2 K^* = 0 $$ or $$ h = K^* = 0. $$ Also note that $$ \lambda_0 $$ and $$ | 0 \rangle $$ correspond to the $$ + $$ case because $$ K $$ in the partition function is actually positive, contrary to the usual convention.
+
+It is then straightforward to calculate that, after normalizing $$ | 0 \rangle $$,
+
+$$ \langle s \rangle = \langle 0 | \sigma_3 | 0 \rangle = \sinh h \frac{\sqrt{\sinh^2 h + \tanh^2 K^*} - \sinh h}{\tanh^2 K^* - \sinh \sqrt{\sinh^2 h + \tanh^2 K^*} + \sinh^2 h}, $$
+
+which can be easily show to be equal to
+
+$$ \frac{\partial f}{\partial h} = \frac{\partial \ln \lambda_0}{\partial h}. $$
