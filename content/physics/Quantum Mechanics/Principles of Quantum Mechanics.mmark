@@ -847,7 +847,8 @@ $$
   && Z \\
   &=& \sum_{s_0 = -}^+ \langle s_0 | T^N | s_0 \rangle \\
   &=& {T^N}_{- -} + {T^N}_{+ +} \\
-  &=& \mathrm{Tr} {T^N}.\end{eqnarray}
+  &=& \mathrm{Tr} {T^N}.
+\end{eqnarray}
 $$
 
 ### Exercise 21.2.6
@@ -920,6 +921,87 @@ It is then straightforward to calculate that, after normalizing $$ | 0 \rangle $
 
 $$ \langle s \rangle = \langle 0 | \sigma_3 | 0 \rangle = \sinh h \frac{\sqrt{\sinh^2 h + \tanh^2 K^*} - \sinh h}{\tanh^2 K^* - \sinh \sqrt{\sinh^2 h + \tanh^2 K^*} + \sinh^2 h}, $$
 
-which can be easily show to be equal to
+which can be easily shown to be equal to
 
 $$ \frac{\partial f}{\partial h} = \frac{\partial \ln \lambda_0}{\partial h}. $$
+
+### Exercise 21.2.9
+
+With periodic boundary conditions, we have
+
+$$
+\begin{eqnarray}
+  && \langle s_j s_i \rangle \\
+  &=& \frac{\langle 0 | T^{N-j} \sigma_3 T^{j-i} \sigma_3 T^i | 0 \rangle + \langle 1 | T^{N-j} \sigma_3 T^{j-i} \sigma_3 T^i | 1 \rangle}{\langle 0 | T^N | 0 \rangle + \langle 1 | T^N | 1 \rangle} \\
+  &=& \frac{{\lambda_0}^{N-j+i} \langle 1 | T^{j-i} | 1 \rangle + {\lambda_1}^{N-j+i} \langle 0 | T^{j-i} | 0 \rangle}{{\lambda_0}^N + {\lambda_1}^N } \\
+  &=& \frac{{\lambda_0}^{N-j+i} {\lambda_1}^{j-i} + {\lambda_1}^{N-j+i} {\lambda_0}^{j-i}}{{\lambda_0}^N + {\lambda_1}^N } \\
+  &\approx& (\frac{\lambda_1}{\lambda_0})^{j-i} + (\frac{\lambda_1}{\lambda_0})^{N-(j-i)}, \\
+\end{eqnarray}
+$$
+
+from which it is obvious that the answer is invariant under $$ j - i \leftrightarrow N - (j - i) $$ and that only the first term is needed as long as $$ j - i $$ is much smaller than $$ N $$.
+
+### Exercise 21.2.10
+
+We will use the actual $$ T $$ in the derivation below, instead of first dropping the prefactor $$ \cosh K^* $$ and then recovering it. Note that the corresponding eigenvalues are then $$ e^{\pm K^*} / \cosh K^* $$. Also, at least in the derivation itself, we will use $$ m $$ and $$ n $$ instead of $$ i $$ and $$ j $$, to avoid confusion with the imaginery number $$ i $$.
+
+We will also use the following identities.
+
+$$
+\begin{eqnarray}
+  \sinh (a + b) &=& \sinh a \cosh b + \cosh a \sinh b \\
+  \cosh (a + b) &=& \cosh a \cosh b + \sinh a \sinh b
+\end{eqnarray}
+$$
+
+From Eq. (21.2.84), we have
+
+$$ T = \frac{e^{K^* \sigma_1}}{\cosh K^*}. $$
+
+Therefore we have
+
+$$ T^m = \frac{e^{m K^* \sigma_1}}{\cosh^m K^*} = \frac{\cosh m k^* (I + \tanh m K^* \sigma_1)}{\cosh^m K^*}, $$
+
+and
+
+$$
+\begin{eqnarray}
+  && T^{-m} \sigma_3 T^m \\
+  &=& \cosh^2 m K^* (I - \tanh m K^* \sigma_1) \sigma_3 (I + \tanh m K^* \sigma_1) \\
+  &=& \cosh^2 m K^* (I - \tanh m K^* \sigma_1) (\sigma_3  + i \tanh m K^* \sigma_2) \\
+  &=& \cosh^2 m K^* (\sigma_3 + i \tanh m K^* \sigma_2 + i \tanh m K^* \sigma_2 + \tanh^2 m K^* \sigma_3) \\
+  &=& \cosh 2m K^* (\sigma_3 + i \tanh 2m K^* \sigma_2).
+\end{eqnarray}
+$$
+
+Now we have
+
+$$
+\begin{eqnarray}
+  && \sigma_3(n) \sigma_3(m) \\
+  &=& \cosh 2n K^* \cosh 2m K^* (\sigma_3 + i \tanh 2n K^* \sigma_2) (\sigma_3 + i \tanh 2m K^* \sigma_2) \\
+  &=& \cosh 2n K^* \cosh 2m K^* \left[(1 - \tanh 2m K^* \tanh 2n K^*) I + (\tanh 2m K^* - \tanh 2n K^*) \sigma_1 \right] \\
+  &=& \cosh 2(m-n) K^* \left[I + \tanh 2 (m-n) K^* \sigma_1 \right] \\
+  &=& (T \cosh K^*)^{2(m-n)}
+\end{eqnarray}
+$$
+
+No matter whether we set $$ | s_0 \rangle $$ to $$ + $$ or $$ - $$ (or $$ \uparrow $$ or $$ \downarrow $$), the relationship below holds. (The sum of $$ s_N $$ is also over the two values $$ + $$ and $$ - $$.)
+
+$$ \sum_{s_N} | s_N \rangle = (I + \sigma_1) | s_0 \rangle $$
+
+Now we have, fixing $$ s_0 $$ at one end but leaving $$ s_N $$ open at the other, and keeping in mind that $$ | 0 \rangle $$ and $$ | 1 \rangle $$ are the eigenvectors of $$ \sigma_1 $$ with eigenvalues $$ \pm 1 $$,
+
+$$
+\begin{eqnarray}
+  && \langle s_j s_i \rangle \\
+  &=& \frac{\sum_{s_N} \langle s_N | T^N \sigma_3(j) \sigma_3(i) | s_0 \rangle}{\sum_{s_N} \langle s_N | T^N | s_0 \rangle} \\
+  &=& \frac{\langle s_0 | (I + \sigma_1) T^N (T \cosh K^*)^{2(i-j)} | s_0 \rangle}{\langle s_0 | (I + \sigma_1) T^N | s_0 \rangle} \\
+  &=& \frac{\langle s_0 | (I + \sigma_1) | 0 \rangle {\lambda_0}^N e^{2(i-j)K^*} \langle 0 | s_0 \rangle + \langle s_0 | (I + \sigma_1) | 1 \rangle {\lambda_1}^N e^{-2(i-j)K^*} \langle 1 | s_0 \rangle}{\langle s_0 | (I + \sigma_1) | 0 \rangle {\lambda_0}^N \langle 0 | s_0 \rangle + \langle s_0 | (I + \sigma_1) | 1 \rangle {\lambda_1}^N \langle 1 | s_0 \rangle} \\
+  &=& \frac{2 \langle s_0 | 0 \rangle {\lambda_0}^N e^{2(i-j)K^*} \langle 0 | s_0 \rangle}{2 \langle s_0 | 0 \rangle {\lambda_0}^N \langle 0 | s_0 \rangle} \\
+  &=& e^{-2(j-i)K^*}.
+\end{eqnarray}
+$$
+
+Noticing that $$ \tanh K^* = e^{-2K} \iff \tanh K = e^{-2K^*} $$, we see that the result above is consistent with Eq. (21.2.69).
+
