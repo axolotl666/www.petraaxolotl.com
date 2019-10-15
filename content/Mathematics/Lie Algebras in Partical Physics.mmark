@@ -84,7 +84,7 @@ There must exist $$ x_1 \in H $$ and $$ x_2 \in H $$ such that $$ x = x_1 g_1 = 
 
 For any $$ y \in H g_1 $$, there exists $$ y_1 \in H $$ such that $$ y = y_1 g_1 = y_1 {x_1}^{-1} x_2 g_2 $$. Note that $$ y_1 $$, $$ {x_1}^{-1} $$ and $$ x_2 $$ are all elements of $$ H $$ and therefore $$ y_1 {x_1}^{-1} x_2 \in H $$ and $$ y \in H g_2 $$. This proves $$ H g_1 \subset H g_2 $$.
 
-$$ H g_2 \subset H g_1 $$ can be proved in similarly.
+$$ H g_2 \subset H g_1 $$ can be proved similarly.
 
 ### 1.11 Schur's lemma
 
