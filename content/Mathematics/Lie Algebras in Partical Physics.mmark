@@ -4,31 +4,59 @@ Description: "Errata, Notes, and Problem Solutions to Lie Algebras in Particle P
 date: 2017-01-02T14:59:31-08:00
 ---
 
+This is a great book. However, a better book for beginners may be Zee's _Group Theory in a Nutshell for Physicists_. Zee's book is mathematically
+less rigorous and sometimes made me cringe a bit. But it has a much better overview of finite groups, which are quite important for a beginner to
+build intuition. It also covers Lorentz's group, which is obviously important for special relativity and quantum field theory.
+
 # Errata and Notes
 
 ## Chapters 1
 
 ### 1.4 Irreducible representations
 
-#### On equivalence
+#### Eq. (1.10)
 
-Note that $$ S $$ in Eq. (1.10) is in general not unitary. Therefore two equivalent representations do not just differ by *a trivial choice of basis* as claimed in the book. All representations of finite groups are equivalent to unitary representations, and we can always find a basis for any representation to have a unitary matrix form, although the basis will not be orthonormal in general. (N.B.: a non-unitary operator can have its matrix form being unitary by choosing a non-orthonormal basis. This does not make the operator itself unitary.)
+It would be much easier if we were talking about (unitary) matrices instead of (unitary) operators. The former can be considered independent
+entities and we are free to do similarity transformations. The latter operates on vectors, which usually have pre-defined concepts such as inner
+products (and therefore orthogonality). In this sense, we cannot make a non-unitary operator unitary through a similarity transformation.
+We can only make the matrix form of a non-unitary operator unitary by choosing a non-orthonormal basis. But this does not make the operator
+itself unitary.
 
-#### On reducibility
+Since $$ S $$ in Eq. (1.10) is in general not unitary, two equivalent representations do not just differ by *a trivial choice of basis*
+physically. 
 
-The defintion of reducible representations should be those that have a *non-trivial* invariant subspace. Obviously $$ \\{ 0 \\} $$ and the original vector space are always invariant subspaces for any representations.
+#### Definition of reducibility
 
-$$ D(g) $$ is always invertible for any representation $$ D $$ and $$ g \in G $$, because $$ D(g) D(g^{-1}) = D(e) = 1 $$. This is actually why Eq. (1.11) is valid as $$ D(g) $$ will never reduce the dimensionality of the invariant subspace.
+The defintion of reducible representations should be those that have a *non-trivial* invariant subspace. Obviously $$ \\{ 0 \\} $$ and the
+original vector space are always invariant subspaces for any representations.
 
-#### On reducibility of equivalent representations
+#### Eq. (1.13)
 
-*If two representations $$ D_1 $$ and $$ D_2 $$ are equivalent, $$ D_1 $$ is reducible if and only if $$ D_2 $$ is reducible.* The proof is as follows.
+The statement that *$$ D_j(g) $$ is irreducible* implies that $$ D_j(g) $$ should be understood as an operator defined on a non-trivial
+subspace $$ X_j $$ of the original space $$ X $$, and $$ X_i $$ and $$ X_j $$ are orthogonal to each other for $$ i \neq j $$
+and $$ \cup_j X_j = X $$.
+
+### 1.9 Useful theorems
+
+#### Theorem 1.1
+
+$$ U $$ is implicitly assumed to be unitary in Eq. (1.28) and this guarantees that $$ X $$ is hermitian in Eq. (1.31). The proof that a unitary
+$$ U $$ always exists to diagonalize a hermitian matrix can be found in most QM books. In fact $$ U $$ can be simply made of orthonormal
+eigenvectors of $$ S $$ juxtaposed next to each other.
+
+#### Theorem 1.2
+
+The proof implicitly uses the following fact.
+
+*If two representations $$ D_1 $$ and $$ D_2 $$ are equivalent, $$ D_1 $$ is reducible if and only if $$ D_2 $$ is reducible.* The proof is
+as follows.
 
 If $$ D_1 $$ is reducible, there exists a non-trivial subspace $$ X $$ whose projector $$ P $$ satisfies Eq. (1.11)
 
 $$ P D_1(g) P = D_1(g) P, \forall g \in G. $$
 
-Since $$ D_1 $$ and $$ D_2 $$ are equivalent, there exists an invertible transformation $$ S $$ such that $$ D_1(g) = S^{-1} D_2(g) S, \forall g \in G $$, therefore
+Since $$ D_1 $$ and $$ D_2 $$ are equivalent, there exists an invertible transformation $$ S $$ such that
+$$ D_1(g) = S^{-1} D_2(g) S, \forall g \in G $$, therefore
 
 $$ P S^{-1} D_2(g) S P = S^{-1} D_2(g) S P, $$
 
@@ -36,13 +64,41 @@ or equivalently
 
 $$ S P S^{-1} D_2(g) S P S^{-1} = D_2(g) S P S^{-1}, $$
 
-where $$ S P S^{-1} $$ is the projector of subspace $$ S X $$, which has the same dimensionality of the original invariant subspace $$ X $$. Obviously $$ S X $$ is non-trivial since there exists $$ v \not \in X $$ and it is easy to show that $$ S v \not \in S X $$. This proves that $$ D_2 $$ is also reducible.
+where $$ S P S^{-1} $$ is the projector of subspace $$ S X $$, which has the same dimensionality of the original invariant subspace $$ X $$.
+Obviously $$ S X $$ is non-trivial since there exists $$ v \not \in X $$ and it is easy to show that $$ S v \not \in S X $$. This proves that
+$$ D_2 $$ is also reducible.
 
-This fact is implicitly used in the proof of Theorem 1.2.
+Similarly, one can easily prove that if two representations $$ D_1 $$ and $$ D_2 $$ are equivalent, $$ D_1 $$ is completely reducible
+if and only if $$ D_2 $$ is completely reducible.
 
-#### <a name="reducibility_hermitian_conjugate"></a>On reducibility of a representation and its Hermitian conjugate
+### 1.10 Subgroups
 
-*A representation $$ D $$ is reducible if and only if its Hermitian conjugate $$ D^\dagger $$ is reducible.* The proof is as follows.
+The statement *Every element of $$ G $$ must belong to one and only one coset* is made without proof. The *one* part is rather obvious since
+$$ e $$ must be in the subgroup. Below is the proof of the *only one* part.
+
+Assuming that $$ x \in H g_1 $$ and $$ x \in H g_2 $$, we want to prove that $$ H g_1 = H g_2 $$ by showing that $$ H g_1 \subset H g_2 $$ and
+$$ H g_2 \subset H g_1 $$.
+
+There must exist $$ x_1 \in H $$ and $$ x_2 \in H $$ such that $$ x = x_1 g_1 = x_2 g_2 $$. This implies that $$ g_1 = {x_1}^{-1} x_2 g_2 $$.
+
+For any $$ y \in H g_1 $$, there exists $$ y_1 \in H $$ such that $$ y = y_1 g_1 = y_1 {x_1}^{-1} x_2 g_2 $$. Note that $$ y_1 $$,
+$$ {x_1}^{-1} $$ and $$ x_2 $$ are all elements of $$ H $$ and therefore $$ y_1 {x_1}^{-1} x_2 \in H $$ and $$ y \in H g_2 $$. This proves
+$$ H g_1 \subset H g_2 $$.
+
+$$ H g_2 \subset H g_1 $$ can be proved similarly.
+
+### 1.11 Schur's lemma
+
+#### Theorem 1.3
+
+In the proof it is rather hand-waving to simply state *A similar argument shows that $$ A $$ vanishes if there is a $$ \langle v| $$ which
+annihilates $$ A $$*, because it actually requires the irreducibility of $$ D_1^\dagger $$ rather than that of $$ D_1 $$ itself and thus
+the following fact.
+
+*A representation $$ D $$ is reducible if and only if its Hermitian conjugate $$ D^\dagger $$ is reducible.*
+
+The proof is as follows. Note that this proof does not require $$ D $$ to be a representation of a finite $$ G $$. It is equally valid
+even if $$ G $$ is infinite.
 
 If $$ D $$ is reducible, there is a non-trivial subspace $$ S $$ such that its projector $$ P $$ satisfies $$ P D(g) P = D(g) P, \forall g \in G $$.
 
@@ -60,63 +116,183 @@ $$
 
 This proves that $$ D^\dagger $$ is also reducible. The *if* part can be proved similarly. 
 
-#### On complete reducibility
+#### Clarification on Eq. (1.46)
 
-Note that $$ D_j(g) $$ as in Eq. (1.13) should not be understood as an operator defined on the original space on which $$ D(g) $$ is. Instead, each $$ D_j(g) $$ is defined on a non-trivial subspace $$ X_j $$ of the original space $$ X $$, and $$ X_i $$ and $$ X_j $$ are orthogonal to each other for $$ i \neq j $$ and $$ \cup_j X_j = X $$.
+There can be multiple appearances of the same irreducible representation in the block diagnoal form of $$ D $$. They share the same lable $$ a $$
+and is distinquished by different values of $$ x $$.
 
-One can easily prove that if two representations $$ D_1 $$ and $$ D_2 $$ are equivalent, $$ D_1 $$ is completely reducible if and only if $$ D_2 $$ is completely reducible.
+### 1.14 Eigenstates
 
-This fact is implicitly used in the proof of Theorem 1.2.
+As for why (1.104) is valid, refer to the derivation up to Eq. (1.57).
 
-### 1.9 Useful theorems
+### 1.16 Example of tensor products
 
-#### On theorem 1.1
+It is worth noting that $$ D_2 $$ as in (1.109) gives us reflections and rotations.
 
-$$ U $$ is implicitly assumed to be unitary in Eq. (1.28) and this guarantees that $$ X $$ is hermitian in Eq. (1.31). The proof that a unitary $$ U $$ always exists to diagonalize a hermitian matrix can be found in most QM books. In fact $$ U $$ can be simply made of orthonormal eigenvectors of $$ S $$ juxtaposed next to each other.
+### 1.17 *Finding the normal modes
 
-### 1.10 Subgroups
-
-The statement *Every element of $$ G $$ must belong to one and only one coset* is made without proof. The *one* part is rather obvious since $$ e $$ must be in the subgroup. Below is the proof of the *only one* part.
-
-Assuming that $$ x \in H g_1 $$ and $$ x \in H g_2 $$, we want to prove that $$ H g_1 = H g_2 $$ by showing that $$ H g_1 \subset H g_2 $$ and $$ H g_2 \subset H g_1 $$.
-
-There must exist $$ x_1 \in H $$ and $$ x_2 \in H $$ such that $$ x = x_1 g_1 = x_2 g_2 $$. This implies that $$ g_1 = {x_1}^{-1} x_2 g_2 $$.
-
-For any $$ y \in H g_1 $$, there exists $$ y_1 \in H $$ such that $$ y = y_1 g_1 = y_1 {x_1}^{-1} x_2 g_2 $$. Note that $$ y_1 $$, $$ {x_1}^{-1} $$ and $$ x_2 $$ are all elements of $$ H $$ and therefore $$ y_1 {x_1}^{-1} x_2 \in H $$ and $$ y \in H g_2 $$. This proves $$ H g_1 \subset H g_2 $$.
-
-$$ H g_2 \subset H g_1 $$ can be proved similarly.
-
-### 1.11 Schur's lemma
-
-#### On theorem 1.3
-
-In the proof it is rather hand-waving to simply state *A similar argument shows that $$ A $$ vanishes if there is a $$ \langle v| $$ which annihilates $$ A $$*, because it actually requires the irreducibility of $$ D_1^\dagger $$ rather than that of $$ D_1 $$ itself.
-
-Fortunately it can be proved that for any $$ D $$, $$ D $$ is reducible if and onlly if $$ D^\dagger $$ is reducible. The proof is given [here](#reducibility_hermitian_conjugate). Note that this proof does not require $$ D $$ to be a representation of a finite $$ G $$. It is equally valid even if $$ G $$ is infinite.
-
-#### On the discussion immediately following Schur's lemma
-
-Note that we first *choose* a unitary representation $$ D $$ and then an orthonormal basis such that $$ D $$ has block diagonal form. If we choose a non-unitary represenation in the first place, we will never manage to make it have block diagonal form in an orthonormal basis.
-
-Suppose $$ D $$ has the following matrix form
-
-$$ \begin{bmatrix} D_1 & 0 \\ 0 & D_2 \end{bmatrix}, $$
-
-where $$ D_1 $$ and $$ D_2 $$ are actually equivalent.
-
-We can always redefine the orthonormal basis so that $$ D_1 $$ and $$ D_2 $$ have exactly the same matrix form. Now the matrix form of $$ D $$ becomes
-
-$$ \begin{bmatrix} D_1 & 0 \\ 0 & D_1 \end{bmatrix}. $$
-
-Since there is only one non-equivalent irreducible sub-representaton, $$ a $$ can take only one value. But this sub-representaton appears twice and therefore $$ x $$ can be 1 or 2. Suppose $$ D_1 $$ is a 3-by-3 matrix. We will label the basis as $$ | 1, 1, 1 \rangle $$, $$ | 1, 2, 1 \rangle $$, $$ | 1, 3, 1 \rangle $$, $$ | 1, 1, 2 \rangle $$, $$ | 1, 2, 2 \rangle $$, and $$ | 1, 3, 2 \rangle $$. Note $$ x $$ is used to differentiate different basis vectors that share the same symmetry properties. The statement *$$ x $$ represents whatever other physical parameters there are* is rather misleading.
-
-### 1.12 Orthogonality relations
-
-$$ A^{a b}_{j l} $$ is an operator on the subspace consisting of the tensorial product of all invariant subspaces corresponding to $$ D_b $$. $$ l $$ corresponds to the combination of $$ k $$ and $$ y $$ as in Eq. (157), and runs from 1 to the product of the number of the invariant subspaces and the dimensionality of $$ D_b $$.
-
-It is implicitly assume that $$ G $$ is a finite group in the derivation from Eq. (161) to Eq. (162).
+Eq. (1.115): The two $$ -\frac{\sqrt{3}}{6} $$ in the last column should be both $$ -\frac{1}{6} $$.
 
 # Solutions
 
 ## Chapters 1
 
+### 1.A.
+
+Trivial. Simply use the fact that every element appears once and only once in every row and column of the multiplication table.
+
+### 1.B.
+
+The only two possibilities are given below, corresponding to $$ Z_4 $$ and $$ Z_2 \times Z_2 $$ respectively.
+
+$$
+\begin{array}
+\hline
+ e & a & b & c  \\ \hline
+ a & b & c & e  \\ \hline
+ b & c & e & a  \\ \hline
+ c & e & a & b  \\ \hline
+\end{array}
+$$
+
+$$
+\begin{array}
+\hline
+ e & a & b & c  \\ \hline
+ a & e & c & b  \\ \hline
+ b & c & e & a  \\ \hline
+ c & b & a & e  \\ \hline
+\end{array}
+$$
+
+### 1.C.
+
+If the representation (1.135) of the permutation group is irreducible, (1.79) would apply.
+
+### 1.D.
+
+Applying Schur's lemma, we have $$ S^{-1} A = \lambda I $$, or $$ A = \lambda S $$.
+
+### 1.E.
+
+It is essentially the group $$ A_4 $$, made of permutations with an even number of 2-cycles. There are in total $$ 4! / 2 = 12 $$ elements.
+
+There are four conjugacy classes.
+- {e},
+- {(12)(34), (13)(24), (14)(23)},
+- {(123), (243), (134), (142)},
+- {(132), (234), (143), (124).
+
+From (1.74), we know the four irreducible representations must be of 1-, 1-, 1-. and 3-dimensional. By applying (1.79) and (1.87), we get the
+following character table.
+
+$$
+\begin{array}
+\hline
+ \text{} & e & (12)(34) & (123)    & (321)     \\ \hline
+ D_1     & 1 & 1        & 1        & 1         \\ \hline
+ D_{1'}  & 1 & 1        & \omega   & \omega^2  \\ \hline
+ D_{1''} & 1 & 1        & \omega^2 & \omega    \\ \hline
+ D_3     & 3 & -1       & 0        & 0         \\ \hline
+\end{array}
+$$
+
+### 1.F.
+
+The group is a subset of $$ S_4 $$, with the following conjugacy classes.
+- {e},
+- {(13)(24)},
+- {(13), (24)},
+- {(12)(34), (14)(23)},
+- {(1234), (4321)}.
+
+Below is the character table.
+
+$$
+\begin{array}
+\hline
+ \text{}    & e & (13)(24) & (13)     & (12)(34) & (1234)    \\ \hline
+ D_1        & 1 & 1        & 1        & 1        & 1         \\ \hline
+ D_{1'}     & 1 & 1        & 1        & -1       & -1        \\ \hline
+ D_{1''}    & 1 & 1        & -1       & 1        & -1        \\ \hline
+ D_{1'''}   & 1 & 1        & -1       & -1       & 1         \\ \hline
+ D_2        & 2 & -2       & 0        & 0        & 0         \\ \hline
+\end{array}
+$$
+
+The $$ D_2 $$ representation is as follows.
+- $$ \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} $$,
+- $$ \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} $$,
+- $$ \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix} $$, $$ \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} $$
+- $$ \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} $$, $$ \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} $$,
+- $$ \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} $$, $$ \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} $$.
+
+The representation that describes the system is $$ D_4 \otimes D_2 $$, where $$ D_4 $$ is the defining representation. Its character table
+is as follows.
+
+$$
+\begin{array}
+\hline
+ \text{} & e & (13)(24) & (13)     & (12)(34) & (1234)    \\ \hline
+ D_8     & 8 & 0        & 0        & 0        & 0         \\ \hline
+\end{array}
+$$
+
+Applying (1.88), we see that in $$ D_8 $$, $$ D_1 $$, $$ D_{1'} $$, $$ D_{1''} $$, and $$ D_{1'''} $$ each appears once, while $$ D_2 $$ appears twice.
+
+The projection onto $$ D_1 $$ is
+
+$$
+\begin{eqnarray}
+  P_1 &=& \frac{1}{8} \sum_{g \in G} \chi_1 (g)^* D_8(g)    \nonumber \\
+  &=& \frac{1}{8} \begin{bmatrix} 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 \end{bmatrix} ^T \begin{bmatrix} 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 \end{bmatrix},
+\end{eqnarray}
+$$
+
+the so-called "breathing mode".
+
+The projection onto $$ D_{1'} $$ is
+
+$$
+\begin{eqnarray}
+  P_{1'} &=& \frac{1}{8} \sum_{g \in G} \chi_{1'} (g)^* D_8(g)    \nonumber \\
+  &=& \frac{1}{8} \begin{bmatrix} 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 \end{bmatrix} ^T \begin{bmatrix} 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 \end{bmatrix},
+\end{eqnarray}
+$$
+
+where 1 and 3 are pulled away from each other while 2 and 4 are pushed towards each other (or the opposite).
+
+The projection onto $$ D_{1''} $$ is
+
+$$
+\begin{eqnarray}
+  P_{1''} &=& \frac{1}{8} \sum_{g \in G} \chi_{1''} (g)^* D_8(g)    \nonumber \\
+  &=& \frac{1}{8} \begin{bmatrix} 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 \end{bmatrix} ^T \begin{bmatrix} 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 \end{bmatrix},
+\end{eqnarray}
+$$
+
+where the four points are pulled away from each other horizontally but pushed towards each other vertically (or the opposite).
+
+The projection onto $$ D_{1'''} $$ is
+
+$$
+\begin{eqnarray}
+  P_{1'''} &=& \frac{1}{8} \sum_{g \in G} \chi_{1'''} (g)^* D_8(g)    \nonumber \\
+  &=& \frac{1}{8} \begin{bmatrix} 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 \end{bmatrix} ^T \begin{bmatrix} 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 \end{bmatrix},
+\end{eqnarray}
+$$
+
+which describes a rotation around the center.
+
+The projection onto $$ D_2 $$ is
+
+$$
+\begin{eqnarray}
+  P_2 &=& \frac{1}{8} \sum_{g \in G} \chi_2
+   (g)^* D_8(g)    \nonumber \\
+  &=& \frac{1}{4} \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \otimes I_4,
+\end{eqnarray}
+$$
+
+where $$ I_4 $$ is the four-dimensional identity matrix. It is equal to the sum of two matrices similar to (1.122) and (1.123), which describe
+translations in the $$ x $$ direction and translations in the $$ y $$ direction.
