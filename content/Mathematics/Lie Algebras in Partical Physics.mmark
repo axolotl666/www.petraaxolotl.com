@@ -373,3 +373,67 @@ $$
 We can now write
 
 $$ \delta_a = \alpha_a + \beta_a - \frac{1}{2} \alpha_r \beta_s f_{rsa} - \frac{1}{12} \alpha_r \beta_s (\alpha_m - \beta_m) f_{rst} f_{tma} + \cdots. $$
+
+## Chapter 3
+
+### 3.A.
+
+We start with the highest weight $$ | j + s | j + s \rangle = |j, j \rangle |s, s \rangle $$ and repeatedly apply $$ J^- $$ on both
+sides until they vanish. We get the spin $$ j + s $$ representation, with in total $$ 2(j + s) + 1 $$ states.
+
+We will notice that $$ | j + s | j + s - 1 \rangle $$ is a linear combination of
+$$ |j, j - 1 \rangle |s, s \rangle $$ and $$ |j, j \rangle |s, s - 1 \rangle $$, which spans a 2-dimensional space. These two vectors
+can form another linear combination that is orthogonal to $$ | j + s | j + s - 1 \rangle $$, and this second linear combination can
+only be $$ | j + s - 1| j + s - 1 \rangle $$. (To verify this claim, apply $$ J^+ $$ and see it vanish.) Now we can again repeatedly
+apply $$ J^- $$ on both sides until they vanish. In doing so, we get the spin $$ j + s - 1 $$ representation, with in total
+$$ 2(j + s) - 1 $$ states.
+
+Now we do exactly the same with $$ | j + s - 1 | j + s - 2 \rangle $$, which is a linear combination of three vectors, which spans a
+3-dimensional space. These three vectors can form a third linear combination that is orthogonal to both $$ | j + s | j + s - 2 \rangle $$
+and $$ | j + s - 1 | j + s - 2 \rangle $$. This third linear combination can only be $$ | j + s - 2 | j + s - 2 \rangle $$...
+
+The whole process stops at the spin $$ | j - s | $$ representation.
+
+As a sanity check, both sides of the equation have $$ (2 j + 1) (2 s + 1) $$ linearly independent states. So everything works out.
+
+### 3.B.
+
+It is easy to show that there is a similarity transformation $$ S $$ such that
+
+$$ S^{-1} (\hat{r} \cdot \sigma) S = \sigma_3. $$
+
+We have
+
+$$
+\begin{eqnarray}
+  && e^{i \vec{r} \cdot \vec{\sigma}}    \nonumber \\
+  &=& S e^{i |\vec{r}| \sigma_3} S^{-1}    \nonumber \\
+  &=& S \begin{bmatrix} e^{i |\vec{r}|} & 0 \\ 0 & e^{-i |\vec{r}|} \end{bmatrix} S^{-1}    \nonumber \\
+\end{eqnarray}
+$$
+
+### 3.C.
+
+Let $$ S = \begin{bmatrix} \frac{1}{\sqrt{2}} & 0 & -\frac{1}{\sqrt{2}} \\ \frac{i}{\sqrt{2}} & 0 & \frac{i}{\sqrt{2}} \\ 0 & -1 & 0 \end{bmatrix} $$.
+
+It is easy to verify that $$ J_i^1 = S^{-1} T_i S $$, where $$ J_i^1 $$ and $$ T_i $$ are the spin-1 representation and the adjoint
+representation of the $$ i $$-th generator.
+
+### 3.D.
+
+$$
+\begin{bmatrix}
+  0 & 0 & 0 & -i \\
+  0 & 0 & -i & 0 \\
+  0 & i & 0 & 0 \\
+  i & 0 & 0 & 0
+\end{bmatrix}
+$$.
+
+### 3.E.
+
+(a) $$ [\sigma_a, \sigma_b] \eta_c $$
+
+(b) $$ \mathrm{Tr}(\sigma_a \cdot 2 \delta_{bd} I \sigma_c) = 4 \delta_{bd} \mathrm{Tr}(\delta_{ac} I) = 8 \delta_{ac} \delta_{bd} $$
+
+(c) $$ \sigma_1 \sigma_2 \eta_1 \eta_2 - \sigma_2 \sigma_1 \eta_2 \eta_1 = 0 $$
