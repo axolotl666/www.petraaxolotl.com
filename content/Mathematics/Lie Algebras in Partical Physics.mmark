@@ -409,6 +409,7 @@ $$
   && e^{i \vec{r} \cdot \vec{\sigma}}    \nonumber \\
   &=& S e^{i |\vec{r}| \sigma_3} S^{-1}    \nonumber \\
   &=& S \begin{bmatrix} e^{i |\vec{r}|} & 0 \\ 0 & e^{-i |\vec{r}|} \end{bmatrix} S^{-1}    \nonumber \\
+  &=& \cos |\vec{r}| \cdot I + i \sin |\vec{r}| \cdot (\hat{r} \cdot \sigma)
 \end{eqnarray}
 $$
 
@@ -437,3 +438,68 @@ $$.
 (b) $$ \mathrm{Tr}(\sigma_a \cdot 2 \delta_{bd} I \sigma_c) = 4 \delta_{bd} \mathrm{Tr}(\delta_{ac} I) = 8 \delta_{ac} \delta_{bd} $$
 
 (c) $$ \sigma_1 \sigma_2 \eta_1 \eta_2 - \sigma_2 \sigma_1 \eta_2 \eta_1 = 0 $$
+
+## Chapter 4
+
+### 4.A.
+
+Simply check the [Table of Clebsch-Gordan coefficients](https://en.wikipedia.org/wiki/Table_of_Clebsch%E2%80%93Gordan_coefficients).
+We see
+
+$$ A = \langle 3/2, -1/2 | 1/2, 1, 1/2, -1 \rangle k_{\alpha \beta} = \sqrt{\frac{1}{3}} k_{\alpha \beta}. $$
+
+What we want is
+
+$$ \langle 3/2, -3/2 | 1/2, 1, -1/2, -1 \rangle k_{\alpha \beta} = k_{\alpha \beta} = \sqrt{3} A. $$
+
+### 4.B.
+
+We could repeatedly apply $$ L- $$ to both sides of $$ O_{+2} = r_{+1} r_{+1} $$. Or we could again check the
+[Table of Clebsch-Gordan coefficients](https://en.wikipedia.org/wiki/Table_of_Clebsch%E2%80%93Gordan_coefficients).
+
+Either way, we get the following.
+
+$$
+\begin{eqnarray}
+  O_{+2} &=& r_{+1} r_{+1}  \\
+  O_{+1} &=& \sqrt{\frac{1}{2}} r_{+1} r_{0} + \sqrt{\frac{1}{2}} r_{0} r_{+1}  \\
+  O_{0}  &=& \sqrt{\frac{1}{6}} r_{+1} r_{-1} + \sqrt{\frac{2}{3}} r_{0} r_{0} + \sqrt{\frac{1}{6}} r_{-1} r_{+1}  \\
+  O_{-1} &=& \sqrt{\frac{1}{2}} r_{-1} r_{0} + \sqrt{\frac{1}{2}} r_{0} r_{-1}  \\
+  O_{-2} &=& r_{-1} r_{-1}
+\end{eqnarray}
+$$
+
+Note the following relationships.
+
+$$
+\begin{eqnarray}
+  r_{+1} &=& -(r_1 + i r_2) = -\sqrt{\frac{1}{2}} \sin \theta e^{i \phi}  \\
+  r_{0}  &=& r_3 = \cos \theta  \\
+  r_{-1} &=& (r_1 - i r_2) = \sqrt{\frac{1}{2}} \sin \theta e^{-i \phi}
+\end{eqnarray}
+$$
+
+Compare these to the [Table of spherical harmonics](https://en.wikipedia.org/wiki/Table_of_spherical_harmonics)
+with $$ l = 2 $$, we see they are identical up to a constant factor.
+
+To generalize this construction to arbitrary $$ l $$, simply notice that
+
+$$ [L^+, (r_{+1})^l] = 0. $$
+
+The operator $$ (r_{+1})^l $$ is therefore the $$ O_{+l} $$ component of a spin $$ l $$ tensor operator. The rest is to
+repeat the previous procedure.
+
+### 4.C.
+
+Note the similarity between this problem and 2.A. and 3.B.
+
+We have
+
+$$
+\begin{eqnarray}
+  && e^{i \alpha \hat{\alpha}_a X_a^1}    \nonumber \\
+  &=& I + i \alpha \hat{\alpha}_a X_a^1 - \frac{\alpha^2}{2!} (\hat{\alpha}_a X_a^1)^2 - \frac{i \alpha^3}{3!} \hat{\alpha}_a X_a^1 + \cdots   \nonumber \\
+  &=& I - (\hat{\alpha}_a X_a^1)^2 + i (\alpha - \frac{\alpha^3}{3!} + \cdots) \hat{\alpha}_a X_a^1 + (1 - \frac{\alpha^2}{2!} + \cdots) (\hat{\alpha}_a X_a^1)^2   \nonumber \\
+  &=& I - (\hat{\alpha}_a X_a^1)^2 + i \sin \alpha \hat{\alpha}_a X_a^1 + \cos \alpha (\hat{\alpha}_a X_a^1)^2   \nonumber \\
+\end{eqnarray}
+$$
