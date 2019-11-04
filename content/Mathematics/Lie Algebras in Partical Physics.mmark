@@ -258,7 +258,7 @@ The projection onto $$ D_1 $$ is
 
 $$
 \begin{eqnarray}
-  P_1 &=& \frac{1}{8} \sum_{g \in G} \chi_1 (g)^* D_8(g)    \nonumber \\
+  P_1 &=& \frac{1}{8} \sum_{g \in G} \chi_1 (g)^* D_8(g)    \\
   &=& \frac{1}{8} \begin{bmatrix} 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 \end{bmatrix} ^T \begin{bmatrix} 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 \end{bmatrix},
 \end{eqnarray}
 $$
@@ -269,7 +269,7 @@ The projection onto $$ D_{1'} $$ is
 
 $$
 \begin{eqnarray}
-  P_{1'} &=& \frac{1}{8} \sum_{g \in G} \chi_{1'} (g)^* D_8(g)    \nonumber \\
+  P_{1'} &=& \frac{1}{8} \sum_{g \in G} \chi_{1'} (g)^* D_8(g)    \\
   &=& \frac{1}{8} \begin{bmatrix} 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 \end{bmatrix} ^T \begin{bmatrix} 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 \end{bmatrix},
 \end{eqnarray}
 $$
@@ -280,7 +280,7 @@ The projection onto $$ D_{1''} $$ is
 
 $$
 \begin{eqnarray}
-  P_{1''} &=& \frac{1}{8} \sum_{g \in G} \chi_{1''} (g)^* D_8(g)    \nonumber \\
+  P_{1''} &=& \frac{1}{8} \sum_{g \in G} \chi_{1''} (g)^* D_8(g)    \\
   &=& \frac{1}{8} \begin{bmatrix} 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 \end{bmatrix} ^T \begin{bmatrix} 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 \end{bmatrix},
 \end{eqnarray}
 $$
@@ -291,7 +291,7 @@ The projection onto $$ D_{1'''} $$ is
 
 $$
 \begin{eqnarray}
-  P_{1'''} &=& \frac{1}{8} \sum_{g \in G} \chi_{1'''} (g)^* D_8(g)    \nonumber \\
+  P_{1'''} &=& \frac{1}{8} \sum_{g \in G} \chi_{1'''} (g)^* D_8(g)    \\
   &=& \frac{1}{8} \begin{bmatrix} 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 \end{bmatrix} ^T \begin{bmatrix} 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 \end{bmatrix},
 \end{eqnarray}
 $$
@@ -303,7 +303,7 @@ The projection onto $$ D_2 $$ is
 $$
 \begin{eqnarray}
   P_2 &=& \frac{1}{8} \sum_{g \in G} \chi_2
-   (g)^* D_8(g)    \nonumber \\
+   (g)^* D_8(g)    \\
   &=& \frac{1}{4} \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \otimes I_4,
 \end{eqnarray}
 $$
@@ -320,8 +320,8 @@ with $$ n = 2, 4, \dots $$ while $$ A^n = A $$ with $$ n = 1, 3, \dots $$, we ha
 
 $$
 \begin{eqnarray}
-  e^{i \alpha A} &=& I - A^2 + A^2 + i \alpha A - \frac{\alpha^2 A^2}{2!} - \frac{i \alpha^2 A^3}{3!} + \cdots    \nonumber \\
-  &=& I - A^2 + A^2 \cos \alpha + i A \sin \alpha    \nonumber \\
+  e^{i \alpha A} &=& I - A^2 + A^2 + i \alpha A - \frac{\alpha^2 A^2}{2!} - \frac{i \alpha^2 A^3}{3!} + \cdots    \\
+  &=& I - A^2 + A^2 \cos \alpha + i A \sin \alpha    \\
   &=& \begin{bmatrix} \cos \alpha & 0 & i \sin \alpha \\ 0 & 1 & 0 \\ i \sin \alpha & 0 & \cos \alpha \end{bmatrix}.
 \end{eqnarray}
 $$
@@ -332,9 +332,9 @@ Applying (2.44), we have
 
 $$
 \begin{eqnarray}
-  &&  e^{i \alpha A} B e^{-i \alpha A}    \nonumber \\
-  &=& B + i \alpha [A, B] - \frac{\alpha^2}{2} [A, [A, B]] - \frac{i \alpha^3}{3!} [A, [A, [A, B]]] + \cdots    \nonumber \\
-  &=& B + i \alpha B - \frac{\alpha^2}{2} B - \frac{i \alpha^3}{3!} B + \cdots    \nonumber \\
+  &&  e^{i \alpha A} B e^{-i \alpha A}    \\
+  &=& B + i \alpha [A, B] - \frac{\alpha^2}{2} [A, [A, B]] - \frac{i \alpha^3}{3!} [A, [A, [A, B]]] + \cdots    \\
+  &=& B + i \alpha B - \frac{\alpha^2}{2} B - \frac{i \alpha^3}{3!} B + \cdots    \\
   &=& B e^{i \alpha}.
 \end{eqnarray}
 $$
@@ -347,11 +347,11 @@ We have
 
 $$
 \begin{eqnarray}
-  K &=& e^{i A} e^{i B} - 1    \nonumber \\
-  &=& (1 + i A - \frac{1}{2} A^2 - \frac{i}{3!} A^3 + \cdots)    \nonumber \\
-  &&  (1 + i B - \frac{1}{2} B^2 - \frac{i}{3!} B^3 + \cdots) -1    \nonumber \\
-  &=& i A + i B - A B - \frac{1}{2} A^2 - \frac{1}{2} B^2    \nonumber \\
-  &&  - \frac{i}{3!} A^3 - \frac{i}{3!} B^3 - \frac{i}{2} A A B - \frac{i}{2} A B B + \cdots.    \nonumber \\
+  K &=& e^{i A} e^{i B} - 1    \\
+  &=& (1 + i A - \frac{1}{2} A^2 - \frac{i}{3!} A^3 + \cdots)    \\
+  &&  (1 + i B - \frac{1}{2} B^2 - \frac{i}{3!} B^3 + \cdots) -1    \\
+  &=& i A + i B - A B - \frac{1}{2} A^2 - \frac{1}{2} B^2    \\
+  &&  - \frac{i}{3!} A^3 - \frac{i}{3!} B^3 - \frac{i}{2} A A B - \frac{i}{2} A B B + \cdots.    \\
 \end{eqnarray}
 $$
 
@@ -359,14 +359,14 @@ This gives
 
 $$
 \begin{eqnarray}
-  i \delta_a X_a &=& K - \frac{1}{2} K^2 + \frac{1}{3} K^3    \nonumber \\
-  &=& i A + i B - A B - \frac{1}{2} A^2 - \frac{1}{2} B^2    \nonumber \\
-  &&  - \frac{i}{3!} A^3 - \frac{i}{3!} B^3 - \frac{i}{2} A A B - \frac{i}{2} A B B    \nonumber \\
-  &&  + \frac{1}{2}(A + B)^2 + \frac{i}{2} A A B + \frac{i}{2} A B A + \frac{i}{2} B A B + \frac{i}{2} A B B    \nonumber \\
-  &&  + \frac{i}{2} A^3 + \frac{i}{2} B^3 + \frac{i}{4} A B B + \frac{i}{4} B A A + \frac{i}{4} A A B + \frac{i}{4} B B A     \nonumber \\
-  &&  - \frac{i}{3} (A + B)^3 + \cdots     \nonumber \\
-  &=& i A + i B - \frac{1}{2} [A, B] + \frac{i}{12} [[A, B], A - B] + \cdots     \nonumber \\
-  &=& i X_a \left( \alpha_a + \beta_a - \frac{1}{2} \alpha_r \beta_s f_{rsa} - \frac{1}{12} \alpha_r \beta_s (\alpha_m - \beta_m) f_{rst} f_{tma} \right) + \cdots.     \nonumber \\
+  i \delta_a X_a &=& K - \frac{1}{2} K^2 + \frac{1}{3} K^3    \\
+  &=& i A + i B - A B - \frac{1}{2} A^2 - \frac{1}{2} B^2    \\
+  &&  - \frac{i}{3!} A^3 - \frac{i}{3!} B^3 - \frac{i}{2} A A B - \frac{i}{2} A B B    \\
+  &&  + \frac{1}{2}(A + B)^2 + \frac{i}{2} A A B + \frac{i}{2} A B A + \frac{i}{2} B A B + \frac{i}{2} A B B    \\
+  &&  + \frac{i}{2} A^3 + \frac{i}{2} B^3 + \frac{i}{4} A B B + \frac{i}{4} B A A + \frac{i}{4} A A B + \frac{i}{4} B B A     \\
+  &&  - \frac{i}{3} (A + B)^3 + \cdots     \\
+  &=& i A + i B - \frac{1}{2} [A, B] + \frac{i}{12} [[A, B], A - B] + \cdots     \\
+  &=& i X_a \left( \alpha_a + \beta_a - \frac{1}{2} \alpha_r \beta_s f_{rsa} - \frac{1}{12} \alpha_r \beta_s (\alpha_m - \beta_m) f_{rst} f_{tma} \right) + \cdots.     \\
 \end{eqnarray}
 $$
 
@@ -406,9 +406,9 @@ We have
 
 $$
 \begin{eqnarray}
-  && e^{i \vec{r} \cdot \vec{\sigma}}    \nonumber \\
-  &=& S e^{i |\vec{r}| \sigma_3} S^{-1}    \nonumber \\
-  &=& S \begin{bmatrix} e^{i |\vec{r}|} & 0 \\ 0 & e^{-i |\vec{r}|} \end{bmatrix} S^{-1}    \nonumber \\
+  && e^{i \vec{r} \cdot \vec{\sigma}}    \\
+  &=& S e^{i |\vec{r}| \sigma_3} S^{-1}    \\
+  &=& S \begin{bmatrix} e^{i |\vec{r}|} & 0 \\ 0 & e^{-i |\vec{r}|} \end{bmatrix} S^{-1}    \\
   &=& \cos |\vec{r}| \cdot I + i \sin |\vec{r}| \cdot (\hat{r} \cdot \sigma)
 \end{eqnarray}
 $$
@@ -497,9 +497,68 @@ We have
 
 $$
 \begin{eqnarray}
-  && e^{i \alpha \hat{\alpha}_a X_a^1}    \nonumber \\
-  &=& I + i \alpha \hat{\alpha}_a X_a^1 - \frac{\alpha^2}{2!} (\hat{\alpha}_a X_a^1)^2 - \frac{i \alpha^3}{3!} \hat{\alpha}_a X_a^1 + \cdots   \nonumber \\
-  &=& I - (\hat{\alpha}_a X_a^1)^2 + i (\alpha - \frac{\alpha^3}{3!} + \cdots) \hat{\alpha}_a X_a^1 + (1 - \frac{\alpha^2}{2!} + \cdots) (\hat{\alpha}_a X_a^1)^2   \nonumber \\
-  &=& I - (\hat{\alpha}_a X_a^1)^2 + i \sin \alpha \hat{\alpha}_a X_a^1 + \cos \alpha (\hat{\alpha}_a X_a^1)^2   \nonumber \\
+  &&  e^{i \alpha \hat{\alpha}_a X_a^1}    \\
+  &=& I + i \alpha \hat{\alpha}_a X_a^1 - \frac{\alpha^2}{2!} (\hat{\alpha}_a X_a^1)^2 - \frac{i \alpha^3}{3!} \hat{\alpha}_a X_a^1 + \cdots   \\
+  &=& I - (\hat{\alpha}_a X_a^1)^2 + i (\alpha - \frac{\alpha^3}{3!} + \cdots) \hat{\alpha}_a X_a^1 + (1 - \frac{\alpha^2}{2!} + \cdots) (\hat{\alpha}_a X_a^1)^2   \\
+  &=& I - (\hat{\alpha}_a X_a^1)^2 + i \sin \alpha \hat{\alpha}_a X_a^1 + \cos \alpha (\hat{\alpha}_a X_a^1)^2.
 \end{eqnarray}
 $$
+
+## Chapter 5
+
+### 5.A.
+
+Since pions are bosons, the full wave function (i.e. a wave function including position, spin, isospin, and whatever else) must be
+symmetric. Since they are in an s-wave state, the wave function is symmetrical in the exchange of the position variables. Since pions
+have spin 0, the wave function must also be symmetrical  in the exchange of isospin.
+
+This means the total isospin has to be 2 (with 5 eigenstates) or 0 (with 1 eigenstate).
+
+### 5.B.
+
+It is not very clear whether it is asked to prove something similar to (5.17), or $$ [T_a, T_b] = \epsilon_{abc} T_c $$.
+
+I assume it is the latter. (The former case is actual easier any way.)
+
+We start with
+
+$$
+\begin{eqnarray}
+  &&  [T_a, T_b]  \\
+  &=& \sum_{x, m, m', \alpha} \sum_{y, n, n', \beta} [J^{j_x}_a]_{m m'} [J^{j_y}_b]_{n n'} [a^\dagger_{x, m, \alpha} a_{x, m', \alpha}, a^\dagger_{y, n, \beta} a_{y, n', \beta}].
+\end{eqnarray}
+$$
+
+The commutator can be calculated as follows. (We take the commutator and plus sign if at least one of the two parts are bosons,
+the anti-commutator and the plus sign if both are fermions.)
+
+$$
+\begin{eqnarray}
+  &&  [a^\dagger_{x, m, \alpha} a_{x, m', \alpha}, a^\dagger_{y, n, \beta} a_{y, n', \beta}]  \\
+  &=& a^\dagger_{x, m, \alpha} [a_{x, m', \alpha}, a^\dagger_{y, n, \beta} a_{y, n', \beta}] + [a^\dagger_{x, m, \alpha}, a^\dagger_{y, n, \beta} a_{y, n', \beta}] a_{x, m', \alpha}  \\
+  &=& a^\dagger_{x, m, \alpha} [a_{x, m', \alpha}, a^\dagger_{y, n, \beta}]_\mp a_{y, n', \beta} \pm a^\dagger_{x, m, \alpha} a^\dagger_{y, n, \beta} [a_{x, m', \alpha}, a_{y, n', \beta}]_\mp  \\
+  &&  \pm a^\dagger_{y, n, \beta} [a^\dagger_{x, m, \alpha}, a_{y, n', \beta}]_\mp a_{x, m', \alpha} + [a^\dagger_{x, m, \alpha}, a^\dagger_{y, n, \beta}]_\mp a_{y, n', \beta} a_{x, m', \alpha}  \\
+  &=& \delta_{x y} \delta_{\alpha \beta} (\delta_{m' n} a^\dagger_{x, m, \alpha} a_{y, n', \beta} - \delta_{m n'} a^\dagger_{y, n, \beta} a_{x, m', \alpha}).
+\end{eqnarray}
+$$
+
+We have therefore
+
+$$
+\begin{eqnarray}
+  &&  [T_a, T_b]  \\
+  &=& \sum_{x, m, n', \alpha} [J^{j_x}_a]_{m n} [J^{j_x}_b]_{n n'} a^\dagger_{x, m, \alpha} a_{x, n', \alpha} - [J^{j_x}_b]_{n m} [J^{j_x}_a]_{m m'} a^\dagger_{x, n, \alpha} a_{x, m', \alpha}  \\
+  &=& \sum_{x, m, n', \alpha} [J^{j_x}_a, J^{j_x}_b]_{m n'} a^\dagger_{x, m, \alpha} a_{x, n', \alpha}  \\
+  &=& \sum_{x, m, n', \alpha} \epsilon_{abc} [J^{j_x}_c]_{m n'} a^\dagger_{x, m, \alpha} a_{x, n', \alpha}  \\
+  &=& \epsilon_{abc} T_c.
+\end{eqnarray}
+$$
+
+5.C.
+
+According to standard perturbation theory, which can be found in any QM book, the probability for a transition from $$ | i \rangle $$
+to  $$ | j \rangle $$ to happen is proportional to $$ |\langle j | H | i \rangle|^2 $$.
+
+We can assume $$ H $$ to be isospin invariant. Therefore the probability of $$ \pi^+ P \rightarrow \Delta^{++} $$ is proportional to
+$$ |\langle 3/2, 3/2 | 1, 1/2, 1, 1/2 \rangle|^2 = 1 $$, while the probability of $$ \pi^- P \rightarrow \Delta^0 $$ is proportional to
+$$ |\langle 3/2, -1/2 | 1, 1/2, -1, 1/2 \rangle|^2 = \frac{1}{3} $$. The ratio of the two is thus 3 to 1.
