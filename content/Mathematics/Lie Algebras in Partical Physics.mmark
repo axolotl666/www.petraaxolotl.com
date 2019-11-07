@@ -562,3 +562,48 @@ to  $$ | j \rangle $$ to happen is proportional to $$ |\langle j | H | i \rangle
 We can assume $$ H $$ to be isospin invariant. Therefore the probability of $$ \pi^+ P \rightarrow \Delta^{++} $$ is proportional to
 $$ |\langle 3/2, 3/2 | 1, 1/2, 1, 1/2 \rangle|^2 = 1 $$, while the probability of $$ \pi^- P \rightarrow \Delta^0 $$ is proportional to
 $$ |\langle 3/2, -1/2 | 1, 1/2, -1, 1/2 \rangle|^2 = \frac{1}{3} $$. The ratio of the two is thus 3 to 1.
+
+## Chapter 6
+
+### 6.A.
+
+In the adjoint representation,
+
+$$
+\begin{eqnarray}
+  &&  H_i | [E_\alpha, E_\beta] \rangle  \\
+  &=& [H_i, [E_\alpha, E_\beta]]  \\
+  &=& [E_\alpha, [H_i, E_\beta]] + [[H_i, E_\alpha], E_\beta]  \\
+  &=& \beta_i [E_\alpha, E_\beta] + \alpha_i [E_\alpha, E_\beta]  \\
+  &=& (\alpha + \beta)_i [E_\alpha, E_\beta].
+\end{eqnarray}
+$$
+
+If $$ \alpha + \beta $$ is a root, $$ [E_\alpha, E_\beta] $$ must be proportional to $$ E_{\alpha + \beta} $$
+due to the uniqueness of non-zero roots. If $$ \alpha + \beta $$ is not a root, $$ [E_\alpha, E_\beta] $$ must be 0.
+
+### 6.B.
+
+From 6.A., $$ [E_\alpha, E_{-\alpha - \beta}] $$ is proportional to $$ E_{-\beta} $$. We can calculate the coefficient
+as follows.
+
+$$
+\begin{eqnarray}
+  &&  \langle E_{-\beta} | [E_\alpha, E_{-\alpha - \beta}] \rangle  \\
+  &=& \lambda^{-1} \mathrm{Tr} (E^\dagger_{-\beta} [E_\alpha, E_{-\alpha - \beta}])  \\
+  &=& \lambda^{-1} \mathrm{Tr} (E_{\beta} [E_\alpha, E_{-\alpha - \beta}])  \\
+  &=& \lambda^{-1} \mathrm{Tr} ([E_{\beta}, E_\alpha], E_{-\alpha - \beta})  \\
+  &=& -N \lambda^{-1} \mathrm{Tr} (E_{\alpha + \beta}, E^\dagger_{\alpha + \beta})  \\
+  &=& -N  \\
+\end{eqnarray}
+$$
+
+### 6.C.
+
+Since $$ \sigma_3 $$ and $$ \sigma_3 \tau_3 $$ are already diagnoal, we can simply read off the four weights from these two
+matrices. They are $$ (\pm 1, \pm 1) $$.
+
+To get the roots, the foolproof method is to write down the two 10-dimensional matrices of $$ H_1 $$ and $$ H_2 $$ in the
+adjoint representation and diagonalize them. In practice, the weights of the four-dimensional representation give us an
+important hint. The difference between two *adjacient* weights is *often* a root. We know there are two zero roots
+corresponding to $$ H_1 $$ and $$ H_2 $$ themselves. The eight remaining are thus $$ (\pm 2, 0), (0, \pm 2), (\pm 2, \pm 2) $$.
