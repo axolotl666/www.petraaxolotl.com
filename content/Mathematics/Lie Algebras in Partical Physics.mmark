@@ -607,3 +607,46 @@ To get the roots, the foolproof method is to write down the two 10-dimensional m
 adjoint representation and diagonalize them. In practice, the weights of the four-dimensional representation give us an
 important hint. The difference between two *adjacient* weights is *often* a root. We know there are two zero roots
 corresponding to $$ H_1 $$ and $$ H_2 $$ themselves. The eight remaining are thus $$ (\pm 2, 0), (0, \pm 2), (\pm 2, \pm 2) $$.
+
+## Chapter 7
+
+### 7.A.
+
+We have $$ [T_1, T_4] = i \frac{1}{2} T_7 $$ and $$ [T_4, T_5] = i \frac{1}{2} T_3 + i \frac{\sqrt{3}}{2} T_8 $$, and
+therefore $$ f_{147} = \frac{1}{2} $$ and $$ f_{456} = 0 $$.
+
+### 7.B.
+
+$$ T_1 $$, $$ T_2 $$ and $$ T_3 $$ generate an SU(2) subalgebra because they have the right commutation relationship.
+
+Under this subalgebra, the first two eigenvectors (corresponding to the top weights in (7.11)) of the defining representation
+form a doublet (spin 1) while the third eigenvectos (corresponding to the bottom weight in (7.11)) form a singlet (spin 0).
+
+The adjoint representation breaks down into the following SU(2) representations.
+- Spin 1/2: $$ E_{1/2, \sqrt{3}/2} $$ and $$ E_{-1/2, \sqrt{3}/2} $$ form a doublet.
+- Spin 1/2: $$ E_{1/2, -\sqrt{3}/2} $$ and $$ E_{-1/2, -\sqrt{3}/2} $$ form a doublet.
+- Spin 1: $$ E_{1, 0} $$, $$ T_{3} $$, and $$ E_{-1, 0} $$ form a triplet.
+- Spin 0: $$ T_{0} $$ forms a singlet.
+
+Remember that the generators are the states in the adjoint representation.
+
+### 7.C.
+
+Defining $$ J_1 $$, $$ J_2 $$, $$ J_3 $$ as $$ \lambda_2 $$, $$ \lambda_5 $$, and $$ \lambda_7 $$, we get
+the commutation relationship of SU(2).
+
+The eigenvectors of $$ J_3 $$ are $$ (0, 1, i)^T $$, $$ (- \sqrt{2}i, 0, 0)^T $$, and $$ (0, 1, -i)^T $$ with eigenvalues
+1, 0, and -1. Applying $$ J^\pm = \frac{1}{\sqrt{2}} (J_1 \pm J_2) $$, we see that they form a triplet of the spin 1
+representation of SU(2)
+
+The adjoint representation breaks down into the following SU(2) representations.
+- Spin 1: $$ J^+ $$, $$ -J_3 $$, and $$ -J^- $$ form a triplet.
+- Spin 2: $$ \lambda_3 - 2i \lambda_6 - \sqrt{3} \lambda_8 $$, $$ 2i \lambda_1 - 2 \lambda_4 $$,
+  $$ \sqrt{6} \lambda_3 + \sqrt{2} \lambda_8 $$, $$ 2i \lambda_1 + 2 \lambda_4 $$, and
+  $$ \lambda_3 + 2i \lambda_6 - \sqrt{3} \lambda_8 $$ form a quintuplet, with their $$ J_3 $$ value equal to
+  2, 1, 0, -1, and 2 respectively.
+
+Remember that the generators are the states in the adjoint representation.
+
+The foolproof way to get the correct result is to write down the matrix of $$ \lambda_7 $$ in the adjoint representation
+and diagonalize it.
