@@ -650,3 +650,54 @@ Remember that the generators are the states in the adjoint representation.
 
 The foolproof way to get the correct result is to write down the matrix of $$ \lambda_7 $$ in the adjoint representation
 and diagonalize it.
+
+## Chapter 8
+
+### 8.A.
+
+The simple roots are $$ \alpha_1 = (0, 2) $$ and $$ \alpha_2 = (2, -2) $$. There should be two lines between the two dots
+in the Dynkin diagram since $$ \cos \theta_{\alpha_1 \alpha_2} = 135^\circ $$.
+
+The fundamental weights are $$ \mu_1 = (1, 1) $$ and $$ \mu_2 = (2, 0) $$.
+
+### 8.B.
+
+We can take $$ H_1 = \sigma_3 (1 + \eta_1) $$ and $$ H_2 = \sigma_3 (1 - \eta_1) $$ as the two Cartan generators.
+Either diagonalizing them in the adjoint representation, or by a bit trials and errors, we can find the following
+roots.
+
+$$
+\begin{eqnarray}
+  E_{1, 0}    &=& \sigma^+ (1 + \eta_1) \\
+  E_{0, -1}   &=& \sigma^+ (1 - \eta_1) \\
+  E_{0, 1}   &=& \sigma^- (1 - \eta_1) \\
+  E_{-1, 0}  &=& \sigma^- (1 + \eta_1)
+\end{eqnarray}
+$$
+
+The algebra can be split into two mutually commuting subalgebras. The first consists of $$ H_1 $$, $$ E_{1, 0} $$,
+and $$ E_{-1, 0} $$, while the second consists of the rest. Therefore the algebra is not simple. We cannot find
+a generator that commutes with everything — such a generator would be a zero matrix in the adjoint representation
+and we know all the six generators are linearly independent — and therefore the algebra is semisimple.
+
+The Dynkin diagram is made of two isolated dots corresponding to $$ E_{1, 0} $$ and $$ E_{0, 1} $$.
+
+### 8.C.
+
+Below is the Cartan matrix.
+
+$$
+\begin{bmatrix}
+  2   & -1  & 0   \\
+  -1  & 2   & -2  \\
+  0   & -1  & 2
+\end{bmatrix}
+$$
+
+I won't draw the diagram here to get all positive roots. Instead, I will simply list all the positive roots below.
+
+- $$ k = 1 $$:  $$ \begin{bmatrix} 2 & -1 & 0 \end{bmatrix} $$, $$ \begin{bmatrix} -1 & 2 & -2 \end{bmatrix} $$, $$ \begin{bmatrix} 0 & -1 & 2 \end{bmatrix} $$.
+- $$ k = 2 $$:  $$ \begin{bmatrix} 1 & 1 & -2 \end{bmatrix} $$, $$ \begin{bmatrix} -1 & 1 & 0 \end{bmatrix} $$.
+- $$ k = 3 $$:  $$ \begin{bmatrix} 1 & 0 & 0 \end{bmatrix} $$, $$ \begin{bmatrix} -1 & 0 & 2 \end{bmatrix} $$.
+- $$ k = 4 $$:  $$ \begin{bmatrix} 1 & -1 & 2 \end{bmatrix} $$.
+- $$ k = 5 $$:  $$ \begin{bmatrix} 0 & 1 & 0 \end{bmatrix} $$.
