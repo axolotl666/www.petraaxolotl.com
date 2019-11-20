@@ -701,3 +701,91 @@ I won't draw the diagram here to get all positive roots. Instead, I will simply 
 - $$ k = 3 $$:  $$ \begin{bmatrix} 1 & 0 & 0 \end{bmatrix} $$, $$ \begin{bmatrix} -1 & 0 & 2 \end{bmatrix} $$.
 - $$ k = 4 $$:  $$ \begin{bmatrix} 1 & -1 & 2 \end{bmatrix} $$.
 - $$ k = 5 $$:  $$ \begin{bmatrix} 0 & 1 & 0 \end{bmatrix} $$.
+
+## Chapter 9
+
+### 9.A.
+
+The general idea is to use commutation rules (6.12), (6.19), and (8.4) to move $$ E_{-\alpha^i} $$s to the left and $$ E_{\alpha^i} $$
+to the right. Also note that $$ \mu = \mu_1 + \mu_2 = \alpha_1 + \alpha_2 $$. 
+
+$$
+\begin{eqnarray}
+  &&  \langle A | A \rangle \\
+  &=& \langle \mu | E_{\alpha^2} E_{\alpha^1} | E_{-\alpha^1} E_{-\alpha^2} | \mu \rangle  \\
+  &=& (\alpha^1)_i \langle \mu | E_{\alpha^2} H_i E_{-\alpha^2} | \mu \rangle + \langle \mu | E_{\alpha^2} E_{-\alpha^1} E_{\alpha^1} E_{-\alpha^2} | \mu \rangle  \\
+  &=& (\alpha^1)_i \langle \mu | E_{\alpha^2} H_i E_{-\alpha^2} | \mu \rangle  \\
+  &=& (\alpha^1)_i \left( (-\alpha^2)_i \langle \mu | E_{\alpha^2} E_{-\alpha^2} | \mu \rangle + \langle \mu | E_{\alpha^2} E_{-\alpha^2} H_i | \mu \rangle \right)  \\
+  &=& \left( \alpha^1 \cdot (\mu - \alpha^2) \right) \langle \mu | E_{\alpha^2} E_{-\alpha^2} | \mu \rangle  \\
+  &=& | \alpha^1 |^2 \left( (\alpha^2)_i \langle \mu | H_i | \mu \rangle + \langle \mu | E_{-\alpha^2} E_{\alpha^2} | \mu \rangle \right)  \\
+  &=& \alpha^2 \cdot \mu  \\
+  &=& 1/2
+\end{eqnarray}
+$$
+
+Similarly, we have $$ \langle A | A \rangle = 1/2 $$ and
+
+$$
+\begin{eqnarray}
+  &&  \langle A | B \rangle \\
+  &=& \langle \mu | E_{\alpha^2} E_{\alpha^1} | E_{-\alpha^2} E_{-\alpha^1} | \mu \rangle  \\
+  &=& \langle \mu | E_{\alpha^2} E_{-\alpha^2} E_{\alpha^1} E_{-\alpha^1} | \mu \rangle  \\
+  &=& (\alpha^2)_i (\alpha^1)_j \langle \mu | H_i H_j | \mu \rangle  \\
+  &=& (\alpha^2 \cdot \mu) (\alpha^1 \cdot \mu)  \\
+  &=& 1/4.
+\end{eqnarray}
+$$
+
+Clearly $$ \langle A | A \rangle \langle B | B \rangle \neq \langle A | B \rangle \langle B | A \rangle $$.
+
+(Refer to any elementary QM book for why the equality is needed for $$ | A \rangle $$ and $$ | B \rangle $$ to be linearly dependent.)
+
+### 9.B.
+
+One way to solve this problem is to diagonalize $$ \frac{1}{2} \lambda_3 \sigma_2 $$ and
+$$ \frac{1}{2} \lambda_8 \sigma_2 $$ and find out all the weights, which are the weights of (1, 0) and those of
+(0, 1), and conclude it can be reduced into (1, 0) and (0, 1).
+
+Or, we could notice the following.
+- $$ \frac{1}{2} \lambda_a \otimes \sigma_2 $$ can be replaced by $$ \sigma_2 \otimes \frac{1}{2} \lambda_a $$, and
+$$ \frac{1}{2} \lambda_a \otimes I $$ by $$ I \otimes \frac{1}{2} \lambda_a $$. This does not change the commutation
+relationships at all.
+- There is a similarity transformation S ($$ \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ i & -i \end{bmatrix} $$) that transforms
+$$ \sigma_2 $$ to $$ \sigma_3 $$.
+- With the similarity transformations $$ S \otimes I $$, both $$ \sigma_3 \otimes \frac{1}{2} \lambda_a $$ for $$ a = 1, 3, 4, 6, 8 $$
+and $$ I \otimes \frac{1}{2} \lambda_a $$ for $$ a = 2, 5, 7 $$ become
+$$ \begin{bmatrix} \frac{1}{2} \lambda_a & 0 \\ 0 & -\frac{1}{2} \lambda_a^* \end{bmatrix} $$, since the former are real while
+the latter are imaginery.
+
+Now we have explicitly block diagonalized the 6-dimensional representation into a $$ 3 $$ and a $$ \bar{3} $$.
+
+### 9.C.
+
+The three weights of 3 are $$ | \mu_1 \rangle $$, $$ | \mu_1 - \alpha_1 \rangle $$, and
+$$ | \mu_1 - \alpha_1 - \alpha_2 \rangle $$.
+
+The highest weight of $$ 3 \times 3 $$ is $$ | \mu_{6, 2 \mu_1} \rangle = | \mu_1 \rangle | \mu_1 \rangle $$. Repeatedly applying
+one of the two lowering operators on both sides, we get all the states in 6.
+
+$$
+\begin{eqnarray}
+  &&            | \mu_{6, 2 \mu_1} \rangle = | \mu_1 \rangle | \mu_1 \rangle  \\
+  &\Rightarrow& | \mu_{6, 2 \mu_1 - \alpha_1} \rangle = \frac{1}{\sqrt{2}} \left( | \mu_1 - \alpha_1 \rangle | \mu_1 \rangle + | \mu_1 \rangle | \mu_1 - \alpha_1 \rangle \right)  \\
+  &\Rightarrow& | \mu_{6, 2 \mu_1 - 2 \alpha_1} \rangle = | \mu_1 - \alpha_1 \rangle | \mu_1 - \alpha_1 \rangle  \\
+  &&            | \mu_{6, 2 \mu_1 - \alpha_1 - \alpha_2} \rangle = \frac{1}{\sqrt{2}} \left( | \mu_1 - \alpha_1 - \alpha_2 \rangle | \mu_1 \rangle + | \mu_1 \rangle | \mu_1 - \alpha_1 - \alpha_2 \rangle \right)  \\
+  &\Rightarrow& | \mu_{6, 2 \mu_1 - 2 \alpha_1 - \alpha_2} \rangle = \frac{1}{\sqrt{2}} \left( | \mu_1 - \alpha_1 - \alpha_2 \rangle | \mu_1 - \alpha_1 \rangle + | \mu_1 - \alpha_1 \rangle | \mu_1 - \alpha_1 - \alpha_2 \rangle \right)  \\
+  &\Rightarrow& | \mu_{6, 2 \mu_1 - 2 \alpha_1 - 2 \alpha_2} \rangle = | \mu_1 - \alpha_1 - \alpha_2 \rangle | \mu_1 - \alpha_1 - \alpha_2 \rangle
+\end{eqnarray}
+$$
+
+Taking the state orthogonal to $$ | \mu_{6, 2 \mu_1 - \alpha_1} \rangle $$ to be $$ | \mu_{\bar{3}, 2 \mu_1 - \alpha_1} \rangle $$,
+and repeatedly applying one of the two lowering operators on both sides, we get all the states in $$ \bar{3} $$.
+
+$$
+\begin{eqnarray}
+  &&            | \mu_{\bar{3}, 2 \mu_1 - \alpha_1} \rangle = \frac{1}{\sqrt{2}} \left( | \mu_1 - \alpha_1 \rangle | \mu_1 \rangle - | \mu_1 \rangle | \mu_1 - \alpha_1 \rangle \right)  \\
+  &\Rightarrow& | \mu_{\bar{3}, 2 \mu_1 - \alpha_1 - \alpha_2} \rangle = \frac{1}{\sqrt{2}} \left( | \mu_1 - \alpha_1 - \alpha_2 \rangle | \mu_1 \rangle - | \mu_1 \rangle | \mu_1 - \alpha_1 - \alpha_2 \rangle \right)  \\
+  &\Rightarrow& | \mu_{\bar{3}, 2 \mu_1 - 2 \alpha_1 - \alpha_2} \rangle = \frac{1}{\sqrt{2}} \left( | \mu_1 - \alpha_1 - \alpha_2 \rangle | \mu_1 - \alpha_1 \rangle - | \mu_1 - \alpha_1 \rangle | \mu_1 - \alpha_1 - \alpha_2 \rangle \right)
+\end{eqnarray}
+$$
+
