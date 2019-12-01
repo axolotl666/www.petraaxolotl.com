@@ -147,6 +147,125 @@ to a hermitian matrix). So we have $$ \mathrm{Tr} (T_a T_a) \ge 0 $$.
 
 Typo. $$ \mathrm{Tr} $$ is missing before two pairs of parentheses.
 
+## Chapter 6
+
+### Eq. (6.2)
+
+Note that since $$ X_{i j} := \mathrm{Tr}(H_i H_j) $$ is a real symmetric matrix (due to $$ H $$'s being hermitian), the similarity
+transformation required can be chosen to be real, keeping $$ H $$'s hermitian.
+
+### Under Eq. (6.14),
+
+_States corresponding to different weights..._
+
+Keep in mind that one should use (6.7) as the definition of inner products between two states, not the inner products of two 1-D
+vectors, although one can prove the equivalence between the two.
+
+### Under Eq. (6.22), _root vectors correspond to unique generators._
+_root_ should be _non-zero root_. Idem for text under Eq. (8.26).
+
+## Chapter 8
+
+### Under Eq. (8.49)
+
+_all 0, -1, -2 or -3..._
+
+Too see why this is true, refer to (8.5) and (8.6).
+
+_It is easy to see that the Cartan matrix is invertible because the a1 are complete and linearly independent._
+
+Row $$ j $$ is simply $$ \alpha_j $$'s coordinates in the $$ e_i = 2 \alpha_i / \alpha_i^2 $$ basis. ($$ e_i $$'s are not orthonormal.)
+
+### Eq. (8.63)
+
+$$ 2 \sqrt{\frac{3}{2}} $$ should be $$ \sqrt{2} \sqrt{\frac{3}{2}} $$. All following equations are wrong by a factor of $$ \sqrt{2} $$.
+
+## Chapter 9
+
+### Under Eq. (9.11)
+
+_But any such state with a positive $$ \phi $$..._
+
+It is actually a bit more complicated than this. The commutator does not necessarily vanish so we may need to repeat the process
+if the commutator itself gives us a positive $$ \phi $$. In the general case, we end up with a sum of (9.11) with only negative $$ \phi $$'s.
+
+### Eq. (9.27)
+
+$$ - n \mu^2 - m \mu^1 $$ is clearly a weight due to Weyl reflection.
+
+### Under Eq. (9.39)
+
+_is not a root_ should be _is not a weight_.
+
+## Chapter 10
+
+### Eq. (10.13)
+
+It would be beneficial for clarity to put $$ T_a v $$ between parentheses, to indicate it is about the components of 
+$$ (T_a v) $$. Then (10.13) can be easily derived from (10.8), (10.9), and (10.10).
+
+### Under Eq. (10.16)
+
+*the tracelessness of the $$ T_a $$s*
+
+Actually it is the hermiticity, rather than tracelessness, is necessary (used in (10.6)).
+
+The hermiticity is the $$ U $$ in $$ SU(3) $$, while the tracelessness is the $$ S $$.
+
+### Under Eq. (10.32)
+
+_The bra transforms under the algebra with an extra minus sign._
+
+See (2.56).
+
+### Under Eq. (10.35)
+
+*the tensor $$ \bar{v} $$ is transformed by $$ T_a \bar{v} $$.*
+
+This can be derived in the same way as (10.13).
+
+### Above Eq. (10.41)
+
+_a object_ should be _an object_.
+
+### Eq. (10.49)
+
+Note the $$ \mu_1 $$ and $$ \mu_2 $$ are the ones in (6.3) and have nothing to do with those in (9.3).
+
+### Above Eq. (10.95)
+
+$$ | s_1 - s_2 | $$ should be $$ 2 \cdot \mathrm{min}(s_1, s_2) $$.
+
+### Under Eq. (10.96)
+
+*the $$ k $$ index* should be *the $$ j $$ index* for both occurences.
+
+### Eq. (10.99)
+
+In the last line, $$ l $$ is the number of $$ 2 $$s in $$ i_1, i_2, \dots, i_k $$, or equivalently, the number of $$ 1 $$s
+in $$ j_1, j_2, \dots, j_k $$.
+
+### Under Eq. (10.114)
+
+$$ 2 $$ should be $$ p + 2 $$.
+
+### Eq. (10.116)
+
+$$ s_1 + s_2 + k + m_1 + m_2 $$ should be $$ s_1 + s_2 - k + m_1 + m_2 $$
+
+### Eq. (10.117)
+
+$$ \begin{bmatrix} 2 s_1 + 2 s_2 - 2 \\ s_1 + s_2 - 1 + m_1 + m_2 \end{bmatrix} $$ should be
+$$ \begin{bmatrix} 2 s_1 + 2 s_2 - 2 k \\ s_1 + s_2 - k + m_1 + m_2 \end{bmatrix} $$.
+
+### Eq. (10.118)
+
+After the first equality, $$ \frac{(2 s_1)! (2 s_2)!}{k!} $$ should be $$ \frac{(2 s_1)! (2 s_2)!}{(2 s_1 - k)! (2 s_2 - k)! k!} $$.
+
+### Under Eq. (10.118)
+
+_it is nice example_ should be _it is a nice example_.
+
 # Solutions
 
 ## Chapter 1
