@@ -275,6 +275,46 @@ $$ \langle 3/2, 1/2 | 1, 3/2, 0, 1/2 \rangle $$.
 
 $$ SU(3) $$ should be $$ SU(2) $$.
 
+## Chapter 11
+
+### (11.12)
+
+_and $$ SU(3) $$_ should be _an $$ SU(3) $$_.
+
+In case it's not obvious, the word *conserve* implies *commute with*.
+
+### Text under (11.17)
+
+For clarity, _the isospin and hypercharge generators_ are $$ T_1 $$, $$ T_2 $$, $$ T_3 $$, and $$ T_8 $$.
+
+*The $$ I = Y = 0 $$ state corresponds to the generator $$ T_8 $$.*
+
+This statement is not accurate. Both $$ T_3 $$ and $$ T_8 $$ have $$ I = Y = 0 $$. But $$ T_3 $$ does not commute with
+$$ T_1 $$ or $$ T_2 $$ and is thus not what we are looking for.
+
+### Eq. (11.19)
+
+This leads to $$ [T_a, H_MS] = O^i_j [T_a, T_8]^j_i $$, guaranteeing that $$ H_MS .$$ commute with
+$$ T_1 $$, $$ T_2 $$, $$ T_3 $$, and $$ T_8 $$.
+
+### Eq. (11.25)
+
+It may seem strange why $$ | \Sigma^+ |^2 $$, $$ | \Sigma^- |^2 $$ and $$ | \Sigma^0 |^2 $$ are combined into $$ | \Sigma |^2 $$,
+$$ | n |^2 $$ and $$ | p |^2 $$ (or $$ | \Xi^0 |^2 $$ and $$ | \Xi^- |^2 $$) are combined into $$ | Ν |^2 $$ (or $$ | \Xi |^2 $$),
+and $$ | \Lambda |^2 $$ reamins as $$ | \Lambda |^2 $$
+
+The reason becomes clear when we look at the $$ M_0 $$ term from the very strong interactions.
+
+$$ \langle B | H_{VS} | B \rangle = M_0 (| \Sigma |^2 + | Ν |^2 + | \Xi |^2+ | \Lambda |^2) $$, where these four items are defined
+in the same way.
+
+### Text under (11.33)
+
+To see where the equal spacing is from, notice that $$ \Delta $$, $$ \Sigma $$, $$ \Xi $$ , $$ \Omega $$ particles have
+components $$ \{ xxx \} $$, $$ \{ xx3 \} $$, $$ \{ x33 \} $$, and $$ 333 $$ respectively, where $$ x = 1, 2 $$. By expanding
+Eq. (10.71), one sees clearly that the result can be written as $$ \lambda ( n_{1, 2} - 2 n_3 ) $$ where $$ n_{1, 2} $$ is
+how many times 1 or 2 appears and $$ n_3 $$ is how many times 3 appears.
+
 # Solutions
 
 ## Chapter 1
@@ -1049,3 +1089,53 @@ $$
 Again we have
 
 $$ A_{+p} = A_{-p} + \sqrt{2} A_{0n}. $$
+
+## Chapter 10
+
+### 11.A.
+
+The reasoning following Eq. (11.33) works exactly the same way for a 6 as for a 10. Hence equal spacing.
+
+### 11.B.
+
+$$ \Delta^+ $$ has non-zero components $$ \Delta^{211} = \Delta^{121} = \Delta^{112} = \frac{1}{\sqrt{3}} $$.
+
+$$ \pi^0 $$ has non-zero components $$ \pi^2_2 = \frac{1}{\sqrt{2}} $$ and $$ \pi^1_1 = -\frac{1}{\sqrt{2}} $$.
+
+$$ P $$ has non-zero components $$ P^1_3 = -1 $$.
+
+$$ \Sigma^{*0} $$ has non-zero components $$ \Sigma^{123} = \Sigma^{132} = \Sigma^{213} = \Sigma^{231} = \Sigma^{312} = \Sigma^{321} = \frac{1}{\sqrt{6}} $$.
+
+$$ K^- $$ has non-zero components $$ K^3_1 = -1 $$.
+
+10 appears only once in $$ 8 \times 8 $$. Thus the result depends only on one unknown variable. See (12.14) for more details.
+
+Now we have
+
+$$ \langle \Delta^+ | H | \pi^0 P \rangle = \lambda \epsilon^{mnk} \bar{\Delta}_{ijk} \pi^i_m P^j_n = \lambda (\bar{\Delta}_{211} \pi^2_2 P^1_3 - \bar{\Delta}_{112} \pi^1_1 P^1_3) = -\sqrt{\frac{2}{3}} \lambda, $$
+
+and
+
+$$ \langle \Sigma^{*0} | H | K^- P \rangle = \lambda \epsilon^{mnk} \bar{\Sigma}_{ijk} K^i_m P^j_n = - \lambda \bar{\Sigma}_{312} K^3_1 P^1_3 = -\frac{1}{\sqrt{6}} \lambda. $$
+
+Therefore the the probability ratio is $$ (\sqrt{\frac{2}{3}} / \frac{1}{\sqrt{6}})^2 = 4 $$.
+
+### 11.C.
+
+From Eq. (11.42) and Eqs. (11.24), we have
+
+$$
+\begin{eqnarray}
+  \mu(P) &=&        +\frac{2}{3} \alpha - \frac{1}{3} \beta  \\
+  \mu(N) &=&        -\frac{1}{3} \alpha - \frac{1}{3} \beta  \\
+  \mu(\Sigma^+) &=& +\frac{2}{3} \alpha - \frac{1}{3} \beta  \\
+  \mu(\Sigma^0) &=& +\frac{1}{6} \alpha + \frac{1}{6} \beta  \\
+  \mu(\Sigma^-) &=& -\frac{1}{3} \alpha + \frac{2}{3} \beta  \\
+  \mu(\Xi^0)    &=& -\frac{1}{3} \alpha - \frac{1}{3} \beta  \\
+  \mu(\Xi^-)    &=& -\frac{1}{3} \alpha + \frac{2}{3} \beta  \\
+  \mu(\Lambda)  &=& -\frac{1}{6} \alpha - \frac{1}{6} \beta.
+\end{eqnarray}
+$$
+
+Since $$ \alpha $$ and $$ \beta $$ can be solved in terms of $$ \mu(P) $$ and $$ \mu(N) $$, all other magnetic moments
+can be expressed in terms of $$ \mu(P) $$ and $$ \mu(N) $$.
