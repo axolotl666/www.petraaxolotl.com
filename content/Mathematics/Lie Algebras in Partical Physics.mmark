@@ -1291,7 +1291,11 @@ The fact that there is only one column in the tableau of any fundamental represe
 that there can be only one column in the tableau of $$ SU(N) $$ and only one column in the tableau of $$ SU(M) $$ in the
 decomposition. Therefore we have
 
-$$ [m] \rightarrow \sum_{i + j = m} [i] \oplus [j]. $$
+$$ [m] \rightarrow \sum_{i + j = m} ([i] , [j])_{M i - N j}. $$
+
+Similarly, we have for the adjoint representation
+
+$$ [N + M - 1, 1] \rightarrow \sum_{i + j = M + N} ([i], [j])_{M i - N j} + \sum_{i + j = M + N} ([i - 1, 1], [j])_{M i - N j} + \sum_{i + j = M + N} ([i], [j - 1, 1])_{M i - N j}. $$
 
 13.E.
 
