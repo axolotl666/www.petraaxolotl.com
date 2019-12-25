@@ -315,6 +315,26 @@ components $$ \{ xxx \} $$, $$ \{ xx3 \} $$, $$ \{ x33 \} $$, and $$ 333 $$ resp
 Eq. (10.71), one sees clearly that the result can be written as $$ \lambda ( n_{1, 2} - 2 n_3 ) $$ where $$ n_{1, 2} $$ is
 how many times 1 or 2 appears and $$ n_3 $$ is how many times 3 appears.
 
+## Chapter 14
+
+### Text under (14.13)
+
+The reason why the $$ n = 2 $$ states _under angular momentum transforms like $$ 5 + 1 $$_ is that the states in the defining
+representation of $$ SU(3) $$ are linear combinations of the eigenstates of the spin-1 representation of $$ SU(2) $$ defined by
+$$ L1 $$, $$ L2 $$, $$ L3 $$. In $$ SU(2) $$, we have $$ 3 \otimes 3 = 5 \oplus 3 \oplus 1 $$. The $$ 3 $$ on the right hand side
+is antisymmetric in $$ SU(2) $$ and does not appear in the symmetric $$ 6 $$ in $$ SU(3) $$. (It appears in the $$ \bar{3} $$ in
+$$ SU(3) $$ instead.)
+
+With 3 indices it would be $$ 7 + 3 $$; 4 indices $$ 9 + 5 + 1 $$; etc.
+
+### Text under (14.20)
+
+This is essentially $$ 8 \otimes 1 \otimes 1 \otimes 1 \cdots $$, which is still an $$ 8 $$.
+
+### Text under (14.21)
+
+It should be $$ b^\dagger_2 $$ instead of $$ b^\dagger_3 $$ But it has not consequence in the following discussion.
+
 # Solutions
 
 ## Chapter 1
@@ -1283,7 +1303,7 @@ $$ 10 \otimes 5 = 45 \oplus \bar{5}. $$
 
 Without actually drawing tableuax, we have
 
-$$ [3, 1] \otimes [2, 1] = [3, 2, 1, 1] \oplus [4, 1, 1, 1] \oplus [3, 2, 2] \oplus [3, 3, 1] \oplus [4, 2, 1] \oplus [5, 1, 1] \oplus [4, 3] \oplus [5, 2]. $$
+$$ [3, 1] \otimes [2, 1] = [3, 2, 1, 1] \oplus [4, 1, 1, 1] \oplus [3, 2, 2] \oplus [3, 3, 1] \oplus [4, 2, 1] \oplus [4, 2, 1] \oplus [5, 1, 1] \oplus [4, 3] \oplus [5, 2]. $$
 
 ### 13.D.
 
@@ -1295,7 +1315,15 @@ $$ [m] \rightarrow \sum_{i + j = m} ([i] , [j])_{M i - N j}. $$
 
 Similarly, we have for the adjoint representation
 
-$$ [N + M - 1, 1] \rightarrow \sum_{i + j = M + N} ([i], [j])_{M i - N j} + \sum_{i + j = M + N} ([i - 1, 1], [j])_{M i - N j} + \sum_{i + j = M + N} ([i], [j - 1, 1])_{M i - N j}. $$
+$$
+\begin{eqnarray}
+  && [N + M - 1, 1]  \\
+  &\rightarrow& \sum_{i + j = M + N} ([i], [j])_{M i - N j} + \sum_{i + j = M + N} ([i - 1, 1], [j])_{M i - N j} + \sum_{i + j = M + N} ([i], [j - 1, 1])_{M i - N j}  \\
+  &=& ([N], [M])_0 \oplus ([N - 1, 1], [M])_0 \oplus ([N, 1], [M - 1])_{M + N} \oplus ([N - 1], [M, 1])_{-M - N} \oplus ([N], [M - 1, 1])_0.
+\end{eqnarray}
+$$
+
+Double-checking the dimensionality, we have $$ (N + M)^2 - 1 = 1 + N^2 - 1 + N M + N M + M^2 - 1 $$. So it checks out.
 
 13.E.
 
@@ -1306,3 +1334,72 @@ $$ [2] \otimes [1, 1] = [2, 1, 1] \oplus [3, 1], $$
 or 
 
 $$ \frac{N (N-1)}{2} \cdot \frac{(N+1) N}{2} = \frac{(N+2)(N+1)N(N-1)}{8} + \frac{(N+1)N(N-1)(N-2)}{8}. $$
+
+## Chapter 14
+
+### 14.A.
+
+The conclusion itself is rather obvious, since we know that $$ a^\dagger_i $$ transform like a $$ (1, 0) $$ and $$ a_i $$
+transform like a $$ (0, 1) $$, and $$ O^k_{i j} $$ is obtained by symmetrizing the two $$ (1, 0) $$s and subtracting the trace,
+exactly how one is supposed to get the $$ (2, 1) $$ representation.
+
+To actually *show* it, we commute $$ Q_a $$ as defined in Eq. (14.8) with $$ O^k_{i j} $$. After some rather tedious
+calculation, which I will not copy here from my notebook, we get the following result.
+
+$$ [Q_a, O^k_{i j}] = [T_a]_{m i} Q^k_{m j} + [T_a]_{m j} Q^k_{i m} - [T_a^*]_{m k} Q^m_{i j} $$
+
+### 14.B.
+
+We could use brute force to figure out the only non-zero term is obtained by have $$ i = 3 $$ and $$ j = k = 1 $$.
+
+We could also notice that $$ O^k_{i j} $$ transform like a $$ (2, 1) $$, $$ a^\dagger_i (a^\dagger_l b^\dagger_l) | 0 \rangle $$
+transform like a $$ (1, 0) $$, and $$ a^\dagger_j a^\dagger_k (a^\dagger_l b^\dagger_l) | 0 \rangle $$ transform like a $$ (2, 0) $$,
+and conclude that $$ O^k_{i j}  a^\dagger_i (a^\dagger_l b^\dagger_l) | 0 \rangle $$ can be decompose into
+$$ (3, 1) \oplus (0, 2) \oplus (2, 0) $$ using Young tableaux, which also tell us $$ (2, 0) $$ is obtained by
+contracting the $$ i $$ in $$ a^\dagger_i (a^\dagger_l b^\dagger_l) | 0 \rangle $$ with the $$ k $$ in $$ O^k_{m n} $$.
+
+Either way, the only non-zero element is
+
+$$
+\begin{eqnarray}
+  &&  \langle 0 | (a_k b_k) a_1 a_1 a^\dagger_1 a^\dagger_1 a_3 a^\dagger_3 (a^\dagger_l b^\dagger_l) | 0 \rangle \\
+  &=& \langle 0 | (a_k b_k) a_1 a_1 a^\dagger_1 a^\dagger_1 [a_3, a^\dagger_3] (a^\dagger_l b^\dagger_l) | 0 \rangle + \langle 0 | (a_k b_k) a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_3 a_3 (a^\dagger_l b^\dagger_l) | 0 \rangle \\
+  &=& \langle 0 | a_1 a_1 (a_k b_k) (a^\dagger_l b^\dagger_l) a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | (a_k b_k) a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_3 b^\dagger_3) | 0 \rangle \\
+  &=& \langle 0 | a_1 a_1 (a_k b_k) (a^\dagger_k b^\dagger_k) a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | (a_3 b_3) a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_3 b^\dagger_3) | 0 \rangle \\
+  &=& \langle 0 | a_1 a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_1 | 0 \rangle + 2 \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 | 0 \rangle \\
+  &=& 6 \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 | 0 \rangle  \\
+  &=& 12.
+\end{eqnarray}
+$$
+
+### 14.C.
+
+We have
+
+$$
+\begin{eqnarray}
+  &&  2 Q_2  \\
+  &=& -i a^\dagger_1 a_2 + i a^\dagger_2 a_1  \\
+  &=& -\frac{i}{2 m \omega} (m \omega r_1 - i p_1) (m \omega r_2 + i p_2) + \frac{i}{2 m \omega} (m \omega r_2 - i p_2) (m \omega r_1 + i p_1) \\
+  &=& - p_1 r_2 + r_1 p_2  \\
+  &=& L_3.
+\end{eqnarray}
+$$
+
+The other two in (14.13) can be shown similarly.
+
+### 14.D.
+
+We have
+
+$$
+\begin{eqnarray}
+  &&  [Q_\alpha, a_k b_k] \\
+  &=& [T_\alpha]_{i j} [a^\dagger_i a_j, a_k b_k] - [T^*_\alpha]_{i j} [b^\dagger_i b_j, a_k b_k] \\
+  &=& -\delta_{i k} [T_\alpha]_{i j} a_j b_k + \delta_{i k} [T^*_\alpha]_{i j} a_k b_j \\
+  &=& -[T_\alpha]_{j i} a_i b_j + [T^*_\alpha]_{i j} a_i b_j \\
+  &=& 0.
+\end{eqnarray}
+$$
+
+The last equality is due to the hermiticity of $$ T_\alpha $$.
