@@ -372,6 +372,19 @@ giving us the same result when cyclic terms are added.
 $$ m $$ should be $$ m_p $$. Note it should be $$ m_p $$ instead of $$ m_\Lambda $$ (and also $$ e $$ on the left
 hand side of Eq. (15.31) instead of 0, the electric charge of $$ \Lambda $$) as a matter of definition. 
 
+## Chapter 16
+
+### Eq. (16.9)
+
+Keep in mind that what it really means is $$ T_a = T^A_a \otimes I + I \otimes T^B_a $$.
+
+### Text under Eq. (16.10)
+
+A more precise statement would be as follows.
+
+*Eigenstates that do not share the same eigenvalue belong to different irreducible representations of color $$ SU(3) $$
+because of Schur's lemma.*
+
 # Solutions
 
 ## Chapter 1
@@ -1495,3 +1508,67 @@ and
 $$ I^- (|uds\rangle - |dus\rangle ) = \frac{1}{\sqrt{2}} (|dds\rangle - |dds\rangle ) = 0. $$
 
 Idem for the cyclic permutations.
+
+## Chapter 16
+
+### 16.A.
+
+The foolproof way is to treat (16.8) as the tensor product of two matrices $$ T^A_a \otimes T^B_a $$ and
+diagnoalize the result. $$ - T_a T^*_a $$ for $$ q\bar{q} $$ pairs and $$ T_a T_a $$ for $$ qq $$ pairs,
+where $$ T_a $$ are those defined in (7.6). This gives us both the eigenvalues and eigenvectors.
+
+Or, knowing the eigenvectors of the decompositions of $$ 3 \times 3 = 6 + \bar{3} $$ and
+$$ 3 \times \bar{3} = 8 + 1 $$, we can simply take a few special values to get the general result.
+
+- $$ q\bar{q} $$ traceless pairs: $$ - \langle 1, 2 | T_a T^*_a | 1, 2 \rangle = \frac{1}{6} $$
+- $$ q\bar{q} $$ trace pairs: $$ - \frac{1}{3} (\langle 1, 1 | + \langle 2, 2 | + \langle 3, 3 |) T_a T^*_a (| 1, 1 \rangle + | 2, 2 \rangle + | 3, 3 \rangle) = - \frac{4}{3} $$
+- $$ qq $$ symmetric pairs: $$ \langle 1, 1 | T_a T_a | 1, 1 \rangle = \frac{1}{3} $$
+- $$ qq $$ antisymmetric pairs: $$ \frac{1}{2} (\langle 1, 2 | - \langle 2, 1 |) T_a T_a (| 1, 2 \rangle - | 2, 1 \rangle) = -\frac{2}{3} $$
+
+### 16.B.
+
+We expect the bound states to be colorless singlets. There are the following possibilities, which all transform
+like a $$ \bar{6} $$ under Gell-Mann's $$ SU(3) $$. (They share the same Young tableau made of two 3-box columns.)
+- 1 quix and 2 antiquarks.
+- 1 quix, 2 quarks, and 1 antiquark.
+- 1 quix and 4 quarks.
+
+### 16.C.
+
+To prove (a), notice that $$ T^{D_1 \oplus D_2}_a = \begin{bmatrix} T^{D_1}_a & 0 \\ 0 & T^{D_2}_a \end{bmatrix} $$.
+
+To prove (b), notice that $$ T^{D_1 \otimes D_2}_a = T^{D_1}_a \otimes I + I \otimes T^{D_2}_a $$ and that
+$$ \mathrm{Tr} (A \otimes B) = \mathrm{Tr} (A) \mathrm{Tr} (B) $$ = 0 when $$ A $$ and $$ B $$ are generators and thus traceless.
+
+For $$ C(8) $$, We have
+
+$$
+\begin{eqnarray}
+  &&    3 \otimes \bar{3} = 8 \oplus 1  \\
+  &\to& 3 \cdot k_{\bar{3}} + k_3 \cdot 3 = k_8 + k_1  \\
+  &\to& k_8 = 3 \cdot k_{\bar{3}} + k_3 \cdot 3 = 3 \cdot \frac{1}{2} + \frac{1}{2} \cdot 3 = 3  \\
+  &\to& C(8) = 8 k_8 / 8 = 3.
+\end{eqnarray}
+$$
+
+For $$ C(6) $$, We have
+
+$$
+\begin{eqnarray}
+  &&    3 \otimes 3 = 6 \oplus \bar{3}  \\
+  &\to& 3 \cdot k_{3} + k_3 \cdot 3 = k_6 + k_\bar{3}  \\
+  &\to& k_6 = 3 \cdot k_{3} + k_3 \cdot 3 - k_\bar{3}  = 3 \cdot \frac{1}{2} + \frac{1}{2} \cdot 3 - \frac{1}{2} = \frac{5}{2}  \\
+  &\to& C(6) = 8 k_6 / 6 = \frac{10}{3}.
+\end{eqnarray}
+$$
+
+For $$ C(10) $$, We have
+
+$$
+\begin{eqnarray}
+  &&    6 \otimes 3 = 10 \oplus 8  \\
+  &\to& 6 \cdot k_{3} + k_6 \cdot 3 = k_{10} + k_8  \\
+  &\to& k_{10} = 6 \cdot k_{3} + k_6 \cdot 3 - k_\bar{8}  = 6 \cdot \frac{1}{2} + \frac{5}{2} \cdot 3 - 3 = \frac{15}{2}  \\
+  &\to& C(10) = 8 k_{10} / 10 = 6.
+\end{eqnarray}
+$$
