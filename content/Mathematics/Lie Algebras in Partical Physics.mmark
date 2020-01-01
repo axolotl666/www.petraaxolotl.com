@@ -14,7 +14,7 @@ build intuition. It also covers Lorentz's group, which is obviously important fo
 
 ### 1.4 Irreducible representations
 
-#### Eq. (1.10)
+#### (1.10)
 
 It would be much easier if we were talking about (unitary) matrices instead of (unitary) operators. The former can be considered independent
 entities and we are free to do similarity transformations. The latter operates on vectors, which usually have pre-defined concepts such as inner
@@ -22,7 +22,7 @@ products (and therefore orthogonality). In this sense, we cannot make a non-unit
 We can only make the matrix form of a non-unitary operator unitary by choosing a non-orthonormal basis. But this does not make the operator
 itself unitary.
 
-Since $$ S $$ in Eq. (1.10) is in general not unitary, two equivalent representations do not just differ by *a trivial choice of basis*
+Since $$ S $$ in (1.10) is in general not unitary, two equivalent representations do not just differ by *a trivial choice of basis*
 physically. 
 
 #### Definition of reducibility
@@ -30,7 +30,7 @@ physically.
 The defintion of reducible representations should be those that have a *non-trivial* invariant subspace. Obviously $$ \\{ 0 \\} $$ and the
 original vector space are always invariant subspaces for any representations.
 
-#### Eq. (1.13)
+#### (1.13)
 
 The statement that *$$ D_j(g) $$ is irreducible* implies that $$ D_j(g) $$ should be understood as an operator defined on a non-trivial
 subspace $$ X_j $$ of the original space $$ X $$, and $$ X_i $$ and $$ X_j $$ are orthogonal to each other for $$ i \neq j $$
@@ -40,7 +40,7 @@ and $$ \cup_j X_j = X $$.
 
 #### Theorem 1.1
 
-$$ U $$ is implicitly assumed to be unitary in Eq. (1.28) and this guarantees that $$ X $$ is hermitian in Eq. (1.31). The proof that a unitary
+$$ U $$ is implicitly assumed to be unitary in (1.28) and this guarantees that $$ X $$ is hermitian in (1.31). The proof that a unitary
 $$ U $$ always exists to diagonalize a hermitian matrix can be found in most QM books. In fact $$ U $$ can be simply made of orthonormal
 eigenvectors of $$ S $$ juxtaposed next to each other.
 
@@ -51,7 +51,7 @@ The proof implicitly uses the following fact.
 *If two representations $$ D_1 $$ and $$ D_2 $$ are equivalent, $$ D_1 $$ is reducible if and only if $$ D_2 $$ is reducible.* The proof is
 as follows.
 
-If $$ D_1 $$ is reducible, there exists a non-trivial subspace $$ X $$ whose projector $$ P $$ satisfies Eq. (1.11)
+If $$ D_1 $$ is reducible, there exists a non-trivial subspace $$ X $$ whose projector $$ P $$ satisfies (1.11)
 
 $$ P D_1(g) P = D_1(g) P, \forall g \in G. $$
 
@@ -116,14 +116,14 @@ $$
 
 This proves that $$ D^\dagger $$ is also reducible. The *if* part can be proved similarly. 
 
-#### Clarification on Eq. (1.46)
+#### Clarification on (1.46)
 
 There can be multiple appearances of the same irreducible representation in the block diagnoal form of $$ D $$. They share the same lable $$ a $$
 and is distinquished by different values of $$ x $$.
 
 ### 1.14 Eigenstates
 
-As for why (1.104) is valid, refer to the derivation up to Eq. (1.57).
+As for why (1.104) is valid, refer to the derivation up to (1.57).
 
 ### 1.16 Example of tensor products
 
@@ -131,42 +131,42 @@ It is worth noting that $$ D_2 $$ as in (1.109) gives us reflections and rotatio
 
 ### 1.17 *Finding the normal modes
 
-Eq. (1.115): The two $$ -\frac{\sqrt{3}}{6} $$ in the last column should be both $$ -\frac{1}{6} $$.
+(1.115): The two $$ -\frac{\sqrt{3}}{6} $$ in the last column should be both $$ -\frac{1}{6} $$.
 
 ## Chapter 2
 
 Note that when the author talks about a *unitary representation of the algebra*, he really means that the representation of the
 group is unitary (and therefore the representation of the the algebra is hermitian).
 
-### Eq. (2.36)
+### (2.36)
 
 Note that when the group representation is unitary (or equivalent to a unitary representation), $$ T_a $$ is hermitian (or equivalent
 to a hermitian matrix). So we have $$ \mathrm{Tr} (T_a T_a) \ge 0 $$.
 
-### Eq. (2.39)
+### (2.39)
 
 Typo. $$ \mathrm{Tr} $$ is missing before two pairs of parentheses.
 
 ## Chapter 6
 
-### Eq. (6.2)
+### (6.2)
 
 Note that since $$ X_{i j} := \mathrm{Tr}(H_i H_j) $$ is a real symmetric matrix (due to $$ H $$'s being hermitian), the similarity
 transformation required can be chosen to be real, keeping $$ H $$'s hermitian.
 
-### Under Eq. (6.14),
+### Under (6.14),
 
 _States corresponding to different weights..._
 
 Keep in mind that one should use (6.7) as the definition of inner products between two states, not the inner products of two 1-D
 vectors, although one can prove the equivalence between the two.
 
-### Under Eq. (6.22), _root vectors correspond to unique generators._
-_root_ should be _non-zero root_. Idem for text under Eq. (8.26).
+### Under (6.22), _root vectors correspond to unique generators._
+_root_ should be _non-zero root_. Idem for text under (8.26).
 
 ## Chapter 8
 
-### Under Eq. (8.49)
+### Under (8.49)
 
 _all 0, -1, -2 or -3..._
 
@@ -176,35 +176,35 @@ _It is easy to see that the Cartan matrix is invertible because the a1 are compl
 
 Row $$ j $$ is simply $$ \alpha_j $$'s coordinates in the $$ e_i = 2 \alpha_i / \alpha_i^2 $$ basis. ($$ e_i $$'s are not orthonormal.)
 
-### Eq. (8.63)
+### (8.63)
 
 $$ 2 \sqrt{\frac{3}{2}} $$ should be $$ \sqrt{2} \sqrt{\frac{3}{2}} $$. All following equations are wrong by a factor of $$ \sqrt{2} $$.
 
 ## Chapter 9
 
-### Under Eq. (9.11)
+### Under (9.11)
 
 _But any such state with a positive $$ \phi $$..._
 
 It is actually a bit more complicated than this. The commutator does not necessarily vanish so we may need to repeat the process
 if the commutator itself gives us a positive $$ \phi $$. In the general case, we end up with a sum of (9.11) with only negative $$ \phi $$'s.
 
-### Eq. (9.27)
+### (9.27)
 
 $$ - n \mu^2 - m \mu^1 $$ is clearly a weight due to Weyl reflection.
 
-### Under Eq. (9.39)
+### Under (9.39)
 
 _is not a root_ should be _is not a weight_.
 
 ## Chapter 10
 
-### Eq. (10.13)
+### (10.13)
 
 It would be beneficial for clarity to put $$ T_a v $$ between parentheses, to indicate it is about the components of 
 $$ (T_a v) $$. Then (10.13) can be easily derived from (10.8), (10.9), and (10.10).
 
-### Under Eq. (10.16)
+### Under (10.16)
 
 *the tracelessness of the $$ T_a $$s*
 
@@ -212,57 +212,57 @@ Actually it is the hermiticity, rather than tracelessness, is necessary (used in
 
 The hermiticity is the $$ U $$ in $$ SU(3) $$, while the tracelessness is the $$ S $$.
 
-### Under Eq. (10.32)
+### Under (10.32)
 
 _The bra transforms under the algebra with an extra minus sign._
 
 See (2.56).
 
-### Under Eq. (10.35)
+### Under (10.35)
 
 *the tensor $$ \bar{v} $$ is transformed by $$ T_a \bar{v} $$.*
 
 This can be derived in the same way as (10.13).
 
-### Above Eq. (10.41)
+### Above (10.41)
 
 _a object_ should be _an object_.
 
-### Eq. (10.49)
+### (10.49)
 
 Note the $$ \mu_1 $$ and $$ \mu_2 $$ are the ones in (6.3) and have nothing to do with those in (9.3).
 
-### Above Eq. (10.95)
+### Above (10.95)
 
 $$ | s_1 - s_2 | $$ should be $$ 2 \cdot \mathrm{min}(s_1, s_2) $$.
 
-### Under Eq. (10.96)
+### Under (10.96)
 
 *the $$ k $$ index* should be *the $$ j $$ index* for both occurences.
 
-### Eq. (10.99)
+### (10.99)
 
 In the last line, $$ l $$ is the number of $$ 2 $$s in $$ i_1, i_2, \dots, i_k $$, or equivalently, the number of $$ 1 $$s
 in $$ j_1, j_2, \dots, j_k $$.
 
-### Under Eq. (10.114)
+### Under (10.114)
 
 $$ 2 $$ should be $$ p + 2 $$.
 
-### Eq. (10.116)
+### (10.116)
 
 $$ s_1 + s_2 + k + m_1 + m_2 $$ should be $$ s_1 + s_2 - k + m_1 + m_2 $$
 
-### Eq. (10.117)
+### (10.117)
 
 $$ \begin{bmatrix} 2 s_1 + 2 s_2 - 2 \\ s_1 + s_2 - 1 + m_1 + m_2 \end{bmatrix} $$ should be
 $$ \begin{bmatrix} 2 s_1 + 2 s_2 - 2 k \\ s_1 + s_2 - k + m_1 + m_2 \end{bmatrix} $$.
 
-### Eq. (10.118)
+### (10.118)
 
 After the first equality, $$ \frac{(2 s_1)! (2 s_2)!}{k!} $$ should be $$ \frac{(2 s_1)! (2 s_2)!}{(2 s_1 - k)! (2 s_2 - k)! k!} $$.
 
-### Under Eq. (10.118)
+### Under (10.118)
 
 _it is nice example_ should be _it is a nice example_.
 
@@ -292,12 +292,12 @@ For clarity, _the isospin and hypercharge generators_ are $$ T_1 $$, $$ T_2 $$, 
 This statement is not accurate. Both $$ T_3 $$ and $$ T_8 $$ have $$ I = Y = 0 $$. But $$ T_3 $$ does not commute with
 $$ T_1 $$ or $$ T_2 $$ and is thus not what we are looking for.
 
-### Eq. (11.19)
+### (11.19)
 
 This leads to $$ [T_a, H_MS] = O^i_j [T_a, T_8]^j_i $$, guaranteeing that $$ H_MS .$$ commute with
 $$ T_1 $$, $$ T_2 $$, $$ T_3 $$, and $$ T_8 $$.
 
-### Eq. (11.25)
+### (11.25)
 
 It may seem strange why $$ | \Sigma^+ |^2 $$, $$ | \Sigma^- |^2 $$ and $$ | \Sigma^0 |^2 $$ are combined into $$ | \Sigma |^2 $$,
 $$ | n |^2 $$ and $$ | p |^2 $$ (or $$ | \Xi^0 |^2 $$ and $$ | \Xi^- |^2 $$) are combined into $$ | Ν |^2 $$ (or $$ | \Xi |^2 $$),
@@ -312,7 +312,7 @@ in the same way.
 
 To see where the equal spacing is from, notice that $$ \Delta $$, $$ \Sigma $$, $$ \Xi $$ , $$ \Omega $$ particles have
 components $$ \{ xxx \} $$, $$ \{ xx3 \} $$, $$ \{ x33 \} $$, and $$ 333 $$ respectively, where $$ x = 1, 2 $$. By expanding
-Eq. (10.71), one sees clearly that the result can be written as $$ \lambda ( n_{1, 2} - 2 n_3 ) $$ where $$ n_{1, 2} $$ is
+(10.71), one sees clearly that the result can be written as $$ \lambda ( n_{1, 2} - 2 n_3 ) $$ where $$ n_{1, 2} $$ is
 how many times 1 or 2 appears and $$ n_3 $$ is how many times 3 appears.
 
 ### Section 13.5
@@ -350,16 +350,16 @@ It should be $$ b^\dagger_2 $$ instead of $$ b^\dagger_3 $$ But it has not conse
 
 Mathematicians would write $$ SU(N) \times SU(M) \le SU(N M) $$.
 
-### Eq. (15.13)
+### (15.13)
 
-We can also use Eq. (11.15) and write it by brute force as (without normalization)
+We can also use (11.15) and write it by brute force as (without normalization)
 
 $$ \left(dsu - sdu + sud - usd + uds - dus - 3(uds - dus) \right) (| +-+ \rangle - | -++ \rangle). $$
 
 The result is the same as the three symmetric pairs in $$ \Lambda $$ vanish when they are multiplied with
 the anitsymmetric spin terms and cyclic permutations are added.
 
-### Eq. (15.14)
+### (15.14)
 
 Again, we could also write by brute force
 
@@ -367,23 +367,40 @@ $$ (uud - udu)(|++-\rangle - |+-+\rangle), $$
 
 giving us the same result when cyclic terms are added.
 
-### Eq. (15.32)
+### (15.32)
 
 $$ m $$ should be $$ m_p $$. Note it should be $$ m_p $$ instead of $$ m_\Lambda $$ (and also $$ e $$ on the left
-hand side of Eq. (15.31) instead of 0, the electric charge of $$ \Lambda $$) as a matter of definition. 
+hand side of (15.31) instead of 0, the electric charge of $$ \Lambda $$) as a matter of definition. 
 
 ## Chapter 16
 
-### Eq. (16.9)
+### (16.9)
 
 Keep in mind that what it really means is $$ T_a = T^A_a \otimes I + I \otimes T^B_a $$.
 
-### Text under Eq. (16.10)
+### Text under (16.10)
 
 A more precise statement would be as follows.
 
 *Eigenstates that do not share the same eigenvalue belong to different irreducible representations of color $$ SU(3) $$
 because of Schur's lemma.*
+
+## Chapter 17
+
+### Discussion on $$ \Sigma - \Lambda $$ splitting under (17.2)<a name="Sigma-Lambda"></a>
+
+_the spins must be aligned, because the state must also be symmetric in spin space_
+
+This statement is incorrect. See Solution to 15.A. The conclusion that the $$ \Lambda $$ has lower energy is however correct,
+because on average (from Solution to 15.A.), the factor for $$ \Sigma^0 $$ as in (17.1) is
+
+$$ \frac{4}{6} (\frac{1}{m_{u,d} m_{u,d}} - 2 \frac{1}{m_{u,d} m_s}) + \frac{1}{6} (-\frac{1}{m_{u,d} m_{u,d}}) + \frac{1}{6} (-\frac{1}{m_{u,d} m_{u,d}}) = \frac{1}{3} \frac{1}{m_{u,d} m_{u,d}} - \frac{4}{3} \frac{1}{m_{u,d} m_s}, $$
+
+while that for $$ \Lambda $$ is (from 15.13))
+
+$$ -\frac{1}{m_{u,d} m_{u,d}}. $$
+
+The former is clearly greater than the latter.
 
 # Solutions
 
@@ -1035,7 +1052,7 @@ See (11.39).
 
 ### 10.B.
 
-Applying Eq. (10.36) and Eq. (10.13), we have
+Applying (10.36) and (10.13), we have
 
 $$
 \begin{eqnarray}
@@ -1047,7 +1064,7 @@ $$
 \end{eqnarray}
 $$
 
-in agreement with Eq. (10.66). In fact, we could have started with Eq. (10.66) and take two special cases to solve
+in agreement with (10.66). In fact, we could have started with (10.66) and take two special cases to solve
 for $$ \lambda_1 $$ and $$ \lambda_2 $$.
 
 ### 10.C.
@@ -1164,7 +1181,7 @@ $$ A_{+p} = A_{-p} + \sqrt{2} A_{0n}. $$
 
 ### 11.A.
 
-The reasoning following Eq. (11.33) works exactly the same way for a 6 as for a 10. Hence equal spacing.
+The reasoning following (11.33) works exactly the same way for a 6 as for a 10. Hence equal spacing.
 
 ### 11.B.
 
@@ -1192,7 +1209,7 @@ Therefore the the probability ratio is $$ (\sqrt{\frac{2}{3}} / \frac{1}{\sqrt{6
 
 ### 11.C.
 
-From Eq. (11.42) and Eqs. (11.24), we have
+From (11.42) and Eqs. (11.24), we have
 
 $$
 \begin{eqnarray}
@@ -1393,7 +1410,7 @@ The conclusion itself is rather obvious, since we know that $$ a^\dagger_i $$ tr
 transform like a $$ (0, 1) $$, and $$ O^k_{i j} $$ is obtained by symmetrizing the two $$ (1, 0) $$s and subtracting the trace,
 exactly how one is supposed to get the $$ (2, 1) $$ representation.
 
-To actually *show* it, we commute $$ Q_a $$ as defined in Eq. (14.8) with $$ O^k_{i j} $$. After some rather tedious
+To actually *show* it, we commute $$ Q_a $$ as defined in (14.8) with $$ O^k_{i j} $$. After some rather tedious
 calculation, which I will not copy here from my notebook, we get the following result.
 
 $$ [Q_a, O^k_{i j}] = [T_a]_{m i} Q^k_{m j} + [T_a]_{m j} Q^k_{i m} - [T_a^*]_{m k} Q^m_{i j} $$
@@ -1470,7 +1487,7 @@ $$
 
 ### 15.B.a.
 
-For each particle except $$ \Sigma^0 $$, we only need to change the $$ Q $$ in Eq. (15.20) accordingly to get the correct ratio.
+For each particle except $$ \Sigma^0 $$, we only need to change the $$ Q $$ in (15.20) accordingly to get the correct ratio.
 For $$ \Sigma^0 $$, we simply do it twice: once for $$ |uds\rangle $$ and once for $$ |dus\rangle $$.
 
 $$
@@ -1485,7 +1502,7 @@ $$
 
 ### 15.B.b.
 
-Again, we can almost read off results from Eq. (15.20). Now we also need to include the mass in the factors together with $$ Q $$.
+Again, we can almost read off results from (15.20). Now we also need to include the mass in the factors together with $$ Q $$.
 
 $$
 \begin{eqnarray}
@@ -1572,3 +1589,47 @@ $$
   &\to& C(10) = 8 k_{10} / 10 = 6.
 \end{eqnarray}
 $$
+
+## Chapter 17
+
+### 17.A.
+
+The $$ qq $$ pair must form a $$ 6 $$ in the color $$ SU(3) $$ and has thus color symmetry. Combined with space symmetry,
+the two quarks must be antisymmetric in flavor-spin since quarks are fermions. We have therefore two possibilities.
+- Spin-1: $$ qq $$ symmetric in spin and antisymmetric in flavor. The $$ qq\bar{Q} $$ form a $$ \bar{3} $$ in flavor $$ SU(3) $$.
+- Spin-0: $$ qq $$ antisymmetric in spin and symmetric in flavor. The $$ qq\bar{Q} $$ form a $$ 6 $$ in flavor $$ SU(3) $$.
+
+### 17.B.
+
+Both $$ \rho $$ and $$ \pi $$ are made of quark-antiquark pairs $$ u $$ and $$ d $$ and their antiparticles.
+The $$ \rho - \pi $$ splitting has the a factor of $$ \frac{1}{m_{u,d} m_{u,d}} $$.
+
+Similarly, the $$ K^* - K $$ splitting has a factor of $$ \frac{1}{m_{u,d} m_s} $$. Therefore we have
+
+$$ \frac{m_{u,d}}{m_s} = \frac{m_{K^*} - m_K}{m_\rho - m_\pi} = \frac{892 - 494}{775 - 140} = 0.63. $$
+
+The factors for $$ \Sigma^0 $$ and $$ \Lambda $$ are given in this [note](#Sigma-Lambda).
+
+The factor for $$ \Sigma^{*0} $$ is $$ \frac{1}{m_{u,d} m_{u,d}} + 2 \frac{1}{m_{u,d} m_s} $$.
+
+Now we have
+
+$$
+  \frac{m_{\Sigma^0} - m_\Lambda}{m_{\Sigma^{*0}} - m_{\Sigma^0}} =
+  \frac{\frac{4}{3} (\frac{1}{m_{u,d} m_{u,d}} - \frac{1}{m_{u,d} m_s})}{\frac{2}{3} \frac{1}{m_{u,d} m_{u,d}} + \frac{10}{3} \frac{1}{m_{u,d} m_s} } =
+  \frac{2(1 - \frac{m_{u,d}}{m_s})}{1 + 5 \frac{m_{u,d}}{m_s} } =
+  \frac{1193 - 1116}{1384 - 1193} = 0.4031.
+$$
+
+Rearranging the terms, we have
+
+$$ \frac{m_{u,d}}{m_s} = \frac{2 - \frac{m_{\Sigma^0} - m_\Lambda}{m_{\Sigma^{*0}} - m_{\Sigma^0}}}{5 \frac{m_{\Sigma^0} - m_\Lambda}{m_{\Sigma^{*0}} - m_{\Sigma^0}} + 2} = 0.40. $$
+
+### 17.C.
+
+The $$ qq $$ pair must form a $$ \bar{3} $$ in the color $$ SU(3) $$ and has thus color antisymmetry. Combined with
+space symmetry, the two quarks must be symmetric in flavor-spin since quarks are fermions. We have therefore two possibilities.
+- Spin-$$ \frac{3}{2} $$: $$ qq $$ symmetric in both spin and flavor. The $$ qqc $$ form a $$ 6 $$ in flavor $$ SU(3) $$.
+- Spin-$$ \frac{1}{2} $$: $$ qq $$ antisymmetric in both spin and flavor. The $$ qqc $$ form a $$ \bar{3} $$ in flavor $$ SU(3) $$.
+
+As far as mass splitting is concerned, we cannot reply on (17.2) because now the four types of quarks have very different masses.
