@@ -406,6 +406,94 @@ $$ -\frac{1}{m_{u,d} m_{u,d}}. $$
 
 The former is clearly greater than the latter.
 
+## Chapter 19
+
+### (19.15)
+
+Here is why $$ (\sigma_1 + i \sigma_2) \otimes S_{kl} $$ has $$ H_n = \sqrt\frac{2}{{n}} $$ and $$ H_m = [\nu^k + \nu^l]_m $$.
+Note that $$ H_m $$ here is really $$ \begin{bmatrix} H_m & 0 \\ 0 & -H_m \end{bmatrix} $$.
+
+We have
+
+$$
+\begin{eqnarray}
+  &&  [H_n, (\sigma_1 + i \sigma_2) \otimes S_{kl}]  \\
+  &=& \frac{1}{\sqrt{2n}} (\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 0 & S_{kl} \\ 0 & 0 \end{bmatrix} - \begin{bmatrix} 0 & S_{kl} \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix})  \\
+  &=& \sqrt{\frac{2}{n}} \begin{bmatrix} 0 & S_{kl} \\ 0 & 0 \end{bmatrix},
+\end{eqnarray}
+$$
+
+and
+
+$$
+\begin{eqnarray}
+  &&  [H_m, (\sigma_1 + i \sigma_2) \otimes S_{kl}]  \\
+  &=& \begin{bmatrix} H_m & 0 \\ 0 & -H_m \end{bmatrix} \begin{bmatrix} 0 & S_{kl} \\ 0 & 0 \end{bmatrix} - \begin{bmatrix} 0 & S_{kl} \\ 0 & 0 \end{bmatrix} \begin{bmatrix} H_m & 0 \\ 0 & -H_m \end{bmatrix}  \\
+  &=& \begin{bmatrix} 0 & H_m S_{kl} + S_{kl} H_m \\ 0 & 0 \end{bmatrix}
+\end{eqnarray}
+$$
+
+$$ H_m S_{kl} $$ has only two non-zero elements $$ [H_m S_{kl}]_{kl} = [H_m]_{kk} = {\nu^k}_m $$ and $$ [H_m S_{kl}]_{lk} = [H_m]_{ll} = {\nu^l}_m $$, while
+$$ S_{kl} H_m $$ also has only two non-zero elements $$ [S_{kl} H_m]_{kl} = [H_m]_{ll} = {\nu^l}_m $$ and $$ [S_{kl} H_m]_{lk} = [H_m]_{kk} = {\nu^k}_m $$.
+Therefore $$ H_m S_{kl} + S_{kl} H_m = ({\nu^k}_m + {\nu^l}_m) S_{kl} = [{\nu^k} + {\nu^l}]_m S_{kl} $$ and we have
+
+$$ [H_m, (\sigma_1 + i \sigma_2) \otimes S_{kl}] = [{\nu^k} + {\nu^l}]_m (\sigma_1 + i \sigma_2) \otimes S_{kl}. $$
+
+It is similar for $$ (\sigma_1 - i \sigma_2) \otimes S_{kl} $$.
+
+### Text under (19.24)
+
+_The action of ($$ i $$ times) the $$ Sp(2N) $$ generators on the complex $$ 2N $$-vector defined by the first column of
+(19.24) is equivalent to the action of (19.22) on (19.24)._
+
+To make this statement true, we need to modify the $$ Sp(2N) $$ generators as in (19.11) to the following form.
+
+$$ \begin{array}{} A \otimes 1 & -S_1 \otimes \sigma_1 & -S_2 \otimes \sigma_2 & -S_3 \otimes \sigma_3 \end{array} $$
+
+Note that $$ A $$ purely imaginery while $$ S_1 $$, $$ S_2 $$, and $$ S_3 $$ are real.
+
+Let $$ Q $$ be a quaternionic $$ N $$-vector with $$ Q^i = B^i + j_1 C^i_1 + j_2 C^i_2 + j_3 C^i_3 $$, and
+$$ X $$ be an $$ Sp(2N) $$ generator with $$ i X = iA + j_1 S_1 + j_2 S_2 + j_2 S_3 $$. We have
+
+$$
+\begin{eqnarray}
+  &&  [(i X) Q]^i  \\
+  &=& [i X]^i_j Q^j  \\
+  &=& \left( [i A]^i_j + j_1 [S_1]^i_j + j_2 [S_2]^i_j + j_3 [S_3]^i_j \right) \left( B^j + j_1 C^j_1 + j_2 C^j_2 + j_3 C^j_3 \right)  \\
+  &=& \left( [i A]^i_j B^j - [S_1]^i_j C^j_1 - [S_2]^i_j C^j_2 - [S_3]^i_j C^j_3 \right) +  \\
+  &&  j_1 \left( [i A]^i_j C^j_1 + [S_1]^i_j B^j + [S_2]^i_j C^j_3 - [S_3]^i_j C^j_2 \right) +  \\
+  &&  j_2 \left( [i A]^i_j C^j_2 - [S_1]^i_j C^j_3 + [S_2]^i_j B^j + [S_3]^i_j C^j_1 \right) +  \\
+  &&  j_3 \left( [i A]^i_j C^j_3 + [S_1]^i_j C^j_2 - [S_2]^i_j C^j_1 + [S_3]^i_j B^j \right).
+\end{eqnarray}
+$$
+
+The corresponding action of ($$ i $$ times) the $$ Sp(2N) $$ generators, as defined above, on the complex
+$$ 2N $$-vector defined by the first column of (19.24), denoted as $$ q $$ with $$ q^{i, 1} = B^i - i C^i_3 $$
+and $$ q^{i, 2} = C^i_2 - i C^i_1 $$, is as follows.
+
+$$
+\begin{eqnarray}
+  &&  [(i X) q]^{i, 1}  \\
+  &=& [i X]^{i, 1}_{j, y} Q^{j, y}  \\
+  &=& i \left( [A]^i_j I^1_y - [S_1]^i_j [\sigma_1]^1_y - [S_2]^i_j [\sigma_2]^1_y - [S_3]^i_j [\sigma_3]^1_y \right) q^{j, y}  \\
+  &=& [i A]^i_j q^{j, 1} - i [S_1]^i_j q^{j, 2} - [S_2]^i_j q^{j, 2} - i [S_3]^i_j q^{j, 1}  \\
+  &=& \left( [i A]^i_j B^j - [S_1]^i_j C^j_1 - [S_2]^i_j C^j_2 - [S_3]^i_j C^j_3 \right) +  \\
+  &&  - i \left( [i A]^i_j C^j_3 + [S_1]^i_j C^j_2 - [S_2]^i_j C^j_1 + [S_3]^i_j B^j \right),
+\end{eqnarray}
+$$
+
+and similarly
+
+$$
+\begin{eqnarray}
+  &&  [(i X) q]^{i, 2}  \\
+  &=& \left( [i A]^i_j C^j_2 - [S_1]^i_j C^j_3 + [S_2]^i_j B^j + [S_3]^i_j C^j_1 \right) +  \\
+  &&  - i \left( [i A]^i_j C^j_1 + [S_1]^i_j B^j + [S_2]^i_j C^j_3 - [S_3]^i_j C^j_2 \right).
+\end{eqnarray}
+$$
+
+Now the equivalence should be obvious.
+
 # Solutions
 
 ## Chapter 1
@@ -1708,3 +1796,117 @@ $$ 50 = (6, 1)_{\frac{4}{3}} \oplus (3, 1)_{-\frac{1}{3}} \oplus (1, 1)_{-2} \op
 
 As claimed in Section 18.7, 45, but not 50, has a component that transforms like the $$ SU(3) \times SU(2) \times U(1) $$
 Higgs field – the $$ (1, 2)_\frac{1}{2} $$.
+
+## Chapter 19
+
+### 19.A.
+
+First we need to check that these generators close under commutation. It is obvious between $$ \sigma_a $$, $$ \tau_a $$,
+and $$ \eta_a $$, and between one of these and $$ \sigma_a \tau_b \eta_c $$.
+
+Now we check how it works between $$ \sigma_a \tau_b \eta_c $$ and $$ \sigma_{a'} \tau_{b'} \eta_{c'} $$. There are four
+possibilities.
+- They do not share any common component, the commucator has the same form $$ \sigma_a \tau_b \eta_c $$;
+- They share one component, e.g. $$ \sigma_1 $$, they commute;
+- They share two components, e.g. $$ \sigma_1 \tau_1 $$, the commucator has the form $$ \sigma_a $$, $$ \tau_a $$, or $$ \eta_a $$;
+- They share three components, they commute.
+
+We can take $$ \sigma_3 $$, $$ \tau_3 $$, $$ \eta_3 $$, and $$ \sigma_3 \tau_3 \eta_3 $$ as the four Cartan generators
+$$ H_1 $$, $$ H_2 $$, $$ H_3 $$, and $$ H_4 $$. (Note that (6.2) is satisfied so they are correctly normalized relative to
+each other.) We could go through the weights of the defining representation and take the differences to get the roots.
+But let us try to find the roots directly. Other than the four Cartan generators, we want linear combinations of the other
+generators $$ x $$ satisfying $$ [H_i, x] = \alpha(i, x) x $$.
+
+Our first guess would be the following linear combinations.
+
+$$
+\begin{array}{}
+  \sigma^\pm & \tau^\pm & \eta^\pm  \\
+  \sigma^\pm \tau_3 \eta_3 & \sigma_3 \tau^\pm \eta_3 & \sigma_3 \tau_3 \eta^\pm  \\
+  \sigma_3 \tau^\pm \eta^{\pm'} & \sigma^\pm \tau_3 \eta^{\pm'} & \sigma^\pm \tau^{\pm'} \eta_3  \\
+  \sigma^\pm \tau^{\pm'} \eta^{\pm''}
+\end{array}
+$$
+
+There are $$ 6 + 12 + 6 + 8 = 32 $$ of these. So the number is right.
+
+$$ H_1 $$, $$ H_2 $$, and $$ H_3 $$ commuting with these generators do give the desired outcome. But we have
+
+$$
+\begin{eqnarray}
+  [H_4, \sigma^\pm] &=& \pm 2 \sigma^\pm \tau_3 \eta_3  \\
+  [H_4, \sigma^\pm \tau_3 \eta_3 ] &=& \pm 2 \sigma^\pm  \\
+  [H_4, \sigma_3 \tau^\pm \eta^{\pm'} ] &=& 0  \\
+  [H_4, \sigma^\pm \tau^{\pm'} \eta^{\pm''} ] &=& \pm \pm' \pm'' 2 \sigma^\pm \tau^{\pm'} \eta^{\pm''},
+\end{eqnarray}
+$$
+
+where the first two commucators do not give us the right form. We need to change the first two rows
+of generators to the following form.
+
+$$
+\begin{array}{}
+  \sigma^\pm \pm' \sigma^\pm \tau_3 \eta_3 & \tau^\pm \pm' \sigma_3 \tau^\pm \eta_3 & \eta^\pm \pm' \sigma_3 \tau_3 \eta^\pm,
+\end{array}
+$$
+
+which give us
+
+$$
+\begin{eqnarray}
+  [H_4, \sigma^\pm \pm' \sigma^\pm \tau_3 \eta_3] &=& \pm \pm' 2 (\sigma^\pm \pm' \sigma^\pm \tau_3 \eta_3).
+\end{eqnarray}
+$$
+
+To get the roots, we only need to focus on the following generators. The rest are obtained through permutating the
+first three components of $$ \alpha $$. ($$ (a, b, b, c) $$ becomes $$ (b, a, b, c) $$ and $$ (b, b, a, c) $$.)
+- $$ \sigma^\pm \pm' \sigma^\pm \tau_3 \eta_3 $$: $$ \alpha = (\pm 2, 0, 0, \pm \pm' 2) $$,
+- $$ \sigma_3 \tau^\pm \eta^{\pm'} $$: $$ \alpha = (0, \pm 2, \pm' 2, 0) $$,
+- $$ \sigma^\pm \tau^{\pm'} \eta^{\pm''} $$: $$ \alpha = (\pm 2, \pm' 2, \pm'' 2, \pm \pm' \pm'' 2 ) $$.
+
+The simple roots are
+
+$$
+\begin{array}{}
+  \alpha_1 = (0, 0, 2, 2) & \alpha_2 = (0, 2, -2, 0) & \alpha_3 = (0, 0, 2, -2) & \alpha_4 = (2, -2, -2, 2).
+\end{array}
+$$
+
+This gives us $$ Sp(8) $$ or $$ C_4 $$.
+
+### 19.B.
+
+We can take exactly the same $$ H_1 $$, $$ H_2 $$, $$ H_3 $$, and $$ H_4 $$ as in the Solution to 19.A. and
+the following linear combinations of the other generators.
+
+$$
+\begin{array}{}
+  \sigma^\pm \pm' \sigma^\pm \tau_3 \eta_3 & \tau^\pm \pm' \sigma_3 \tau^\pm \eta_3  \\
+  \sigma_3 \eta^\pm \pm' \tau_3 \eta^\pm  \\
+  \sigma^\pm \eta^{\pm'} & \tau^\pm \eta^{\pm'}  \\
+  \sigma^\pm \tau^{\pm'} \eta_3
+\end{array}
+$$
+
+There are $$ 8 + 4 + 8 + 4 = 24 $$ of these. So the number is right.
+
+Below are the roots, presented in the same order as the generators above.
+
+$$
+\begin{array}{}
+  (\pm 2, 0, 0, \pm \pm' 2) & (0, \pm 2, 0, \pm \pm' 2)  \\
+  (0, 0, \pm 2, \pm \pm' 2)  \\
+  (\pm 2, 0, \pm' 2, 0) & (0, \pm 2, \pm' 2, 0)  \\
+  (\pm 2, \pm' 2, 0, 0)
+\end{array}
+$$
+
+The simple roots are
+
+$$
+\begin{array}{}
+  \alpha_1 = (2, -2, 0, 0) & \alpha_2 = (0, 2, -2, 0) & \alpha_3 = (0, 0, 2, -2) & \alpha_4 = (0, 0, 2, 2).
+\end{array}
+$$
+
+This gives us $$ SO(8) $$ or $$ D_4 $$.
