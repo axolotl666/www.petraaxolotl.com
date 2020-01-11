@@ -494,6 +494,40 @@ $$
 
 Now the equivalence should be obvious.
 
+## Chapter 20
+
+### Discussion on *decomposable* and *semi-simple*
+
+_is has no Abelian invariant subalgebra_ should be _it has no Abelian invariant subalgebra_.
+
+### Discussion under (20.19)
+
+_If we remove any vector from an extended $$ \Pi $$-system, the remaining vectors are linearly independent._
+
+The reason why this is true is that all coefficients (as defined in (8.12)) of $$ - \alpha_0 $$, the highest root,
+are strictly positive.
+
+If a coefficient $$ k_i = 0 $$, we can show that $$ k_j = 0 $$ for all $$ \alpha_j $$ connected to $$ \alpha_i $$.
+Since the algebra is simple (i.e. all those $$ \alpha $$’s are connected), this would eventually lead to
+$$ \alpha_0 = 0 $$.
+
+Below are the coefficients of the highest root of the four families of the classical Lie algebras.
+- A: $$ (1, 1, \dots, 1) $$,
+- B: $$ (1, 2, 2, \dots, 2) $$,
+- C: $$ (2, 2, \dots, 2, 1) $$,
+- D: $$ (1, 2, 2, \dots, 2, 1, 1) $$.
+
+In [SageMath](https://www.sagemath.org), on can use the following code to get the coefficients of the highest root
+of an algebra (e.g., $$ F_4 $$ here).
+
+```LieAlgebra(QQ, cartan_type=['F', 4]).highest_root_basis_elt()```
+
+With these coefficients, we can easily verify the extended diagrams in (20.20).
+
+Building the whole algebra *up* from the lowest root is essentially the same as building the whole adjoint
+representation (i.e. the root set) *down* from the highest root. The removal of one of the simple roots will
+thus lead to a subset of the root set of the original algebra.
+
 # Solutions
 
 ## Chapter 1
@@ -1910,3 +1944,40 @@ $$
 $$
 
 This gives us $$ SO(8) $$ or $$ D_4 $$.
+
+## Chapter 20
+
+### 20.A.
+
+Let's say the $$ \Pi $$-system can be decomposed into subsystems $$ \Pi_1 $$ and $$ \Pi_2 $$.
+
+We can show all the postive roots are made either exclusively of simple roots in $$ \Pi_1 $$, or exclusively of
+simple roots in $$ \Pi_2 $$, by constructing the whole algebra following the procedure described in Section 8.2,
+point 6. (8.18) guarantees that $$ \alpha + \beta $$ is not a root if $$ \alpha \in \Pi_1 $$ and
+$$ \beta \in \Pi_2 $$ because then we have $$ \alpha \cdot \beta = 0 $$.
+
+This shows that not only the simple roots, but also all non-zero roots, can be split into two orthogonal subsets
+of dimensions $$ M $$ and $$ N $$ respectively. This also implies any root from one set commutes from any root
+from the other set.
+
+The Cartan genrators can be linearly recombined in such a way that the first $$ M $$ Cartan generators commute
+with all the generators in the second set, while the other $$ N $$ Cartan generators commute with all the generators
+in the first set. (This is mearly a matter of elementary linear algebra.)
+
+Now we have decomposed the whole root system into two subsystems.
+
+### 20.B.
+
+We have the following possibilities.
+- $$ E_6 $$ by removing any of the three branch circles,
+- $$ A_1 \times A_5 $$ by removing any of the three circles between a branch and the center,
+- $$ A_2 \times A_2 \times A_2 $$ by removing the circle in the center.
+
+### 20.C.
+
+Noticing $$ SO(12) = D_6 $$, we have the following possibilities.
+- $$ D_6 $$ by removing any of the four branch circles,
+- $$ A_1 \times A_1 \times D_4 $$ by removing any of the two branching circles,
+- $$ A_3 \times A_3 $$ by removing the circle in the center.
+
+$$ D_4 $$ can be further broken down to $$ A_1 \times A_1 \times A_1 \times A_1 $$.
