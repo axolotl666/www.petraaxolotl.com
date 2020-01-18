@@ -528,6 +528,50 @@ Building the whole algebra *up* from the lowest root is essentially the same as 
 representation (i.e. the root set) *down* from the highest root. The removal of one of the simple roots will
 thus lead to a subset of the root set of the original algebra.
 
+## Chapter 21
+
+### (21.6)
+
+(21.5) also requires
+
+$$ [H_j, E_{\eta e^k + \eta’ e^l}] = (\eta [e^k]_j + \eta' [e^l]_j) E_{\eta e^k + \eta' e^l} = (\eta \delta_{jk} + \eta' \delta_{jl}) E_{\eta e^k + \eta' e^l}, $$
+
+which can be shown through a straightforward but tedious calculation using (21.3).
+
+### (21.11)
+
+It would be better to write the last equation as
+
+$$ \sigma^i_a | x e^j \rangle = \delta_{ij} | x' e^j \rangle [\sigma_a]_{x' x}. $$
+
+Also note that $$ x $$ and $$ x' $$ should be treated as labels/indices rather than numbers.
+
+### (21.46)
+
+As explained in the footnote, we have
+
+$$ R = A + i B = O d O^T, $$
+
+where $$ A $$ and $$ i B $$ are the real and imaginary parts of $$ R $$ and they are simultaneously diagonalized by
+an orthogonal (and thus real) matrix $$ O $$.
+
+From $$ R^* R = I $$. we have $$ O d^* O^T O d O^T = I \rightarrow d^* d = I $$. Since $$ d $$ is diagnoal, we have
+
+$$ d = \mathrm{diag}(d_1, d_2, \dots, d_n), $$
+
+where $$ d_1, d_2, \dots, d_n $$ are complex numbers of unit length. We now define
+
+$$ \sqrt{d} = \mathrm{diag}(\sqrt{d_1}, \sqrt{d_2}, \dots, \sqrt{d_n}). $$
+
+(We do not care which of the two roots of $$ d_1 $$, $$ d_2 $$, etc., we take.) Note that $$ \sqrt{d} $$ is also
+unitary.
+
+Now we have
+
+$$ R = O \sqrt{d} \sqrt{d} O^T = (O \sqrt{d}) (O \sqrt{d})^T, $$
+
+where $$ O \sqrt{d} $$ is unitary.
+
 # Solutions
 
 ## Chapter 1
@@ -1981,3 +2025,56 @@ Noticing $$ SO(12) = D_6 $$, we have the following possibilities.
 - $$ A_3 \times A_3 $$ by removing the circle in the center.
 
 $$ D_4 $$ can be further broken down to $$ A_1 \times A_1 \times A_1 \times A_1 $$.
+
+## Chapter 21
+
+### 21.A.
+
+We can simply replace (21.12) by
+
+$$
+\begin{array}{}
+  H_1 = \frac{1}{2} \sigma_2  \\
+  H_2 = \frac{1}{2} \tau_2,
+\end{array}
+$$
+
+and (21.30) by
+
+$$
+\begin{array}{}
+  M_{1, 5} &=& \frac{1}{2} \sigma_3  \\
+  M_{2, 5} &=& \frac{1}{2} \sigma_1  \\
+  M_{3, 5} &=& \frac{1}{2} \sigma_2 \tau_3  \\
+  M_{4, 5} &=& \frac{1}{2} \sigma_2 \tau_1.
+\end{array}
+$$
+
+Essentially we are permutating $$ 3 \rightarrow 2 \rightarrow 1 \rightarrow 3 $$ compared to the representation
+given in the book. Note that $$ \pm \frac{e^1}{2} $$ and $$ \pm \frac{e^2}{2} $$ are now the eigenvectors of
+$$ \sigma_2 $$ and $$ \tau_2 $$.
+
+It is straightforward to verify the commutation relations (21.3), and that the generators
+acting on the states give the expected results.
+
+(21.54) now becomes
+
+$$
+\begin{array}{}
+  -r^1 {\sigma_{1,3}}^* {r^1}^{-1} &=& \sigma_{1,3}  \\
+  -r^1 {\sigma_2}^* {r^1}^{-1} \cdot r^2 {\tau_{1,3}}^* {r^2}^{-1} &=& \sigma_2 \tau_{1,3}.
+\end{array}
+$$
+
+$$ r^1 $$ must anticommute with both $$ \sigma_1 $$ and $$ \sigma_3 $$. Thus we can take $$ r^1 = \sigma_2 $$.
+$$ r^2 $$ must commute with both $$ \tau_1 $$ and $$ \tau_3 $$. Thus we can take $$ r^2 = I $$.
+Therefore we have $$ R = \sigma_2 \otimes I $$, an antisymmetric matrix.
+
+### 21.B.
+
+For convenience, we can choose to remove the first two dimensions of the $$ SO(2 n + 1) $$ by setting
+every generator $$ M_{ij} = 0 $$ if $$ i \in \{ 1, 2 \} $$ or $$ j \in \{ 1, 2 \} $$ in the defining representation.
+
+Now $$ | \pm e^1/2 \rangle $$ in (21.11) become two singletons unaffected by any generators. Essentially, the
+$$ 2^n $$-dimensional spinor representation of $$ SO(2 n + 1) $$ breaks down to two $$ 2^{n - 1} $$-dimensional
+spinor representation of $$ SO(2 n - 1) $$.
