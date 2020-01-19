@@ -2033,21 +2033,21 @@ $$ D_4 $$ can be further broken down to $$ A_1 \times A_1 \times A_1 \times A_1 
 We can simply replace (21.12) by
 
 $$
-\begin{array}{}
+\begin{eqnarray}
   H_1 = \frac{1}{2} \sigma_2  \\
   H_2 = \frac{1}{2} \tau_2,
-\end{array}
+\end{eqnarray}
 $$
 
 and (21.30) by
 
 $$
-\begin{array}{}
+\begin{eqnarray}
   M_{1, 5} &=& \frac{1}{2} \sigma_3  \\
   M_{2, 5} &=& \frac{1}{2} \sigma_1  \\
   M_{3, 5} &=& \frac{1}{2} \sigma_2 \tau_3  \\
   M_{4, 5} &=& \frac{1}{2} \sigma_2 \tau_1.
-\end{array}
+\end{eqnarray}
 $$
 
 Essentially we are permutating $$ 3 \rightarrow 2 \rightarrow 1 \rightarrow 3 $$ compared to the representation
@@ -2060,10 +2060,10 @@ acting on the states give the expected results.
 (21.54) now becomes
 
 $$
-\begin{array}{}
+\begin{eqnarray}
   -r^1 {\sigma_{1,3}}^* {r^1}^{-1} &=& \sigma_{1,3}  \\
   -r^1 {\sigma_2}^* {r^1}^{-1} \cdot r^2 {\tau_{1,3}}^* {r^2}^{-1} &=& \sigma_2 \tau_{1,3}.
-\end{array}
+\end{eqnarray}
 $$
 
 $$ r^1 $$ must anticommute with both $$ \sigma_1 $$ and $$ \sigma_3 $$. Thus we can take $$ r^1 = \sigma_2 $$.
@@ -2078,3 +2078,114 @@ every generator $$ M_{ij} = 0 $$ if $$ i \in \{ 1, 2 \} $$ or $$ j \in \{ 1, 2 \
 Now $$ | \pm e^1/2 \rangle $$ in (21.11) become two singletons unaffected by any generators. Essentially, the
 $$ 2^n $$-dimensional spinor representation of $$ SO(2 n + 1) $$ breaks down to two $$ 2^{n - 1} $$-dimensional
 spinor representation of $$ SO(2 n - 1) $$.
+
+## Chapter 22
+
+### 22.A.
+
+Without loss of generality, we can assign the first $$ 2m $$ dimensions to $$ SO(2m) $$ and the rest
+to $$ SO(2n - 2m) $$. Any $$ M_{i j} $$ where $$ i \le 2m $$ and $$ j > 2m $$ or the other way around
+is set to 0. It is easy to see that all the $$ SO(2m) $$ generators, as well as all the $$ SO(2n - 2m) $$
+generators, are contained in the remaining $$ M_{ij} $$s. Since the rank remains the same,
+$$ SO(2m) \times SO(2n - 2m) $$ is a regular maximal subalgebra of $$ SO(2n) $$.
+
+The roots of the $$ SO(2m) \times SO(2n - 2m) $$ subalgebra have the form $$ \pm e^j \pm e^k $$, where $$ j \neq k $$
+and $$ j, k \le m $$ or $$ j, k > m $$. A root operates either exclusively on the first $$ m $$, or exclusively
+on the last $$ n - m $$, dimensions of the spinor representations. Therefore $$ \prod_{j = 1}^m \eta_j $$ and
+$$ \prod_{j = m + 1}^n \eta_j $$ will not change value where $$ \eta_j $$ are defined in (22.5).
+
+Therefore we have
+
+$$
+\begin{eqnarray}
+  D^{n - 1} &\rightarrow& D^{m - 1} \otimes D^{n - m} \oplus D^m \otimes D^{n - m - 1}  \\
+  D^n &\rightarrow& D^m \otimes D^{n - m} \oplus D^{m - 1} \otimes D^{n - m - 1}.
+\end{eqnarray}
+$$
+
+### 22.B.
+
+Without loss of generality, we can assign the first $$ 2m $$ dimensions to $$ SO(2m) $$ and the rest
+to $$ SO(2n - 2m + 1) $$. Any $$ M_{i j} $$ where $$ i \le 2m $$ and $$ j > 2m $$ or the other way around
+is set to 0. It is easy to see that all the $$ SO(2m) $$ generators, as well as all the $$ SO(2n - 2m + 1) $$
+generators, are contained in the remaining $$ M_{ij} $$s. Since the rank remains the same,
+$$ SO(2m) \times SO(2n - 2m + 1) $$ is a regular maximal subalgebra of $$ SO(2n + 1) $$.
+
+The roots of the $$ SO(2m) \times SO(2n - 2m + 1) $$ subalgebra fall under one of the two categories.
+- $$ \pm e^j \pm e^k $$, where $$ j \neq k $$ and $$ j, k \le m $$, or
+- $$ \pm e^j \pm e^k $$, where $$ j \neq k $$ and $$ j, k > m $$ or $$ \pm e^j $$ where $$ j > m $$.
+
+A root in the first category operates exclusively on the first $$ m $$ dimensions of the spinor
+representation, and $$ \prod_{j = 1}^m \eta_j $$ will not change value where $$ \eta_j $$ are defined in (22.5).
+
+A root in the second category operates exclusively on the last $$ n - m $$ dimensions of the spinor
+representation, and $$ \prod_{j = m + 1}^n \eta_j $$ can change value where $$ \eta_j $$ are defined in (22.5).
+
+Therefore we have
+
+$$ D^n \rightarrow D^{m - 1} \otimes D^{n - m} \oplus D^m \otimes D^{n - m}. $$
+
+### 22.C.
+
+The fact that the Dynkin diagram of $$ SO(4) $$ is made of two disconnected dots, combined with the solution to
+Problem 20.A, is a proof that $$ SO(4) $$ is not simple.
+
+From (22.3), we know the four roots of $$ SO(4) $$ are $$ \pm e^1 \pm e^2 $$. We can replace the Cartan generators
+$$ H_1 $$ and $$ H_2 $$ by the following
+
+$$
+\begin{eqnarray}
+  H_x = \frac{1}{2} (H_1 + H_2)  \\
+  H_y = \frac{1}{2} (H_1 - H_2).
+\end{eqnarray}
+$$
+
+It is easy to verify that they commute with each other. Furthermore, we have
+
+$$
+\begin{array}{}
+  [H_x, E_{+ e^1 + e^2}] = +E_{+ e^1 + e^2} & [H_y, E_{+ e^1 + e^2}] = 0  \\
+  [H_x, E_{- e^1 - e^2}] = -E_{- e^1 - e^2} & [H_y, E_{- e^1 - e^2}] = 0  \\
+  [H_x, E_{+ e^1 - e^2}] = 0 & [H_y, E_{+ e^1 - e^2}] = +E_{+ e^1 - e^2}  \\
+  [H_x, E_{- e^1 + e^2}] = 0 & [H_y, E_{- e^1 + e^2}] = -E_{- e^1 + e^2}.
+\end{array}
+$$
+
+So $$ H_x $$, $$ E_{+ e^1 + e^2} $$, and $$ E_{- e^1 - e^2} $$ form an $$ SU(2) $$, while
+So $$ H_y $$, $$ E_{+ e^1 - e^2} $$, and $$ E_{- e^1 + e^2} $$ form another $$ SU(2) $$.
+These two $$ SU(2) $$ commute with each other.
+
+The arguments in the chapter apply because nowhere the algebra is assumed to be simple.
+In fact, we have $$ \mu_1 = \frac{1}{2} \alpha_1 $$ and $$ \mu_2 = \frac{1}{2} \alpha_2 $$, forming
+two independent $$ SU(2) $$ doublets.
+
+### 22.D.
+
+We can almost read off the answers from the Dynkin diagrams. $$ \alpha_1 $$, $$ \alpha_2 $$, and
+$$ \alpha_3 $$ of $$ SO(6) $$ correspond to $$ \alpha_2 $$, $$ \alpha_1 $$, and $$ \alpha_3 $$ of
+$$ SU(4) $$. (The order of the two edge circles can be exchanged.)
+
+This is why $$ D^1 $$ of $$ SU(4) $$ corresponds $$ D^2 $$ (or $$ D^3 $$) of $$ SO(6) $$, and $$ D^2 $$
+of $$ SU(4) $$ corresponds $$ D^1 $$ of $$ SO(6) $$. The 10 of $$ SU(4) $$, being the symmetric tensor
+product of two 4s (i.e. $$ 2 D^1 $$), corresponds to $$ 2 D^2 $$ (or $$ 2 D^3 $$) in $$ SO(6) $$.
+
+Comparing the corresponding simple roots, we have
+- $$ SU(4) $$: $$ \alpha^1 = (1, 0, 0) $$, $$ \alpha^2 = (-\frac{1}{2}, \frac{\sqrt{3}}{2}, 0) $$,
+$$ \alpha^3 = (0, -\frac{1}{\sqrt{3}}, \frac{2}{\sqrt{6}}) $$.
+- $$ SO(6) $$: $$ \alpha^2 = (0, 1, -1) $$, $$ \alpha^1 = (1, -1, 0) $$, $$ \alpha^3 = (0, 1, 1) $$.
+
+(See (13.11) and (22.2).)
+
+To make the correspondence work, we can replace the Cartan generators of $$ SO(6) $$ by the following
+
+$$
+\begin{eqnarray}
+  H_x &=& \frac{1}{2} H_2 - \frac{1}{2} H_3  \\
+  H_y &=& \frac{1}{\sqrt{3}} H_1 - \frac{1}{2 \sqrt{3}} H_2 - \frac{1}{2 \sqrt{3}} H_3  \\
+  H_z &=& \frac{1}{\sqrt{6}} H_1 + \frac{1}{\sqrt{6}} H_2 + \frac{1}{\sqrt{6}} H_3.
+\end{eqnarray}
+$$
+
+It is then easy to verify that the commutation relationships between $$ H_x $$, $$ H_y $$, $$ H_z $$,
+$$ \alpha^2 $$, $$ \alpha^1 $$, and $$ \alpha^3 $$ in $$ SO(6) $$ are exactly the same as those between
+$$ H_1 $$, $$ H_2 $$, $$ H_3 $$, $$ \alpha^1 $$, $$ \alpha^2 $$, $$ \alpha^3 $$ in $$ SU(4) $$.
