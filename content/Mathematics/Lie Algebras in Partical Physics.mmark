@@ -507,8 +507,10 @@ _If we remove any vector from an extended $$ \Pi $$-system, the remaining vector
 The reason why this is true is that all coefficients (as defined in (8.12)) of $$ - \alpha_0 $$, the highest root,
 are strictly positive.
 
-If a coefficient $$ k_i = 0 $$, we can show that $$ k_j = 0 $$ for all $$ \alpha_j $$ connected to $$ \alpha_i $$.
-Since the algebra is simple (i.e. all those $$ \alpha $$’s are connected), this would eventually lead to
+If a coefficient $$ k_i = 0 $$, we can show that $$ k_j = 0 $$ for all $$ \alpha_j $$ connected to $$ \alpha_i $$,
+because a) $$ (\alpha_i) \cdot (- \alpha_0) \ge 0 $$ since $$ p_i $$ as in (6.36) must be 0 for $$ (- \alpha_0 $$ to
+be the highest, and b) $$ \alpha_i \cdot \alpha_j \le 0 $$ with strict inequality if $$ \alpha_j $$ is connected to
+$$ \alpha_i $$. Since the algebra is simple (i.e. all those $$ \alpha $$’s are connected), this would eventually lead to
 $$ \alpha_0 = 0 $$.
 
 Below are the coefficients of the highest root of the four families of the classical Lie algebras.
@@ -571,6 +573,73 @@ Now we have
 $$ R = O \sqrt{d} \sqrt{d} O^T = (O \sqrt{d}) (O \sqrt{d})^T, $$
 
 where $$ O \sqrt{d} $$ is unitary.
+
+## Chapter 23
+
+### Statement following (23.4)
+
+The statement is correct except for $$ SO(3) $$ and $$ SO(4) $$, of which $$ D^1 $$ is not the defining representation.
+
+### (23.5)
+
+Note that this particular choice of $$ \Gamma $$ matrices, together with (23.2), give us exactly the same generator matrices
+as in (21.30). This is important later when we combine $$ \Gamma $$s with $$ R $$, whose form was derived based on the
+particular forms of (21.30).
+
+### Paragraph following (23.6)
+
+_These elements of the Clifford algebra are actually proportional to $$ M_{j,2n + 2} $$ in the spinor representation
+that we constructed._
+
+This can be verified by using (21.3), (22.14), (22.16) and (22.18).
+
+_These generators transform like the components of a vector under the $$ SO(2n + 1) $$ subgroup of $$ SO(2n + 2) $$._
+
+This is just a restatement of (23.3).
+
+### Statement following (23.14)
+
+A less philosophical explanation for the lack of a definite symmetry property is that the upper and lower indices
+transform differently so any symmetry or antisymmetry would not be preserved any way when we change the basis.
+
+### Paragraph following (23.17)
+
+_These products must be either symmetric or antisymmetric..._
+
+Each $$ \Gamma_l R $$, being the tensor product of a bunch of Pauli matrices, is certainly either symmetric or
+antisymmetric. (See (23.5) and (21.55)).
+
+By choosing $$ j = l $$ in (23.17) we can see that $$ \Gamma_l R $$ and $$ \Gamma _k R $$ must share the same symmetry property.
+
+### Paragraph following (23.31)
+
+The notation of $$ D^1 $$, $$ D^2 $$, $$ D^3 $$, etc. for $$ SO(3) $$, $$ SO(5) $$, $$ S(7) $$, etc. is wrong.
+See Page 122 for the definition of $$ D^j $$.
+
+For $$ SO(3) $$, the vector tensor is 3-dimensional, while $$ D^1 $$, which is the spinor representation,
+is 2-dimensional.
+
+For $$ SO(5) $$, the antisymmetric tensor with 2 vector indices are 10-dimensional, while $$ D^2 $$ is 4-dimensional.
+
+In fact, the antisymmetric tensor with $$ n $$ vector indices of $$ SO(2n + 1) $$ is $$ 2 D^n $$.
+
+### Paragraph following (23.42)
+
+_The symmetry factor for $$ (k) $$ is $$ (-1)^{(n - k)(n - k - 1)/2} $$_
+
+It should be $$ (-1)^{(n - k)(n - k + 1)/2} $$ in general, although for $$ n = 5 $$ it does not matter.
+
+Note the reasoning starts from (23.26), rather than (23.34).
+
+We are treating $$ SO(2n) $$ as a subalgebra of $$ SU(2n + 1) $$, rather than a superalgebra of $$ SO(2n - 1) $$.
+This is the opposite approach to that in Chapter 22.
+
+When we treat $$ SO(2n) $$ as a subalgebra of $$ SO(2n + 1) $$, $$ D^n $$ of $$ SO(2n + 1) $$ breaks down into
+$$ D^n \oplus D^{n - 1} $$ of $$ SO(2n) $$. The symmetry factor of $$ D^n \otimes D^n $$, and of $$ D^{n - 1} \otimes D^{n - 1} $$
+in $$ SO(2n) $$, must be by definition the same as that of $$ D^n \otimes D^n $$ in $$ SO(2n + 1) $$.
+
+To reach the same conclusion starting from (23.34), we would have to find a unitary matrix and put it to the right to
+$$ P_+ K P_- $$ to change the basis of $$ \bar{D}^{n - 1} $$ to the basis of $$ D^n $$.
 
 # Solutions
 
@@ -2189,3 +2258,70 @@ $$
 It is then easy to verify that the commutation relationships between $$ H_x $$, $$ H_y $$, $$ H_z $$,
 $$ \alpha^2 $$, $$ \alpha^1 $$, and $$ \alpha^3 $$ in $$ SO(6) $$ are exactly the same as those between
 $$ H_1 $$, $$ H_2 $$, $$ H_3 $$, $$ \alpha^1 $$, $$ \alpha^2 $$, $$ \alpha^3 $$ in $$ SU(4) $$.
+
+## Chapter 23
+
+### 23.A.
+
+From
+
+$$
+\begin{eqnarray}
+  (1 - 1)^{2n + 1} &=& \sum_{j = 0}^n {2n + 1 \choose 2j + 1} - \sum_{j = 0}^n {2n + 1 \choose 2j} &=& 0  \\
+  (1 + 1)^{2n + 1} &=& \sum_{j = 0}^n {2n + 1 \choose 2j + 1} + \sum_{j = 0}^n {2n + 1 \choose 2j} &=& 2^{2n + 1},
+\end{eqnarray}  
+$$
+
+we have
+
+$$ \sum_{j = 0}^n {2n + 1 \choose 2j + 1} = \sum_{j = 0}^n {2n + 1 \choose 2j} = 2^{2n}. $$
+
+This verifies the dimensionality of (23.49). For (23.50), simply replace $$ 2n $$ by $$ 2n - 1 $$.
+
+### 23.B.
+
+Note that the vector representation of $$ SO(4) $$ is not $$ D^1 $$ .
+
+I do not see how (23.9) can be useful for our purpose here, other than restating (23.3), which says that
+$$ \Gamma $$ matrices transform as vector operators. Therefore we only need to see how $$ \Gamma_i $$,
+where $$ i = 1 \dots 2n $$, transform under $$ T_a $$, as defined in (23.46).
+
+(23.48) shows that $$ A^\dagger_j $$ transforms like $$ D^1 $$ under $$ SU(n) $$. Notice that each
+$$ A^\dagger_j $$ is a particular linear combination of $$ \Gamma_{2j - 1} $$ and $$ \Gamma_{2j} $$. The
+final missing piece is that $$ A_j $$ transforms like $$ D^{n - 1} $$, the complex conjugate of $$ D^1 $$,
+under $$ SU(n) $$. $$ A_j $$ is another linear combination of $$ \Gamma_{2j - 1} $$ and $$ \Gamma_{2j} $$.
+
+It should be fairly obvious now that the vector representation of $$ SO(2n) $$, made up of $$ \Gamma_i $$s,
+transforms like $$ D^1 \oplus D^{n - 1} $$ under $$ SU(n) $$.
+
+One can reach the same conclusion by observing how the $$ D^1 $$ representation of $$ SO(2n) $$ for $$ n \ge 3 $$
+is built by raising and lowering $$ \mu^1 $$ with simple roots in $$ SO(2n) $$, and how it breaks into two separate
+representations of $$ SU(n) $$ when $$ \alpha^n $$ in $$ SO(2n) $$ is removed. (Also notice that the first
+$$ n - 1 $$ simple roots of $$ SO(2n) $$ are also simple roots of $$ SU(n) $$.)
+
+### 23.C.
+
+To determine $$ \lambda $$, We only need to check the value of $$ u^{123} $$ as follows.
+
+$$ u^{123} = \lambda \cdot 3! \cdot u^{456} = \lambda^2 \epsilon^{456123} \cdot (3!)^2 \cdot u^{123} = - \lambda^2 \cdot (3!)^2 \cdot u^{123} $$
+
+Therefore we have
+
+$$ \lambda = \pm \frac{i}{6}. $$
+
+### 23.D.a.
+
+Directly applying (23.49), we have
+
+$$ \begin{array}{} D^7 \rightarrow [1] \oplus [3] \oplus [5] \oplus [7] & D^6 \rightarrow [0] \oplus [2] \oplus [4] \oplus [6] \end {array}. $$
+
+### 23.D.b
+
+This problem is simply Problem 22.A, followed by 23.D.a. We have
+
+$$
+\begin{eqnarray}
+  D^7 &\rightarrow& D^2 \otimes \bigg( [1] \oplus [3] \oplus [5] \bigg) \oplus D^1 \otimes \bigg( [0] \oplus [2] \oplus [4] \bigg)  \\
+  D^6 &\rightarrow& D^2 \otimes \bigg( [0] \oplus [2] \oplus [4] \bigg) \oplus D^1 \otimes \bigg( [1] \oplus [3] \oplus [5] \bigg).
+\end{eqnarray}
+$$
