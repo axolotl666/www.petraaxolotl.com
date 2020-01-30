@@ -641,6 +641,16 @@ in $$ SO(2n) $$, must be by definition the same as that of $$ D^n \otimes D^n $$
 To reach the same conclusion starting from (23.34), we would have to find a unitary matrix and put it to the right to
 $$ P_+ K P_- $$ to change the basis of $$ \bar{D}^{n - 1} $$ to the basis of $$ D^n $$.
 
+## Chapter 24
+
+### (24.13) and (24.14)
+
+It may be helpful to review Problems 12.A. and 18.C. to see why it is so.
+
+### (24.19)
+
+It should be $$ \begin{bmatrix} A_2 I_2 + S_2 \sigma_2 & 0 \\ 0 & A_3 I_2 + S_3 \sigma_2 \end{bmatrix} $$.
+
 # Solutions
 
 ## Chapter 1
@@ -731,7 +741,7 @@ $$
 The $$ D_2 $$ representation is as follows.
 - $$ \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} $$,
 - $$ \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} $$,
-- $$ \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix} $$, $$ \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} $$
+- $$ \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix} $$, $$ \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} $$,
 - $$ \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} $$, $$ \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} $$,
 - $$ \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} $$, $$ \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} $$.
 
@@ -2325,3 +2335,51 @@ $$
   D^6 &\rightarrow& D^2 \otimes \bigg( [0] \oplus [2] \oplus [4] \bigg) \oplus D^1 \otimes \bigg( [1] \oplus [3] \oplus [5] \bigg).
 \end{eqnarray}
 $$
+
+## Chapter 24
+
+### 24.A.
+
+The first half of this problem can be tackled in exactly the same way as Problems 19.A. and 19.B. It is easy to verify that
+the algebra closes.
+
+We can take $$ \frac{1}{2} \sigma_3 $$, $$ \frac{1}{2} \tau_3 $$, $$ \frac{1}{2} \eta_3 $$, $$ \frac{1}{2} \eta_3 \rho_3 $$,
+and $$ \frac{1}{2} \sigma_3 \tau_3 \rho_3 $$ as the five Cartan generators $$ H_1 $$, $$ H_2 $$, $$ H_3 $$, $$ H_4 $$, and $$ H_5 $$.
+(Note that (6.2) is satisfied so they are correctly normalized relative to each other.) Other than the five Cartan generators,
+we want linear combinations of the other generators $$ x $$ satisfying $$ [H_i, x] = \alpha(i, x) x $$.
+
+Below is the full list of such linear combinations.
+- $$ (\pm 1, \pm' 1, 0, 0, 0)$$ : $$ \frac{1}{2} \sigma^\pm \tau^{\pm'} \rho_3 $$,
+- $$ (\pm 1, 0, \pm' 1, 0, 0)$$ : $$ \frac{1}{2} \sigma^\pm \eta^{\pm'} \rho_2 $$,
+- $$ (\pm 1, 0, 0, \pm' 1, 0)$$ : $$ \frac{1}{2} \sigma^\pm (\rho_1 \pm' i \eta_3 \rho_2) $$,
+- $$ (\pm 1, 0, 0, 0, \pm \pm' 1)$$ : $$ \frac{1}{2} \sigma^\pm (1 \pm' \tau_3 \rho_3) $$,
+- $$ (0, \pm 1, \pm' 1, 0, 0)$$ : $$ \frac{1}{2} \tau^\pm \eta^{\pm'} \rho_1 $$,
+- $$ (0, \pm 1, 0, \mp' 1, 0)$$ : $$ \frac{1}{2} \tau^\pm (\rho_2 \pm' i \eta_3 \rho_1) $$,
+- $$ (0, \pm 1, 0, 0, \pm \pm' 1)$$ : $$ \frac{1}{2} \tau^\pm (1 \pm' \sigma_3 \rho_3) $$,
+- $$ (0, 0, \pm 1, \pm \pm' 1, 0)$$ : $$ \frac{1}{2} \eta^\pm (1 \pm' \rho_3) $$,
+- $$ (0, 0, \pm 1, 0, \mp' 1)$$ : $$ \frac{1}{2} \eta^\pm (\sigma_3 \rho_2 \pm' i \tau_3 \rho_1) $$,
+- $$ (0, 0, 0, \pm 1, \pm' 1)$$ : $$ \frac{1}{2} \sigma_3(\rho_1 \pm i \eta_3 \rho_2) \pm' \frac{1}{2} \tau_3(i \rho_2 \pm \eta_3 \rho_1) $$.
+
+Comparing this to (22.3) we see it is clearly $$ SO(10) $$.
+
+Among the subset $$ \vec{\eta} (1 + \rho_3) / 4 $$, $$ \eta^\pm (1 + \rho_3) / 4 $$ have root vectors $$ (0, 0, \pm 1, \pm 1, 0) $$,
+and $$ \eta_3 (1 + \rho_3) / 4 $$ has root vector $$ (0, 0, 0, 0, 0) $$. This strongly suggest that the generators related to the
+1st, 2nd, and 5th dimensions should be used to form the $$ SO(6) = SU(4) $$, while the generators related to the 3rd and the 4th diemensions
+should be used to form the $$ SO(4) $$. All the other generators that spans across the two should be removed.
+
+The last step is to rewrite the $$ SO(4) $$ generators as $$ SU(2) \times SU(2) $$ generators, as described in the solution to
+Problem 22.C.
+
+To summarize, we have the following generators in the $$ SU(2) \times SU(2) \times SU(4) $$ subalgebra. (The $$ SU(2) $$ generators
+are rescaled by a factor of $$ \frac{1}{\sqrt{2}} $$ to conform to the standard $$ SU(2) $$ structure constants.)
+- $$ SU(2) $$: $$ \vec{\eta} (1 + \rho_3) / 4 $$,
+- $$ SU(2) $$: $$ \vec{\eta} (1 - \rho_3) / 4 $$,
+- $$ SU(4) $$: $$ \frac{1}{2} \sigma_3 $$, $$ \frac{1}{2} \tau_3 $$, $$ \frac{1}{2} \sigma_3 \tau_3 \rho_3 $$;
+$$ \frac{1}{2} \sigma^\pm \tau^{\pm'} \rho_3 $$, $$ \frac{1}{2} \sigma^\pm (1 \pm' \tau_3 \rho_3) $$,
+$$ \frac{1}{2} \tau^\pm (1 \pm' \sigma_3 \rho_3) $$.
+
+### 24.B.
+
+Since the highest weight of $$ D^5 $$ is $$ \mu^5 $$, we know the $$ SO(10) $$ representation with highest weight $$ 2 \mu^5 $$
+must be in $$ [D^5 \otimes D^5]_S = (1) \oplus (5) $$. (See Section 23.5.) Therefore the representation that we are looking for is
+$$ (5) $$, which has 126 dimensions.
