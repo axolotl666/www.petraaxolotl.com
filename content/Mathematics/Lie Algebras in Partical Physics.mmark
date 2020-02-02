@@ -2383,3 +2383,33 @@ $$ \frac{1}{2} \tau^\pm (1 \pm' \sigma_3 \rho_3) $$.
 Since the highest weight of $$ D^5 $$ is $$ \mu^5 $$, we know the $$ SO(10) $$ representation with highest weight $$ 2 \mu^5 $$
 must be in $$ [D^5 \otimes D^5]_S = (1) \oplus (5) $$. (See Section 23.5.) Therefore the representation that we are looking for is
 $$ (5) $$, which has 126 dimensions.
+
+## Chapter 25
+
+### 25.A.
+
+$$ D^1 $$ has weights $$ \pm e^j $$, which break up into two sets:
+- $$ \pm e^1 $$ $$ \pm e^2 $$ transforming like $$ (2, 2, 1, 1) $$, and
+- $$ \pm e^3 $$ $$ \pm e^4 $$ transforming like $$ (1, 1, 2, 2) $$.
+
+Therefore we have $$ D^1 \rightarrow (2, 2, 1, 1) \oplus (1, 1, 2, 2) $$.
+
+Similarly, we have $$ D^4 \rightarrow (2, 1, 1, 2) \oplus (1, 2, 2, 1) $$.
+
+### 25.B.
+
+An obvious attempt would be to map $$ SO(5) $$ roots $$ \pm e^1 \pm e^2 $$ and $$ \pm e^j $$ into
+$$ SO(8) $$'s $$ D^3 $$ weights using only the first and second lines of (25.15) (since $$ e^3 $$
+and $$ e^4 $$ do not exist in $$ SO(5) $$). We can then generate a $$ SO(5) $$ vector representation
+starting with $$ \mu^3 $$ of $$ SO(8) $$ as the highest weight. The problem is that we get one extra
+null weight $$ (0, 0, 0, 0) $$ that is not in $$ D^3 $$ of $$ SO(8) $$. This hints the impossibility
+of the task. Below follows a proof.
+
+The vector representation of $$ SO(5) $$ has the following weights: $$ (\pm 1, 0) $$, $$ (0, \pm 1) $$,
+and $$ (0, 0) $$. The distances between these weights have ratio $$ 1 : \sqrt{2} : 2 $$.
+
+The distance ratio of the $$ SO(8) $$ spinor representation weights (of either $$ D^3 $$ or $$ D^4 $$)
+is $$ 1 : \sqrt{2} $$.
+
+It is therefore impossible to find five eigenvectors in either $$ D^3 $$ or $$ D^4 $$ of $$ SO(8) $$
+that transform like $$ D^1 $$ of $$ SO(5) $$.
