@@ -651,6 +651,20 @@ It may be helpful to review Problems 12.A. and 18.C. to see why it is so.
 
 It should be $$ \begin{bmatrix} A_2 I_2 + S_2 \sigma_2 & 0 \\ 0 & A_3 I_2 + S_3 \sigma_2 \end{bmatrix} $$.
 
+## Chapter 26
+
+### Statement following (26.5)
+
+$$ e^j $$ should be $$ \nu^j$$.
+
+### (26.17)
+
+Either $$ T^* $$ should be replaced by $$ T $$, or $$ \alpha' $$ and $$ \beta' $$ should be switched.
+
+### Discussion following (26.20)
+
+$$ 2 \nu^1 $$ should be $$ 2 \mu^1 $$.
+
 # Solutions
 
 ## Chapter 1
@@ -2413,3 +2427,63 @@ is $$ 1 : \sqrt{2} $$.
 
 It is therefore impossible to find five eigenvectors in either $$ D^3 $$ or $$ D^4 $$ of $$ SO(8) $$
 that transform like $$ D^1 $$ of $$ SO(5) $$.
+
+## Chapter 26
+
+### 26.A.
+
+We can choose the following Cartan generators.
+
+$$ [H_i]_{jk} = \frac{1}{\sqrt{2}} (\delta_{i, j} \delta_{i, k} - \delta_{i + n, j} \delta_{i + n, k}) $$
+
+With this choice, $$ D^1 $$ weights are $$ \pm e^j / \sqrt{2} $$.
+
+### 26.B.
+
+The tensor product $$ D^1 \otimes D^2 $$ can be broken into two parts.
+
+$$ u^\alpha v^{\beta \gamma} = \frac{1}{3} (A^{\alpha \beta \gamma} + M^{\alpha \beta \gamma}), $$
+
+where
+
+$$ A^{\alpha \beta \gamma} = u^\alpha v^{\beta \gamma} + u^\beta v^{\gamma \alpha} + u^\gamma v^{\alpha \beta} $$
+
+is completely antisymmetric and cyclic, and
+
+$$ M^{\alpha \beta \gamma} = 2 u^\alpha v^{\beta \gamma} + u^\beta v^{\alpha \gamma} + u^\gamma v^{ \beta \alpha} $$
+
+has the symmetry property
+
+$$ M^{\alpha \beta \gamma} + M^{\beta \gamma \alpha} + M^{\gamma \alpha \beta} = 0. $$
+
+This would be the end of it if it were $$ SU(6) $$. $$ A^{\alpha \beta \gamma} $$ would have $$ {6 \choose 3} = 20 $$
+dimensions, while $$ M^{\alpha \beta \gamma} $$ would have $$ {6 \choose 3} \cdot 2 + 6 \cdot 5 = 70 $$ dimensions.
+
+But since we are dealing with $$ Sp(6) $$ instead, both $$ A^{\alpha \beta \gamma} $$ and $$ M^{\alpha \beta \gamma} $$
+can be reduced because the combination
+
+$$ O^\gamma = [R^{-1}]_{\beta \alpha} u^\alpha v^{\beta \gamma}  $$
+
+is a non-zero vector of 6 dimensions. The combination
+
+$$ X^{\alpha \beta \gamma} \equiv A^{\alpha \beta \gamma} - \frac{1}{n} [R]^{\alpha \beta} [R^{-1}]_{\beta' \alpha'} u^{\alpha'} v^{\beta' \gamma} $$
+
+satisfies
+
+$$ [R^{-1}]_{\beta \alpha} X^{\alpha \beta \gamma} = 0. $$
+
+Therefore $$ X^{\alpha \beta \gamma} $$ is the irreducible representation $$ D^3 $$ and has $$ 20 - 6 = 14 $$ dimensions.
+
+Similarly, the combination
+
+$$ Y^{\alpha \beta \gamma} \equiv M^{\alpha \beta \gamma} - \frac{1}{2n} [R]^{\alpha \beta} [R^{-1}]_{\beta' \alpha'} u^{\alpha'} v^{\beta' \gamma} $$
+
+satisfies
+
+$$ [R^{-1}]_{\beta \alpha} Y^{\alpha \beta \gamma} = 0. $$
+
+Therefore $$ Y^{\alpha \beta \gamma} $$ is the irreducible representation $$ D^1 + D^2 $$ and has $$ 70 - 6 = 64 $$ dimensions.
+
+We can write the product in terms of irreducible combination as
+
+$$ u^\alpha v^{\beta \gamma} = \frac{1}{3} X^{\alpha \beta \gamma} + \frac{1}{3} Y^{\alpha \beta \gamma} + \frac{1}{2} [R]^{\alpha \beta} O^\gamma. $$
