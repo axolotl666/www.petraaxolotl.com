@@ -2487,3 +2487,62 @@ Therefore $$ Y^{\alpha \beta \gamma} $$ is the irreducible representation $$ D^1
 We can write the product in terms of irreducible combination as
 
 $$ u^\alpha v^{\beta \gamma} = \frac{1}{3} X^{\alpha \beta \gamma} + \frac{1}{3} Y^{\alpha \beta \gamma} + \frac{1}{2} [R]^{\alpha \beta} O^\gamma. $$
+
+## Chapter 27
+
+### 27.A.
+
+Using (27.26), (27.27), and (27.28), we have the following in $$ SU(3) $$.
+
+$$
+\begin{eqnarray}
+  A(6) &=& A(6) + A(\bar{3}) + A(3) = A(6 \oplus \bar{3}) + 1 = A(3 \otimes 3) + 1 = 3 \cdot 1 + 1 \cdot 3 + 1 = 7  \\
+  A(8) &=& A(8) + A(1) = A(8 \oplus 1) = A(3 \otimes \bar{3}) = 3 \cdot (-1) + 1 \cdot 3 = 0  \\
+  A(10) &=& A(10) + A(8) = A(10 \oplus 8) = A(6 \otimes 3) = 6 \cdot 1 + 7 \cdot 3 = 27
+\end{eqnarray}
+$$
+
+### 27.B.
+
+In $$ SU(5) $$, we have
+
+$$ 10 = [5 \otimes 5]_{AS}. $$
+
+In the $$ SU(3) $$ subalgebra, we have
+
+$$ [5 \otimes 5]_{AS} = [(3 + 1 + 1) \otimes (3 + 1 + 1)]_{AS} = \bar{3} + 3 + 3, $$
+
+and therefore
+
+$$ A(10)^{SU(5)} = A(\bar{3})^{SU(3)} + A(3)^{SU(3)} + A(3)^{SU(3)} = 1 = A(5)^{SU(5)}. $$
+
+### 27.C.
+
+For (27.27), we have
+
+$$
+\begin{eqnarray}
+  &&  A(D_1 \oplus D_2)  \\
+  &=& \mathrm{Tr} \left( \{ T^{D_1 \oplus D_2}_a, T^{D_1 \oplus D_2}_b \} T^{D_1 \oplus D_2}_c \right) / d^{abc}  \\
+  &=& \mathrm{Tr} \left( \{ \begin{bmatrix} T^{D_1}_a & 0 \\ 0 & T^{D_2}_a \end{bmatrix}, \begin{bmatrix} T^{D_1}_b & 0 \\ 0 & T^{D_2}_b \end{bmatrix} \} \begin{bmatrix} T^{D_1}_c & 0 \\ 0 & T^{D_2}_c \end{bmatrix} \right) / d^{abc}  \\
+  &=& \mathrm{Tr} \left( \begin{bmatrix} \{ T^{D_1}_a, T^{D_1}_b \} T^{D_1}_c & 0 \\ 0 & T^{D_2}_a, T^{D_2}_b \} T^{D_2}_c \end{bmatrix} \right) / d^{abc}  \\
+  &=& \Big( \mathrm{Tr} \left( \{ T^{D_1}_a, T^{D_1}_b \} T^{D_1}_c \right) + \mathrm{Tr} \left( T^{D_2}_a, T^{D_2}_b \} T^{D_2}_c \right) \Big) / d^{abc}  \\
+  &=& A(D_1) + A(D_2).
+\end{eqnarray}
+$$
+
+For (27.28), we have
+
+$$
+\begin{eqnarray}
+  &&  A(D_1 \otimes D_2)  \\
+  &=& \mathrm{Tr} \left( \{ T^{D_1 \otimes D_2}_a, T^{D_1 \otimes D_2}_b \} T^{D_1 \otimes D_2}_c \right) / d^{abc}  \\
+  &=& \mathrm{Tr} \left( \{ T^{D_1}_a \otimes I + I \otimes T^{D_2}_a, T^{D_1}_b \otimes I + I \otimes T^{D_2}_b \} (T^{D_1}_c \otimes I + I \otimes T^{D_2}_c) \right) / d^{abc}  \\
+  &=& \mathrm{Tr} \Big( \left( \{ T^{D_1}_a, T^{D_1}_b \} \otimes I + I \otimes \{ T^{D_2}_a, T^{D_2}_b \} + 2 T^{D_1}_a \otimes T^{D_2}_b + 2 T^{D_1}_b \otimes T^{D_2}_a \right) (T^{D_1}_c \otimes I + I \otimes T^{D_2}_c) \Big) / d^{abc}  \\
+  &=& \Big( \mathrm{Tr} \left( \{ T^{D_1}_a, T^{D_1}_b \} T^{D_1}_c \otimes I \right) + \mathrm{Tr} \left( I \otimes \{ T^{D_2}_a, T^{D_2}_b \} T^{D_2}_c \right) \Big) / d^{abc}  \\
+  &=& \mathrm{dim}(D_1) A(D_2) + \mathrm{dim}(D_2) A(D_1),
+\end{eqnarray}
+$$
+
+where the fourth equality holds because all other terms lead to zero as all generators in both $$ D_1 $$ and $$ D_2 $$
+are traceless and $$ \mathrm{Tr}(A \otimes B) = \mathrm{Tr}(A) \cdot \mathrm{Tr}(B) $$.
