@@ -152,7 +152,7 @@ $$ \nabla \cdot (\nabla^2 \boldsymbol{A}) = \nabla^2 (\nabla \cdot \boldsymbol{A
 
 $$ \nabla \cdot (\boldsymbol{A} \times \boldsymbol{B}) = \boldsymbol{B} \cdot (\nabla \times \boldsymbol{A}) - \boldsymbol{A} \cdot (\nabla \times \boldsymbol{B}) $$
 
-$$ (\boldsymbol{A} \times \boldsymbol{B}) \cdot (\boldsymbol{C} \times \boldsymbol{D}) = (\boldsymbol{A} \cdot \boldsymbol{C}) (\boldsymbol{B} \times \boldsymbol{D}) - (\boldsymbol{B} \cdot \boldsymbol{C}) (\boldsymbol{A} \times \boldsymbol{D}) $$
+$$ (\boldsymbol{A} \times \boldsymbol{B}) \cdot (\boldsymbol{C} \times \boldsymbol{D}) = (\boldsymbol{A} \cdot \boldsymbol{C}) (\boldsymbol{B} \cdot \boldsymbol{D}) - (\boldsymbol{B} \cdot \boldsymbol{C}) (\boldsymbol{A} \cdot \boldsymbol{D}) $$
 
 ### Page 482, Eq. (18.2.35)
 
