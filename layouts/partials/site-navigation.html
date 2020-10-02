@@ -6,14 +6,29 @@
     <div class="flex-l items-center">
       {{ if .Site.Menus.main }}
         <ul class="pl0 mr3">
-          {{ range .Site.Menus.main }}
-          <li class="list f5 f5-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="{{ .URL }}" title="{{ .Name }} page">
-              {{ .Name }}
-            </a>
-          </li>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+          {{ if .HasChildren }}
+            <li class="list f5 f5-ns fw4 dib pr3">
+              <span class="hover-white no-underline white-90 dropdown">{{ .Name }}</span>
+              <ul class="pl0 mr3 dropdown-content">
+                {{ range .Children }}
+                  <li class="list f5 f5-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="{{ .URL }}">{{ .Name }}</a>
+                  </li>
+                {{ end }}
+              </ul>
+            </li>
+          {{ else }}
+            <li class="list f5 f5-ns fw4 dib pr3">
+              <a class="hover-white no-underline white-90" href="{{ .URL }}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+              </a>
+            </li>
           {{ end }}
-        </ul>
+        {{ end }}
+      </ul>
       {{ end }}
       {{ partial "social-follow.html" . }}
     </div>

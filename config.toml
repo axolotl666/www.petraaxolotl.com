@@ -6,6 +6,9 @@ copyright = "Petra Axolotl"
 favicon = "images/favicon.png"
 pluralizelisttitles = "false"
 
+[params]
+    custom_css = ["css/style.css"]
+
 [[menu.main]]
     name = "About"
     weight = 1
@@ -19,16 +22,31 @@ pluralizelisttitles = "false"
     url = "/canada/"
 
 [[menu.main]]
-    name = "General Relativity"
+    name = "Physics"
     weight = 3
+    identifier = "physics"
+    url = "/physics/"
+
+[[menu.main]]
+    name = "General Relativity"
+    weight = 1
+    parent = "physics"
     identifier = "general relativity"
     url = "/physics/general-relativity/a-first-course-in-general-relativity"
 
 [[menu.main]]
     name = "Quantum Mechanics"
-    weight = 5
-    identifier = "quantum mechanics"
+    weight = 2
+    parent = "physics"
+    identifier = "quantum_mechanics"
     url = "/physics/quantum-mechanics/principles-of-quantum-mechanics"
+
+[[menu.main]]
+    name = "Quantum Field Theory"
+    weight = 3
+    parent = "physics"
+    identifier = "quantum_field_theory"
+    url = "/physics/quantum-field-theory/an-introduction-to-quantum-field-theory"
 
 [[menu.main]]
     name = "Mathematics"
