@@ -29,6 +29,8 @@ various individuals, including [Xianyu](https://zzxianyu.files.wordpress.com/201
 Unfortunately, all of them have serious problems here and there. I will point to the best solution to each problem, often with some
 typo corrections. In the rare cases where none of them is satisfactory, I will post my own solution.
 
+Here is a link to the official [Errata](https://www.slac.stanford.edu/~mpeskin/QFT.html).
+
 # Chapter 1
 
 The reader can safely skip it during the first read. It is probably a good idea for those who have the habit of trying to understand every
@@ -59,7 +61,7 @@ to an imaginary number.
 
 Xianyu's solution is good, except for an obvious typo in (2.5), where the last $$F_{\mu\lambda}$$ should be $$F_{\lambda\mu}$$.
 
-It should be stressed that when we calculate energy and momentum densities, we are free to add and subtract any 4-divergence terms,
+It should be stressed that when we calculate energy and momentum densities, we are free to add or subtract any 4-divergence terms,
 because their integral leads to surface terms, which we take to vanish at infinity. The implication is that any densities are
 well deﬁned only in a smeared sense, i.e. as an average over a big enough area.
 
