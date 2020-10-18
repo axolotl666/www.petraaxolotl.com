@@ -233,7 +233,7 @@ menu: "solutions"
 
         To get the components of $$ \vec{a} $$ in $$ \mathcal{O} $$, one applies the Lorentz transformation.
 
-        $$ \begin{pmatrix} \gamma & \gamma v & 0 & 0 \\ \gamma v & \gamma & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 0 \\ \alpha \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} \alpha \gamma v \\ \alpha \gamma \\ 0 \\ 0 \end{pmatrix} $$
+        $$ \begin{pmatrix} \gamma & \gamma v & 0 & 0 \\ \gamma v & \gamma & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 0 \\ \alpha \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} \alpha \gamma v \\ \alpha \gamma \\ 0 \\ 0 \end{pmatrix} $$
 
         Therefore,
 

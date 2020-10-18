@@ -4,4 +4,107 @@ Description: "Errata, Notes, and Problem Solutions"
 date: 2020-10-01T22:56:31+01:00
 ---
 
-An Introduction to Quantum Field Theory
+I have tried several textbooks to study quantum field theory. Below is a quick summary over them.
+
+Maggiore's [A Modern Introduction to Quantum Field Theory] (https://www.amazon.com/Modern-Introduction-Quantum-Theory-Physics/dp/0198520743)
+is a great starting point, especially for those who have already studied group theory. Unfortunately, there are many omissions
+in its derivations, as well as some serious (yet hard to detect) errors starting from Chapter 4. I would suggest that the reader
+should complete Chapter 2 and Chapter 3, and then move on to Peskin and Schroeder.
+
+Weinberg's [The Quantum Theory of Fields] (https://www.amazon.com/Quantum-Theory-Fields-Paperback-Set/dp/052167056X) is great
+for those who already know quite a bit about quantum field theory. But it contains too much information and will only overwhelm
+the uninitiated, although one should keep a copy of it for reference purposes.
+
+Peskin and Schroeder's [An Introduction to Quantum Field Theory](https://www.amazon.com/Introduction-Quantum-Field-Theory/dp/0367320568/)
+is probably the best book overall. Certain pedagogical choices are in my opinion suboptimal. For example, complex scalar fields and
+Majorana fields are only included in exercises, although some key insight could be gained by treating real scalar fields as a special case
+of complex scalar fields, and Majorana fields as a special case of Dirac fields, and drawing an analogy between the two. Also, the discussion
+on C-, P-, and T-symmetries has some issues and only includes Dirac fields. Despite these imperfections, it is probably still the best
+choice for novices. One can always turn to Weinberg if they find certain parts unclear or confusing in Peskin and Schroeder.
+
+The rest of this post will focus on Peskin and Schroeder. I will include notes that I believe are useful for first-time learners. It is
+impossible to gain a real understanding of quantum field theory without doing its exercises. There are solutions available online posted by
+various individuals, including [Xianyu](https://zzxianyu.files.wordpress.com/2017/01/peskin_problems.pdf),
+[Bourjaily](http://www-personal.umich.edu/~jbourj/qft.htm), and [Pokraka](http://www.physics.mcgill.ca/~andrzej/peskin.html).
+Unfortunately, all of them have serious problems here and there. I will point to the best solution to each problem, often with some
+typo corrections. In the rare cases where none of them is satisfactory, I will post my own solution.
+
+# Chapter 1
+
+The reader can safely skip it during the first read. It is probably a good idea for those who have the habit of trying to understand every
+single sentence.
+
+# Chapter 2
+
+## Notes
+
+### Page 25
+
+In the derivation of (2.45), we use the fact that $$[\phi(\mathbf{x}, t), \nabla \phi(\mathbf{x'}, t)] = 0$$. Note that
+$$[\phi(\mathbf{x}, t), \nabla_{} \phi(\mathbf{x'}, t)]$$ really means $$[\phi(\mathbf{x}, t), \nabla_{\mathbf{x'}} \phi(\mathbf{x'}, t)]$$
+and therefore it is equal to $$\nabla_{\mathbf{x'}}[\phi(\mathbf{x}, t), \phi(\mathbf{x'}, t)] = 0$$.
+
+Alternatively, we can calculate $$[\phi(\mathbf{x}, t), \nabla \phi(\mathbf{x'}, t)]$$ from (2.25), and get something like
+$$\int \frac{d^3p}{(2\pi)^3} \frac{\mathbf{p}}{\omega_\mathbf{p}} (e^{i \mathbf{p} \cdot (\mathbf{x}-\mathbf{x'})} + e^{i \mathbf{p} \cdot (\mathbf{x'}-\mathbf{x})}) $$,
+which vanishes because the integrand is odd.
+
+### Page 27
+
+To get the right sign for the denominator in (2.52), we need to rotate $$p$$ *continuously* on the complex plane from a real number
+to an imaginary number.
+
+## Problems
+
+### 2 .1
+
+Xianyu's solution is good, except for an obvious typo in (2.5), where the last $$F_{\mu\lambda}$$ should be $$F_{\lambda\mu}$$.
+
+It should be stressed that when we calculate energy and momentum densities, we are free to add and subtract any 4-divergence terms,
+because their integral leads to surface terms, which we take to vanish at infinity. The implication is that any densities are
+well deﬁned only in a smeared sense, i.e. as an average over a big enough area.
+
+### 2 .2
+
+Xianyu's solution is good, except for the following typos or minor issues.
+
+In the derivation of (2.7), $$b_\mathbf{q} a_\mathbf{q}$$ should be $$b_\mathbf{p} a_\mathbf{q}$$ before the fourth equal sign. Also,
+$$d^x$$ should be $$d^3 \frac{p}{(2 \pi)^3}$$ in the last two lines, .
+
+Regarding (2.19), there should be a minus sign if we use (2.12). But as usual, it is a matter of definition so we don't really care.
+Also, the order of $$\phi^*$$ and $$\dot{\phi}$$ does not matter, since its choice will only introduce an infinite constant term that we
+will throw away in the end. However, this particular order does make it more complicated for (d). $$e^{i(E_\mathbf{p} + E_\mathbf{q} t)}$$
+after the 5th equal sign in the derivation should be $$e^{i(E_\mathbf{p} + E_\mathbf{q})t}$$.
+
+In (2.23), the last $$\tau_{ij}$$ should be $$\tau_{ij}^*$$.
+
+In (2.24), the last $$\tau^\alpha_{ij}$$ is correct, because
+
+$$\dot{\Phi}_i \tau_{ij}^* \Phi^*_j = \Phi^*_j \tau_{ij}^* \dot{\Phi}_i = \Phi^*_i \tau_{ji}^* \dot{\Phi}_j = \Phi^*_i \tau_{ij} \dot{\Phi}_j.$$
+
+The first equality is up to an inﬁnite constant term, while the last one is because $$\tau^* = \tau^T$$.
+
+In (2.25), the integrand should be $$a^\dagger_{i \mathbf{p}} \tau^a_{ij} a_{j \mathbf{p}} - b^\dagger_{j \mathbf{p}} \tau^a_{ij} b_{i \mathbf{p}}$$,
+or equivalently, $$a^\dagger_{i \mathbf{p}} \tau^a_{ij} a_{j \mathbf{p}} - b^\dagger_{i \mathbf{p}} {\tau^a}^*_{ij} b_{j \mathbf{p}}$$.
+I will privilege the second notation, which makes the rest of the problem easier. It is easy to verify that
+$$Q^a = {Q^a}^\dagger$$, so that the charge is real.
+
+In the derivation of (2.26), $$+(a\rightarrow b)$$ should be $$-(a\rightarrow b)$$ but it does not affect the result.
+
+In the derivation of (2.27), all three $$t$$s sandwidged between $$b^\dagger$$ and $$b$$ should be $$t^*$$s. Also, $$a\rightarrow b$$
+needs to reflect such complex conjugations and this is what causes the change of sign between the second line and the third line.
+The end result is however correct.
+
+It is worth pointing out that in the thoery of free fields, a complex scalar field is simply made of two real fields of the same mass. This
+can be clearly seen when we write $$\phi = \phi_R + i \phi_I$$, where both $$\phi_R$$ and $$\phi_I$$ are real. The Langragian of $$\phi$$
+is simply the sum of the Langragians of the two real fields. Complex scalar fields become more interesting when we introduce higher-order terms
+into the Langragian, e.g. $$ (\phi^* \phi)^2 = \phi_R^4+\phi_I^4+2\phi_R^2 \phi_I^2$$, effectively coupling the two otherwise independent
+real fields.
+
+The Langragian in this problem does not include such higher-order terms, and $$n$$ identical complex scalar fields are equivalent to $$2n$$
+identical real scalar fields. Therefore we can replace $$SU(n)$$ by $$SO(2n)$$ in the solution and the number of generators (and thus conserved
+charges) increases from $$n^2-1$$ to $$n(2n-1)$$, without counting the regular charge corresponding to $$U(1)$$.
+
+### 2 .3
+
+Xianyu's solution is good. For the definition of $$K_1$$, refer to this [Wikipedia page]
+(https://en.wikipedia.org/wiki/Bessel_function#Modified_Bessel_functions:_I%CE%B1,_K%CE%B1).
