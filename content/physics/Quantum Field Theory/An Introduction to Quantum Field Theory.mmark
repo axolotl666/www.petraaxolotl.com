@@ -106,7 +106,221 @@ The Langragian in this problem does not include such higher-order terms, and $$n
 identical real scalar fields. Therefore we can replace $$SU(n)$$ by $$SO(2n)$$ in the solution and the number of generators (and thus conserved
 charges) increases from $$n^2-1$$ to $$n(2n-1)$$, without counting the regular charge corresponding to $$U(1)$$.
 
-### 2 .3
+### 2.3
 
 Xianyu's solution is good. For the definition of $$K_1$$, refer to this [Wikipedia page]
 (https://en.wikipedia.org/wiki/Bessel_function#Modified_Bessel_functions:_I%CE%B1,_K%CE%B1).
+
+# Chapter 3
+
+## Notes
+
+### Page 51
+
+The explanation on the Lorentz invariance of (3.77) may be a bit cryptic for those less proficient in group theory.
+Here is some elaboration.
+
+The upper half of (3.43) can be written as $$m(\psi_L)_\alpha=i(\sigma^\mu)_{\alpha\beta} \partial_\mu (\psi_R)_\beta$$, where
+$$(\psi_L)_\alpha$$, $$(\psi_R)_\beta$$, and $$\partial_\mu$$ transform according to $$(\frac{1}{2},0)$$, $$(0,\frac{1}{2})$$, and
+(covariant) vector representations of the Lorentz group. (See Problem 3.1 for more explanation on $$(\frac{1}{2},0)$$ and
+$$(0,\frac{1}{2})$$.)
+
+This implies that the matching $$\alpha$$, $$\beta$$, and $$\mu$$ transform according to $$(\frac{1}{2},0)$$,
+$$(0,\frac{1}{2})$$, and (contravariant) vector representations of the Lorentz group. 
+
+With $$\mu$$ contracted, the LHS of (3.77) is a tensor with four indices which transform as described in the highlighted text.
+
+On the RHS, $$\epsilon$$ is an invariant tensor in both $$(\frac{1}{2},0)$$ and $$(0,\frac{1}{2})$$ representations.
+
+This makes (3.77) a tensor equation. So we only need to verify it for one of the 16 components and the rest are automatically
+guaranteed because these components can be rotated into one another.
+
+### Page 52
+
+To show the equality between the first line and the second line of (3.82), we re-write (3.80) as
+
+$$\epsilon_{\beta\alpha}(\sigma^\mu)_{\beta\gamma}=(\bar{\sigma}^\mu)_{\beta\alpha}\epsilon_{\gamma\beta},$$
+
+, apply it twice to $$\epsilon_{\beta\delta}(\sigma^\nu)_{\beta\rho}(\bar{\sigma}^\lambda)_{\rho\sigma}(u_{2L})_\sigma$$,
+and finally re-lable a few dummy variables.
+
+### Page 53
+
+We should read the LHS of (3.89) as $$[\psi(x)_a, \psi^\dagger(y)_b]$$, and the $$1_{4x4}$$ on the RHS as $$\delta_{ab}$$.
+
+### Page 59
+
+The last sentence on this page should not be surprising at all. If we sandwich the LHS of (3.110) between $$\langle\psi|$$
+and $$|\psi\rangle$$, we are rotating the state $$|\psi\rangle$$ by $$U(Λ^{-1})$$.
+
+### Page 60
+
+After the discussion on the spin, we could also apply Noether's theorem to boosts. We will similarly get two terms.
+- The one corresponding to orbital angular momentum is the relativistic version of Newton's first law.
+- The one corresponding to spin gives us 3-momentum conservation. (We simply replace $$\Sigma^3$$ by (3.26).)
+
+For more detail, see [this post](https://physics.stackexchange.com/questions/12559/what-conservation-law-corresponds-to-lorentz-boosts).
+
+For the derivation of $$j^0$$, we use the fact that $$\mathcal{J}^0$$ as in (2.10) is 0, because $$\partial_t$$ does not appear in
+$$\delta\mathcal{L} = - \theta (x \partial_y - y \partial_x) \mathcal{L}$$. (Note that $$\mathcal{L}$$ is a scaler.)
+
+### Page 62
+
+The symmetry corresponding to $$Q$$ is $$\Psi \rightarrow e^{i\theta}\Psi$$.
+
+It becomes more interesting when we couple the Dirac field to an electromagnetic field through minimal coupling.
+See Section 3.5.4 in Maggiore.
+
+Regarding the polarization of $$\psi_\alpha(x)|0\rangle$$, we can apply the number operator $$N$$, which is similar to $$H$$
+as in (3.104), and conclude that $$\psi_\alpha(x)|0\rangle$$ contains *one* positron. It is however not an eigenstate of $$S$$,
+and so it has mixed polarization.
+
+### Page 65
+
+3.6 is the most problematic section in this book. Throughout this section $$P\ldots P$$, $$T\ldots T$$, and $$C\ldots C$$ should be
+$$P\ldots P^{-1}$$, $$T\ldots T^{-1}$$, and $$C\ldots C^{-1}$$. Note that $$P$$ really stands for $$U(P)$$ (and similarly for $$T$$
+and $$C$$). So although $$PP=TT=CC=1$$ in the Minkowsky space, there is no guarantee that $$U(P)U(P)=U(T)U(T)=U(C)U(C)=1$$ in the
+Hilbert space. In fact, as pointed out in the Errata, $$U(T)U(T)=-1$$ in some cases. For $$U(P)U(P)$$ and $$U(C)U(C)$$, we can later
+set them to one *by choice*. But it is probably not a good idea to assume it implicitly from the very beginning.
+
+In fact, if we consistently use $$T\psi(x)T^{-1}$$ in the book, the correction in the Errata (p.69) will be unnecessary.
+
+Also notice that any observable can be written in the form $$\langle 0| O |0\rangle$$. When we do a parity transformation to the
+vacuum, it becomes $$\langle 0|P^\dagger| O |P|0\rangle$$. So the phase of $$P|0\rangle$$ is canceled any way and we may as well
+set $$P|0\rangle = |0\rangle$$.
+
+The discussion on intrinsic parity $$\eta_a^2,\eta_b^2=\pm 1$$ is valid only if we are dealing with particles who are their own
+antiparticles, since we may have $$aa$$ (or $$a^\dagger a^\dagger$$) in observables. But otherwise, $$\psi$$ will always appear
+in pairs with $$\bar{\psi}$$ (or equivalently $$\psi^\dagger$$) in any observable, allowing $$\eta$$ to be any complex number
+of unit magnitude.
+
+In (3.124), we are using the fact that $$U(P)$$ is unitary. See Weinberg for a full discussion on this topic.
+
+### Page 68
+
+Notation-wise, it might be a good idea to write $$\xi^{\updownarrow s}$$ instead of $$\xi^{-s}$$ to avoid weird situations
+like $$\xi^{-(-s)} = -\xi^s$$.
+
+### Page 69
+
+In (3.139), we are using the fact that $$T$$ is unitary (or strictly speaking, anti-unitary) so that $$T^{-1} = T^\dagger$$,
+where the $$\dagger$$ sign denotes anti-adjoint rather than adjoint.
+
+## Problems
+
+### 3.1
+
+Pokraka's solution is very detailed and looks quite good.
+
+### 3.2
+
+Both Xianyu's and Pokraka's solutions are fine.
+
+### 3.3
+
+Note that the only purpose of $$k_1$$ is to define unambiguously $$u_{R0}$$. We can redefine $$k_1$$ as $$k_1 - x k_0$$ such that
+$$k_1$$ has no time component. It will still give us $$k_0 \cdot k_1 = 0$$ and won't change $$u_{R0}$$, since we are talking about
+massless particles. We may therefore demand from the very beginning that $$k_1$$ has no time component.
+
+Similarly, the purpose of $$k_0$$ is to specify a direction. Its 3-momentum, which is equal to its energy, has no consequence for
+$$u_L(p)$$ or $$u_R(p)$$, both of which are always properly normalized.
+
+Both Xianyu's and Pokraka's solutions are fine.
+
+### 3.4
+
+Note that the equation in part (a) is nothing other than (3.39) by having $$\psi_L = \chi$$ and $$\psi_R = i \sigma^2 \chi^*$$, and
+that the action in part (b) is nothing but half of (3.34) by having $$\psi_L = \chi$$ and $$\psi_R = i \sigma^2 \chi^*$$. In fact,
+part (c) shows that a Majorana field is a special case of Dirac fields, when we set $$\chi_1=\chi_2$$. This is very similar to a real
+scalar field, which is a special case of complex scalar fields, with the extra constraint that $$\phi=\phi^*$$. In both cases,
+the extra constraint makes a particle its own antiparticle.
+
+It is useful to know the following equalities for matrices made of Grassmann numbers.
+- $$(A B)^T = - B^T A^T$$
+- $$(A B)^\dagger = B^\dagger A^\dagger$$, just as for matrices made of c-numbers.
+
+Xianyu's solution to part (d) has a serious error. Pokraka's solution looks quite good.
+
+### 3.5
+
+Xianyu's solution is good, except for the following typos (and a note).
+
+In the derivation of $$\delta(\chi^\dagger i \bar{\sigma}^\mu \partial_\mu \chi)$$ before (3.39),
+$$i F^* \epsilon^\dagger \bar{\sigma}^2 \partial_\mu \chi$$ (appearing twice) should be
+$$i F^* \epsilon^\dagger \bar{\sigma}^\mu \partial_\mu \chi$$.
+
+In (3.39), $$\sigma^\mu \sigma^\nu \sigma_\nu$$ should be $$\sigma^\mu \bar{\sigma}^\nu \partial_\nu$$.
+
+For the four equations immediately after (3.41), note that both $$\epsilon$$ and $$\chi$$ are made of Grassmann numbers.
+
+In (3.48), $$i\phi\chi^T\sigma^2\chi$$ should be $$ig\phi\chi^T\sigma^2\chi$$.
+
+In (3.49), we are assuming that $$g$$ is real. Otherwise $$g$$ should be $$g^*$$.
+
+### 3.6
+
+For part (a), Xianyu's solution is good.
+
+For part (b), one should instead consult [this](http://www.physics.utah.edu/~sandick/7640fall2013/Hmwk4Sols.pdf), which
+also has a few typos, of which the most important is that $$G_{abcd}$$ should be $$M_{abcd}$$.
+
+For part (c), Xianyu's solution is good. Note that in (3.58), $$\gamma^\mu$$ either commutes or anticommutes with $$\Gamma^D$$.
+
+### 3.7
+
+Just as in the main text, $$P\ldots P$$, $$T\ldots T$$, and $$C\ldots C$$ should be $$P\ldots P^{-1}$$, $$T\ldots T^{-1}$$,
+and $$C\ldots C^{-1}$$.
+
+Xianyu's solution is good for parts (a) and (b), except that in the equation right after (3.61), a factor of $$-\frac{i}(2)$$
+should be removed.
+
+For part (c), see my comment below.
+
+It should be stressed that we are not required to consider cases with $$\partial_\mu$$. Such cases are non-trivial. It is common
+to see arguments (in some other textbooks!) that a $$\partial_\mu$$ is always matched with either another $$\partial^\mu$$ or
+a bilinear $$\bar{\psi} \gamma^\mu \psi$$ and in both cases $$CPT = 1$$.
+
+This is a bad argument because this same logic would lead us to the conclusion that a Dirac field would be antisymmetric under
+$$C$$ alone, at least when $$m=0$$. (See the table on Page 71.) But it is clearly not true. The reason is that an extra minus
+sign can arise through integration by part, such as in the case of $$\bar{\psi}i\gamma^\mu\partial_\mu\psi$$ in the Dirac
+Langragian.
+
+### 3.8
+
+For part (a), Pokraka is in general good, except for the following.
+
+In the Fournier transform in (1.3), $$e^{i\mathbf{k}\cdot\mathbf{r}}$$ should be $$e^{-i\mathbf{k}\cdot\mathbf{r}}$$, although
+it does not really matter because the purpose of (1.3) is to show that parity of $$\psi_{n l m_l}(\mathbf{k})$$ is the same as
+that of $$\psi_{n l m_l}(\mathbf{x})$$.
+
+Also notice that when we calculate $$ P|\Psi_{n l m_l;s,m_s} \rangle$$ as in (1.2), $$P$$ passes right through
+$$\psi_{nlm_l}(\mathbf{k})$$, instead of changing it to $$\psi_{nlm_l}(-\mathbf{k})$$. To see why, simply consider
+$$\psi(\mathbf{k})=\delta^3(\mathbf{k}-\mathbf{k_0})$$.
+
+The discussion around $$T$$ is however wrong. $$T$$ not only flips $$m_l$$, but also changes $$\psi_{nlm_l}(\mathbf{k})$$ to
+$$\psi_{nlm_l}^*(\mathbf{k})$$. Therefore spin eigenstates do not have a well-defined quantum number under $$T$$.
+
+For part (b), to ensure that electrodynamics be invariant to $$P$$ and $$C$$, we need to make $$\Delta H$$ invariant, and this
+means $$A^\mu$$ must have the same $$P$$ and $$C$$ parity as $$j^\mu$$.
+
+Since $$j^\mu$$ has $$C$$ parity equal to $$-1$$, the same must be true for $$A^\mu$$. Knowing that photon is its own
+antiparticle, we can safely assume that the quantization of $$A^\mu$$ should look like
+
+$$A^{\mu}(x) = \int \frac{d^3 p}{(2\pi)^3)} \frac{1}{\sqrt{2E_p}} \sum_s (a^s_\mathbf{p} \epsilon^s(p) e^{-i p x} + {a^s}^\dagger_\mathbf{p} {\epsilon^s}^*(p) e^{i p x}), $$
+
+and
+
+$$C a^s_\mathbf{p} C^{-1} = - a^s_\mathbf{p}. $$
+
+An (unnormalized) two-photon state in the center-of-mass frame can be expressed as
+
+$$ \int \frac{d^3 k}{(2\pi)^3)} \sum_{s,s'} \psi_{s,s'}(\mathbf{p}) {a^s}^\dagger_\mathbf{p} {a^{s'}}^\dagger_{-\mathbf{p}} | 0 \rangle. $$
+
+Its quantum number under $$C$$ is $$+1$$, the same as the spin-0 ground state of positronium ($$l=0$$, $$s=0$$), or any positronium
+state with even $$l+s$$.
+
+The same argument can be made for a 3-photon state and the spin-1 ground state ($$l=0$$, $$s=1$$), or any positronium
+state with odd $$l+s$$.
+
+For 1-photon transitions between positronium levels, $$l+s$$ of the positronium must change from odd to even or from even to odd,
+before and after the transition.
