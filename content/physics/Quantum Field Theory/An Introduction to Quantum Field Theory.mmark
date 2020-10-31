@@ -324,3 +324,183 @@ state with odd $$l+s$$.
 
 For 1-photon transitions between positronium levels, $$l+s$$ of the positronium must change from odd to even or from even to odd,
 before and after the transition.
+
+# Chapter 4
+
+## Notes
+
+### Page 86
+
+Note that in (4.23), $$t_0$$ is still very much present. It is hidden inside the definition of $$H_I$$.
+
+### Page 103
+
+The explicit factor $$e^{-i\mathbf{b}\cdot\mathbf{k}_\mathcal{B}}$$ is essential in the following calculation. Also,
+its interpretation is completely logical and the statement that suggests it's merely a convention is rather misleading.
+
+$$\int \frac{d^3 k_\mathcal{B}}{(2\pi)^3} \phi_\mathcal{B}(k_\mathcal{B}) |k_\mathcal{B}\rangle$$ describes *one* incoming
+particle of $$\mathcal{B}$$, localized at a certain point in space. Applying $$e^{-i P \cdot \mathbf{b}}$$, we get
+$$e^{-i \mathbf{b} \cdot \mathbf{k}_\mathcal{B}}$$ inside the integral, which is simply the original incoming particle
+translated by $$\mathbf{b}$$.
+
+In the calculation leading to (4.79), there are really three things over which we need to average.
+- all possible forms of wave packets of $$\mathcal{A}$$
+- all possible forms of wave packets of $$\mathcal{B}$$
+- spatial shift of $$\mathcal{B}$$ by $$\mathbf{b}$$.
+
+In the most general case, $$\phi_\mathcal{B}(\mathbf{k}_\mathcal{B})$$ in (4.68) should be written as
+$$\phi_\mathcal{B}(\mathbf{k}_\mathcal{B}, \mathbf{b})$$, to allow the possibility that the distribution of all possible
+wave packet forms of $$\mathcal{B}$$ may depend on $$\mathbf{b}$$. If, however, we assume such dependency does not exist,
+$$\phi_\mathcal{B}(\mathbf{k}_\mathcal{B}, \mathbf{b})$$ becomes
+$$\phi_\mathcal{B}(\mathbf{k}_\mathcal{B}) e^{-i \mathbf{b} \cdot \mathbf{k}_\mathcal{B}}$$. This also allows us to decouple
+the integrand and first integrate over $$\mathbf{b}$$, keeping the same $$\phi_\mathcal{B}(\mathbf{k}_\mathcal{B})$$,
+and then integrate over different forms of wave packets $$\phi_\mathcal{B}(\mathbf{k}_\mathcal{B})$$ and
+$$\phi_\mathcal{A}(\mathbf{k}_\mathcal{A})$$. The latter integrals turn out to be unnecessary if we assume that
+$$\phi_\mathcal{B}(\mathbf{k}_\mathcal{B})$$ and $$\phi_\mathcal{A}(\mathbf{k}_\mathcal{A})$$ are sufficiently peaked, as
+explained in the text.
+
+### Page 104
+
+In (4.72), we need to have both real and imaginary parts in $$T$$ to make $$S$$ unitary. The same applies to
+$$\mathcal{M}$$. Therefore $$|\mathcal{M}|^2$$ in the following text really should be $$|\mathrm{Re}(\mathcal{M})|^2$$.
+
+### Page 105
+
+It is not entirely clear how (4.76) leads to (4.78). What is missing is somewhere in the derivation factors of
+$$\delta^{(4)}(k_\mathcal{A}-\bar{k}_\mathcal{A})$$ and $$\delta^{(4)}(k_\mathcal{B}-\bar{k}_\mathcal{B})$$.
+Below are the steps to reach such factors.
+
+Note that $$\delta^{(4)}(k_\mathcal{A}+k_\mathcal{B}-\sum p_f)$$ and $$\delta^{(4)}(\bar{k}_\mathcal{A}+\bar{k}_\mathcal{B}-\sum p_f)$$,
+put together, are equivalent to $$\delta^{(4)}(k_\mathcal{A}+k_\mathcal{B}-\bar{k}_\mathcal{A}-\bar{k}_\mathcal{B})$$ and
+$$\delta^{(4)}(k_\mathcal{A}+k_\mathcal{B}-\sum p_f)$$.
+
+The first one, combined with $$\delta^{(2)}(k^\perp_\mathcal{B}-\bar{k}^\perp_\mathcal{B})$$, gives us also
+$$\delta^{(2)}(k^\perp_\mathcal{A}-\bar{k}^\perp_\mathcal{A}).$$
+
+(Note that $$\perp$$ denotes the components of $$k$$ that lie in the plane where $$\mathcal{B}$$ particles are created. It is
+perpendicular to the path of collision in direction $$z$$.)
+
+Further, from $$\delta(E_\mathcal{A} + E_\mathcal{B} - \bar{E}_\mathcal{A} - \bar{E}_\mathcal{B})$$ and
+$$ \delta(k^z_\mathcal{A} + k^z_\mathcal{B} - \bar{k}^z_\mathcal{A} - \bar{k}^z_\mathcal{B})$$,
+we can get, assuming $$\mathcal{A}$$ and $$\mathcal{B}$$ have different masses,
+$$\delta(k^z_\mathcal{A}-\bar{k}^z_\mathcal{A}) \delta(k^z_\mathcal{B}-\bar{k}^z_\mathcal{B})$$.
+
+If $$\mathcal{A}$$ and $$\mathcal{B}$$ have the same mass, however, we also get an extra term
+$$\delta(k^z_\mathcal{A}-\bar{k}^z_\mathcal{B}) \delta(k^z_\mathcal{B}-\bar{k}^z_\mathcal{A})$$.
+
+Fortunately, this would give us $$\phi_\mathcal{A}(\mathbf{k}_\mathcal{A}) \phi_\mathcal{B}(\mathbf{k}_\mathcal{A})$$ in the
+integral. We can safely assume this to be zero, because the wave packets of $$\mathcal{A}$$ and $$\mathcal{B}$$ do not
+overlap.
+
+### Page 106
+
+For an explicit proof that (4.80) is Lorentz invariant, refer to [this link](http://scipp.ucsc.edu/~haber/ph217/Lips.pdf).
+
+### Page 119
+
+Regarding the assignment of the momentum to the direction of particle-number flow, the same argument can be made for
+complex scalar fields, whose particles and antiparticles are not the same. But it does not matter in the end because
+the propagator is an even function.
+
+For Majorana fields, it is a lot more complicated. Refer to [these slides](http://scipp.ucsc.edu/~haber/webpage/majfermions2.pdf)
+or [this paper](http://scipp.ucsc.edu/~haber/pubs/Physics.Reports.494.1.pdf).
+
+## Problems
+
+### 4.1
+
+The overall approach in Pokraka's solution is correct, despite the following errors.
+
+#### Part (b)
+
+The argument that starts with _since $$p^0>0$$_ at the end is wrong. We integrate over $$p^0$$ from
+$$-\infty$$ to $$\infty$$. There are two poles at $$p^0=E_\mathbf{p}-i\epsilon$$ and at
+$$p^0=-E_\mathbf{p}+i\epsilon$$. The lack of an explicit term in the form of $$e^{i\cdot p \cdot c}$$, where
+c is either a positive or a negative real number, implies that we have to assume that $$|\tilde{j}(p)|^2$$, as
+_am analytical function on the complex plane_, vanishes fast enough as $$|p|\rightarrow\infty$$. With this
+assumption, we can freely choose to do the contour integration in either the upper or the lower plane. Both
+choices lead to the same result. (Although the choice does affect $$p^0$$, and therefore $$\tilde{j}(p)$$,
+it has no consequence after the integration.)
+
+#### Part (c)
+
+The explanation on the symmetry factor is unfortunatley completely off. Below is how it should be calculated.
+
+A Feynman diagram with $$n$$ propagators and $$2n$$ gives us $$(-\lambda)^n$$, mupltiplied by a factor of
+$$\frac{1}{(2n)!}$$ (from Taylor expansion), as well as a factor of $$(2n-1)!!$$. (The first vertex can
+choose among $$(2n-1)$$ vertices, the next one among $$(2n-3)$$ vertices, etc.) The total amplitude of the
+process is therefore
+
+$$\sum_{n=0}^\infty \frac{(2n-1)!!}{(2n)!} (-\lambda)^n = \sum_{n=0}^\infty \frac{1}{2^n n!} (-\lambda)^n = e^{-\lambda/2}. $$
+
+The total probability is thus simply $$ e^{-\lambda} $$.
+
+#### Part (d)
+
+Instead of $$\langle 0|a_\mathbf{k}^n$$, we should have $$\langle 0|a_{\mathbf{k}_1} a_{\mathbf{k}_2} \dots a_{\mathbf{k}_n}$$.
+Within the total amplitude, there is a factor of $$n!$$ from the $$n!$$ different ways to contract
+$$\phi(x_i)$$ with $$a_{\mathbf{k}_j}$$, which is then cancelled by $$\frac{1}{n!}$$ from Taylor's expansion.
+
+To calculate the probability, we need to integrate over $$\mathbf{k}_1, \dots, \mathbf{k}_n$$, and divide by
+$$\frac{1}{n!}$$ because those $$n$$ particles are identical.
+
+### 4.2
+
+Pokraka's solution shows how to calculate $$i\mathcal{M}$$, while Xianyu did a better job calculating $$\Gamma$$.
+
+Note that we should take $$\mathbf{P}_\Phi=0$$ because decay rates, by definition, should be calculated in the
+COM frame. Also, the calculation becomes simpler if one remembers
+$$\int \frac{dp}{(2\pi)^3} p = \int \frac{dE_\mathbf{p}}{(2\pi)^3} E_\mathbf{p} $$.
+
+### 4.3
+
+#### Part (a)
+
+Pokraka's solution is detailed very well motivated, despite the following error.
+
+$$E_{CM}$$ is *not* equal to $$2m$$ unless in the nonrelativistic limit.
+
+#### Part (b)
+
+Pokraka's solution is detailed very well motivated, despite the following errors.
+
+The statement $$\Phi^i_{\mathrm{min}}=0$$ is wrong.
+
+In the super long derivation of $$V(\Phi^2)$$, the third-to-the-last and the last equal signs should be removed.
+
+In the propagator of the massive $$\sigma$$ field, it should be $$m=\sqrt{2}\mu$$.
+
+#### Part (c)
+
+Xianyu's solution is good, although it uses Mandelstam variables, which are to be introduced in a later chapter. Note that
+in the first three diagrams, $$\frac{1}{2}$$ from the second-order taylor expansion is cancelled by $$2$$ from the symmetry
+between the two vertices. Also, all appreances of $$\mathcal{M}$$ really should be $$i\mathcal{M}$$.
+
+#### Part (d)
+
+Xianyu's solution is good, except that in (4.36), $$\lambda \Phi^i \Phi^i$$ should be written as $$\lambda \Phi^j \Phi^j$$
+to avoid any confusion.
+
+To get the new $$V(\Phi^2)$$, simply replace $$\sigma$$ by $$\sigma+\frac{a}{2\mu^2}$$ in Pokraka's solution to part (b).
+The last two terms in the original derivation give now to the pions an extra mass term
+
+$$(\boldsymbol{\pi} \cdot \boldsymbol{\pi}) \left(\sqrt{\lambda}\mu \frac{a}{2\mu^2} + O(a^2)\right),$$
+
+corresponding to a mass of $$a^{1/2}\lambda^{1/4}\mu^{-1/2}$$.
+
+Further, this replacement does not affect the coefficient of the $$(\boldsymbol{\pi} \cdot \boldsymbol{\pi})^2$$ term, but it
+does change the coefficient of the $$(\boldsymbol{\pi} \cdot \boldsymbol{\pi})\sigma$$ term from $$\sqrt{\lambda}\mu$$ to
+$$\sqrt{\lambda}\mu + \lambda \frac{a}{2\mu^2}$$
+
+Compared to (4.34), now we have an extra term $$2i \frac{\lambda^{3/2}a}{\mu^3}\left(\frac{s+t+u}{2\mu^2}+3\right)$$, and the result
+is simply (4.39). Also note that now $$s+t+u=4m^2=\frac{4\alpha\sqrt{\lambda}}{\mu}$$ are proportional to $$a$$. Therefore we have,
+at threshold,
+
+$$i\mathcal{M}=\frac{10i\lambda^{3/2}a}{\mu^3} + O(a^2).$$
+
+### 4.4
+
+Xianyu's solution is very good, except for the following.
+
+- In (4.58), there should be an overall minus sign. Also, $$u(p)$$ should be $$u(k)$$.
+- In (4.61), it should be $$|\mathbf{k}|^2$$ in the denominator.
