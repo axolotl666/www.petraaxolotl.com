@@ -361,8 +361,12 @@ explained in the text.
 
 ### Page 104
 
-In (4.72), we need to have both real and imaginary parts in $$T$$ to make $$S$$ unitary. The same applies to
-$$\mathcal{M}$$. Therefore $$|\mathcal{M}|^2$$ in the following text really should be $$|\mathrm{Re}(\mathcal{M})|^2$$.
+Note that $$S$$ and $$T$$ are (infinite-dimensional) matrices, whose rows are labeled by states like $$\langle p_1 p_2|$$
+and columns by states like $$|k_\mathcal{A} k_\mathcal{B}\rangle$$. Obviously, those states, though orthorgonal to each other,
+are not eigenstates of $$S$$, because otherwise $$S$$ would be a diagonal matrix. The split of $$S$$ into an identity matrix
+and $$iT$$ is rather arbitrary. $$iT$$ also has non-zero diagonal elements.
+
+$$i\mathcal{M}$$ (multiplied by $$(2\pi)^4 \delta^{(4)}$$), on the other hand, is just an entry in the $$S$$ matrix.
 
 ### Page 105
 
