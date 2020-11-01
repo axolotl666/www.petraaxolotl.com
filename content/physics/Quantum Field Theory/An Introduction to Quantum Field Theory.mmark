@@ -364,9 +364,12 @@ explained in the text.
 Note that $$S$$ and $$T$$ are (infinite-dimensional) matrices, whose rows are labeled by states like $$\langle p_1 p_2|$$
 and columns by states like $$|k_\mathcal{A} k_\mathcal{B}\rangle$$. Obviously, those states, though orthorgonal to each other,
 are not eigenstates of $$S$$, because otherwise $$S$$ would be a diagonal matrix. The split of $$S$$ into an identity matrix
-and $$iT$$ is rather arbitrary. $$iT$$ also has non-zero diagonal elements.
+and $$iT$$ is rather arbitrary. $$iT$$ also has non-zero diagonal elements. Also, note that the $$H$$ in the $$S$$ matrix
+is the full interactive theory Hamiltonian. Thus the $$1$$ in (4.72) is not the same as the 0-th Taylor expansion of
+the right-hand-side of (4.89).
 
-$$i\mathcal{M}$$ (multiplied by $$(2\pi)^4 \delta^{(4)}$$), on the other hand, is just an entry in the $$S$$ matrix.
+$$i\mathcal{M}$$, on the other hand, is just an entry in the $$S$$ matrix. $$(2\pi)^4 \delta^{(4)}$$ is from our state normalization
+convention and thus outside the $$S$$ matrix.
 
 ### Page 105
 
