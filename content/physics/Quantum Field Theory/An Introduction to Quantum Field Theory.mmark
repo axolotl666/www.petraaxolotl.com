@@ -511,3 +511,238 @@ Xianyu's solution is very good, except for the following.
 
 - In (4.58), there should be an overall minus sign. Also, $$u(p)$$ should be $$u(k)$$.
 - In (4.61), it should be $$|\mathbf{k}|^2$$ in the denominator.
+
+# Chapter 5
+
+## Problems
+
+### 5.1
+
+### 5.2
+
+### 5.3
+
+### 5.4
+
+#### Part (a)
+
+Xianyu's solution is overall correct, except for the following.
+- For the triplet states, we should set $$\xi \xi'^\dagger$$ to $$\frac{1}{2}\sigma^1+\frac{i}{2}\sigma^2$$,
+$$-\frac{1}{2}\sigma^1+\frac{i}{2}\sigma^2$$, and $$-\frac{1}{\sqrt{2}}\sigma^3$$. The sign in (5.61) is actually
+correct, despite the error corrected in Errata. Here we have $$\xi \xi’^\dagger$$ instead of $$\xi’ \xi^\dagger$$.
+- $$2m$$ should be $$m$$ in the denominator in (5.63).
+- $$\delta(m-E_1)$$ should be $$\delta(2m-2E_1)$$ in (5.64). This error miraculously cancels the previous error
+and eventually gives us the correct result.
+
+#### Part (b)
+
+The answer provided by Xianyu is not wrong (except for some minor sign errors). But it takes the direction of
+$$\mathbf{k}$$ to be the $$x^3$$-axis, and thus implicitly uses the same direction to label spin states.
+This will present a problem later in part (d), where we need to allow for an arbitrary angle between the direction
+of $$\mathbf{k}$$ and the $$z$$-direction that is used to label both the spin states, and various spatial
+wavefunctions. Also, we will distinguish the $$x$$-axis and $$y$$-axis explicitly, because that is what we will do
+with the spatial wavefunctions.
+
+Below is the necessary corrections to Xianyu's solution.
+
+In (5.65), we need instead the following. (Note that the relative angle between $$p_1$$ and $$k_1$$ here is $$-\theta$$ instead
+of $$\theta$$. But it does not matter in the end.)
+
+$$
+\begin{eqnarray}
+  k_1^\mu=(E, k \sin\theta\cos\phi, k \sin\theta\sin\phi, k \cos\theta) & \qquad\qquad\qquad & k_2^\mu=(E, -k \sin\theta\cos\phi, -k \sin\theta\sin\phi, -k \cos\theta)  \\
+  p_1^\mu=(E, 0, 0, E) & \qquad\qquad\qquad & p_2^\mu=(E, 0, 0, -E)  \\
+  \epsilon_\pm^\mu(p_1)=\frac{1}{\sqrt{2}}(0, \mp 1, -i, 0) & \qquad\qquad\qquad & \epsilon_\pm^\mu(p_2)=\frac{1}{\sqrt{2}}(0, \pm 1, -i, 0)
+\end{eqnarray}
+$$
+
+correspondingly, we have the following.
+
+$$
+\begin{eqnarray}
+  \sqrt{k_1 \cdot \sigma} = \sqrt{k_2 \cdot \bar{\sigma}} = \sqrt{m} - \frac{k\sin\theta\cos\phi}{2\sqrt{m}} \sigma^1 - \frac{k\sin\theta\sin\phi}{2\sqrt{m}} \sigma^2 - \frac{k\cos\theta}{2\sqrt{m}} \sigma^3  \\
+  \sqrt{k_2 \cdot \sigma} = \sqrt{k_1 \cdot \bar{\sigma}} = \sqrt{m} + \frac{k\sin\theta\cos\phi}{2\sqrt{m}} \sigma^1 + \frac{k\sin\theta\sin\phi}{2\sqrt{m}} \sigma^2 + \frac{k\cos\theta}{2\sqrt{m}} \sigma^3
+\end{eqnarray}
+$$
+
+(The other two equations remain the same.)
+
+After some tedious calculation, we have the following.
+
+$$
+\begin{eqnarray}
+  \Gamma^{\mu\nu}_t &=& 2m^2\sigma^\nu\sigma^3\sigma^\mu - mk(\sigma_\theta\sigma^\nu\sigma^\mu+\sigma^\nu\sigma^\mu\sigma_\theta+2\sigma^\nu\sigma_\theta\sigma^\mu)+O(k^2)  \\
+  \Gamma^{\mu\nu}_u &=& -2m^2\sigma^\mu\sigma^3\sigma^\nu - mk(\sigma_\theta\sigma^\mu\sigma^\nu+\sigma^\mu\sigma^\nu\sigma_\theta+2\sigma^\mu\sigma_\theta\sigma^\nu)+O(k^2),
+\end{eqnarray}
+$$
+
+where $$\sigma_\theta = \sigma^1 \sin\theta \cos\phi + \sigma^2 \sin\theta \sin\phi + \sigma^3 \cos\theta$$.
+
+The part between the brackets in (5.66) thus becomes
+
+$$-2\cos\theta\sigma^\mu\sigma^3\sigma^\nu-2\cos\theta\sigma^\nu\sigma^3\sigma^\mu+(\sigma_\theta\sigma^\mu\sigma^\nu+\sigma^\mu\sigma^\nu\sigma_\theta+2\sigma^\mu\sigma_\theta\sigma^\nu)+(\sigma_\theta\sigma^\nu\sigma^\mu+\sigma^\nu\sigma^\mu\sigma_\theta+2\sigma^\nu\sigma_\theta\sigma^\mu).$$
+
+Now we have something quite different to (5.67).
+
+$$
+\begin{eqnarray}
+  i\hat{\mathcal{M}}^{S=1,S_z=-1}_{\pm\pm} = -2i e^{-i\phi} \sin\theta \frac{e^2k}{m} & \qquad\qquad & i\hat{\mathcal{M}}^{S=1,S_z=-1}_{+-} = 0 & \qquad\qquad & i\hat{\mathcal{M}}^{S=1,S_z=-1}_{-+} = 4i e^{i\phi} \sin\theta \frac{e^2k}{m}  \\
+  i\hat{\mathcal{M}}^{S=1,S_z=0}_{\pm\pm} = -2\sqrt{2}i \cos\theta \frac{e^2k}{m} & \qquad\qquad & i\hat{\mathcal{M}}^{S=1,S_z=0}_{\pm\mp} = 0  \\
+  i\hat{\mathcal{M}}^{S=1,S_z=1}_{\pm\pm} = 2i e^{i\phi} \sin\theta \frac{e^2k}{m} & \qquad\qquad & i\hat{\mathcal{M}}^{S=1,S_z=1}_{+-} = -4i e^{-i\phi} \sin\theta \frac{e^2k}{m} & \qquad\qquad & i\hat{\mathcal{M}}^{S=1,S_z=1}_{-+} = 0  \\
+  i\hat{\mathcal{M}}^{S=0}_{\pm\pm} = 0 & \qquad\qquad\qquad & i\hat{\mathcal{M}}^{S=0}_{\pm\mp} = 0
+\end{eqnarray}
+$$
+
+Note that we are ignoring terms proportional to zero powers of $$\mathbf{k}$$, because they don’t matter for $$L=1$$, where
+the spatial wavefunction is odd and such terms lead to 0.
+
+Also note that result above converves $$J_z$$. For example, $$i\hat{\mathcal{M}}^{S=1,S_z=-1}_{\pm\pm}$$ has $$J_z=L_z+S_z=1-1=0$$,
+the same as that of two right-handed (or two left-handed) photons in the opposite direction.
+
+#### Part (c)
+
+This problem has serious issues.
+
+In the definition of $$|B(\mathbf{k})\rangle$$, $$a^\dagger$$ should be understood as a row vector $$(a^\dagger_\uparrow, a^\dagger_\downarrow)$$
+while $$b^\dagger$$ as a column vector $$(b^\dagger_\downarrow, -b^\dagger_\uparrow)^T$$.
+(The parameter $$\mathbf{k}$$ does not add any value and I will leave it out from now on.)
+
+With this definition, we can easiy verify the following for a spin-1 electron-positron pair.
+
+$$
+\begin{eqnarray}
+|S_z=1\rangle &=& |\uparrow\uparrow\rangle = a^\dagger \left( -\frac{1}{2}(\sigma^1+i\sigma^2) \right) b^\dagger |0\rangle  \\
+|S_z=0\rangle &=& \frac{1}{\sqrt{2}}(|\uparrow\downarrow\rangle+|\downarrow\uparrow\rangle) = a^\dagger \left( \frac{1}{\sqrt{2}}\sigma^3 \right) b^\dagger |0\rangle  \\
+|S_z=-1\rangle &=& |\downarrow\downarrow\rangle = a^\dagger \left( \frac{1}{2}(\sigma^1-i\sigma^2) \right) b^\dagger |0\rangle
+\end{eqnarray}
+$$
+
+We see that the matrix between $$a^\dagger$$ and $$b^\dagger$$ is simply $$\frac{1}{\sqrt{2}}\mathbf{n}\cdot\mathbf{\sigma}$$,
+where $$\mathbf{n}$$ is defined on Page 150 (and corrected in the Errata).
+
+Similarly for orbital angular momentum $$L=1$$, we have the following.
+
+$$
+\begin{eqnarray}
+|L_z=1\rangle &=& -\frac{1}{\sqrt{2}}(\psi_1 + i \psi_2)  \\
+|L_z=0\rangle &=& \psi_3  \\
+|L_z=-1\rangle &=& \frac{1}{\sqrt{2}}(\psi_1 - i \psi_2)
+\end{eqnarray}
+$$
+
+With this in mind, we can write the $$|J=2,J_z=2\rangle$$ state as follows.
+
+$$
+\begin{eqnarray}
+  &&  |J=2,J_z=2\rangle  \\
+  &=& |L_z=1,S_z=1\rangle  \\
+  &=& \sqrt{2M} \int \frac{d^3 p}{(2\pi)^3} \left(-\frac{1}{\sqrt{2}}(\psi_1 + i \psi_2)\right) a^\dagger \left( -\frac{1}{2}(\sigma^1+i\sigma^2) \right) b^\dagger |0\rangle  \\
+  &=& \sqrt{2M} \int \frac{d^3 p}{(2\pi)^3} a^\dagger \left( \psi_1 \left(\frac{1}{2\sqrt{2}}\sigma^1 + \frac{i}{2\sqrt{2}}\sigma^2\right) + \psi_2 \left(\frac{i}{2\sqrt{2}}\sigma^1 - \frac{1}{2\sqrt{2}}\sigma^2\right) \right) b^\dagger |0\rangle  \\
+\end{eqnarray}
+$$
+
+Comparing it to the definition of $$|B\rangle$$, we have $$\Sigma^1 = \frac{1}{2\sqrt{2}}\sigma^1 + \frac{i}{2\sqrt{2}}\sigma^2$$,
+$$\Sigma^2 = \frac{i}{2\sqrt{2}}\sigma^1 - \frac{1}{2\sqrt{2}}\sigma^2$$ and $$\Sigma^3 = 0$$, or equivalently,
+$$h^{ij}=\begin{pmatrix}\frac{\sqrt{3}}{2\sqrt{2}} & \frac{\sqrt{3}i}{2\sqrt{2}} & 0 \\
+\frac{\sqrt{3}i}{2\sqrt{2}} & -\frac{\sqrt{3}}{2\sqrt{2}} & 0  \\
+0 & 0 & 0 \\
+\end{pmatrix}$$.
+
+If we adopt these [Clebsch–Gordan coefficients](https://en.wikipedia.org/wiki/Table_of_Clebsch%E2%80%93Gordan_coefficients#_j1_=_1,_j2_=_1)
+to decompose $$J$$ into $$L$$ and $$S$$ (e.g. $$|J=1,J_z=0\rangle=\frac{1}{\sqrt{2}}|L_z=1,S_z=-1\rangle-\frac{1}{\sqrt{2}}|L_z=-1,S_z=1\rangle$$),
+we have the following $$h^{ij}$$ for $$J=2$$,
+
+$$
+\begin{eqnarray}
+  J_z=2&:& h^{ij}=\begin{pmatrix} \frac{\sqrt{3}}{2\sqrt{2}} & \frac{\sqrt{3}i}{2\sqrt{2}} & 0 \\ \frac{\sqrt{3}i}{2\sqrt{2}} & -\frac{\sqrt{3}}{2\sqrt{2}} & 0 \\ 0 & 0 & 0 \end{pmatrix}  \\
+  J_z=1&:& h^{ij}=\begin{pmatrix} 0 & 0 & -\frac{\sqrt{3}}{2\sqrt{2}} \\ 0 & 0 & -\frac{\sqrt{3}i}{2\sqrt{2}} \\ -\frac{\sqrt{3}}{2\sqrt{2}} & -\frac{\sqrt{3}i}{2\sqrt{2}} & 0 \end{pmatrix}  \\
+  J_z=0&:& h^{ij}=\begin{pmatrix} -\frac{1}{2} & 0 & 0 \\ 0 & -\frac{1}{2} & 0 \\ 0 & 0 & 1 \\ \end{pmatrix}  \\
+  J_z=-1&:& h^{ij}=\begin{pmatrix} 0 & 0 & \frac{\sqrt{3}}{2\sqrt{2}} \\ 0 & 0 & -\frac{\sqrt{3}i}{2\sqrt{2}} \\ \frac{\sqrt{3}}{2\sqrt{2}} & -\frac{\sqrt{3}i}{2\sqrt{2}} & 0 \end{pmatrix}  \\
+  J_z=-2&:& h^{ij}=\begin{pmatrix} \frac{\sqrt{3}}{2\sqrt{2}} & -\frac{\sqrt{3}i}{2\sqrt{2}} & 0 \\ -\frac{\sqrt{3}i}{2\sqrt{2}} & -\frac{\sqrt{3}}{2\sqrt{2}} & 0 \\ 0 & 0 & 0 \\ \end{pmatrix}  \\
+\end{eqnarray}
+$$
+
+and the following for $$J=1$$.
+
+$$
+\begin{eqnarray}
+  J_z=1&:& \mathbf{n}=(\frac{i}{\sqrt{2}}, -\frac{1}{\sqrt{2}}, 0)  \\
+  J_z=0&:& \mathbf{n}=(0, 0, -i)  \\
+  J_z=-1&:& \mathbf{n}=(-\frac{i}{\sqrt{2}}, -\frac{1}{\sqrt{2}}, 0)
+\end{eqnarray}
+$$
+
+For $$J=0$$, we can verify that it should be $$\Sigma^i=-\frac{1}{\sqrt{6}}\sigma^i$$, with an extra sign compared
+to the one given in the original text.
+
+Since all $$\Sigma$$ matrices are expressed in terms of $$\sigma$$ matrices. It is worthwhile to see explicitly what
+each $$\sigma$$ matrix means. $$\sigma^1$$ corresponds to $$|S_z=-1\rangle - |S_z=1\rangle$$
+($$a^\dagger_\downarrow b^\dagger_\downarrow - a^\dagger_\uparrow b^\dagger_\uparrow$$), $$\sigma^2$$ corresponds to
+$$i |S_z=-1\rangle + i|S_z=1\rangle$$ ($$i a^\dagger_\downarrow b^\dagger_\downarrow + i a^\dagger_\uparrow b^\dagger_\uparrow$$), 
+and $$\sigma^3$$ corresponds to $$\sqrt{2}|S_z=0\rangle$$
+($$a^\dagger_\uparrow b^\dagger_\downarrow + a^\dagger_\downarrow b^\dagger_\uparrow$$).
+
+#### Part (d)
+
+Combining the results from Part (b) and Part (c), we have the following.
+
+$$
+\begin{eqnarray}
+  \sigma^1_{\pm\pm} \rightarrow -4i \frac{e^2}{m} k^x & \qquad\qquad & \sigma^1_{+-} \rightarrow 4i \frac{e^2}{m} (k^x - i k^y) & \qquad\qquad & \sigma^1_{-+} \rightarrow 4i \frac{e^2}{m} (k^x + i k^y)  \\
+  \sigma^2_{\pm\pm} \rightarrow -4i \frac{e^2}{m} k^y & \qquad\qquad & \sigma^2_{+-} \rightarrow 4 \frac{e^2}{m} (k^x - i k^y) & \qquad\qquad & \sigma^2_{-+} \rightarrow -4 \frac{e^2}{m} (k^x + i k^y)  \\
+  \sigma^3_{\pm\pm} \rightarrow -4i \frac{e^2}{m} k^z & \qquad\qquad & \sigma^3_{\pm\mp} \rightarrow 0
+\end{eqnarray}
+$$
+
+Also note that there is a sign error in the formula given in Part (b) in the original textbook. We also use the following
+for the positronium spatial wavefunction with $$L=1$$ and electron mass $$m$$.
+
+$$\psi_{2,1,i}(\mathbf{x}) = \sqrt{\frac{(\alpha m)^5}{\pi}} \frac{x^i}{32} e^{-\alpha m r/4}, $$
+
+which gives us $$f(0) = \frac{\alpha^{5/2} m^{5/2}}{32 \sqrt{\pi}} $$.
+
+Let us start with $$J=0$$.
+
+$$
+\begin{eqnarray}
+  &&  i\hat{\mathcal{M}}(P_{J=0,J_z=0}\rightarrow \gamma_\pm\gamma_\pm)  \\
+  &=& \frac{1}{\sqrt{m}} \int \frac{d^3k}{(2\pi)^3} \frac{-1}{\sqrt{6}} (-4i \frac{e^2}{m}) \left( \psi_1(\mathbf{k}) k^x + \psi_2(\mathbf{k}) k^y  + \psi_3(\mathbf{k}) k^z \right)  \\
+  &=& \frac{4i e^2}{\sqrt{6}m^{3/2}} (-i) \left( \frac{\partial \psi_1(\mathbf{x})}{\partial x} + \frac{\partial \psi_2(\mathbf{x})}{\partial y} + \frac{\partial \psi_3(\mathbf{x})}{\partial z} \right) \Bigg |_{\mathbf{x}=0}  \\
+  &=& \frac{12 e^2}{\sqrt{6}m^{3/2}} f(0)  \\
+  &=& \sqrt{\frac{3\pi\alpha^7}{8}} m
+\end{eqnarray}
+$$
+
+Following exactly the same procedure, we get $$ i\hat{\mathcal{M}}(P_{J=0,J_z=0}\rightarrow \gamma_\pm\gamma_\mp) = 0$$,
+which should not be a surprise given the conservation of $$J_z$$.
+
+By summing up $$\gamma_+\gamma_+$$ and $$\gamma_-\gamma_-$$, and taking into account that the two photons are
+indistinguishable, we have $$\Gamma(P_{J=0}\rightarrow 2\gamma) = \frac{3}{128}\alpha^7 m$$.
+
+For $$J=1$$, we have $$ i\hat{\mathcal{M}}(P_{J=1,J_z=0,\pm 1}\rightarrow \gamma_\pm\gamma_\pm) = i\hat{\mathcal{M}}(P_{J=1,J_z=0,\pm 1}\rightarrow \gamma_\pm\gamma_\mp) = 0$$,
+by following the same calculation.
+
+For $$J=2$$, most $$i\hat{\mathcal{M}}$$ terms vanish, excecpt for
+
+$$
+\begin{eqnarray}
+  &&  i\hat{\mathcal{M}}(P_{J=2,J_z=2}\rightarrow \gamma_+\gamma_-)  \\
+  &=& \frac{1}{\sqrt{m}} \int \frac{d^3k}{(2\pi)^3} \frac{1}{2\sqrt{2}} (\psi_1\sigma^1_{+-}+i\psi_1\sigma^2_{+-}+i\psi_2\sigma^1_{+-}-\psi_2\sigma^2_{+-})  \\
+  &=& \frac{1}{\sqrt{m}} \int \frac{d^3k}{(2\pi)^3} \frac{1}{2\sqrt{2}} (4i \frac{e^2}{m}) \left( 2\psi_1(\mathbf{k}) k^x + 2\psi_2(\mathbf{k}) k^y \right)  \\
+  &=& \sqrt{\frac{\pi\alpha^7}{2}} m,
+\end{eqnarray}
+$$
+
+and
+
+$$
+\begin{eqnarray}
+  &&  i\hat{\mathcal{M}}(P_{J=2,J_z=-2}\rightarrow \gamma_-\gamma_+)  \\
+  &=& \frac{1}{\sqrt{m}} \int \frac{d^3k}{(2\pi)^3} \frac{1}{2\sqrt{2}} (\psi_1\sigma^1_{-+}-i\psi_1\sigma^2_{-+}-i\psi_2\sigma^1_{-+}-\psi_2\sigma^2_{-+})  \\
+  &=& \frac{1}{\sqrt{m}} \int \frac{d^3k}{(2\pi)^3} \frac{1}{2\sqrt{2}} (4i \frac{e^2}{m}) \left( 2\psi_1(\mathbf{k}) k^x + 2\psi_2(\mathbf{k}) k^y \right)  \\
+  &=& \sqrt{\frac{\pi\alpha^7}{2}} m.
+\end{eqnarray}
+$$
+
+By summing up $$\gamma_+\gamma_-$$ and $$\gamma_-\gamma_+$$ and averaging over the five $$J_z$$s, we have
+$$\Gamma(P_{J=2}\rightarrow 2\gamma) = \frac{1}{160}\alpha^7 m$$.

@@ -1,7 +1,7 @@
 baseURL = "http://www.petraaxolotl.com"
 languageCode = "en-us"
 title = "All axolotls enjoy mathematics. But this one also loves physics."
-theme = "gohugo-theme-ananke"
+theme = "ananke"
 copyright = "Petra Axolotl"
 favicon = "images/favicon.png"
 pluralizelisttitles = "false"
