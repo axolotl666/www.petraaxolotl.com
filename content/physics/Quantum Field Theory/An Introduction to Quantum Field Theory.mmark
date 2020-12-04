@@ -596,9 +596,6 @@ $$
 Note that we are ignoring terms proportional to zero powers of $$\mathbf{k}$$, because they don’t matter for $$L=1$$, where
 the spatial wavefunction is odd and such terms lead to 0.
 
-Also note that result above converves $$J_z$$. For example, $$i\hat{\mathcal{M}}^{S=1,S_z=-1}_{\pm\pm}$$ has $$J_z=L_z+S_z=1-1=0$$,
-the same as that of two right-handed (or two left-handed) photons in the opposite direction.
-
 #### Part (c)
 
 This problem has serious issues.
@@ -746,3 +743,45 @@ $$
 
 By summing up $$\gamma_+\gamma_-$$ and $$\gamma_-\gamma_+$$ and averaging over the five $$J_z$$s, we have
 $$\Gamma(P_{J=2}\rightarrow 2\gamma) = \frac{1}{160}\alpha^7 m$$.
+
+It is very nice to see that $$i\hat{\mathcal{M}}(P \rightarrow 2\gamma)$$ is non-zero only when $$J_z$$ is conserved.
+
+### 5.5
+
+To derive $$\sum_i \epsilon_\mu^{(i)} \epsilon_\nu^{(i)*} \rightarrow -g_{\mu\nu}$$, simply set $${\epsilon^{(3)}}^\mu = (k/m,0,0,E/m)$$
+and $$k^\mu = (E,0,0,k)$$. To same derivation on Page 160 gives us this result.
+
+Xianyu's solution is generally correct, with a few exceptions.
+
+#### Part (a)
+
+In (5.80), $$ig$$ should be $$-ig$$, although it has no further consequence.
+
+In (5.84), $$dp$$ should be $$dE_p$$ in the last line.
+
+#### Part (b)
+
+In (5.86), $$\frac{i}{\not{k}_1-\not{p}_1}$$ really means $$\frac{i(\not{k}_1-\not{p}_1)}{(k_1-p_1)^2}$$. It's a notation that
+is introduced in Chapter 7.
+
+#### Part (c)
+
+In the textbook we have *Show that the denominator of the propagator then never becomes smaller than $$O(m_e^2/s)$$*. This sentence
+is very misleading. When we choose *not* to ignore electron mass, the denominator of the propagator is $$2 x E(k \cos\theta - E)$$.
+Note that $$x$$ is fully determined by $$E$$, $$m_e$$, $$m_B$$ and $$\theta$$. The minimal value of its *absolute value* is reached when
+$$\theta=0$$. Also with $$E-k \approx m_e^2/2E$$, the minimal absolute value is $$x m_e^2$$.
+
+Energy conservation gives us $$x = 1 - m_B^2/s$$. So the minimal absolute value is $$(s-m_B^2)m_e^2/s$$. If we compare this to
+$$t$$ in the derivation in Xianyu's solution, where $$m_e$$ is set to 0 in (5.89), we have
+
+$$t = -(s-m_B^2)m_e^2/s = (m_B^2-s) \sin^2 (\theta/2),$$
+
+giving us $$\theta^2 = 4 m_e^2/s$$.
+
+So in (5.92), the upper limit of the integral should really be $$1 - 2 m_e^2/$$ instead of $$1 - m_e^2/$$. But such a constant term
+does not matter when only the leading logarithmic term, proportional to $$\log(s/m_e^2)$$, is retained. Also, if we choose to keep
+the $$\cos^2\theta$$ from (5.91) inside the integral, instead of just setting it to 1, we get the same end result *to the leading
+logarithmic term proportional to $$\log(s/m_e^2)$$*.
+
+### 5.6
+
