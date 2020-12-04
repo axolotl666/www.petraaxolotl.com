@@ -785,3 +785,38 @@ logarithmic term proportional to $$\log(s/m_e^2)$$*.
 
 ### 5.6
 
+#### Part (a)
+
+The definitions of $$\epsilon_+^\mu$$ and $$\epsilon_-^\mu$$ should be swapped. Since both sides of the definitions are Lorentz vectors,
+we only need to show it is valid in a particular frame where $$k^\mu=(k,0,0,k)$$, $$p^\mu=(p,p\sin\theta,0,p\cos\theta)$$,
+$$u_R(k)=\sqrt{2k} (0,0,1,0)^T$$ and $$u_R(p)=\sqrt{2p} (0,0,\cos(\theta/2),\sin(\theta/2))^T$$. Then we have
+$$\epsilon_-^\mu=\frac{1}{\sqrt{2}} (\cot(\theta/2),1,-i,\cot(\theta/2))$$. We get similar results for $$\epsilon_+^\mu$$.
+
+Also, the statement *The second term on the right gives zero when dotted with any photon emission amplitude $$\mathcal{M}^\mu$$* is
+inaccurate. $$\mathcal{M}^\mu$$ should be replaced by $$\mathcal{M}^\mu(k) {\mathcal{M}^\nu}^*(k)$$.
+
+Xianyu's solution is good. Note that in the derivation of (5.95), we can freely add terms like
+$$\bar{u}_R(k) \gamma^\mu u_L(p) \bar{u}_L(p) \gamma^\nu u_R(k)$$, because terms like $$\bar{u}_R(k) \gamma^\mu u_L(p)$$ vanish
+as it can be easily seen in the chiral representation.
+
+#### Part (a)
+
+(5.97) in Xianyu's solution should be re-derived accordingly as follows.
+
+$$
+\begin{eqnarray}
+  &&  i\hat{\mathcal{M}}(e_L^- e_R^+ \rightarrow \gamma_L \gamma_R)  \\
+  &=& -(ie)^2 {\epsilon_-}_\mu^*(p_1) {\epsilon_+}_\nu^*(p_2) \bar{u}_L(k_2) \left( \gamma^\nu \frac{i(\not{k_1}-\not{p_1})}{(k_1-p_1)^2} \gamma^\mu + \gamma^\mu \frac{i(\not{k_1}-\not{p_2})}{(k_1-p_2)^2} \gamma^\nu \right) u_L(k_1)  \\
+  &=& -ie^2 \frac{[k_1\gamma_\mu p_1\rangle\langle k_2\gamma_\nu p_2]}{4\sqrt{(k_1\cdot p_1)(k_2\cdot p_2)}} \left(\frac{\langle k_2 \gamma^\nu (\not{k_1}-\not{p_1}) \gamma^\mu k_1]}{t} + \frac{\langle k_2 \gamma^\mu (\not{k_1}-\not{p_2}) \gamma^\nu k_1]}{u} \right)  \\
+  &=& -ie^2 \frac{\langle p_1 \gamma_\mu k_1]\langle k_2\gamma_\nu p_2]}{2t} \left(\frac{\langle k_2 \gamma^\nu k_1]\langle k_1 \gamma^\mu k_1] - \langle k_2 \gamma^\nu p_1]\langle p_1 \gamma^\mu k_1]}{t} + \frac{\langle k_2 \gamma^\mu k_1]\langle k_1 \gamma^\nu k_1] - \langle k_2 \gamma^\mu p_2]\langle p_2 \gamma^\nu k_1]}{u} \right)  \\
+  &=& \frac{-2ie^2}{t} \left(\frac{\langle k_1 p_1 \rangle [k_1 k_1] \langle k_2 k_2 \rangle [k_1 p_2] - \langle p_1 p_1 \rangle [k_1 k_1] \langle k_2 k_2 \rangle [p_1 p_2]}{t} + \frac{\langle k_2 p_1 \rangle [k_1 k_1] \langle k_2 k_1 \rangle [k_1 p_2] - \langle k_2 p_1 \rangle [k_1 p_2] \langle k_2 p_2 \rangle [k_1 p_2]}{u} \right)  \\
+  &=& \frac{2ie^2}{t} \frac{\langle k_2 p_1 \rangle [k_1 p_2] \langle k_2 p_2 \rangle [k_1 p_2]}{u}
+\end{eqnarray}
+$$
+
+This is simply (5.99) in Xianyu's solution.
+
+Likewise, (5.97) in Xianyu's solution actually gives us $$i\hat{\mathcal{M}}(e_L^- e_R^+ \rightarrow \gamma_R \gamma_L)$$.
+
+Therefore, $$\frac{t}{u}$$ and $$\frac{u}{t}$$ in (5.100) and (5.101) in Xianyu's solution should be swapped and this change
+gives us the same result (5.102).
