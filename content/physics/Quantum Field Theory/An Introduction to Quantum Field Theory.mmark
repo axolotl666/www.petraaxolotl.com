@@ -514,13 +514,146 @@ Xianyu's solution is very good, except for the following.
 
 # Chapter 5
 
+## Notes
+
+### Page 137
+
+To understand the one but last paragraph on this page, note that the curve in Figure 5.1 is
+$$\sigma \cdot E^2_{cm}$$ instead of $$\sigma$$.
+
+### Page 144
+
+About Figure 5.4, note that if we measure the spins of the muons along the $$z$$-direction, as well as the momenta,
+total spin-$$z$$ will always be conserved. However, if we measure the helicity (i.e. spin in the direction of momentum)
+we will get a distribution.
+
+If we only measure the spins of the muons, but not the momenta, things are more complicated, because it is angular momentum,
+rather than total spin, that is conserved. (See (3.111).) Since there is angular dependency in the wave function of the two muons,
+orbital angular momentum is non-zero, and therefore total spin itself is not conserved. The muon wave function is basically a mixture
+of $$1s$$ and $$2p$$ (with $$L_z = 0$$). Since $$J_z = L_z + S_z$$, $$S_z$$ is still conserved.
+
+There is thus no contradiction with Section 5.3.
+
+### Page 149
+
+In (5.42), there should be a minus sign according Notations and Conventions.
+
+### Page 150
+
+Here is how to derive (5.51).
+
+From (5.34) and (5.36), we have
+
+$$\Gamma(k) = -i \sqrt{2} e^2 \sigma^i \epsilon^i.$$
+
+Then we have, from (5.50)
+
+$$
+\begin{eqnarray}
+  &&  \mathrm{tr} \left( \frac{\Gamma(k)\dot {\mathbf{n}^*}^j \sigma^j}{\sqrt{2}i} \right)  \\
+  &=& - e^2 \mathrm{tr} \left( \mathbf{\epsilon}^i {\mathbf{n}^*}^j \sigma^i \sigma^j \right)  \\
+  &=& - e^2 \mathrm{tr} \left( \mathbf{\epsilon}^i {\mathbf{n}^*}^j (\delta^i_j + i \epsilon_{ijk} \sigma^k) \right)  \\
+  &=& - e^2 \mathrm{tr} \left( \mathbf{\epsilon}^i {\mathbf{n}^*}^i + i \epsilon_{ijk} \mathbf{\epsilon}^i {\mathbf{n}^*}^j \sigma^k) \right)
+\end{eqnarray}
+$$
+
+Since the trace of all sigma matrices is 0, the trace of the second part is 0 and we have
+
+$$\mathrm{tr} \left( \frac{\Gamma(k)\dot {\mathbf{n}^*}^j \sigma^j}{\sqrt{2}i} \right) = - 2e^2 \mathbf{\epsilon}^i {\mathbf{n}^*}^i.$$
+
+### Page 152
+
+It is interesting that we multiply Equation (5.57) by a color factor of 3 for the case of a spin-1 $$q\bar{q}$$ decay.
+We are summing instead of averaging over the three colours.
+
+The reason is that a quarkonium is always in the state of $$ \frac{1}{\sqrt{3}} (r\bar{r} + g\bar{g} + b\bar{b})$$,
+instead of having three eigenstates $$r\bar{r}$$, $$g\bar{g}$$, and $$b\bar{b}$$.
+
+### Page 160
+
+To derive (5.79), integrate by parts on the RHS of (5.78) and assume the integrand goes to 0 at infinity.
+
+### Page 161
+
+To derive (5.81), note if there are multiple gamma matrices between $$\bar{u}$$ and $$u$$, their order needs to be reversed
+when we take the complex conjugate. Also see Page 132 for reference.
+
+### Page 167
+
+To derive the un-numbered equation, we should also calculate $$2p\cdot k$$ besides $$2k\cdot k'$$ in the center-of-mass frame
+and in the lab frame.
+
 ## Problems
 
 ### 5.1
 
+There is a minor correction in the Errata.
+
+Xianyu's solution is good except for the following.
+- In (5.5), $$|\mathbf{k}|^4$$ should be $$|\mathbf{k}|^2$$.
+- In (5.8), a factor of $$\frac{1}{4}$$ is missing in the intermediate step.
+- Immediately above (5.12), $$4k^2\sin^2\frac{\theta}{2}$$ should have a minus sign.
+- In (5.12), it should be $$\sin^4\frac{\theta}{2}$$ in the denominator.
+
 ### 5.2
 
+Xianyu's solution is good except for the following.
+- In (5.19), $$E_{CM}$$ should be $$E_{CM}^2$$.
+
 ### 5.3
+
+In Problem 3.3, $$u_{R0}$$ was defined using another vector $$k_1$$. But once $$u_{R0}$$ was defined, $$k_1$$ was
+no longer needed anywhere. So we may as well pick an $$u_{R0}$$ from the very beginning.
+
+#### Part (a)
+
+Xianyu's solution is good except for the following.
+- In (5.28), the last $$(1-\gamma^5)$$ should be $$(1+\gamma^5)$$.
+
+#### Part (b)
+
+Xianyu's solution is good except for the following.
+- Immediately below (5.32), $$C \mathrm{tr}(\not{p_1}\gamma^\mu\not{p_2})$$ should be
+$$C \mathrm{tr}(\not{p_1}\gamma^\mu\not{p_2}\frac{1+\gamma^5}{2}\not{k_0})$$.
+
+#### Part (c)
+
+Another way to argue about the form of $$[M]$$ is as follows.
+
+Any 4-by-4 matrix can be written as a linear combination of the 16 $$\Gamma$$ matrices, of which 8 are block-wise diagonal
+(1, $$\gamma^5$$, $$\gamma^\mu \gamma^\nu$$), and 8 are block-wise off-diagonal ($$\gamma^\mu$$, $$\gamma^\mu \gamma^5$$).
+The RHS, being itself block-wise off-diagonal, must be a linear combination of the 8 block-wise off-diagonal $$\Gamma$$ matrices.
+
+Xianyu's solution is good except for the following.
+- Between (5.33) and (5.34), $$\gamma^\mu M=-M\gamma^5$$ should be $$\gamma^5 M=-M\gamma^5$$.
+
+#### Part (d)
+
+Xianyu's solution is good except for the following.
+- In (5.36), $$(-i e^2)$$ should be $$(-i e)^2$$.
+- In (5.39), $$E_{CM}$$ should be $$E_{CM}^2 = s$$. Idem for the rest of the solution.
+- In (5.40), a factor of $$\frac{4}{s^2}$$ is missing in the intermediate step.
+
+In (5.37), note that $$\bar{v}_R(p_1)\gamma_\mu v_R(p_2)$$ can be written as $$[\bar{v}_R(p_1)]_a [\gamma_\mu]_{ab} [v_R(p_2)]_b$$.
+Also, $$\bar{v}_R(p_1) u_R(k_1)$$ vanishes and this is most obvious in the chiral representation.
+
+#### Part (e)
+
+Xianyu's solution is a bit more messed up here.
+
+By simple visual inspection in the chiral representation, we can see that the $$t$$-channel term in (5.41)
+is 0. A similar observation leads to (5.45), which contains a sign error.
+
+(5.43), (5.44), and (5.46) can be easily obtained by replacing variables.
+- (5.43) can be obtained from (5.42) by $$p_1 \leftrightarrow k_2$$.
+- (5.44) can be obtained from (5.41) by $$k_1 \leftrightarrow p_1$$ and $$k_2 \leftrightarrow p_2$$.
+- (5.46) can be obtained from (5.45) by $$k_1 \leftrightarrow p_2$$ and $$k_2 \leftrightarrow p_1$$.
+
+(5.46) has the same sign error as in (5.45).
+
+It should be $$s$$ instead of $$2s$$ in the denominator in (5.47), (5.48), and (5.49).
+
+Sum all possibilities up, divided it by four, and we get the correct answer (5.50).
 
 ### 5.4
 
