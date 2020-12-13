@@ -932,7 +932,7 @@ Xianyu's solution is good. Note that in the derivation of (5.95), we can freely 
 $$\bar{u}_R(k) \gamma^\mu u_L(p) \bar{u}_L(p) \gamma^\nu u_R(k)$$, because terms like $$\bar{u}_R(k) \gamma^\mu u_L(p)$$ vanish
 as it can be easily seen in the chiral representation.
 
-#### Part (a)
+#### Part (b)
 
 (5.97) in Xianyu's solution should be re-derived accordingly as follows.
 
@@ -953,3 +953,58 @@ Likewise, (5.97) in Xianyu's solution actually gives us $$i\hat{\mathcal{M}}(e_L
 
 Therefore, $$\frac{t}{u}$$ and $$\frac{u}{t}$$ in (5.100) and (5.101) in Xianyu's solution should be swapped and this change
 gives us the same result (5.102).
+
+# Chapter 6
+
+## Notes
+
+### Page 178
+
+The placement of the poles at $$k^0=\pm|\mathbf{k}|$$ below the real axis might seem a bit arbitrary. The point
+is that this is the only way to ensure that $$A^\mu(x)$$ with $$t<0$$ be the Coulomb potential of an unaccelerated
+charge.
+
+The un-numbered equation at the bottom of the page is a bit sloppy. The $$k$$ in $$k^2$$ in the denominator is a
+4-momentum with $$k^0$$ set to $$\mathbf{k}\cdot\mathbf{p}/p^0$$. It should have been written similar to Eq. (6.6).
+
+For some more details on the electromagnetic field, one can refer to Shankar's *Principles of Quantum Mechanics*, Section
+18.5.
+
+### Page 182
+
+Technically, the last equality in (6.17) should be approximate equality.
+
+### Page 187
+
+Regarding the *Born approximation of scattering from a potential*, refer to the discussion around (4.123) and (4.124).
+
+Immediately below (6.35), by *vanishes at $$\mathbf{q}=0$$*, the author means that radiative corrections vanish.
+
+### Page 188
+
+There is a sign error in the equation/defintion of $$\tilde{B}^k(\mathbf{q})$$.
+
+### Page 190
+
+For the statement *the denominator depends only on $$l^2$$* to make sense, we need to assume that $$p$$ corresponds
+to an external (thus non-virtual) electron, and thus $$p^2=m_e^2$$.
+
+### Page 191
+
+For a detailed derivation of (6.44), see [this post](https://physics.stackexchange.com/questions/127931/error-in-standard-textbook-an-introduction-to-quantum-field-theory-of-peskin-a).
+
+To see why $$q^2<0$$, note that we can always find a frame where the incoming and outgoing electrons have the same energy.
+
+### Page 192
+
+For a detailed derivation of the numerator, see [this post](https://physics.stackexchange.com/questions/279528/calculation-of-electron-vertex-correction-in-peskin-and-schroeder).
+
+### Page 193
+
+The statement *the Wick rotation cannot be justified* does not seem to make sense. Wick rotation should be fine up
+to $$l^4$$ in the numerator when $$m=3$$.
+
+### Page 195
+
+The statement *the divergence appears in the worst possible place...* means that an infinite $$\Lambda$$ leads to an infinite
+$$\log\frac{z\Lambda^2}{\Delta}$$.
