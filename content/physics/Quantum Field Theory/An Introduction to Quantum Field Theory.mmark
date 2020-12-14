@@ -1008,3 +1008,19 @@ to $$l^4$$ in the numerator when $$m=3$$.
 
 The statement *the divergence appears in the worst possible place...* means that an infinite $$\Lambda$$ leads to an infinite
 $$\log\frac{z\Lambda^2}{\Delta}$$.
+
+### Page 208
+
+The "correction" to Eq. (6.86) in the official Errata actually makes things worse. The original text is perfectly correct.
+Only its interpretation requires some explanation.
+
+(6.86) is a conditional probability, i.e., given that we observe those hard photons, with the threshold $$E_l$$ being $$E_+$$,
+what is the probability that there are exactly $$n$$ soft photons with energy between $$E_-$$ and $$E_+$$, and whatever number
+of soft photos with energy less than $$E_-$$. This can be clearly seen when we can multiply it to (6.84) as follows.
+
+$$
+\begin{eqnarray}
+  &&  \left(\frac{d\sigma}{d\Omega}\right)_0 \times \exp\left[-\frac{\alpha}{\pi}f_{\mathrm{IR}}(q^2)\log\left(\frac{-q^2}{E_+^2}\right)\right] \times \frac{1}{n!}\left[\frac{\alpha}{\pi}f_{\mathrm{IR}}(q^2)\log\left(\frac{E_+^2}{E_-^2}\right)\right]^n \times \exp\left[-\frac{\alpha}{\pi}f_{\mathrm{IR}}(q^2)\log\left(\frac{E_+^2}{E_-^2}\right)\right]  \\
+  &=& \left(\frac{d\sigma}{d\Omega}\right)_0 \times \exp\left[-\frac{\alpha}{\pi}f_{\mathrm{IR}}(q^2)\log\left(\frac{-q^2}{E_-^2}\right)\right] \times \frac{1}{n!}\left[\frac{\alpha}{\pi}f_{\mathrm{IR}}(q^2)\log\left(\frac{E_+^2}{E_-^2}\right)\right]^n
+\end{eqnarray}
+$$
