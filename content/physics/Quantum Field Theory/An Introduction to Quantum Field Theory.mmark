@@ -57,7 +57,7 @@ to an imaginary number.
 
 ## Problems
 
-### 2 .1
+### 2.1
 
 Xianyu's solution is good, except for an obvious typo in (2.5), where the last $$F_{\mu\lambda}$$ should be $$F_{\lambda\mu}$$.
 
@@ -65,7 +65,7 @@ It should be stressed that when we calculate energy and momentum densities, we a
 because their integral leads to surface terms, which we take to vanish at infinity. The implication is that any densities are
 well deﬁned only in a smeared sense, i.e. as an average over a big enough area.
 
-### 2 .2
+### 2.2
 
 Xianyu's solution is good, except for the following typos or minor issues.
 
@@ -1024,3 +1024,113 @@ $$
   &=& \left(\frac{d\sigma}{d\Omega}\right)_0 \times \exp\left[-\frac{\alpha}{\pi}f_{\mathrm{IR}}(q^2)\log\left(\frac{-q^2}{E_-^2}\right)\right] \times \frac{1}{n!}\left[\frac{\alpha}{\pi}f_{\mathrm{IR}}(q^2)\log\left(\frac{E_+^2}{E_-^2}\right)\right]^n
 \end{eqnarray}
 $$
+
+## Problems
+
+### 6.1
+
+Xianyu's solution is probably not wrong. But there are many gaps in the derivations. So it is better to refer
+to Bourjaily's solution.
+
+Below is a list of the minor errors.
+- $$(k' \cdot p)(k \cdot p)$$ should be $$(k' \cdot p)(k \cdot p')$$ at the bottom of Page 1. This error is propagated to
+the top of Page 3, but corrected thereafter.
+- It should be $$p' = (E-E'+m,E\hat{z}-\vec{k'})$$ on Page 2.
+- It should be $$k' = (E',0,E'\sin\theta,E'\cos\theta)$$ on Page 2.
+- It should be $$k^2=0=k'^2+2q\cdot k'+q^2=2p'\cdot k'-2p\cdot k'+q^2=2p'\cdot k'-2Em$$ on Page 2.
+- $$F_s$$ should be $$F_2$$ on Page 3.
+- It should be $$\frac{q^2}{4}=-\frac{2E^2m^2}{1+\frac{2E}{m}\sin^2\frac{\theta}{2}}\frac{q^2}{2m^2}\sin^2\frac{\theta}{2}$$
+on Page 3.
+- In the third line of the derivation of $$\sigma$$ on Page 4, $$dE$$ should be $$dE'$$. A more serious conceptual error is
+that $$\bar{|\mathcal{M}|^2}$$ should be inside the integral throughout the derivation. Basically we should move the integral sign
+to the leftmost on every single line.
+
+### 6.2
+
+Xianyu's solution is good.
+
+#### Part (a)
+
+Note that the expansion is simply decomposing a 4-vector into four linearly independent basis vectors.
+
+#### Part (b)
+
+To see how to reach (6.19) from the three preceding equations in Xianyu's solution, simply notice that when
+we throw away the time dimension in the equation in Part (a) in the textbook where $$A$$, $$B$$, $$C$$, and $$D$$
+are defined, $$\mathbf{\epsilon}_1$$, $$\mathbf{\epsilon}_2$$, and $$\mathbf{q}$$ are orthorgonal to each other.
+We immediately get (6.19) by multiplying $$\mathbf{\epsilon}_1$$ or $$\mathbf{\epsilon}_2$$ on both sides of the equation.
+
+#### Part (c)
+
+In (6.20) and (6.21), $$\hat{\mathcal{M}}_\nu(q)$$ should be $$\hat{\mathcal{M}}_\nu^*(q)$$.
+
+There are a few issues with (6.22).
+
+First, Xianyu is already using an assumption from Part (e), that *the target cross sections are independent of
+the photon polarization*, which means $$\epsilon_1^\mu{\epsilon_1^\nu}^*$$ and $$\epsilon_2^\mu{\epsilon_2^\nu}^*$$
+are equivalent to each other, as long as they are dotted into $$\hat{\mathcal{M}}_\mu(q)\hat{\mathcal{M}}_\nu^*(q)$$.
+Eq. (5.75) in the textbook then implies that we should have $$\epsilon_1^\mu{\epsilon_1^\nu}^*\rightarrow-\frac{1}{2}g^{\mu\nu}$$
+and $$\epsilon_2^\mu{\epsilon_2^\nu}^*\rightarrow-\frac{1}{2}g^{\mu\nu}$$. Note that the factor should be $$-\frac{1}{2}$$
+instead of $$-\frac{1}{3}$$, because there are in fact also $$\epsilon_0$$ and $$\epsilon_3$$ that cancel each other.
+So the factor of $$\frac{1}{3}$$ in the second line of (6.22) should be  $$\frac{1}{2}$$ instead. This factor somehow got
+lost between the second and the third line of (6.22).
+
+(If we postpone this assumption, we simply deal with the two polarizations separately by splitting (6.22) into two equations.
+We will reach the same conclusion nonetheless.)
+
+Second, the minus sign in the third line should not be there. I guess Xianyu got it when he replaced the integral variable
+$$p'$$ (or equivalently $$E'$$) by $$x$$. But we should then also swap the upper and lower limits of the integral over $$x$$.
+What those values are exactly does not really matter in the end, as long as the lower limit is less than the upper limit, because
+the $$\delta^4$$ term will fix it. The only integral in (6.22) that is not fixed by the $$\delta^4$$ term is that over
+$$\theta$$.
+
+Third, $$|\hat{\mathcal{M}}^\mu|^2$$ is effectively defined as $$-\hat{\mathcal{M}}^\mu \hat{\mathcal{M}}_\mu$$
+with a minus sign coming from averaging over photon polarizations.
+
+In (6.23), $$(1-\cos\theta)^4$$ should be $$(1-\cos\theta)^2$$.
+
+#### Part (d)
+
+The left-hand side of (6.24) means that the lower limit of the integral over $$\theta$$ is now effectively $$\frac{x}{1-x}\frac{m}{E}$$.
+Factors like $$\frac{x}{1-x}$$, or the upper bound of $$\theta$$, do not matter compared to the dominant term $$\log\frac{E^2}{m^2}$$.
+The minus sign on the right-hand side, however, should be removed. (This error cancels the previous sign error in (6.22).)
+
+#### Part (e)
+
+In (6.25), a factor of $$\frac{1}{2}$$ should be added, due to the error in Part (c). Note that $$Ex$$ is simply $$E_\gamma$$,
+the energy of the equivalent photon, so we can write, instead of (6.25),
+
+$$d\sigma=\frac{1}{2} dx \frac{1}{2E_\gamma2M_t}\frac{\alpha}{2\pi} \frac{1+(1-x)^2}{x}\log\frac{E^2}{m^2} \int\frac{d^3p_t}{(2\pi)^3 2E_t}|\hat{\mathcal{M}}^\mu(q)|^2 (2\pi)^4 \delta^{(4)}(\sum p_i).$$
+
+Note that this is exactly what we would write down if we pretend it is an incoming photon hitting the target, and replace the
+regular expression $$\int \frac{d^3p_\gamma}{(2\pi)^3 2E_\gamma}\ldots$$ by $$\int N_\gamma dx$$. The factor of $$\frac{1}{2}$$
+is then simply averaging over the photon helicity.
+
+### 6.3
+
+Xianyu's solution is probably not wrong. But there are many gaps in the derivations. So it is better to refer
+to Bourjaily's solution.
+
+#### Part (a)
+
+Note that we don't care about terms that only involve a $$\gamma^\mu$$ because they affect $$F_1$$ but
+for $$g$$ we only need $$F_1(0)$$, which is *always* set to 1.
+
+There are the following errors on Page 2.
+- In the first line of the calculation of the numerator, $$u(p)$$ is missing at the end.
+- It should be $$\textbf{(iv)} \rightarrow 2mp'^\mu$$.
+- $$(y-x)(z-1)$$ should be $$(x-y)(1+z)$$ in (a.4).
+
+#### Part (b)
+
+I have nothing to add to Bourjaily's solution.
+
+#### Part (c)
+
+It should be rather obvious that the $$a$$ should be $$\lambda$$'s subscript rather a standalone parameter
+in the textbook.
+
+There are the following errors on Page 4.
+- It should be $$\Delta=-xyq^2+(1-z)^2m_e^2+zm_a^2$$.
+- There is an overall sign error in $$i\mathcal{M}$$.
+- $$(y-x)(z-1)$$ should be $$(x-y)(1+z)$$ in (a.4).
