@@ -1134,3 +1134,561 @@ There are the following errors on Page 4.
 - It should be $$\Delta=-xyq^2+(1-z)^2m_e^2+zm_a^2$$.
 - There is an overall sign error in $$i\mathcal{M}$$.
 - $$(y-x)(z-1)$$ should be $$(x-y)(1+z)$$ in (a.4).
+
+# Chapter 7
+
+## Notes
+
+### Page 212
+
+For a better understanding of the following sentence, refer to [this post](https://physics.stackexchange.com/questions/34799/when-do-one-point-functions-vanish).
+
+*This term is usually zero by symmetry; for higher-spin fields, it is zero by Lorentz invariance.*
+
+### Page 216
+
+A review of the text leading to (4.57) is recommended before one studies *An Example: The Electron Self-Energy*.
+
+### Page 221
+
+[This link](https://physics.stackexchange.com/questions/487852/peskin-and-schroeder-section-7-1-mass-shift) provides a partial explanation
+to the claim below. However, it is still unclear why we would *need* linearity in $$m_0$$.
+
+*The mass shift must therefore be proportional to $$m_0$$, and so, by dimensional analysis, it can depend only logarithmically on $$\Lambda$$.*
+
+### Page 224
+
+The following statement is meant to be valid only at the singularity.
+
+*The denominator is just that of Eq. (7.5): p2 — ra2.*
+
+### Page 227
+
+The following statement requires some qualification.
+
+*By a similar analysis, it is easy to confirm that disconnected diagrams should be disregarded because they do not have the singularity structure,
+with a product of four poles, indicated on the right-hand side of (7.42).*
+
+For a 2-particle→2-particle scattering, a disconnected diagram would lead to two poles. But for a 3-particle→3-particle scattering
+($$\mathrm{a,b,c}\rightarrow\mathrm{1,2,3}$$), we can have a disconnected diagram with six poles with a and b connected to 1 and c connected
+to 2 and 3.
+
+Also, remember that the Feynman propagators for the two external lines in each diagram in the 1PI must not be included in the expression
+for $$-iM^2(p^2)$$. In particular, see (7.16) and the discussion below (7.21).
+
+### Page 231
+
+If one pays close attention to the derivation of (7.49), one should notice that there is nothing preventing $$f$$ from being the same
+as $$a$$ or $$b$$.
+
+### Page 233
+
+Regarding the phrase *in the physical region $$k^0 > 2m$$*, here we are already assuming the center-of-mass frame.
+In general, $$i\mathcal{M}$$ is a function of $$k^2$$ instead of $$k^0$$.
+
+### Page 234
+
+The paragraph above (7.53) deserves some elaboration.
+
+We certainly could close the integration contour upward and pick up the residues of the poles in the upper half-plane. We would,
+however, get exactly the same result.
+
+In (7.54), we only considered the pole at $$q^0=-(1/2)k^0+E_\mathbf{q}$$. If we also include the other pole $$q^0=(1/2)k^0+E_\mathbf{q}$$,
+we will get an extra term similar to the second line of (7.54), but with $$(k^0-2E_\mathbf{q})$$ in the denominator replaced by
+$$(k^0+2E_\mathbf{q})$$. This will not lead to any pole in the integrand and therefore will only contribute to the real part of $$\delta M$$.
+Note that strictly speaking, the equality in (7.54) is incorrect because it ignores this irrelevant but nonetheless non-zero contribution.
+
+To see why (7.53) is true, notice the following.
+
+$$
+\begin{eqnarray}
+  &&  \delta\left( (k/2+q)^2-m^2 \right)  \\
+  &=& \delta\left( (k^0/2+q^0)^2-E_\mathbf{q}^2 \right)  \\
+  &=& \delta\left( (k^0/2+q^0+E_\mathbf{q})(k^0/2+q^0-E_\mathbf{q}) \right)  \\
+  &=& \delta\left(q^0 - (-k^0/2-E_\mathbf{q}) \right) \frac{1}{|k^0/2+q^0-E_\mathbf{q}|} + \delta\left(q^0 - (-k^0/2+E_\mathbf{q}) \right) \frac{1}{|k^0/2+q^0+E_\mathbf{q}|}  \\
+\end{eqnarray}
+$$
+
+Subtitute this into (7.52), we have
+
+$$i\delta \mathcal{M} = -2\pi i \frac{\lambda^2}{2} \int \frac{d^3 q}{(2\pi)^4} \left( \frac{1}{(k^0+E_\mathbf{q})^2-E_\mathbf{q}^2} \frac{1}{2E_\mathbf{q}} + \frac{1}{(k^0-E_\mathbf{q})^2-E_\mathbf{q}^2} \frac{1}{2E_\mathbf{q}} \right),$$
+
+which is exactly the same as (7.54) if we had included both poles.
+
+Regarding the principle value $$P$$, refer to A.4 in Shankar's Principles of Quantum Mechanics.
+
+To verify the claim about (7.55), we substitue (7.53) and (7.55) into (7.52) and have
+
+$$
+\begin{eqnarray}
+  &&  i\delta \mathcal{M}  \\
+  &\rightarrow& \frac{\lambda^2}{2} \int \frac{d^4 q}{(2\pi)^4} (-2i\pi)^2 \delta\left( (k/2+q)^2-m^2 \right) \delta\left( (k/2-q)^2-m^2 \right)  \\
+  &=& - \frac{1}{(2\pi)^2} \frac{\lambda^2}{2} \int d^4 q \left( \delta\left(q^0 - (-k^0/2-E_\mathbf{q}) \right) \frac{1}{|k^0/2+q^0-E_\mathbf{q}|} + \delta\left(q^0 - (-k^0/2+E_\mathbf{q}) \right) \frac{1}{|k^0/2+q^0+E_\mathbf{q}|} \right) \left( \delta\left(q^0 - (k^0/2+E_\mathbf{q}) \right) \frac{1}{|k^0/2-q^0-E_\mathbf{q}|} + \delta\left(q^0 - (k^0/2-E_\mathbf{q}) \right) \frac{1}{|k^0/2-q^0+E_\mathbf{q}|} \right)  \\
+  &=& - \frac{1}{(2\pi)^2} \frac{\lambda^2}{2} \int d^3 q \left( \delta(k^0+2E_\mathbf{q}) \frac{1}{2E_\mathbf{q}k_0} + \delta(-k^0) \frac{1}{2E_\mathbf{q}(k_0+2E_\mathbf{q})} + \delta(-k^0) \frac{1}{2E_\mathbf{q}(k_0-2E_\mathbf{q})} + \delta(-k^0+2E_\mathbf{q}) \frac{1}{2E_\mathbf{q}k_0} \right)  \\
+  &=& - \frac{1}{\pi} \frac{\lambda^2}{2} \int_m^\infty dE_{\mathrm{q}} E_{\mathrm{q}} |q| \left( \delta(k^0+2E_\mathbf{q}) \frac{1}{2E_\mathbf{q}k_0} + \delta(-k^0) \frac{1}{2E_\mathbf{q}(k_0+2E_\mathbf{q})} + \delta(-k^0) \frac{1}{2E_\mathbf{q}(k_0-2E_\mathbf{q})} + \delta(-k^0+2E_\mathbf{q}) \frac{1}{2E_\mathbf{q}k_0} \right)  \\
+  &=& - \frac{1}{\pi} \frac{\lambda^2}{2} \int_m^\infty dE_{\mathrm{q}} |q| \delta(-k^0+2E_\mathbf{q}) \frac{1}{2k_0},
+\end{eqnarray}
+$$
+
+which is indeed the discontinuity $$i\delta \mathcal{M}(k^2+i\epsilon) - i\delta \mathcal{M}(k^2-i\epsilon)$$.
+
+### Page 235
+
+To make the discussion around (7.56) a bit more explicit, we have, starting from (7.52) and making the substitutions
+up to and including (7.56),
+
+$$
+\begin{eqnarray}
+  &&  \mathrm{Disc} (i \mathcal{M})  \\
+  &=& \frac{\lambda^2}{2} \int \frac{d^4 p_1}{(2\pi)^4} \int \frac{d^4 p_2}{(2\pi)^4} (2\pi)^4 \delta^{(4)}(p_1+p_2-k) (-2i\pi)^2 \delta(p_1^2-m^2) \delta(p_2^2-m^2)  \\
+  &=& -\frac{\lambda^2}{2} \int \frac{d^4 p_1}{(2\pi)^3} \int \frac{d^4 p_2}{(2\pi)^3} (2\pi)^4 \delta^{(4)}(p_1+p_2-k) \delta\left((p_1^0)^2-E_\mathrm{p_1}\right) \delta\left((p_2^0)^2-E_\mathrm{p_2}\right)  \\
+  &=& -\frac{\lambda^2}{2} \int \frac{d^3 p_1}{(2\pi)^3} \int \frac{d^3 p_2}{(2\pi)^3} (2\pi)^4 \delta^{(4)}(p_1+p_2-k) \frac{1}{2E_\mathrm{p_1}} \frac{1}{2E_\mathrm{p_2}}  \\
+  &=& -\frac{1}{2} \int \frac{d^3 p_1}{(2\pi)^3} \frac{1}{2E_\mathrm{p_1}} \int \frac{d^3 p_2}{(2\pi)^3} \frac{1}{2E_\mathrm{p_2}} |\mathcal{M}(k)|^2 (2\pi)^4 \delta^{(4)}(p_1+p_2-k),
+\end{eqnarray}
+$$
+
+where $$\mathcal{M}(k)=-\lambda+O(\lambda^2)$$ as can be seen in the discussion under (4.98).
+
+### Page 236
+
+Note that for *the order-$$\alpha^2$$ Bhabha scattering diagrams shown in Fig. 7.6*, the factor of $$\frac{1}{2}$$
+is absent since it is about the scattering of an electron and a positron, which are not identical.
+
+The validity of (7.57) cannot be established by the arguments given in the textbook for the following reasons.
+- The claim in the paragraph above (7.57) that $$-iM^2(p^2)$$ can be thought of as the sum of all amputated diagrams
+is dubious. If we refer back to (4.54), the first sub-diagram cannot be expressed as something conforming to Figure 7.4;
+the second one is unambiguous; the third however presents a problem, as the suggested "amputated diagram" can contain
+the first loop, the second loop, or both, and this will lead to multiple counting of the same sub-diagram in the
+complete, un-amputated diagram.
+- Even if we accept the previous claim any way, now we rely on the un-numbered equation at the top of Page 229. It
+is however $$S$$, instead of $$iT$$, on the left-hand side. So the left-hand side will give us an extra term $$\langle p|1|p\rangle$$
+in addition to just $$i\mathcal{M} (2\pi)^4\delta^{(4)}(0)$$.
+
+In fact, one could argue that we should not be allowed to use the LSZ formula at all, because we derived the LSZ formula by
+assuming asymptotic states.
+
+There are probably some other deeper reasons why (7.57) is valid.
+
+For 1-particle → 1-particle “scattering” where the particle is stable, The right-hand side of (7.49) vanishes, because
+$$\mathcal{M}$$ is the matrix element of $$T$$, which is in turn defined as $$S=1+iT$$. $$\mathcal{M}$$ must vanish
+since $$\langle p|S|p\rangle=(2\pi)^4\delta^{(4)}(0)$$.
+
+To get a better understanding of unstable particles, I found the following two sources quite helpful.
+- _Quantum Field Theory_ by Professor Lowell S. Brown. Section 6.3. Note that certain conventions used in the book are different.
+For (6.3.10), refer to (6.1.48) and notice that $$G^{-1}(z)$$ itself has a $$-\pi i \sigma(z)$$ for $$z$$ under the real axis.
+- Master thesis _Resonances and poles in the second Riemann sheet_ by Thomas Wolkanowski.
+
+Unlike a "real" particle, which manifests itself as a delta function in Figure 7.3, an unstable particle is a pole
+on the "second" Riemmann sheet right below the real axis through analytical continuation - actually also on a "zeroth" sheet by symmetry
+right above the real axis - and would manifest itself as a bump in Figure 7.3. In a sense, its presense is "sensed"
+on the branch cut (since everything is through analytical continuation and therefore continuous).
+
+### Page 241
+
+There is a sign error in the two equations on this page.
+
+### Page 246
+
+I am not sure how to prove the claim *If, for example, $$\Pi^{\mu\nu}(q)$$ contained a term $$M^2g^{\mu\nu}$$ (with no compensating
+$$q^\mu q^\nu$$ term), the photon mass would be shifted to $$M$$*.
+
+### Page 254
+
+As for $$q=-Q$$, we would be integrating downward on the left side of the cut, and upward on the right side of the cut
+with the original $$Q$$. Now with $$q$$, which is $$Q$$ rotated by $$\frac{\pi}{2}$$ clockwise, it would be twice the integral
+below the real axis from $$2m$$ to infinity.
+
+### Page 255
+
+To see where $$\frac{5}{3}$$ is from in the un-numbered equation, use [this calculator](https://www.integral-calculator.com/).
+
+## Problems
+
+### 7.1
+
+Most solutions floating online use dimensional regularization. For the sake of variety, I will use the good old
+Pauli-Villars procedure instead. (Feel free to consult Xianyu's solution, just note that a factor of $$\frac{1}{2}$$
+is missing in his (7.1). I will make further no mention of his solution to this problem.)
+
+One starts with (7.52). Note its similarity with (7.16). Following the same procedure with minimal modifications
+(e.g., replacing the numerator by a constant, setting $$\mu=m_0$$, etc.), we have
+
+$$
+\begin{eqnarray}
+  &&  i\delta\mathcal{M}  \\
+  &=& \frac{\lambda^2}{2} \int_0^1 \frac{i}{(4\pi)^2}\log\left(\frac{\Delta_\Lambda}{\Delta}\right) dx  \\
+  &=& \frac{\lambda^2}{2} \int_0^1 \frac{i}{(4\pi)^2}\log\left(\frac{\Lambda^2-x(1-x)k^2}{m_0^2-x(1-x)k^2}\right) dx  \\
+  &=& \frac{\lambda^2}{2} \int_0^1 \frac{i}{(4\pi)^2}\log\left(\frac{\Lambda^2}{m_0^2-x(1-x)k^2}\right) dx,
+\end{eqnarray}
+$$
+
+where as usual, we set $$\Lambda\rightarrow\infty$$.
+
+Since $$x(1-x) \le \frac{1}{4}$$, nothing funny happens within the logarithm and $$\delta\mathcal{M}$$ is
+real as long as $$k^2 < 4 m_0^2$$. When $$k^2 \ge 4 m_0^2$$, we calculate $$\log\left(\frac{\Lambda^2}{m_0^2-x(1-x)k^2}\right)$$
+through analytic continuation. We have
+
+$$
+\begin{eqnarray}
+  &&  \mathrm{Im}\log\left(\frac{\Lambda^2}{m_0^2-x(1-x)(k^2+i\epsilon)}\right)  \\
+  &=& \mathrm{Im}\log\left(-\frac{\Lambda^2}{x(1-x)k^2-m_0^2} + i\epsilon \right)  \\
+  &=& \pi,
+\end{eqnarray}
+$$
+
+when $$\frac{1}{2}-\frac{1}{2}\sqrt{1-\frac{4m_0^2}{k^2}} < x < \frac{1}{2}+\frac{1}{2}\sqrt{1-\frac{4m_0^2}{k^2}}$$.
+
+Therefore we have
+
+$$
+\begin{eqnarray}
+  &&  \mathrm{Im} \delta\mathcal{M}  \\
+  &=& \frac{\lambda^2}{2(4\pi)^2} \int_{\frac{1}{2}-\frac{1}{2}\sqrt{1-\frac{4m_0^2}{k^2}}}^{\frac{1}{2}+\frac{1}{2}\sqrt{1-\frac{4m_0^2}{k^2}}} \mathrm{Im}\log\left(\frac{\Lambda^2}{m_0^2-x(1-x)k^2}\right) dx  \\
+  &=& \frac{\lambda^2}{32\pi} \sqrt{1-\frac{4m_0^2}{k^2}}  \\
+\end{eqnarray}
+$$
+
+### 7.2
+
+#### Part (a)
+
+Calculation leading to $$Z_1$$ starts with (6.38). With the regularization required for this problem, we will have
+to introduce photon mass $$\mu$$. This leads to the following modifications.
+- (6.38): $$(k-p)^2+i\epsilon$$ has to be replace by $$(k-p)^2-\mu^2+i\epsilon$$;
+- (6.43): an extra term $$-z\mu^2$$ has to be added;
+- (6.44): an extra term $$z\mu^2$$ has to be added to $$\Delta$$.
+
+If we cut off $$l_E$$ at $$\Lambda$$, (6.49) becomes
+
+$$\frac{i}{2(4\pi)^2}\left(\frac{\Lambda^2}{(\Lambda^2+\Delta)^2}+\frac{1}{\Lambda^2+\Delta}-\frac{1}{\Delta}\right)=\frac{-i}{2(4\pi)^2}\frac{\Lambda^4}{(\Lambda^2+\Delta)^2\Delta},$$
+
+and (6.50) becomes
+
+$$\frac{-i}{2(4\pi)^2}\left(\frac{\Lambda^4}{(\Lambda^2+\Delta)^2}+\frac{2\Lambda^2}{\Lambda^2+\Delta}-2\log(\frac{\Lambda^2+\Delta}{\Delta})\right).$$
+
+Setting $$q=0$$, we have from (6.47)
+
+$$
+\begin{eqnarray}
+  &&  \delta\Gamma^\mu(q=0)  \\
+  &=& \gamma^\mu 2ie^2\int_0^1dx dy dz \delta(x+y+z-1) \left[(-1) \frac{-i}{2(4\pi)^2}\left(\frac{\Lambda^4}{(\Lambda^2+\Delta)^2}+\frac{2\Lambda^2}{\Lambda^2+\Delta}-2\log(\frac{\Lambda^2+\Delta}{\Delta})\right)+2(1-4z+z^2)m^2(\frac{-i}{2(4\pi)^2}\frac{\Lambda^4}{(\Lambda^2+\Delta)^2\Delta})\right],
+\end{eqnarray}
+$$
+
+where $$\Delta=(1-z)^2m^2+z\mu^2$$ since we have set $$q=0$$.
+
+Then from (7.47) we have
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_1  \\
+  &=& -2ie^2\int_0^1dx dy dz \delta(x+y+z-1) \left[(-1) \frac{-i}{2(4\pi)^2}\left(\frac{\Lambda^4}{(\Lambda^2+\Delta)^2}+\frac{2\Lambda^2}{\Lambda^2+\Delta}-2\log(\frac{\Lambda^2+\Delta}{\Delta})\right)+2(1-4z+z^2)m^2(\frac{-i}{2(4\pi)^2}\frac{\Lambda^4}{(\Lambda^2+\Delta)^2\Delta})\right]  \\
+  &=& -2ie^2\int_0^1 dz (1-z) \left[\frac{i}{2(4\pi)^2}\left(\frac{\Lambda^4}{(\Lambda^2+\Delta)^2}+\frac{2\Lambda^2}{\Lambda^2+\Delta}-2\log(\frac{\Lambda^2+\Delta}{\Delta})\right)+2(1-4z+z^2)m^2(\frac{-i}{2(4\pi)^2}\frac{\Lambda^4}{(\Lambda^2+\Delta)^2\Delta})\right]  \\
+  &=& \frac{e^2}{(4\pi)^2} \int_0^1 dz (1-z) \left[\left(\frac{\Lambda^4}{(\Lambda^2+\Delta)^2}+\frac{2\Lambda^2}{\Lambda^2+\Delta}-2\log(\frac{\Lambda^2+\Delta}{\Delta})\right)-2(1-4z+z^2)m^2\frac{\Lambda^4}{(\Lambda^2+\Delta)^2\Delta}\right].
+\end{eqnarray}
+$$
+
+Setting $$\Lambda\rightarrow\infty$$, we have
+
+$$\delta Z_1 = \frac{e^2}{(4\pi)^2} \int_0^1 dz (1-z) \left[\left(3-2\log(\frac{\Lambda^2+\Delta}{\Delta})\right)-2(1-4z+z^2)\frac{m^2}{\Delta}\right].$$
+
+Now we turn to $$Z_2$$. With the same procedure, (7.18) becomes
+
+$$\frac{i}{(4\pi)^2}\left(\log(\frac{\Lambda^2+\Delta}{\Delta})-\frac{\Lambda^2}{\Lambda^2+\Delta}\right),$$
+
+where $$\Delta=-x(1-x)p^2+x\mu^2+(1-x)m^2$$.
+
+From (7.17), we have
+
+$$
+\begin{eqnarray}
+  &&  \Sigma_2(p)  \\
+  &=& \frac{e^2}{(4\pi)^2} \int_0^1 dx (-2x\not{p}+4m) \left(\log(\frac{\Lambda^2+\Delta}{\Delta})-\frac{\Lambda^2}{\Lambda^2+\Delta}\right).
+\end{eqnarray}
+$$
+
+From (7.26), we have
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_2  \\
+  &=& \frac{d\Sigma}{d\not{p}} \Bigg|_{\not{p}=m}  \\
+  &=& \frac{e^2}{(4\pi)^2} \int_0^1 dx \left[(-2x) \left(\log(\frac{\Lambda^2+\Delta}{\Delta})-\frac{\Lambda^2}{\Lambda^2+\Delta}\right) + (-2x\not{p}+4m) \left(\frac{1}{\Lambda^2+\Delta}-\frac{1}{\Delta}+\frac{\Lambda^2}{(\Lambda^2+\Delta)^2}\right)(-2x)(1-x)\not{p} \right] \Bigg|_{\not{p}=m}  \\
+  &=& \frac{e^2}{(4\pi)^2} \int_0^1 dx \left[(-2x) \left(\log(\frac{\Lambda^2+\Delta}{\Delta})-\frac{\Lambda^2}{\Lambda^2+\Delta}\right) - 4x(2-x)(1-x)m^2 \left(\frac{1}{\Lambda^2+\Delta}-\frac{1}{\Delta}+\frac{\Lambda^2}{(\Lambda^2+\Delta)^2}\right) \right]  \\
+  &=& \frac{e^2}{(4\pi)^2} \int_0^1 dx \left[(-2x) \left(\log(\frac{\Lambda^2+\Delta}{\Delta})-\frac{\Lambda^2}{\Lambda^2+\Delta}\right) + 4x(2-x)(1-x)m^2 \frac{\Lambda^4}{(\Lambda^2+\Delta)^2\Delta} \right],
+\end{eqnarray}
+$$
+
+with now $$\Delta=(1-x)^2m^2+x\mu^2$$.
+
+Setting $$\Lambda\rightarrow\infty$$, we have
+
+$$\delta Z_2 = \frac{e^2}{(4\pi)^2} \int_0^1 dx \left[(-2x) \left(\log(\frac{\Lambda^2+\Delta}{\Delta})-1\right) + 4x(2-x)(1-x)\frac{m^2}{\Delta} \right].$$
+
+Notice that in both cases, we have the same $$\Delta$$ when we replace $$z$$ by $$x$$ in $$Z_1$$.
+
+Clearly $$\delta Z_1 \neq \delta Z_2$$.
+
+#### Part (b)
+
+We start with (6.38). The calculation can be greatly simplified since we are only interested in the case where $$q=0$$. (See (7.47).)
+Therefore we may as well set $$q=0$$ (and thus $$p=p'$$ and $$k=k'$$) from the very beginning. Then (6.38) becomes
+
+$$
+\begin{eqnarray}
+  &&  \bar{u}(p) \delta\Gamma^\mu(p,p) u(p)  \\
+  &=& \int \frac{d^dk}{(2\pi)^d} \frac{-ig_{\nu\rho}}{(k-p)^2-\mu^2+i\epsilon} \bar{u}(p) (-ie\gamma^\nu) \frac{i(\not{k}+m)}{{k}^2-m^2+i\epsilon} \gamma^\mu \frac{i(\not{k}+m)}{{k}^2-m^2+i\epsilon} (-ie\gamma^\rho) u(p)  \\
+  &=& -ie^2 \int \frac{d^dk}{(2\pi)^d} \frac{\bar{u}(p) [(2-d)\not{k}\gamma^\mu\not{k} + (2-d)m^2\gamma^\mu + 2dmk^\mu ]u(p)}{((k-p)^2-\mu^2+i\epsilon) ({k}^2-m^2+i\epsilon) ({k}^2-m^2+i\epsilon)}  \\
+  &=& -ie^2 \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{2 \bar{u}(p) [(2-d)\frac{2-d}{d}l^2\gamma^\mu + (2-d)(1+z^2)m^2\gamma^\mu + dmz(p^\mu+p^\mu) ]u(p)}{D^3}  \\
+  &=& -ie^2 \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{2 \bar{u}(p) \gamma^\mu[(2-d)\frac{2-d}{d}l^2 + (2-d)(1+z^2)m^2 + 2dm^2z]u(p)}{D^3},
+\end{eqnarray}
+$$
+
+where we have made exactly the same substitutions as those leading to (6.47), except that now $$\Delta=(1-z)^2m^2+z\mu^2$$. Note that
+our result is consistent with (6.47).
+
+From this we can directly read
+
+$$
+\begin{eqnarray}
+  &&  \delta\Gamma^\mu(q=0)  \\
+  &=& \gamma^\mu (2ie^2) \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{(d-2)\frac{2-d}{d}l^2 + (d-2)(1+z^2)m^2 - 2dm^2z}{D^3}  \\
+  &=& \gamma^\mu (-2e^2) \int_0^1 dz (1-z) \left[(d-2)\frac{2-d}{d}\frac{1}{(4\pi)^{d/2}}\frac{d}{2}\frac{\Gamma(2-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{2-\frac{d}{2}} - ((d-2)(1+z^2) - 2dz)m^2 \frac{1}{(4\pi)^{d/2}}\frac{\Gamma(3-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{3-\frac{d}{2}}\right]  \\
+  &=& \gamma^\mu \frac{2e^2}{(4\pi)^{d/2}} \int_0^1 dz (1-z) \left[\frac{(d-2)^2}{2}\frac{\Gamma(2-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{2-\frac{d}{2}} + ((d-2)(1+z^2) - 2dz)m^2 \frac{\Gamma(3-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{3-\frac{d}{2}}\right]  \\
+  &=& \gamma^\mu \frac{2e^2}{(4\pi)^2} \int_0^1 dz (1-z) \left[\frac{4-4\epsilon}{4}\left(\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)\right) + 2(1-4z+z^2)m^2 \frac{1}{2}(\frac{1}{\Delta})\right]  \\
+  &=& \gamma^\mu \frac{2e^2}{(4\pi)^2} \int_0^1 dz (1-z) \left[\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)-2 + \frac{(1-4z+z^2)m^2}{\Delta}\right].
+\end{eqnarray}
+$$
+
+Equivalently, we have
+
+$$\delta Z_1 = -\frac{2e^2}{(4\pi)^2} \int_0^1 dz (1-z) \left[\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)-2 + \frac{(1-4z+z^2)m^2}{\Delta}\right].$$
+
+For $$Z_2$$. we start with (7.16), which now becomes
+
+$$
+\begin{eqnarray}
+  &&  \Sigma_2(p)  \\
+  &=& -ie^2 \int \frac{d^dk}{(2\pi)^d} \frac{\gamma^\mu(\not{k}+m)\gamma^\mu}{(k^2-m^2+i\epsilon)((p-k)^2-\mu^2+i\epsilon)}  \\
+  &=& -ie^2 \int \frac{d^dk}{(2\pi)^d} \frac{-(d-2)\not{k}+dm}{(k^2-m^2+i\epsilon)((p-k)^2-\mu^2+i\epsilon)}  \\
+  &=& -ie^2 \int_0^1 dx \int \frac{d^dl}{(2\pi)^d} \frac{-(d-2)x\not{p}+dm}{(l^2-\Delta+i\epsilon)^2}  \\
+  &=& \frac{e^2}{(4\pi)^{d/2}} \int_0^1 dx (-(d-2)x\not{p}+dm) \frac{\Gamma(2-\frac{d}{2})}{\Gamma(2)} (\frac{1}{\Delta})^{2-\frac{d}{2}}  \\
+  &=& \frac{e^2}{(4\pi)^2} \int_0^1 dx \left(-(2-\epsilon)x\not{p}+(4-\epsilon)m\right) \left(\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)\right).
+\end{eqnarray}
+$$
+
+From (7.26), we have
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_2  \\
+  &=& \frac{d\Sigma}{d\not{p}} \Bigg|_{\not{p}=m}  \\
+  &=& \frac{e^2}{(4\pi)^2} \int_0^1 dx \left[-(2-\epsilon)x \left(\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)\right) + \left(-(2-\epsilon)xm+(4-\epsilon)m\right) (-\frac{1}{\Delta}) (-x)(1-x)2m \right] \\
+  &=& -\frac{2e^2}{(4\pi)^2} \int_0^1 dx x \left[\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)-1 - \frac{2(2-x)(1-x)m^2}{\Delta}  \right].
+\end{eqnarray}
+$$
+
+Again, notice that we have in both cases the same $$\Delta$$ when we replace $$z$$ by $$x$$ in $$Z_1$$. Also notice
+that $$\int_0^1 x dx = \int_0^1 (1-x) dx$$. So we have (with $$\Delta=(1-x)^2m^2+x\mu^2$$)
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_1 - \delta Z_2  \\
+  &=& -\frac{2e^2}{(4\pi)^2} \left[ \int_0^1 dx \left(x-(1-x)\right) \log\Delta + \int_0^1 dx (1-x) \left(-1 + \frac{(1-4x+x^2)m^2}{\Delta} + \frac{2x(2-x)m^2}{\Delta}\right) \right]  \\
+  &=& -\frac{2e^2}{(4\pi)^2} \left[ \int_0^1 d(x^2-x) \log\Delta + \int_0^1 dx (1-x) \frac{(1-x^2)m^2-\Delta}{\Delta} \right]  \\
+  &=& -\frac{2e^2}{(4\pi)^2} \left[ -\int_0^1 dx \frac{x^2-x}{\Delta} \left(2(x-1)m^2+\mu^2\right) + \int_0^1 dx (1-x) \frac{2x(1-x)m^2-x\mu^2}{\Delta} \right]  \\
+  &=& -\frac{2e^2}{(4\pi)^2} \int_0^1 dx (1-x) \frac{2x(x-1)m^2 + x\mu^2 + 2x(1-x)m^2-x\mu^2}{\Delta}  \\
+  &=& 0.
+\end{eqnarray}
+$$
+
+### 7.3
+
+#### Part (a)
+
+Let us go back to (6.38). We only need to replce the virtual photon by a virtual $$\phi$$. As far as $$\delta Z_1$$ is concerned,
+we could simply set $$q=0$$ as we did in 7.2. But we will keep $$q$$ this time so that we can verify directly the Ward identity.
+(From the proof of the Ward identity, it should be clear that the presence of $$\phi$$ should change absolutely nothing. But it
+is still nice to verify it here.)
+
+We have (with the same or similar substitutions as in the textbook)
+
+$$
+\begin{eqnarray}
+  &&  \bar{u}(p') \delta\Gamma^\mu(p',p) u(p)  \\
+  &=& \int \frac{d^dk}{(2\pi)^d} \frac{i}{(k-p)^2-m_\phi^2+i\epsilon} \bar{u}(p') (-i\frac{\lambda}{\sqrt{2}}) \frac{i(\not{k'}+m)}{{k'}^2-m^2+i\epsilon} \gamma^\mu \frac{i(\not{k}+m)}{{k}^2-m^2+i\epsilon} (-i\frac{\lambda}{\sqrt{2}}) u(p)  \\
+  &=& \frac{i\lambda^2}{2} \int \frac{d^dk}{(2\pi)^d} \frac{\bar{u}(p') [\not{k'}\gamma^\mu\not{k} + m^2\gamma^\mu + m(\not{k'}\gamma^\mu+\gamma^\mu\not{k})]u(p)}{((k-p)^2-\mu^2+i\epsilon) ({k}^2-m^2+i\epsilon) ({k}^2-m^2+i\epsilon)}  \\
+  &=& i\lambda^2 \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{\bar{u}(p') N u(p)}{D^3},
+\end{eqnarray}
+$$
+
+where $$ N $$ is
+
+$$
+\begin{eqnarray}
+  &=& \not{l}\gamma^\mu\not{l} + ((1-y)\not{q}+z\not{p})\gamma^\mu(-y\not{q}+z\not{p}) + m^2\gamma^\mu + m(\not{q}\gamma^\mu+2(l^\mu-yq^\mu+zp^\mu))  \\
+  &=& \frac{2-d}{d}l^2\gamma^\mu + \left((1-y)m + (y+z-1)\not{p}\right)\gamma^\mu\left(-y\not{p'}+(y+z)m\right) + m^2\gamma^\mu + m(m\gamma^\mu-\not{p}\gamma^\mu+2(l^\mu-yq^\mu+zp^\mu))  \\
+  &=& \frac{2-d}{d}l^2\gamma^\mu - y(1-y)m\gamma^\mu\not{p'} - y(y+z-1)\not{p}\gamma^\mu\not{p'} + [(y+z-1)(y+z) - 1]m\not{p}\gamma^\mu + [(1-y)(y+z) + 1 + 1 ]m^2\gamma^\mu - 2ymq^\mu + 2zmp^\mu.
+\end{eqnarray}
+$$
+
+Note that the equality signs above, as well as often the case in the following derivations, are valid only when
+everything is sandwiched between $$\bar{u}(p')$$ and $$u(p)$$ and inside an integral over $$l$$.
+
+Using the following equality
+
+$$
+\begin{eqnarray}
+  &&  \not{p} \gamma^\mu \not{p'}  \\
+  &=& (2p^\mu-\gamma^\mu\not{p}) \not{p'}  \\
+  &=& 2m p^\mu - \gamma^\mu (2p\cdot p' - \not{p'}\not{p})  \\
+  &=& 2m p^\mu - \gamma^\mu (2p\cdot p') + 2m {p'}^\mu - m\not{p'}\gamma^\mu  \\
+  &=& 2m (p^\mu + {p'}^\mu) + \gamma^\mu ((p-p')^2 - 2m^2) - m^2 \gamma^\mu  \\
+  &=& 2m (p^\mu+{p'}^\mu) + \gamma^\mu (q^2 - 3m^2),
+\end{eqnarray}
+$$
+
+as well as $$\gamma^\mu\not{p'}=2{p'}^\mu-m\gamma^\mu$$ and $$\not{p}\gamma^\mu=2{p}^\mu-m\gamma^\mu$$, we have
+
+$$
+\begin{eqnarray}
+  &&  N  \\
+  &=& \gamma^\mu\frac{2-d}{d}l^2 + m^2\gamma^\mu\left[y(1-y)+1+(1-y-z)(y+z)-3y(1-y-z)+(1-y)(y+z)+2\right] + q^2\gamma^\mu y(1-y-z) - 2mp^\mu\left[(1-y-z)(y+z)+1\right] - 2m{p'}^\mu y(1-y) + 2my(1-y-z)(p^\mu+{p'}^\mu) - 2myq^\mu  \\
+  &=& \gamma^\mu\frac{2-d}{d}l^2 + m^2\gamma^\mu(3+2z-z^2) + q^2\gamma^\mu y(1-y-z) - m(p^\mu+{p'}^\mu)(1-z^2) - mq^\mu(2y+z^2+2yz-1).
+\end{eqnarray}
+$$
+
+Now using the Gordon identity (6.32) and $$x+y+z=1$$, we have
+
+$$
+\begin{eqnarray}
+  &&  N  \\
+  &=& \gamma^\mu\frac{2-d}{d}l^2 + m^2\gamma^\mu(3+2z-z^2) + q^2\gamma^\mu y(1-y-z) - m(2m\gamma^\mu-i\sigma^{\mu\nu}q_\nu)(1-z^2) + mq^\mu(x-y)(1+z)  \\
+  &=& \gamma^\mu\frac{2-d}{d}l^2 + m^2\gamma^\mu(1+2z+z^2) + q^2\gamma^\mu y(1-y-z) +im\sigma^{\mu\nu}q_\nu(1-z^2)  + mq^\mu(x-y)(1+z)  \\
+  &=& \gamma^\mu\left[\frac{2-d}{d}l^2 + m^2(1+z)^2 + q^2y(1-y-z)\right] +im\sigma^{\mu\nu}q_\nu(1-z^2)  + mq^\mu(x-y)(1+z).
+\end{eqnarray}
+$$
+
+From the result above, the Ward identity is clearly satisfied. (See the discussion leading to (6.47).)
+
+We can also read off the extra $$\delta Z_1$$ due to the virtual $$\phi$$.
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_1  \\
+  &=& -i\lambda^2 \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{\frac{2-d}{d}l^2 + m^2(1+z)^2}{(l^2-\Delta)^3}  \\
+  &=& -i\lambda^2 \frac{i}{(4\pi)^{d/2}} \int_0^1 dxdydz \delta(x+y+z-1) \left[ \frac{2-d}{d} \frac{d}{2}\frac{\Gamma(2-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{2-\frac{d}{2}} - m^2(1+z)^2\frac{\Gamma(3-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{3-\frac{d}{2}} \right]  \\
+  &=& \frac{\lambda^2}{2(4\pi)^2} \int_0^1 dz (1-z) \left[ (\frac{\epsilon}{2}-1) (\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)) - \frac{m^2(1+z)^2}{\Delta} \right]  \\
+  &=& -\frac{\lambda^2}{2(4\pi)^2} \int_0^1 dz (1-z) \left[ \frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)-1 + \frac{m^2(1+z)^2}{\Delta} \right].
+\end{eqnarray}
+$$
+
+For $$Z_2$$. we start with (7.16), which now becomes
+
+$$
+\begin{eqnarray}
+  &&  \Sigma_2(p)  \\
+  &=& \frac{i\lambda^2}{2} \int \frac{d^dk}{(2\pi)^d} \frac{\not{k}+m}{(k^2-m^2+i\epsilon)((p-k)^2-m_\phi^2+i\epsilon)}  \\
+  &=& \frac{i\lambda^2}{2} \int_0^1 dx \int \frac{d^dl}{(2\pi)^d} \frac{x\not{p}+m}{(l^2-\Delta+i\epsilon)^2}  \\
+  &=& -\frac{\lambda^2}{2(4\pi)^{d/2}} \int_0^1 dx (x\not{p}+m) \frac{\Gamma(2-\frac{d}{2})}{\Gamma(2)} (\frac{1}{\Delta})^{2-\frac{d}{2}}  \\
+  &=& -\frac{\lambda^2}{2(4\pi)^2} \int_0^1 dx \left(x\not{p}+m\right) \left(\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)\right).
+\end{eqnarray}
+$$
+
+From (7.26), we have
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_2  \\
+  &=& \frac{d\Sigma}{d\not{p}} \Bigg|_{\not{p}=m}  \\
+  &=& -\frac{\lambda^2}{2(4\pi)^2} \int_0^1 dx \left[x \left(\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)\right) + \left(xm+m\right) (-\frac{1}{\Delta}) (-x)(1-x)2m \right] \\
+  &=& -\frac{\lambda^2}{2(4\pi)^2} \int_0^1 dx x \left[\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi) + \frac{2(1+x)(1-x)m^2}{\Delta}  \right].
+\end{eqnarray}
+$$
+
+Again, notice that we have in both cases the same $$\Delta$$ when we replace $$z$$ by $$x$$ in $$Z_1$$. Also notice
+that $$\int_0^1 x dx = \int_0^1 (1-x) dx$$. So we have (with $$\Delta=(1-x)^2m^2+xm_\phi^2$$)
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_1 - \delta Z_2  \\
+  &=& -\frac{\lambda^2}{2(4\pi)^2} \left[ \int_0^1 dx \left(x-(1-x)\right) \log\Delta + \int_0^1 dx (1-x) \left(-1 + \frac{(1+x)^2m^2}{\Delta} - \frac{2x(1+x)m^2}{\Delta}\right) \right]  \\
+  &=& -\frac{\lambda^2}{2(4\pi)^2} \left[ \int_0^1 d(x^2-x) \log\Delta + \int_0^1 dx (1-x) \frac{(1-x^2)m^2-\Delta}{\Delta} \right]  \\
+  &=& -\frac{\lambda^2}{2(4\pi)^2} \left[ -\int_0^1 dx \frac{x^2-x}{\Delta} \left(2(x-1)m^2+m_\phi^2\right) + \int_0^1 dx (1-x) \frac{2x(1-x)m^2-xm_\phi^2}{\Delta} \right]  \\
+  &=& -\frac{\lambda^2}{2(4\pi)^2} \int_0^1 dx (1-x) \frac{2x(x-1)m^2 + xm_\phi^2 + 2x(1-x)m^2-xm_\phi^2}{\Delta}  \\
+  &=& 0.
+\end{eqnarray}
+$$
+
+#### Part (b)
+
+In Part (a), we have shown that $$\delta Z_1 = \delta Z_2$$ for fermion-photon interactions. What this equality means
+physically is that in the limit that $$q\rightarrow0$$, the observed coupling constant for the fermion-photon-fermion
+vertex is equal to $$e=\sqrt{Z_3}e_0$$, where $$e_0$$ is the "bare" charge in the Langragian.
+
+Now we want to verify whether the same is true for the fermion-$$\phi$$-fermion vertex.
+
+To calculate its corresponding $$Z_1$$, we again starts with (6.38). We need to calculate the $$\delta Z_1$$ contribution
+from photon and that from $$\phi$$. From now on, $$q$$ denotes the momentum of the $$phi$$ particle. As before, we can
+simply set it to $$0$$ since we are only interested in this limit.
+
+$$
+\begin{eqnarray}
+  &&  \bar{u}(p) \delta\Lambda_\gamma(p,p) u(p)  \\
+  &=& \int \frac{d^dk}{(2\pi)^d} \frac{-ig_{\nu\rho}}{(k-p)^2-\mu^2+i\epsilon} \bar{u}(p) (-ie\gamma^\nu) \frac{i(\not{k}+m)}{{k}^2-m^2+i\epsilon} \frac{i(\not{k}+m)}{{k}^2-m^2+i\epsilon} (-ie\gamma^\rho) u(p)  \\
+  &=& -ie^2 \int \frac{d^dk}{(2\pi)^d} \frac{\bar{u}(p) [dk^2 + dm^2 - 2(d-2)m\not{k} ]u(p)}{((k-p)^2-\mu^2+i\epsilon) ({k}^2-m^2+i\epsilon) ({k}^2-m^2+i\epsilon)}  \\
+  &=& -ie^2 \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{2 \bar{u}(p) [dl^2 + d(zp)^2 + dm^2 -2(d-2)mz\not{p} ]u(p)}{D^3}  \\
+  &=& -ie^2 \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{2 \bar{u}(p) [dl^2 + (d(z^2-2z+1)+4z)m^2]u(p)}{D^3}.
+\end{eqnarray}
+$$
+
+Therefore we have
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_{1,\gamma}  \\
+  &=& -\delta\Lambda_\gamma(q=0)  \\
+  &=& 2ie^2 \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{dl^2 + (d(z^2-2z+1)+4z)m^2}{D^3}  \\
+  &=& 2ie^2 \frac{i}{(4\pi)^{d/2}} \int_0^1 dz(1-z) \left[ \frac{d^2}{2}\frac{\Gamma(2-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{2-\frac{d}{2}} - (d(z^2-2z+1)+4z)m^2 \frac{\Gamma(3-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{3-\frac{d}{2}} \right]  \\
+  &=& 2ie^2 \frac{i}{(4\pi)^2} \int_0^1 dz(1-z) \left[ (4-2\epsilon)(\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)) - \frac{2(z^2-z+1)m^2 }{\Delta} \right]  \\
+  &\approx& -\frac{8e^2}{(4\pi)^2\epsilon}
+\end{eqnarray}
+$$
+
+Similarly, we have
+
+$$
+\begin{eqnarray}
+  &&  \bar{u}(p) \delta\Lambda_\phi(p,p) u(p)  \\
+  &=& \int \frac{d^dk}{(2\pi)^d} \frac{i}{(k-p)^2-m_\phi^2+i\epsilon} \bar{u}(p) \frac{-i\lambda}{\sqrt{2}} \frac{i(\not{k}+m)}{{k}^2-m^2+i\epsilon} \frac{i(\not{k}+m)}{{k}^2-m^2+i\epsilon} \frac{-i\lambda}{\sqrt{2}} u(p)  \\
+  &=& \frac{i\lambda^2}{2} \int \frac{d^dk}{(2\pi)^d} \frac{\bar{u}(p) [k^2 + m^2 + 2m\not{k} ]u(p)}{((k-p)^2-m_\phi^2+i\epsilon) ({k}^2-m^2+i\epsilon) ({k}^2-m^2+i\epsilon)}  \\
+  &=& \frac{i\lambda^2}{2} \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{2 \bar{u}(p) [l^2 + (zp)^2 + m^2 + 2mz\not{p} ]u(p)}{D^3}  \\
+  &=& \frac{i\lambda^2}{2} \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{2 \bar{u}(p) [l^2 + (z^2+2z+1) m^2 ]u(p)}{D^3}.
+\end{eqnarray}
+$$
+
+Therefore we have
+
+$$
+\begin{eqnarray}
+  &&  \delta Z_{1,\phi}  \\
+  &=& -\delta\Lambda_\phi(q=0)  \\
+  &=& -i\lambda^2 \int \frac{d^dl}{(2\pi)^d} \int_0^1 dxdydz \delta(x+y+z-1) \frac{l^2 + (z^2+2z+1)m^2}{D^3}  \\
+  &=& -i\lambda^2 \frac{i}{(4\pi)^{d/2}} \int_0^1 dz(1-z) \left[ \frac{d}{2}\frac{\Gamma(2-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{2-\frac{d}{2}} - (z^2+2z+1)m^2 \frac{\Gamma(3-\frac{d}{2})}{\Gamma(3)}(\frac{1}{\Delta})^{3-\frac{d}{2}} \right]  \\
+  &=& -i\lambda^2 \frac{i}{(4\pi)^2} \int_0^1 dz(1-z) \left[ (1-\frac{\epsilon}{4})(\frac{2}{\epsilon}-\log\Delta-\gamma+\log(4\pi)) - \frac{(z^2+2z+1)m^2 }{2\Delta} \right]  \\
+  &\approx& \frac{\lambda^2}{(4\pi)^2\epsilon}
+\end{eqnarray}
+$$
+
+Note that $$\delta Z_2$$ is about the so-called electron self-energy, which we already have from Problem 7.2(b) and from Part (a).
+If we retain only the parts proportional to $$\frac{1}{\epsilon}$$, we have
+
+$$
+\begin{eqnarray}
+  \delta Z_{2,\gamma} &\approx&  -\frac{2e^2}{(4\pi)^2\epsilon}  \\
+  \delta Z_{2,\phi} &\approx&  -\frac{\lambda^2}{2(4\pi)^2\epsilon}.
+\end{eqnarray}
+$$
+
+Clearly $$\delta Z_1 - \delta Z_2 \approx -\frac{6e^2}{(4\pi)^2\epsilon} + \frac{3\lambda^2}{2(4\pi)^2\epsilon} $$ does not
+vanish. So the rescaling of this vertex at $$q^2 = 0$$ is not canceled by the correction to $$Z_2$$.
