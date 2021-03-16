@@ -1692,3 +1692,289 @@ $$
 
 Clearly $$\delta Z_1 - \delta Z_2 \approx -\frac{6e^2}{(4\pi)^2\epsilon} + \frac{3\lambda^2}{2(4\pi)^2\epsilon} $$ does not
 vanish. So the rescaling of this vertex at $$q^2 = 0$$ is not canceled by the correction to $$Z_2$$.
+
+# Final Project
+
+Before jumping into calculations, we should notice the similarity between parts (a) and (d) and the electron vertex function (Section 6.3),
+between parts (c) and (d) and soft Bremsstralung (Section 6.1), and finally between part (e) and how the infrared divergences from the two
+phenomena cancel each other (Section 6.5).
+
+Comparing $$\Delta H$$ to (4.129), we can easily infer that the Feynman rule for $$\bar{\psi}_{fi}\gamma^\mu\psi_{fi}$$ (without summation)
+should be $$-ig\gamma^\mu$$, while the gluon propagator is formally the same as that of photons. Also refer to my comment on quarkonium,
+which explains the color factor of 3, and equally applies to the gluon-quark-antiquark interaction.
+
+## Part (a)
+
+<img src="/images/final_project.svg" style="width:200px;">
+
+Treating all particles as massless except the gluon, and remembering that on internal fermion lines (propagators), the momentum must be
+assigned in the direction of particle-number flow, we have
+
+$$
+\begin{eqnarray}
+  &&  i\delta \mathcal{M}  \\
+  &=& \int \frac{d^4k}{(2\pi)^4} \frac{-ig_{\rho\sigma}}{(k-k_1)^2-\mu^2+i\epsilon} \bar{u}(k_1) (-ig\gamma^\sigma) \frac{i\not{k}}{{k}^2+i\epsilon} (i e Q_f \gamma^\nu) \frac{i(\not{k}-\not{q})}{{(k-q)}^2+i\epsilon} (-ig\gamma^\rho) v(k_2) \frac{-ig_{\mu\nu}}{q^2+i\epsilon} \bar{v}(p_2) (-ie\gamma^\mu) u(p_1)  \\
+  &=& \bar{u}(k_1) (-ie) \left[ \int \frac{d^4k}{(2\pi)^4} \frac{ 2i g^2 (-Q_f) (\not{k}-\not{q}) \gamma^\nu \not{k} }{ ((k-k_1)^2-\mu^2+i\epsilon) ({k}^2+i\epsilon) ((k-q)^2+i\epsilon) } \right] v(k_2) \frac{-ig_{\mu\nu}}{q^2+i\epsilon} \bar{v}(p_2) (-ie\gamma^\mu) u(p_1).
+\end{eqnarray}
+$$
+
+We can focus on the integral between the brackets, which is equivalent to $$\gamma^\nu$$ in the tree diagram. Denoting it as
+$$\delta F_1(q^2) \gamma^\nu$$, we have
+
+$$
+\delta F_1(q^2) \gamma^\nu = -2i g^2 Q_f \int \frac{d^4k}{(2\pi)^4} \frac{ (\not{k}-\not{q}) \gamma^\nu \not{k} }{ ((k-k_1)^2-\mu^2+i\epsilon) ({k}^2+i\epsilon) ((k-q)^2+i\epsilon) }
+$$
+
+Instead of evaluating it from scratch, we could take advantage of its similarity to (6.38) and crossing symmetry (5.67).
+The correspondence between (6.38) and ours is the following. (There is actually an extra complication with the sign. But
+it affects the correction and the tree diagram in the same way so we may ignore it.)
+- $$ e^2 \leftrightarrow -g^2 Q_f $$
+- $$ p \leftrightarrow -k_2 $$
+- $$ u(p) \leftrightarrow v(-k_2) $$
+- $$ p' \leftrightarrow k_1 $$
+- $$ k \leftrightarrow k - q $$
+
+Another difference is that we have set the fermion mass to zero and the gluon mass to $$\mu$$. The net effect is that
+- (6.44) becomes $$\Delta = -xyq^2 + z\mu^2$$;
+- (6.54) remains essentially the same, with all necessary modifications listed above.
+
+(6.56) then becomes
+
+$$
+\delta F_1(q^2) = -\frac{\alpha_g Q_f}{2\pi} \int_0^1 dx dy dz \delta(x+y+z-1) \left[\log\frac{\mu^2 z}{\mu^2 z - q^2 xy} + \frac{q^2(1-x)(1-y)}{\mu^2 z-q^2 xy} \right] + O(\alpha_g^2).
+$$
+
+There are a few points worth mentioning.
+- Within the logarithm, it makes more sense to retain the quark mass, instead of that of the virtual gluon.
+But it will not affect the result when we take the limit where both masses tend to zero.
+- Close to the end of the calculation, $$q^2$$ should be replaced by $$q^2+i\epsilon$$ when we carry out
+analytical continuation of the logarithm. The sign of $$i\epsilon$$ can be easily read from the equations
+below (6.47), and this will determine the sign of the imaginary part of $$\delta F_1(q^2)$$, although it does
+not really matter when we calculate the cross section. (In fact, even the magnitude of the imaginary part does
+not matter if we restrict to the first order of $$\alpha_g$$.) 
+- Strictly speaking, $$F_1(q^2=0) = -Q_f$$. But the sign obviously does not matter when we are calculating the
+cross section.
+
+## Part (b)
+
+For (i) and (ii), Xianyu's solution is quite clear.
+
+For (iii), we have the following. (Remember that quarks and antiquarks are treated as massless and therefore
+$$E_1=|\mathbf{k}_1|$$ and $$E_2=|\mathbf{k}_2|$$.)
+
+$$
+\begin{eqnarray}
+  &&  \int d\Pi_3  \\
+  &=& \int \frac{d^3\mathbf{k}_1}{(2\pi)^3} \frac{d^3\mathbf{k}_2}{(2\pi)^3} \frac{d^3\mathbf{k}_3}{(2\pi)^3} \frac{1}{(2E_1)(2E_2)(2E_3)} (2\pi)^4 \delta^{(4)} (q-k_1-k_2-k_3)  \\
+  &=& \int \frac{d^3\mathbf{k}_1}{(2\pi)^3} \frac{d^3\mathbf{k}_2}{(2\pi)^3} \frac{1}{(2E_1)(2E_2)(2E_3)} (2\pi) \delta (E_q-E_1-E_2-E_3) \Big|_{\mathbf{k}_3=-\mathbf{k}_1-\mathbf{k}_2;E_3=\sqrt{{k_3}^2+\mu^2}}  \\
+  &=& \int \frac{d E_1 E_1^2 d\cos\theta_1 d\phi_1}{(2\pi)^3} \frac{d E_2 E_2^2 d\cos\theta_{12} d\phi_2}{(2\pi)^3} \frac{1}{(2E_1)(2E_2)(2E_3)} (2\pi) \delta \left(E_q-E_1-E_2-\sqrt{E_1^2+E_2^3+2E_1E_2\cos\theta_{12}+\mu^2}\right) \Big|_{\mathbf{k}_3=-\mathbf{k}_1-\mathbf{k}_2;E_3=\sqrt{{k_3}^2+\mu^2}}  \\
+  &=& \frac{1}{{32\pi^3}} \int d E_1 d E_2 d\cos\theta_{12} \frac{E_1 E_2}{E_3} \frac{E_3}{E_1 E_2} \delta \left(\cos\theta_{12} - \frac{E_q^2-2E_q(E_1+E_2)+2E_1E_2-\mu^2}{2E_1E_2} \right) \Big|_{\mathbf{k}_3=-\mathbf{k}_1-\mathbf{k}_2;E_3=\sqrt{{k_3}^2+\mu^2}}  \\
+  &=& \frac{1}{{32\pi^3}} \int d E_1 d E_2 \Big|_{\cos\theta_{12} = \frac{E_q^2-2E_q(E_1+E_2)+2E_1E_2-\mu^2}{2E_1E_2}}  \\
+  &=& \frac{q^2}{{128\pi^3}} \int d x_1 d x_2 \Big|_{\cos\theta_{12} = \frac{1-(x_1+x_2)+x_1x_2/2-\mu^2/q^2}{x_1x_2/2}}.
+\end{eqnarray}
+$$
+
+Since $$-1 \le \cos\theta_{12} \le 1$$, we have
+
+$$
+\begin{eqnarray}
+  &&     -x_1x_2/2 \le 1-(x_1+x_2)+x_1x_2/2-\mu^2/q^2 \le x_1x_2/2  \\
+  &\iff& -x_1x_2 \le 1-(x_1+x_2)-\mu^2/q^2 \le 0  \\
+  &\iff& 1 - x_1 - \mu^2/q^2 \le x_2 \le 1 - \frac{\mu^2/q^2}{1 - x_1},
+\end{eqnarray}
+$$
+
+and therefore
+
+$$ \int d\Pi_3 = \frac{q^2}{{128\pi^3}} \int_0^{1-\mu^2/q^2} d x_1 \int_{1 - x_1 - \mu^2/q^2}^{1 - \frac{\mu^2/q^2}{1 - x_1}} d x_2. $$
+
+## Part (c)
+
+For pedagogical purposes, I will keep the quark mass and the electron mass for now. We have
+
+$$
+\begin{eqnarray}
+  &&  i\mathcal{M}  \\
+  &=& \epsilon_\rho^*(k_3) \bar{u}(k_1) \left[ (-ig\gamma^\rho) \frac{i(\not{k}_1+\not{k}_3+m_q)}{(k_1+k_3)^2-m_q^2+i\epsilon} (i e Q_f \gamma^\nu) + (i e Q_f \gamma^\nu) \frac{i(-\not{k}_2-\not{k}_3+m_q)}{(-k_2-k_3)^2-m_q^2+i\epsilon} (-ig\gamma^\rho) \right] v(k_2) \frac{-ig_{\mu\nu}}{q^2+i\epsilon} \bar{v}(p_2) (-ie\gamma^\mu) u(p_1)  \\
+  &=& -i g e^2 Q_f \epsilon_\rho^*(k_3) \bar{u}(k_1) \left[ \gamma^\rho \frac{\not{k}_1+\not{k}_3+m_q}{(k_1+k_3)^2-m_q^2+i\epsilon} \gamma^\mu + \gamma^\mu \frac{-\not{k}_2-\not{k}_3+m_q}{(-k_2-k_3)^2-m_q^2+i\epsilon} \gamma^\rho \right] v(k_2) \frac{1}{q^2+i\epsilon} \bar{v}(p_2) \gamma^\mu u(p_1).
+\end{eqnarray}
+$$
+
+The part between $$ \bar{u}(k_1)$$ and $$v(k_2)$$, multiplied with its complex conjugate, will form the
+main ingredient of what is callled $$H_{\mu\nu}$$ in the textbook. An argument based on general principles for
+
+$$q^\mu H_{\mu\nu} = 0$$
+
+is essentially the same as the Ward identity. To verify it explicitly, we only need to focus on the part between
+$$ \bar{u}(k_1)$$ and $$v(k_2)$$ in $$i\mathcal{M}$$. Also remember that for fermions we have
+$$ \bar{u}(k) \not{k} = \bar{u}(k) m $$ and $$ \not{k} v(k) = -m v(k) $$.
+
+$$
+\begin{eqnarray}
+  &&  \bar{u}(k_1) \left[ \gamma^\rho \frac{\not{k}_1+\not{k}_3+m_q}{(k_1+k_3)^2-m_q^2+i\epsilon} \not{q} + \not{q} \frac{-\not{k}_2-\not{k}_3+m_q}{(-k_2-k_3)^2-m_q^2+i\epsilon} \gamma^\rho \right] v(k_2)  \\
+  &=& \bar{u}(k_1) \left[ \gamma^\rho \frac{\not{k}_1+\not{k}_3+m_q}{(k_1+k_3)^2-m_q^2+i\epsilon} (\not{k}_1+\not{k}_2+\not{k}_3) + (\not{k}_1+\not{k}_2+\not{k}_3) \frac{-\not{k}_2-\not{k}_3+m_q}{(-k_2-k_3)^2-m_q^2+i\epsilon} \gamma^\rho \right] v(k_2)  \\
+  &=& \bar{u}(k_1) \left[ \gamma^\rho \frac{\not{k}_1+\not{k}_3+m_q}{(k_1+k_3)^2-m_q^2+i\epsilon} (\not{k}_1+\not{k}_3-m_q) + (\not{k}_2+\not{k}_3+m_q) \frac{-\not{k}_2-\not{k}_3+m_q}{(-k_2-k_3)^2-m_q^2+i\epsilon} \gamma^\rho \right] v(k_2)  \\
+  &=& 0.
+\end{eqnarray}
+$$
+
+Multiplying by $$g_{\mu\nu}$$ on both sides of
+
+$$\int d\Pi_3 H^{\mu\nu} = (g^{\mu\nu} - \frac{q^\mu q^\nu}{q^2}) \cdot H$$
+
+we have
+
+$$\int d\Pi_3 g^{\mu\nu} H_{\mu\nu} = 3 \cdot H.$$
+
+Now we have, keeping in mind that $$L_{\mu\nu} q^\mu = 0$$ due to the Ward identity,
+
+$$L_{\mu\nu} \int d\Pi_3 H^{\mu\nu} = g^{\mu\nu}L_{\mu\nu} H = \frac{1}{3} (g^{\mu\nu}L_{\mu\nu}) \int d\Pi_3 g^{\rho\sigma} H_{\rho\sigma}.$$
+
+For the rest, one can refer to Xianyu's solution. The calculation of (7.55) is rather tedious but no special techinques
+are required except the numerator algebra listed in A.3 of the textbook. For the factor of 3 due to color charges, refer
+to my previous comments.
+
+## Part (d)
+
+In Xianyu's solution, note that we are already throwing away $$O\left(\mu^4/q^4\right)$$ terms in (7.59).
+
+Denoting $$\frac{\mu^2}{q^2}$$ simply as $$\epsilon$$, we need to calculate the following integral.
+
+$$\int_0^{1-\epsilon} \int_{1-x_1-\epsilon}^{1-\frac{\epsilon}{1-x_1}} F\left(x_1, x_2,\epsilon\right) \mathrm{d}x_2 \mathrm{d}x_1,$$
+
+where
+
+$$F(x_1, x_2,\epsilon) = \frac{2(x_1+x_2-1+\epsilon)(1+\epsilon)}{(1-x_1)(1-x_2)} + \left(\frac{1}{(1-x_1)^2} + \frac{1}{(1-x_2)^2}\right)\left((1-x_1)(1-x_2)-\epsilon\right).$$
+
+First, noticing that $$x_1$$ and $$x_2$$ are completely symmetric in both $$F(x_1, x_2,\epsilon)$$ and the
+integration area, we can replace $$F(x_1, x_2,\epsilon)$$ by the following.
+
+$$ F(x_1, x_2,\epsilon) \rightarrow \frac{-4(1+\epsilon)}{1-x_1} + \frac{2(1+\epsilon)^2}{(1-x_1)(1-x_2)} + 2 \frac{1-x_2}{1-x_1} - 2 \frac{\epsilon}{(1-x_1)^2} $$
+
+Only the integral of the second term is tricky. We have
+
+$$
+\begin{eqnarray}
+  &&  \int_0^{1-\epsilon} \int_{1-x_1\epsilon}^{1-\frac{\epsilon}{1-x_1}} \frac{2(1+\epsilon)}{(1-x_1)(1-x_2)}\mathrm{d}x_2 \mathrm{d}x_1 \\
+  &=& \left(2+O(\epsilon)\right) \int_0^{1-\epsilon} \frac{ \log\left(x_1+\epsilon\right)-\log\left(\frac{\epsilon}{1-x_1}\right)}{1-x_1} \mathrm{d}x_1 \\
+  &=& \left(2+O(\epsilon)\right) \left(\int_0^1 \frac{\log(x_1)}{1-x_1} \mathrm{d}x_1 + o(1)|_{\epsilon\rightarrow 0} \right) - \left(2+O(\mu^2)\right) \int_0^{1-\epsilon} \frac{\log(\epsilon)-\log(1-x_1)}{1-x_1} \mathrm{d}x_1 \\
+  &=& -\frac{\pi^2}{3} - \left(2+O(\epsilon)\right) \left(-\log^2(\epsilon) + \frac{1}{2} \log^2(\epsilon) \right) \\
+  &=& -\frac{\pi^2}{3} + \log^2(\epsilon).
+\end{eqnarray}
+$$
+
+(We can safely throw away not only $$O(\epsilon)$$ terms, but also $$O(\epsilon)\log(\epsilon)$$ and
+$$O(\epsilon)\log^2(\epsilon)$$ terms, because they all tend to zero when $$\epsilon$$ does.)
+
+For the other integrals, it is easier to use a computer. Below is a piece of Python code that calculates
+the integral of the last term of $$F(x_1,x_2,\epsilon)$$.
+
+```python
+from sympy import *
+init_printing()
+x_1, x_2, epsilon = symbols('x_1 x_2 epsilon', positive=True)
+
+x_2_upper = 1 - epsilon/(1-x_1)
+x_2_lower = 1 - x_1 - epsilon
+
+integrand = epsilon/((1-x_1)**2)
+inner = integrate(integrand, (x_2,x_2_lower,x_2_upper))
+outer = integrate(inner,(x_1,0,1-epsilon))
+simplify(outer)
+```
+
+Therefore the end result is
+
+$$
+\begin{eqnarray}
+  &&  \int_0^{1-\epsilon} \int_{1-x_1\epsilon}^{1-\frac{\epsilon}{1-x_1}} F(x_1,x_2,\epsilon) \\
+  &=& -4\left(-\log(\epsilon)-2\right) + \left(-\frac{\pi^2}{3}+\log^2(\epsilon)\right) + 2\left(-\frac{1}{2}\log(\epsilon)-1\right) - 2\left(\frac{1}{2}\right)  \\
+  &=& \log^2(\frac{\mu^2}{q^2}) + 3 \log(\frac{\mu^2}{q^2}) + 5 -\frac{\pi^2}{3}.
+\end{eqnarray}
+$$
+
+And we have
+
+$$
+\sigma(e^+e^-\rightarrow \bar{q}qg) = \frac{4\pi\alpha^2}{3s} \cdot 3Q_f^2 \cdot \frac{\alpha}{2\pi} \left[ \log^2\left(\frac{\mu^2}{q^2}\right) + 3 \log\left(\frac{\mu^2}{q^2}\right) + 5 -\frac{\pi^2}{3} \right].
+$$
+
+## Parts (e) and (f)
+
+Focusing on the integral from part (a), and substituting $$Q^2=-q^2$$, we have
+
+$$
+\begin{eqnarray}
+  &&  \int dxdydz \delta(x+y+z-1) \left[ \log\frac{\mu^2 z}{\mu^2 z + Q^2 x y} - \frac{Q^2 (1-x)(1-y)}{\mu^2 z + Q^2 x y} \right] \\
+  &=& \int_0^1 dz \int_0^{1-z} \left[ \log\frac{\mu^2 z}{\mu^2 z + Q^2 (1-y-z) y} - \frac{Q^2 (y+z)(1-y)}{\mu^2 z + Q^2 (1-y-z) y} \right] dy.
+\end{eqnarray}
+$$
+
+But we have
+
+$$
+\begin{eqnarray}
+  &&  \int_0^{1-z} \log\frac{\mu^2 z}{\mu^2 z + Q^2 (1-y-z) y} dy  \\
+  &=& \int_0^{1-z} \Big[ \log\left(\mu^2 z\right) - \log\left(\mu^2 z + Q^2 (1-y-z) y\right) \Big] dy  \\
+  &=& (1-z)\log\left(\mu^2 z\right) - (1-z)\log\left(\mu^2 z\right) + \int_0^{1-z} \frac{Q^2 y(1-2y-z)}{\mu^2 z + Q^2 (1-y-z) y} dy.
+\end{eqnarray}
+$$
+
+Therefore we have
+
+$$
+\begin{eqnarray}
+  &&  \int dxdydz \delta(x+y+z-1) \left[ \log\frac{\mu^2 z}{\mu^2 z + Q^2 x y} - \frac{Q^2 (1-x)(1-y)}{\mu^2 z + Q^2 x y} \right] \\
+  &=& -\int_0^1 dz \int_0^{1-z} \frac{y^2+z}{\frac{\mu^2}{Q^2} z + (1-y-z) y} dy  \\
+  &=& -\int_0^1 \left[\frac{1-y}{\frac{\mu^2}{Q^2} - y} + \left(y^2-\frac{y(1-y)}{\frac{\mu^2}{Q^2}-y}\right)\int_0^{1-y} \frac{1}{\frac{\mu^2}{Q^2} z + (1-y-z) y} dz \right] dy  \\
+  &=& -\int_0^1 \left[\frac{1-y}{\frac{\mu^2}{Q^2} - y} + \left( \frac{y^2}{\frac{\mu^2}{Q^2}-y} - \frac{y(1-y)}{(\frac{\mu^2}{Q^2}-y)^2} \right) \log\left(\frac{\mu^2}{Q^2} z + (1-y-z) y\right)\Big|_{z=0}^{1-y} \right] dy  \\
+  &=& -\int_0^1 \left[\frac{1-y}{\frac{\mu^2}{Q^2} - y} + \left( \frac{y^2}{\frac{\mu^2}{Q^2}-y} - \frac{y(1-y)}{(\frac{\mu^2}{Q^2}-y)^2} \right) \left(\log\left(\frac{\mu^2}{Q^2} (1-y)\right) - \log\left((1-y) y\right)\right) \right] dy  \\
+  &=& -\int_0^1 \left[1 - \frac{1}{y+\frac{\mu^2}{q^2}} + O(\mu^2) + \left( -y  + 1 - \frac{1+O(\mu^2)}{y+\frac{\mu^2}{q^2}} + \frac{\frac{\mu^2}{q^2}+O(\mu^4)}{(y+\frac{\mu^2}{q^2})^2} + O(\mu^2) \right) \left(\log\left(\frac{\mu^2}{Q^2}\right) - \log(y)\right) \right] dy  \\
+  &=& -1 - \log\left(\frac{\mu^2}{q^2}\right) + \left(-\frac{1}{2} - \log\left(\frac{\mu^2}{q^2}\right) - 1 \right) \log\left(\frac{\mu^2}{Q^2}\right) - \int_0^1 \left[\left( y - 1 + \frac{1+O(\mu^2)}{y+\frac{\mu^2}{q^2}} - \frac{\frac{\mu^2}{q^2}+O(\mu^4)}{(y+\frac{\mu^2}{q^2})^2} + O(\mu^2) \right) \log(y) \right] dy  \\
+  &=& -1 - \log\left(\frac{\mu^2}{q^2}\right) + \left(-\frac{3}{2} - \log\left(\frac{\mu^2}{q^2}\right) \right) \log\left(\frac{\mu^2}{-q^2-i\epsilon}\right) - \left(-\frac{1}{4} + 1 - \log\left(\frac{\mu^2}{q^2}\right) \right) - \left(1+O(\mu^2)\right) \int_0^1 \frac{\log(y)}{y+\frac{\mu^2}{q^2}} dy  \\
+  &=& -\frac{7}{4} - \left(\frac{3}{2} + \log\left(\frac{\mu^2}{q^2}\right) \right) \left( \log\left(\frac{\mu^2}{q^2}\right) +i\pi \right) - \left(1+O(\mu^2)\right) \left(-\frac{1}{2}\log^2\left(\frac{\mu^2}{q^2}\right)-\frac{\pi^2}{6}\right)  \\
+  &=& -\frac{1}{2}\log^2\left(\frac{\mu^2}{q^2}\right) - \frac{3}{2}\log\left(\frac{\mu^2}{q^2}\right) - \frac{7}{4} + \frac{\pi^2}{6} - i\pi \left(\log\left(\frac{\mu^2}{q^2}\right)+\frac{3}{2}\right).
+\end{eqnarray}
+$$
+
+Most integrals in the intermediate steps of the derivation above can be better done by a computer,
+except the following.
+
+$$
+\begin{eqnarray}
+  &&  \int_0^1 \frac{\log(x)}{x+\epsilon} \mathrm{d}x  \\
+  &=& \int_0^1 \frac{\log(x+\epsilon-\epsilon)}{x+\epsilon} \mathrm{d}x  \\
+  &=& \int_0^1 \frac{1}{x+\epsilon}\left(\log(x+\epsilon) - \sum_{n=1}^\infty \frac{1}{n} \left(\frac{\epsilon}{x+\epsilon}\right)^n \right) \mathrm{d}x  \\
+  &=& \frac{1}{2}\log^2(x+\epsilon) \Bigg|_0^1 - \int_0^1 \left( \sum_{n=1}^\infty \frac{1}{n}\frac{\epsilon^n}{(x+\epsilon)^{n+1}}\right) \mathrm{d}x  \\
+  &=& -\frac{1}{2}\log^2(\epsilon) + O(\epsilon) + \sum_{n=1}^\infty \left( \frac{1}{n^2}\frac{\epsilon^n}{ (x+\epsilon)^n} \Bigg|_0^1 \right)  \\
+  &=& -\frac{1}{2}\log^2(\epsilon) + O(\epsilon) + \sum_{n=1}^\infty \left( -\frac{1}{n^2} + O(\epsilon^n) \right)  \\
+  &=& -\frac{1}{2}\log^2(\epsilon) - \frac{\pi^2}{6} + O(\epsilon)
+\end{eqnarray}
+$$
+
+Omitting all $$O(\alpha_g^2)$$ terms, we have
+
+$$
+\begin{eqnarray}
+  &&  F_1(q^2)  \\
+  &=& -Q_f \left[1 + \frac{\alpha_g}{2\pi} \int_0^1 dx dy dz \delta(x+y+z-1) \left(\log\frac{\mu^2 z}{\mu^2 z - q^2 xy} + \frac{q^2(1-x)(1-y)}{\mu^2 z-q^2 xy} \right) \right]  \\
+  &=& -Q_f \left[1 - \frac{\alpha_g}{4\pi} \left( \log^2\left(\frac{\mu^2}{q^2}\right) + 3\log\left(\frac{\mu^2}{q^2}\right) + \frac{7}{2} - \frac{\pi^2}{3} + i\pi \left(2\log\left(\frac{\mu^2}{q^2}\right)+3\right) \right) \right].
+\end{eqnarray}
+$$
+
+It is mathematically problematic to treat the coefficient of $$\alpha_g$$ as if it were a small value
+despite of the infrared divergence, but let us pretend it is okay to do so. Then we have
+
+$$
+\begin{eqnarray}
+  &&  \sigma(e^+e^-\rightarrow\bar{q}q)  \\
+  &=& \frac{4\pi\alpha^2}{3s} \cdot 3 F_1(q^2) F_1^*(q^2)  \\
+  &=& \frac{4\pi\alpha^2}{3s} \cdot 3 Q_f^2 \left[1 - \frac{\alpha_g}{2\pi} \left( \log^2\left(\frac{\mu^2}{q^2}\right) + 3\log\left(\frac{\mu^2}{q^2}\right) + \frac{7}{2} - \frac{\pi^2}{3} \right) \right].
+\end{eqnarray}
+$$
+
+Combining this with the result from part (d), we have
+
+$$
+\sigma(e^+e^-\rightarrow\bar{q}q \:\mathrm{or}\: \bar{q}qg) = \frac{4\pi\alpha^2}{3s} \cdot 3 Q_f^2 \cdot \left(1 + \frac{3\alpha_g}{4\pi} \right).
+$$
