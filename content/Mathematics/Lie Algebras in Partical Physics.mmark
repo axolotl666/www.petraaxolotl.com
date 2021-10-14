@@ -1557,6 +1557,8 @@ $$ 10 \otimes 8 = 35 + 27 + 10 + 8. $$
 The general claim that *for any Lie group, the tensor product of the adjoint representation with any
 arbitrary nontrivial representation $$ D $$ must contain $$ D $$* can be proved as follows.
 
+*On a second thought, the proof below is incorrect. Please ignore it.*
+
 Here we assume the Lie algebra to be simple and of rank $$ n $$ and $$ D $$ to be irreducible.
 
 Without loss of generality, we can label $$ D $$ by its Dynkin coefficients $$ (l^1, l^2, \dots, l^m, 0, \dots, 0) $$,
@@ -1646,7 +1648,7 @@ $$
 
 Double-checking the dimensionality, we have $$ (N + M)^2 - 1 = 1 + N^2 - 1 + N M + N M + M^2 - 1 $$. So it checks out.
 
-13.E.
+### 13.E.
 
 Without actually drawing tableuax, we have
 
