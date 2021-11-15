@@ -1688,8 +1688,9 @@ $$
   &&  \langle 0 | (a_k b_k) a_1 a_1 a^\dagger_1 a^\dagger_1 a_3 a^\dagger_3 (a^\dagger_l b^\dagger_l) | 0 \rangle \\
   &=& \langle 0 | (a_k b_k) a_1 a_1 a^\dagger_1 a^\dagger_1 [a_3, a^\dagger_3] (a^\dagger_l b^\dagger_l) | 0 \rangle + \langle 0 | (a_k b_k) a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_3 a_3 (a^\dagger_l b^\dagger_l) | 0 \rangle \\
   &=& \langle 0 | a_1 a_1 (a_k b_k) (a^\dagger_l b^\dagger_l) a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | (a_k b_k) a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_3 b^\dagger_3) | 0 \rangle \\
-  &=& \langle 0 | a_1 a_1 (a_k b_k) (a^\dagger_k b^\dagger_k) a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | (a_3 b_3) a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_3 b^\dagger_3) | 0 \rangle \\
-  &=& \langle 0 | a_1 a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_1 | 0 \rangle + 2 \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 | 0 \rangle \\
+  &=& \langle 0 | a_1 a_1 (a_k a^\dagger_l) (b_k b^\dagger_l) a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | (a_3 b_3) a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_3 b^\dagger_3) | 0 \rangle \\
+  &=& \langle 0 | a_1 a_1 (d^k_l + a^\dagger_l a_k) (d^k_l + b^\dagger_l b_k) a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 a_3 a^\dagger_3 b_3 b^\dagger_3) | 0 \rangle \\
+  &=& \langle 0 | a_1 a_1 a_1 a^\dagger_1 a^\dagger_1 a^\dagger_1 | 0 \rangle + (3-1) \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 | 0 \rangle + \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 | 0 \rangle \\
   &=& 6 \langle 0 | a_1 a_1 a^\dagger_1 a^\dagger_1 | 0 \rangle  \\
   &=& 12.
 \end{eqnarray}
@@ -1947,7 +1948,7 @@ down quark in the proton to form $$ \pi^0 $$.
 [This paper](http://math.ucr.edu/home/baez/guts.pdf) provides useful details to understand the Standard Model and
 the $$ SU(5) $$ GUT.
 
-### 18.D.
+### 18.E.
 
 We have
 
