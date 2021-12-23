@@ -2411,8 +2411,8 @@ $$ (5) $$, which has 126 dimensions.
 ### 25.A.
 
 $$ D^1 $$ has weights $$ \pm e^j $$, which break up into two sets:
-- $$ \pm e^1 $$ $$ \pm e^2 $$ transforming like $$ (2, 2, 1, 1) $$, and
-- $$ \pm e^3 $$ $$ \pm e^4 $$ transforming like $$ (1, 1, 2, 2) $$.
+- $$ \pm e^1 $$ and $$ \pm e^2 $$ transforming like $$ (2, 2, 1, 1) $$, and
+- $$ \pm e^3 $$ and $$ \pm e^4 $$ transforming like $$ (1, 1, 2, 2) $$.
 
 Therefore we have $$ D^1 \rightarrow (2, 2, 1, 1) \oplus (1, 1, 2, 2) $$.
 
