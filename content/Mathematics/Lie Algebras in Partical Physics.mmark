@@ -2518,11 +2518,11 @@ $$ 10 = [5 \otimes 5]_{AS}. $$
 
 In the $$ SU(3) $$ subalgebra, we have
 
-$$ [5 \otimes 5]_{AS} = [(3 + 1 + 1) \otimes (3 + 1 + 1)]_{AS} = \bar{3} + 3 + 3, $$
+$$ [5 \otimes 5]_{AS} = [(3 + 1 + 1) \otimes (3 + 1 + 1)]_{AS} = \bar{3} + 3 + 3 + 1, $$
 
 and therefore
 
-$$ A(10)^{SU(5)} = A(\bar{3})^{SU(3)} + A(3)^{SU(3)} + A(3)^{SU(3)} = 1 = A(5)^{SU(5)}. $$
+$$ A(10)^{SU(5)} = A(\bar{3})^{SU(3)} + A(3)^{SU(3)} + A(3)^{SU(3)} + A(1)^{SU(3)} = 1 = A(5)^{SU(5)}. $$
 
 ### 27.C.
 
